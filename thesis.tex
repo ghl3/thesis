@@ -1,5 +1,16 @@
 %% NYU PhD thesis format. Created by José Koiller 2007--2008.
 
+%%
+%% PLEASE SEE THE OFFICIAL FORMATTING GUIDE:
+%% http://gsas.nyu.edu/docs/IO/4474/formattingguide.pdf
+%% 
+%% Style obtained from:
+%% http://www.math.nyu.edu/student_resources/misc.php
+%%
+%% Submission Guidelines:
+%% http://gsas.nyu.edu/page/grad.life.dissertation.html
+%%
+
 %% Use the first of the following lines during production to
 %% easily spot "overfull boxes" in the output. Use the second
 %% line for the final version.
@@ -8,13 +19,13 @@
 
 %% Replace the title, name, advisor name, graduation date and dedication below with
 %% your own. Graduation months must be January, May or September.
-\newcommand{\thesistitle}{Proof of the Riemann Hypothesis}
-\newcommand{\thesisauthor}{Jane Doe}
-\newcommand{\thesisadvisor}{Professor Fulana de Tal}
-\newcommand{\graddate}{May 2032}
+\newcommand{\thesistitle}{Measurements of Top Quark and Top Quark Like processes at the LHC}
+\newcommand{\thesisauthor}{George Herbert Lewis III}
+\newcommand{\thesisadvisor}{Professor Kyle Cranmer}
+\newcommand{\graddate}{Year of the Depends Adult Undergarment}
 %% If you do not want a dedication, scroll down and comment out
 %% the appropriate lines in this file.
-\newcommand{\thesisdedication}{To my dog Weierstra\ss, with affection.}
+\newcommand{\thesisdedication}{Dedicated to the memory of Kurt Vonnegut (placeholder).}
 
 %% The following makes chapters and sections, but not subsections,
 %% appear in the TOC (table of contents). Increase to 2 or 3 to
@@ -92,7 +103,7 @@
   A dissertation submitted in partial fulfillment\\
   of the requirements for the degree of\\
   Doctor of Philosophy\\
-  Department of Mathematics\\
+  Department of Physics\\
   New York University\\
   \graddate
 \end{doublespace}
@@ -145,13 +156,21 @@
 
 %%%%% Body of thesis starts %%%%%%%%%%%%
 \pagenumbering{arabic} % switches page numbering to arabic: 1, 2, 3, etc.
+
 %% Introduction. If your thesis has no introduction, or chapter 1 is
 %% meant to be the introduction, then comment out the lines below.
 \section*{Introduction}\addcontentsline{toc}{section}{Introduction}
+
 \input{intro}
+\input{chap1}
+
+\appendix
+
+\input{app1}
+\input{biblio}
+
 %% If your thesis has different "Parts", use commands such as the following:
 %\part{First Part\label{part:one}}%
-\input{chap1}
 %\input{chap2} % further chapters -- change file names to meaningful things...
 %\input{chap3}
 %\part{Second Part\label{part:two}}%
@@ -160,13 +179,10 @@
 %\input{chap6}
 %%%%% Appendices start %%%%%%%%%%%%%%%%
 %% Comment out the following line if your thesis has no appendix
-\appendix
-\input{app1}
 %% Note: If your thesis has more than one appendix, NYU requires a "list of
 %% appendices" page before the body of the thesis. I don't provide the tools
 %% to create that here, so you're on your own for that one... Sorry.
 %\input{app2}
 %%%% Input bibliography file %%%%%%%%%%%%%%%
-\input{biblio}
 
 \end{document}

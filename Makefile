@@ -11,7 +11,6 @@ thesis:
 	latex  ${NOTENAME}
 	latex  ${NOTENAME}
 	dvipdf -sPAPERSIZE=a4 -dPDFSETTINGS=/prepress ${NOTENAME}
-	make clean
 #
 # standard Latex targets
 #
@@ -33,5 +32,5 @@ thesis:
 
 clean:
 	rm -f *.aux *.log *.bbl *.blg *.brf *.cb *.ind *.idx *.ilg  \
-	      *.inx *.dvi *.toc *.out *.nav *.snm  spellTmp 
+	      *.inx *.dvi *.toc *.out *.nav *.snm *.lof *.lot  spellTmp 
 
