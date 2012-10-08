@@ -67,6 +67,7 @@ The hadronic tile calrimeter, which covers [XX] starradians, detects jets that a
 It is a cylindric shell ranging from an inner radius 2.28 meters and outer radius 4.25 meters.
 The tile is made of three subsystems, one central ``barrel'' calrimeter which covers $|\eta| < 1.0$ and two ``extended barrel'' calrimeters, which cover $0.8 < |\eta| < 1.7$ on either side.
 The tile calrimeters consist of alternating layers of 14 mm iron plates, which is used for inducing the hadronic shower and stopping the jet, and 3mm active scintillating-tile, which is used to measure the energy deposited into the calrimeter by the jet.
+%Iron is used because the hadronic particles that make up jets interact strongly with nucleii, and therefore a material with a high nuclear density is desirable.
 The scintillating tile is attached to a series of photomultiplier tubes (PMTs) that amplify the tile's electrical readout.
 Key to the successful performance of the tile calrimeter is providing enough average interaction lengths for the hadronic shower to be contained.
 The hadronic thickness at the end of the tile calrimeter (at $\eta=0$) is 9.2 $\lambda$, which is enough to ensure good jet resolution and to minimize jet ``punch through'' into the muon system.
@@ -94,15 +95,51 @@ A small number of jets managed to escape the hadronic calrimeter and enter the m
 In addition, jets with ``heavy flavor'' may contain decays that result in real muons (but not muons that originated from a hard collission in the beam spot), so care must be taken to separate muons originating as jets from muons originating from the hard process.
 
 % How jets work, and how they shower
-The first step in measuring a jet's energy is stopping it.  
-The hadronic partilces that make up a jet are made up of quarks and gluons, which are charged under the strong force (QCD).
-They therefore interact with the nucleii of materials that they pass through.
-The primary mechanism for energy loss of high energy hadrons traveling through a solid material is via inelastic nuclear interactions.
-As these interactions cause the original hadron to lose energy, they will also cause nuclear excitations and subsequent nuclear decays in the material.
-This in turn leads to the emission of additional hadronic particles, which themselves will interact with the material.
-The net effect is the formation of what is known as a hadronic shower.
-When the energy of the daughter particles in the shower becomes too small for nuclear excitation, the shower ceases to evolve, and the remaining energy of hadrons is lost to ionization and electromagnetic interactions.
-While the majority of energy is lost via nuclear interactions, a non-neglegable fraction of a jet's energy interacts electromagnetically .
-This fraction 
+
+%% The first step in measuring a jet's energy is stopping it.  
+%% The hadronic partilces that make up a jet are made up of quarks and gluons, which are charged under the strong force (QCD).
+%% They therefore interact with the nucleii of materials that they pass through.
+%% The primary mechanism for energy loss of high energy hadrons traveling through a solid material is via inelastic nuclear interactions.
+%% As these interactions cause the original hadron to lose energy, they will also cause nuclear excitations and subsequent nuclear decays in the material.
+%% This in turn leads to the emission of additional hadronic particles, which themselves will interact with the material.
+%% The net effect is the formation of what is known as a hadronic shower.
+%% When the energy of the daughter particles in the shower becomes too small for nuclear excitation, the shower ceases to evolve, and the remaining energy of hadrons is lost to ionization and electromagnetic interactions.
+%% While the majority of energy is lost via nuclear interactions, a non-neglegable fraction of a jet's energy interacts electromagnetically .
+%% This fraction 
 
 
+\subsection{Electrons}
+Electrons and positrons are electromagnetically charge and wil therefore interact with the innner detector, and in addition their trajectories will be curved as the particles are beant by the magnetic field.
+As they pass through the inner detector, electrons will deposit hits in the pixles, silicon, and straw tubes, and the collection of these hits can be extrapolated together to reconstruct the electron's track.
+This track is of crucial importance for identifying electrons.
+The track carries information both about the direction of the electron, but also about its momentum, and the presence of a track is necessary to distinuish electrons from photons, which lead essentially identical electromagnetic showers in the EM calrimeter.
+When electrons enter the EM calrimeter, they will begin to decellerate, which will cause the electron to radiate via bremsstralung.
+The radiated photons often have enough energy to produce electorn-positron pairs, which themselves will emit bremsstralung radiation.
+This creates a cascade of electrons, positrons, and photons that is collectively known as an electromagnetic shower.
+The energy of this shower is determined as it is absorbed by the EM calrimeter.
+The EM calrimeter tends to provide a better energy resoltion for high pT electrons than the tracks do (beginning when the electron's energy is around 10 GeV).
+
+[ 2010 performance: http://cdsweb.cern.ch/record/1273197 ]
+[ https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2011-006/ATL-PHYS-PUB-2011-006.pdf ]
+[ Moriond 2012 Resolution info: https://indico.cern.ch/getFile.py/access?contribId=3&resId=1&materialId=slides&confId=163471]
+[ https://twiki.cern.ch/twiki/pub/AtlasProtected/EnergyScaleResolutionRecommendations/summary_rel16.pdf ]
+
+\subsection{Photons}
+Photons are identified as electromagnetic showers that aren't matched to an inner detector track.
+In addition, photons may decay into an electron-positron pair before entering the EM calorimeter.
+If this occurs within or before the inner-detector, the proximity of the electron and positron's tracks can be used to identify the pair as a photon that ``converted'' electromagnetically, and the pair can be reconstructed as a single photon.
+%In addition, photons may be identified as electron-positron pairs  from ``conversions,'' which are electron-positron pairs that 
+
+
+\subsection{Muons}
+Muons, with a mass of 106 MeV, weigh about 200 times more than the electron (which weights .512 MeV).
+This implies that, for a fixed energy, a muon will have a smaller value of $\beta$ than an electron (or, equivalantly $\gamma$), which results in a smaller amount of radiation being emitted as it passes through matter.
+Therefore, a muon's mean radiation length in ATLAS' calrimeters will be much longer than an electron's length, and a significant EM shower will not develop within the detector.
+For this reason, most of a muon's energy escapes ATLAS.  
+
+[ pdg: Muons through matter: http://pdg.lbl.gov/2000/passagerpp.pdf fig 23.1 ]
+
+Since one can not measure its energy through calrimetry, ATLAS instead measures its momentum by estimating its curvature when bent in a magnetic field.
+A Muon will create a bent track in the inner detector that can be used to estimate its momentum.
+However, the resolution of the inner detector for high pt muons becomes somewhat poor.
+To vastly improve on the measurement of the inner detector alone, ATLAS has a large set of detectors that comprise the muon spectrometer.
