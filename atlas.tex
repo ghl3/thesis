@@ -2,7 +2,6 @@
 %
 %
 
-
 \section{ATLAS}
 ATLAS is a multi-purpose particle detector designed for particle discovery.
 In order to fulfull this broad role, ATLAS must excel in several ways:
@@ -25,7 +24,6 @@ Typical descriptions of the ATLAS detector list its various components and descr
 But perhaps it is more useful to instead approach the detector from the perspective of the different particles that it is designed to detecct, and to use that as a springboard to go into machine's enieneering details.
 
 \subsection{Layout and Geometry}
-
 Cylander, eta, phi size, underground, lhc, geneva, Mount Blanc, etc
 
 
@@ -41,28 +39,14 @@ The liquid argon must of course remain cooled, and so the electromagnetic calrim
 To reduce the amount of upstream material present before the calrimeter systems, the solonodial magent for the inner detector is located within the EM calrimeter's cryostat.
 A dedicated presampler is located directly behind the cryostat's wall to correct for any energy lost within inactive material in front of the EM calrimeter.
 Behind the outside of the cyrostat and past the EM calrimeter is the hadronic calrimeter, which consists of alternating layers of iron and scintillating tile.
-Finally, the outer-most layer of ATLAS is the muon system, which consists of many subsystems designed to detect the trajectories of muons at high rates and with good resolution.
- 
-
+Finally, the outer-most layer of ATLAS is the muon spectrometer, which consists of many subsystems designed to detect the trajectories of muons at high rates and with good resolution. 
+A 8T magnetic field is induced across the entire muon system and is produced by large superconducting toroid magnets.
 
 
 \subsection{Jets}
-
 The Large Hadron Collider is thus named because it collides a specific hadronic bound state of quarks known as the proton.
 The majority of interactions between these particles are mediated by the strong force (QCD), and the vast majority of final state particles are cone-like sprays of hadronic particles known as Jets.
 It is therefore crucial that a detector working with a hadron collider be excellent at identifying and measuring hadronic particles.
-
-% How jets work, and how they shower
-The first step in measuring a jet's energy is stopping it.  
-The hadronic partilces that make up a jet are made up of quarks and gluons, which are charged under the strong force (QCD).
-They therefore interact with the nucleii of materials that they pass through.
-The primary mechanism for energy loss of high energy hadrons traveling through a solid material is via inelastic nuclear interactions.
-As these interactions cause the original hadron to lose energy, they will also cause nuclear excitations and subsequent nuclear decays in the material.
-This in turn leads to the emission of additional hadronic particles, which themselves will interact with the material.
-The net effect is the formation of what is known as a hadronic shower.
-When the energy of the daughter particles in the shower becomes too small for nuclear excitation, the shower ceases to evolve, and the remaining energy of hadrons is lost to ionization and electromagnetic interactions.
-While the majority of energy is lost via nuclear interactions, a non-neglegable fraction of a jet's energy interacts electromagnetically .
-This fraction 
 
 % General Hadronic Calo layout
 The primary means of studying a jet is through calrimetry, where the energy of a jet is determined by stopping a hadronic shower using a dense material and measuring the energy deposited using active material.
@@ -73,7 +57,6 @@ ATLAS' hadronic calrimeter system is divided into three subsystems that each cov
 The largest and most important is the ``tile'' hadronic calrimeter (which itself is divided into the ``barrel'' and ``extended barrel'' tile calrimeters), which covers the rapidity region of $|\eta| < 1.7$. [tdr]  
 The ``hadronic end cap'' (HEC) extends the calrimeter's range up to $|\eta| < 3.2$, and the ``forward calrimeter'' (FCAL) covers the pseudorapidity range of $3.1 < |\eta| < 4.9$.  
 %Each of these subsystems have similar goals but vary in their design.
-
 
 [pdg review: http://pdg.lbl.gov/2011/reviews/rpp2011-rev-passage-particles-matter.pdf]
 
@@ -87,3 +70,39 @@ The tile calrimeters consist of alternating layers of 14 mm iron plates, which i
 The scintillating tile is attached to a series of photomultiplier tubes (PMTs) that amplify the tile's electrical readout.
 Key to the successful performance of the tile calrimeter is providing enough average interaction lengths for the hadronic shower to be contained.
 The hadronic thickness at the end of the tile calrimeter (at $\eta=0$) is 9.2 $\lambda$, which is enough to ensure good jet resolution and to minimize jet ``punch through'' into the muon system.
+
+
+
+\subsection{Measuring Particles with ATLAS}
+
+\subsection{Jets}
+Jets are produced when particles with color charge, quarks and gluons, are in the outgoing states of a hard interaction.
+As these particles propogate through space, they will tend to decay into or radiate other color-charged particles, leading to a phenomenon known as the evolution of a ``parton shower.''
+This shower grows rapidly because QCD, which is an asymptotically free field theory, has a small coupling constant at high energies.  
+As the shower progresses and the average energy of the constituent particles decreases, the QCD coupling constant will grow stronger, and this will cause the quarks and gluons to bind together into stable particles in a process known as ``hadronization.''
+The collection of these hadrons, which move in a wide, cone-like shape, is known as a jet.
+%The average distance for the parton-shower, hadronization evolution process is small compared to the radius of ATLAS, adn so jets are fully formed as they begin to interact with the detector
+
+A jet originating from the beam spot and and moving through ATLAS will first interact with the inner detector.  Since many of the constituent particles of a jet are charged hadrons ($\pi^{+}$, $\K^{+}$, etc), they will leave tracks in the ID.
+Jet algorithms can use these tracks when attempting to identify a jet, and there are algorithms that exclusively rely on this collection of tracks to build a set of identified jets (
+[ Track Jets, 2009: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2010-002 ].
+However, the most common way to reconstruct jets is using the calrimetry.
+Jets will deposit a small fraction of their energy in the Electromagnetic Calrimeter, but the majority of the shower's energy is measued by the hadronic calrimeter.
+There are many algorithms used to reconstruct jets using information from the hadronic calrimeter, but most of them consist of clustering algorithms which group together cells of energy deposits.
+The main differences between techniques involve how these energy deposits are calibrated (if at all) and how the cells are clustered (based on fixed geometries, such as cones, or based on iterative algorithms using a distance function to merge cell deposits).
+A small number of jets managed to escape the hadronic calrimeter and enter the muon chambers, where they can be misidentified as mouns.
+In addition, jets with ``heavy flavor'' may contain decays that result in real muons (but not muons that originated from a hard collission in the beam spot), so care must be taken to separate muons originating as jets from muons originating from the hard process.
+
+% How jets work, and how they shower
+The first step in measuring a jet's energy is stopping it.  
+The hadronic partilces that make up a jet are made up of quarks and gluons, which are charged under the strong force (QCD).
+They therefore interact with the nucleii of materials that they pass through.
+The primary mechanism for energy loss of high energy hadrons traveling through a solid material is via inelastic nuclear interactions.
+As these interactions cause the original hadron to lose energy, they will also cause nuclear excitations and subsequent nuclear decays in the material.
+This in turn leads to the emission of additional hadronic particles, which themselves will interact with the material.
+The net effect is the formation of what is known as a hadronic shower.
+When the energy of the daughter particles in the shower becomes too small for nuclear excitation, the shower ceases to evolve, and the remaining energy of hadrons is lost to ionization and electromagnetic interactions.
+While the majority of energy is lost via nuclear interactions, a non-neglegable fraction of a jet's energy interacts electromagnetically .
+This fraction 
+
+
