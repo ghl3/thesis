@@ -28,28 +28,62 @@ But perhaps it is more useful to instead approach the detector from the perspect
 
 Cylander, eta, phi size, underground, lhc, geneva, Mount Blanc, etc
 
+
+\subsection{Overview}
+ATLAS is a multi-component detector consisting of many individual subsystems, each of which measures a certain number of kinematic properties of particles created or scattered by the LHC.
+Only when combining the measurements of these sub-systems do complete pictures of particles and entire begin to emerge.
+The subcomponents of ATLAS are layered around the central location of the primary interaction.
+The inner-most layer of ATLAS is the ``inner detector'', which consists of silicon strips and pixils and is designed to track the 3-d trajectories of charged particles passing through it.
+The inner detector extends for 1.15 m and is surronded by a solonodial magent which provides a 2T field within the inner detector.
+This field causes charged particles to bend and allows the inner detector to measure the momenta of charged particles by fitting their trajectories.
+Surronding the inner detector is the electromagnetic calrimeter, which consists of alternating layers of lead absorbers and active electronics that are baithed in liquid argon.
+The liquid argon must of course remain cooled, and so the electromagnetic calrimeter is located within a cryostat that maintains a temperature of [XX].
+To reduce the amount of upstream material present before the calrimeter systems, the solonodial magent for the inner detector is located within the EM calrimeter's cryostat.
+A dedicated presampler is located directly behind the cryostat's wall to correct for any energy lost within inactive material in front of the EM calrimeter.
+Behind the outside of the cyrostat and past the EM calrimeter is the hadronic calrimeter, which consists of alternating layers of iron and scintillating tile.
+Finally, the outer-most layer of ATLAS is the muon system, which consists of many subsystems designed to detect the trajectories of muons at high rates and with good resolution.
+ 
+
+
+
 \subsection{Jets}
 
 The Large Hadron Collider is thus named because it collides a specific hadronic bound state of quarks known as the proton.
 The majority of interactions between these particles are mediated by the strong force (QCD), and the vast majority of final state particles are cone-like sprays of hadronic particles known as Jets.
 It is therefore crucial that a detector working with a hadron collider be excellent at identifying and measuring hadronic particles.
 
-The primary means of studying a jet is through calrimetry.
-The energy of a jet is measured by stopping the jet a component of the detector and measuring how much energy the jet deposits into that component.
-The ATLAS hadronic calrimeter is designed to contain as much of a hadronic shower within the calrimeter itself and to accurately determine its energy using the calrimeter's active components.
-ATLAS' hadronic calrimeter system is divided into three subsystems that each cover different ranges in pseudorapidity.  The largest and most important is the barrel hadronic calrimeter, which is also simply known as the ``tile,'' which covers the rapidity region of $|\eta| < 1.7$. [tdr]  The hadronic end cap (HEC) extends the calrimeter's range up to $|\eta| < 3.2$.  Finally, the forward calrimeter (FCAL) covers the pseudorapidity range of $3.1 < |\eta| < 4.9$.  Each of these subsystems have similar goals but vary in their design.
-
-The first step in measuring a jet's energy is stopping it.  The hadronic partilces that make up a jet are made up of quarks and gluons, which are charged under the strong force (QCD).
-Therefore, they can interact with the nucleii of materials that they encounter.
+% How jets work, and how they shower
+The first step in measuring a jet's energy is stopping it.  
+The hadronic partilces that make up a jet are made up of quarks and gluons, which are charged under the strong force (QCD).
+They therefore interact with the nucleii of materials that they pass through.
 The primary mechanism for energy loss of high energy hadrons traveling through a solid material is via inelastic nuclear interactions.
 As these interactions cause the original hadron to lose energy, they will also cause nuclear excitations and subsequent nuclear decays in the material.
 This in turn leads to the emission of additional hadronic particles, which themselves will interact with the material.
 The net effect is the formation of what is known as a hadronic shower.
 When the energy of the daughter particles in the shower becomes too small for nuclear excitation, the shower ceases to evolve, and the remaining energy of hadrons is lost to ionization and electromagnetic interactions.
-While the majority of 
+While the majority of energy is lost via nuclear interactions, a non-neglegable fraction of a jet's energy interacts electromagnetically .
+This fraction 
+
+% General Hadronic Calo layout
+The primary means of studying a jet is through calrimetry, where the energy of a jet is determined by stopping a hadronic shower using a dense material and measuring the energy deposited using active material.
+%The energy of a jet is measured by stopping the jet within a component of the detector and measuring how much energy the jet deposits into that component.
+The direction of the jet is determined by the  $\eta$, $\phi$ location of where the jet hits the detector.
+The ATLAS hadronic calrimeter is designed to contain as much of a hadronic shower within the calrimeter itself and to accurately determine its energy using the calrimeter's active components.
+ATLAS' hadronic calrimeter system is divided into three subsystems that each cover different ranges in pseudorapidity.  
+The largest and most important is the ``tile'' hadronic calrimeter (which itself is divided into the ``barrel'' and ``extended barrel'' tile calrimeters), which covers the rapidity region of $|\eta| < 1.7$. [tdr]  
+The ``hadronic end cap'' (HEC) extends the calrimeter's range up to $|\eta| < 3.2$, and the ``forward calrimeter'' (FCAL) covers the pseudorapidity range of $3.1 < |\eta| < 4.9$.  
+%Each of these subsystems have similar goals but vary in their design.
+
 
 [pdg review: http://pdg.lbl.gov/2011/reviews/rpp2011-rev-passage-particles-matter.pdf]
 
 [http://rd11.web.cern.ch/RD11/rkb/PH14pp/node80.html]
 
-
+% The Tile
+The hadronic tile calrimeter, which covers [XX] starradians, detects jets that appear close to perpendicular to the beam pipe.
+It is a cylindric shell ranging from an inner radius 2.28 meters and outer radius 4.25 meters.
+The tile is made of three subsystems, one central ``barrel'' calrimeter which covers $|\eta| < 1.0$ and two ``extended barrel'' calrimeters, which cover $0.8 < |\eta| < 1.7$ on either side.
+The tile calrimeters consist of alternating layers of 14 mm iron plates, which is used for inducing the hadronic shower and stopping the jet, and 3mm active scintillating-tile, which is used to measure the energy deposited into the calrimeter by the jet.
+The scintillating tile is attached to a series of photomultiplier tubes (PMTs) that amplify the tile's electrical readout.
+Key to the successful performance of the tile calrimeter is providing enough average interaction lengths for the hadronic shower to be contained.
+The hadronic thickness at the end of the tile calrimeter (at $\eta=0$) is 9.2 $\lambda$, which is enough to ensure good jet resolution and to minimize jet ``punch through'' into the muon system.
