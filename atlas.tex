@@ -34,45 +34,89 @@ The subcomponents of ATLAS are layered around the central location of the primar
 The inner-most layer of ATLAS is the ``inner detector'', which consists of silicon strips and pixils and is designed to track the 3-d trajectories of charged particles passing through it.
 The inner detector extends for 1.15 m and is surronded by a solonodial magent which provides a 2T field within the inner detector.
 This field causes charged particles to bend and allows the inner detector to measure the momenta of charged particles by fitting their trajectories.
-Surronding the inner detector is the electromagnetic calrimeter, which consists of alternating layers of lead absorbers and active electronics that are baithed in liquid argon.
-The liquid argon must of course remain cooled, and so the electromagnetic calrimeter is located within a cryostat that maintains a temperature of [XX].
-To reduce the amount of upstream material present before the calrimeter systems, the solonodial magent for the inner detector is located within the EM calrimeter's cryostat.
-A dedicated presampler is located directly behind the cryostat's wall to correct for any energy lost within inactive material in front of the EM calrimeter.
-Behind the outside of the cyrostat and past the EM calrimeter is the hadronic calrimeter, which consists of alternating layers of iron and scintillating tile.
+Surronding the inner detector is the electromagnetic calorimeter, which consists of alternating layers of lead absorbers and active electronics that are baithed in liquid argon.
+The liquid argon must of course remain cooled, and so the electromagnetic calorimeter is located within a cryostat that maintains a temperature of [XX].
+To reduce the amount of upstream material present before the calorimeter systems, the solonodial magent for the inner detector is located within the EM calorimeter's cryostat.
+A dedicated presampler is located directly behind the cryostat's wall to correct for any energy lost within inactive material in front of the EM calorimeter.
+Behind the outside of the cyrostat and past the EM calorimeter is the hadronic calorimeter, which consists of alternating layers of iron and scintillating tile.
 Finally, the outer-most layer of ATLAS is the muon spectrometer, which consists of many subsystems designed to detect the trajectories of muons at high rates and with good resolution. 
 A 8T magnetic field is induced across the entire muon system and is produced by large superconducting toroid magnets.
 
+\subsection{Inner Detector}
+The inner detector is first part of the ATLAS detector encountered by particles emerging from the interaction point.
+The inner detector (ID) consists of three subsystems which are designed to track the trajectories of charged particles as a collection of discrete points where they hit active parts of the detector.
 
-\subsection{Jets}
+The first layer of the ID is the pixel detector, which itself consists of three barrel layers of pixel modules at radaii of 4 cm, 10 cm, and 13 cm (on average) as well as five disks on each side of the deterctor to cover the forward region in pseudorapidity.
+Each region contains a collection of pixel modules (which are identical across the barrel and disk regions) which are 62.4 mm long and 21.4 mm wide.
+The individual modules contain 61,440 pixel elements, and there are 1500 such modules in the barrel and 700 in the disks. %read out by 16 chips, each serving an array of 24 by 160 pixels 
+In total, there are about 140 million detector elements. % each 50 μm in the Rφ direction and 300 μm in z,
+The pixel detectors are designed to measure the impact parameters of short-lived particles lead to non-neglegable displaced vertices, such as $\tau$s and b-quarks.
+% Pixel Image: http://www.atlas.ch/pixel-detector.html
+% Paper and individual pixel image: http://arxiv.org/pdf/physics/0412138.pdf
+
+Moving outward through the inner detector, the next layer encountered is the Semiconductor tracker (SCT).
+Since it exists at a larger radius, the SCT must cover a larger area (about 61 $m^2)$ with active material.
+The detector contains 6.2 million readout channels that are spread across four complete barrels at radii of 30.0, 37.3, 44.7 and 52.0 cm, and three rings of end-cap detectors on either side.
+Each subdetector consists of a collection of 6.36$\times$6.40 $cm^2$ silicon strips (each with 768 readout strips) arranged in an overlapping pattern with each strip aligned at a small angle.
+The spatial resolution is of the SCT is 16 $\mu$m in $R-\phi$ and 580 $\mu$m in z, which can distinguish tracks that are separated by as little as 200 $\mu$m.
+
+The final component of ATLAS' inner detector is the Transition Radiation Tracker (TRT).
+
+\subsection{Electromagnetic Calorimeter}
+The subcomponents that make up ATLAS's electromagnetic calorimeter are each designed to measure the energy of electrons and photons by inducing and absorbing an elecromagnetic shower.
+Heavier charged particles, such as muons and pions, will interact with electromagnetic calorimeters, but their interaction lengths are longer than those of electrons and photons, which makes their showers more elongated.
+As a result they do not deposit a majority of their energy within the range of ATLAS' EM calrimeters.
+ATLAS' Electromagnetic calorimeter is divided into three subsections consisting of the barrel calorimeter, which covers a pseudorapidity range of $|\eta| < 1.475$ and the two end-cap calorimeters, which covers $1.375 < |\eta| < 2.5$.
+However, as opposed to the hadronic calorimeter, each subcomponent shares a common design.
+The calorimeter consists of layers of lead absorbers shaped in a zig-zag, accordian-like pattern and similarly arranged Kapton electrodes placed in the middle of gaps between the lead absorbers.
+%The calorimeter consists of alternating layers of Kapton electrodes and lead absorbers that are both shaped in a zig-zag, accordian-like pattern.
+The calorimeter's zigs and zags are aligned in the radial direction, which removes the possability of inactive cracks where two plates meet.
+The entire calorimeter is bathed in liquid argon, which is maintained at a temperature of about 88 degrees kelvin by the cryostats that encases the electromagnetic calorimeters (for this reason, ATLAS' electromagnetic calorimeters are commonly referred to simply as the ``LAr calorimeter'').
+As charged particles fly through the calorimeter, they will ionize the Liquid Argon, and ionized electrons are drawn toward the active electrodes by a high voltage electric field (of about 1 kV/mm) that is maintained throughout the calorimeter. % [http://arxiv.org/pdf/0912.2642v4.pdf]
+The current absorbed is preportional to the energy deposited, which is used to reconstruct the energy of the electron hitting the calorimeter.
+Each LAr calorimeter is segmented into three or four transverse layers and is divided into cells of varying granularity in  $\Delta \eta \times \Delta \phi$, depending on the location and on the layer.%$ = 0.1 \times 0.1$ for $|\eta| < 2.5$ and up to $\Delta \eta \times \Delta \phi = 0.4 \times 0.4$. for $3.1 < |\eta| < 4.9$.
+In all, the LAr calorimeter has 182,468 readout cells.
+Of particular importance is the first layer of very LAr barrel calorimeter, which is finely segmented ``strips'' of  $\Delta \eta \times \Delta \phi = (0.0031 \times 0.098)$. 
+This this $\eta$ segmentation allows for the resolution of the EM shower shape differences between photons and $\pi_{0}$s which decay into narrowly separated photon pairs, 
+In the barrel, the three layers of LAr calorimeters have thicknesses of 4.3, 16, and 2 radiation lengths, respectively.
+In addition, the barrel contains a presampler layer, which consists of LAr electrods, but no lead absorber, that is used to correct for energy lost in the inner detector, the solenoid magnet, and in the cryostat walls (the end caps have less material upstream from the EM calorimeters and therefore don't require a presampler). % [http://www.hep.lu.se/atlas/thesis/egede/thesis-node43.html]
+
+% Helpful Talk: [http://www.physics.utoronto.ca/~krieger/talks/Krieger_NSS05_Talk.pdf]
+% Commissioning ATLAS paper: [http://arxiv.org/pdf/0912.2642v4.pdf]
+% LAR Temperature: [http://cdsweb.cern.ch/record/686091]
+
+
+\subsection{Hadronic Calorimeter}
 The Large Hadron Collider is thus named because it collides a specific hadronic bound state of quarks known as the proton.
 The majority of interactions between these particles are mediated by the strong force (QCD), and the vast majority of final state particles are cone-like sprays of hadronic particles known as Jets.
 It is therefore crucial that a detector working with a hadron collider be excellent at identifying and measuring hadronic particles.
 
 % General Hadronic Calo layout
-The primary means of studying a jet is through calrimetry, where the energy of a jet is determined by stopping a hadronic shower using a dense material and measuring the energy deposited using active material.
-%The energy of a jet is measured by stopping the jet within a component of the detector and measuring how much energy the jet deposits into that component.
+The primary means of studying a jet is through calrimetry, where the energy of a jet is determined by stopping its hadronic shower using a dense material and measuring the energy it deposits in an active material.
 The direction of the jet is determined by the  $\eta$, $\phi$ location of where the jet hits the detector.
-The ATLAS hadronic calrimeter is designed to contain as much of a hadronic shower within the calrimeter itself and to accurately determine its energy using the calrimeter's active components.
-ATLAS' hadronic calrimeter system is divided into three subsystems that each cover different ranges in pseudorapidity.  
-The largest and most important is the ``tile'' hadronic calrimeter (which itself is divided into the ``barrel'' and ``extended barrel'' tile calrimeters), which covers the rapidity region of $|\eta| < 1.7$. [tdr]  
-The ``hadronic end cap'' (HEC) extends the calrimeter's range up to $|\eta| < 3.2$, and the ``forward calrimeter'' (FCAL) covers the pseudorapidity range of $3.1 < |\eta| < 4.9$.  
+The ATLAS hadronic calorimeter is designed to contain as much of a hadronic shower within the calorimeter itself and to accurately determine its energy using the calorimeter's active components.
+It is divided into three subsystems that cover overlapping ranges in pseudorapidity.
+The largest and most important is the ``tile'' hadronic calorimeter (which itself is divided into the ``barrel'' and two ``extended barrel'' tile calorimeters), which covers the rapidity region of $|\eta| < 1.7$. [tdr]  
+The ``hadronic end cap'' (HEC) extends the calorimeter's range up to $|\eta| < 3.2$, and the ``forward calorimeter'' (FCAL) covers the pseudorapidity range of $3.1 < |\eta| < 4.9$.  
 %Each of these subsystems have similar goals but vary in their design.
 
-[pdg review: http://pdg.lbl.gov/2011/reviews/rpp2011-rev-passage-particles-matter.pdf]
+% [pdg review: http://pdg.lbl.gov/2011/reviews/rpp2011-rev-passage-particles-matter.pdf]
 
-[http://rd11.web.cern.ch/RD11/rkb/PH14pp/node80.html]
+% [http://rd11.web.cern.ch/RD11/rkb/PH14pp/node80.html]
 
 % The Tile
-The hadronic tile calrimeter, which covers [XX] starradians, detects jets that appear close to perpendicular to the beam pipe.
+The hadronic tile calorimeter, which covers [XX] starradians, detects jets that emerge low pseudorapidity, including those that are close to perpendicular to the beam pipe.
 It is a cylindric shell ranging from an inner radius 2.28 meters and outer radius 4.25 meters.
-The tile is made of three subsystems, one central ``barrel'' calrimeter which covers $|\eta| < 1.0$ and two ``extended barrel'' calrimeters, which cover $0.8 < |\eta| < 1.7$ on either side.
-The tile calrimeters consist of alternating layers of 14 mm iron plates, which is used for inducing the hadronic shower and stopping the jet, and 3mm active scintillating-tile, which is used to measure the energy deposited into the calrimeter by the jet.
+The tile is made of three subsystems, one central ``barrel'' calorimeter which covers $|\eta| < 1.0$ and two ``extended barrel'' calorimeters, which cover $0.8 < |\eta| < 1.7$ on either side.
+The tile calorimeters consist of alternating layers of 14 mm iron plates, which is used for inducing the hadronic shower and stopping the jet, and 3mm active scintillating-tile, which is used to measure the energy deposited into the calorimeter by the jet.
 %Iron is used because the hadronic particles that make up jets interact strongly with nucleii, and therefore a material with a high nuclear density is desirable.
 The scintillating tile is attached to a series of photomultiplier tubes (PMTs) that amplify the tile's electrical readout.
-Key to the successful performance of the tile calrimeter is providing enough average interaction lengths for the hadronic shower to be contained.
-The hadronic thickness at the end of the tile calrimeter (at $\eta=0$) is 9.2 $\lambda$, which is enough to ensure good jet resolution and to minimize jet ``punch through'' into the muon system.
+Key to the successful performance of the tile calorimeter is providing enough average interaction lengths for the hadronic shower to be contained.
+The hadronic thickness at the end of the tile calorimeter (at $\eta=0$) is 9.2 $\lambda$, which is enough to ensure good jet resolution and to minimize jet ``punch through'' into the muon system.
 
 
+
+\subsection{Muon Spectrometer}
 
 \subsection{Measuring Particles with ATLAS}
 
@@ -84,14 +128,16 @@ As the shower progresses and the average energy of the constituent particles dec
 The collection of these hadrons, which move in a wide, cone-like shape, is known as a jet.
 %The average distance for the parton-shower, hadronization evolution process is small compared to the radius of ATLAS, adn so jets are fully formed as they begin to interact with the detector
 
-A jet originating from the beam spot and and moving through ATLAS will first interact with the inner detector.  Since many of the constituent particles of a jet are charged hadrons ($\pi^{+}$, $\K^{+}$, etc), they will leave tracks in the ID.
+A jet originating from the beam spot and and moving through ATLAS will first interact with the inner detector.  Since many of the constituent particles of a jet are charged hadrons ($\pi^{+}$, $K^{+}$, etc), they will leave tracks in the ID.
 Jet algorithms can use these tracks when attempting to identify a jet, and there are algorithms that exclusively rely on this collection of tracks to build a set of identified jets (
-[ Track Jets, 2009: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2010-002 ].
+
+%[ Track Jets, 2009: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2010-002 ].
+
 However, the most common way to reconstruct jets is using the calrimetry.
-Jets will deposit a small fraction of their energy in the Electromagnetic Calrimeter, but the majority of the shower's energy is measued by the hadronic calrimeter.
-There are many algorithms used to reconstruct jets using information from the hadronic calrimeter, but most of them consist of clustering algorithms which group together cells of energy deposits.
+Jets will deposit a small fraction of their energy in the Electromagnetic Calorimeter, but the majority of the shower's energy is measued by the hadronic calorimeter.
+There are many algorithms used to reconstruct jets using information from the hadronic calorimeter, but most of them consist of clustering algorithms which group together cells of energy deposits.
 The main differences between techniques involve how these energy deposits are calibrated (if at all) and how the cells are clustered (based on fixed geometries, such as cones, or based on iterative algorithms using a distance function to merge cell deposits).
-A small number of jets managed to escape the hadronic calrimeter and enter the muon chambers, where they can be misidentified as mouns.
+A small number of jets managed to escape the hadronic calorimeter and enter the muon chambers, where they can be misidentified as mouns.
 In addition, jets with ``heavy flavor'' may contain decays that result in real muons (but not muons that originated from a hard collission in the beam spot), so care must be taken to separate muons originating as jets from muons originating from the hard process.
 
 % How jets work, and how they shower
@@ -112,17 +158,17 @@ In addition, jets with ``heavy flavor'' may contain decays that result in real m
 Electrons and positrons are electromagnetically charge and wil therefore interact with the innner detector, and in addition their trajectories will be curved as the particles are beant by the magnetic field.
 As they pass through the inner detector, electrons will deposit hits in the pixles, silicon, and straw tubes, and the collection of these hits can be extrapolated together to reconstruct the electron's track.
 This track is of crucial importance for identifying electrons.
-The track carries information both about the direction of the electron, but also about its momentum, and the presence of a track is necessary to distinuish electrons from photons, which lead essentially identical electromagnetic showers in the EM calrimeter.
-When electrons enter the EM calrimeter, they will begin to decellerate, which will cause the electron to radiate via bremsstralung.
+The track carries information both about the direction of the electron, but also about its momentum, and the presence of a track is necessary to distinuish electrons from photons, which lead essentially identical electromagnetic showers in the EM calorimeter.
+When electrons enter the EM calorimeter, they will begin to decellerate, which will cause the electron to radiate via bremsstralung.
 The radiated photons often have enough energy to produce electorn-positron pairs, which themselves will emit bremsstralung radiation.
 This creates a cascade of electrons, positrons, and photons that is collectively known as an electromagnetic shower.
-The energy of this shower is determined as it is absorbed by the EM calrimeter.
-The EM calrimeter tends to provide a better energy resoltion for high pT electrons than the tracks do (beginning when the electron's energy is around 10 GeV).
+The energy of this shower is determined as it is absorbed by the EM calorimeter.
+The EM calorimeter tends to provide a better energy resoltion for high pT electrons than the tracks do (beginning when the electron's energy is around 10 GeV).
 
-[ 2010 performance: http://cdsweb.cern.ch/record/1273197 ]
-[ https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2011-006/ATL-PHYS-PUB-2011-006.pdf ]
-[ Moriond 2012 Resolution info: https://indico.cern.ch/getFile.py/access?contribId=3&resId=1&materialId=slides&confId=163471]
-[ https://twiki.cern.ch/twiki/pub/AtlasProtected/EnergyScaleResolutionRecommendations/summary_rel16.pdf ]
+% [ 2010 performance: http://cdsweb.cern.ch/record/1273197 ]
+% [ https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2011-006/ATL-PHYS-PUB-2011-006.pdf ]
+% [ Moriond 2012 Resolution info: https://indico.cern.ch/getFile.py/access?contribId=3&resId=1&materialId=slides&confId=163471]
+% [ https://twiki.cern.ch/twiki/pub/AtlasProtected/EnergyScaleResolutionRecommendations/summary_rel16.pdf ]
 
 \subsection{Photons}
 Photons are identified as electromagnetic showers that aren't matched to an inner detector track.
@@ -134,10 +180,10 @@ If this occurs within or before the inner-detector, the proximity of the electro
 \subsection{Muons}
 Muons, with a mass of 106 MeV, weigh about 200 times more than the electron (which weights .512 MeV).
 This implies that, for a fixed energy, a muon will have a smaller value of $\beta$ than an electron (or, equivalantly $\gamma$), which results in a smaller amount of radiation being emitted as it passes through matter.
-Therefore, a muon's mean radiation length in ATLAS' calrimeters will be much longer than an electron's length, and a significant EM shower will not develop within the detector.
+Therefore, a muon's mean radiation length in ATLAS' calorimeters will be much longer than an electron's length, and a significant EM shower will not develop within the detector.
 For this reason, most of a muon's energy escapes ATLAS.  
 
-[ pdg: Muons through matter: http://pdg.lbl.gov/2000/passagerpp.pdf fig 23.1 ]
+% [ pdg: Muons through matter: http://pdg.lbl.gov/2000/passagerpp.pdf fig 23.1 ]
 
 Since one can not measure its energy through calrimetry, ATLAS instead measures its momentum by estimating its curvature when bent in a magnetic field.
 A Muon will create a bent track in the inner detector that can be used to estimate its momentum.
