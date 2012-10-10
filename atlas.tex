@@ -2,6 +2,7 @@
 %
 %
 
+
 \section{ATLAS}
 ATLAS is a multi-purpose particle detector designed for particle discovery.
 In order to fulfull this broad role, ATLAS must excel in several ways:
@@ -18,7 +19,6 @@ These requirements are entirely non-trivial, and fulfilling them required decade
 The original design for ATLAS
 In order to be successful, ATLAS 
 to use a wide spectrum of detector designed to discover particles and to precisely measure their proproperties.
-
 
 Typical descriptions of the ATLAS detector list its various components and describe their properties.
 But perhaps it is more useful to instead approach the detector from the perspective of the different particles that it is designed to detecct, and to use that as a springboard to go into machine's enieneering details.
@@ -46,17 +46,26 @@ A 8T magnetic field is induced across the entire muon system and is produced by 
 The inner detector is first part of the ATLAS detector encountered by particles emerging from the interaction point.
 The inner detector (ID) consists of three subsystems which are designed to track the trajectories of charged particles as a collection of discrete points where they hit active parts of the detector.
 
-The first layer of the ID is the pixel detector, which itself consists of three barrel layers of pixel modules at radaii of 4 cm, 10 cm, and 13 cm (on average) as well as five disks on each side of the deterctor to cover the forward region in pseudorapidity.
+The first layer of the ID is the pixel detector, which itself consists of three barrel layers of pixel modules at radaii of 5 cm, 10 cm, and 13 cm (on average) as well as three endcap disks on each side of the deterctor to cover the forward region in pseudorapidity.
+The entire barrel cylander is 1.4 m long and .5 m in diameter.
+The inner-most layer of the barrel pixel detector is known as the ``b-layer'' for its importance in the identification of displaced vertices due to b-quarks.
+% The ``b-layer'' also plays an important role in separating prompt electrons from photons that convert into an electron-positron pair
+(An upgrade to the detector will add an additional b-layer, known as the insertable b-layer, in space that will be freed up the beam pipe is replaced with a smaller version.)
 Each region contains a collection of pixel modules (which are identical across the barrel and disk regions) which are 62.4 mm long and 21.4 mm wide.
 The individual modules contain 61,440 pixel elements, and there are 1500 such modules in the barrel and 700 in the disks. %read out by 16 chips, each serving an array of 24 by 160 pixels 
 In total, there are about 140 million detector elements. % each 50 μm in the Rφ direction and 300 μm in z,
 The pixel detectors are designed to measure the impact parameters of short-lived particles lead to non-neglegable displaced vertices, such as $\tau$s and b-quarks.
+Charged particles moving through the pixel detector will hit individual pixel diodes, which will create an electrical current that is amplified and sent to the readout system.
+
 % Pixel Image: http://www.atlas.ch/pixel-detector.html
 % Paper and individual pixel image: http://arxiv.org/pdf/physics/0412138.pdf
+% Tracking performance of the pixel detector: http://www.sciencedirect.com/science/article/pii/S0168900206007157 (2004)
+% B-layer upgrade (insertable, IBL): http://cdsweb.cern.ch/record/1207594/files/ATL-INDET-PROC-2009-012.pdf
 
-Moving outward through the inner detector, the next layer encountered is the Semiconductor tracker (SCT).
+Moving outward through the inner detector, the next layer encountered is the Semiconductor tracker (SCT), which is made up of several layers of silicon strips.
 Since it exists at a larger radius, the SCT must cover a larger area (about 61 $m^2)$ with active material.
-The detector contains 6.2 million readout channels that are spread across four complete barrels at radii of 30.0, 37.3, 44.7 and 52.0 cm, and three rings of end-cap detectors on either side.
+For the same reason, it can afford to be coarser than the pixel detector.
+The SCT contains 6.2 million readout channels that are spread across four complete barrels at radii of 30.0, 37.3, 44.7 and 52.0 cm, and three rings of end-cap detectors on either side.
 Each subdetector consists of a collection of 6.36$\times$6.40 $cm^2$ silicon strips (each with 768 readout strips) arranged in an overlapping pattern with each strip aligned at a small angle.
 The spatial resolution is of the SCT is 16 $\mu$m in $R-\phi$ and 580 $\mu$m in z, which can distinguish tracks that are separated by as little as 200 $\mu$m.
 
@@ -126,31 +135,67 @@ The scintillating tile is attached to a series of photomultiplier tubes (PMTs) t
 Key to the successful performance of the tile calorimeter is providing enough average interaction lengths for the hadronic shower to be contained.
 The hadronic thickness at the end of the tile calorimeter (at $\eta=0$) is 9.2 $\lambda$, which is enough to ensure good jet resolution and to minimize jet ``punch through'' into the muon system.
 
-
-
 \subsection{Muon Spectrometer}
+The Muon spectrometer is a set of tracking chambers that cover a large volume on the outside of ATLAS that are used to determine the trajectories of Muons.
+Much of the spectrometer is located within a strong magnetic field of 8 Tesla that is created by large toroidal magnets in the barrel region (which covers $|\eta| < 1.0$ as well as smaller end-cap magnets which cover the range $1.4 < |\eta| < 2.7$. 
+The magnetic field in the transition region is comes from a combination of the barrel toroidal magnets and the end-cap magnets.
+The muon magnet system is designed to provide a field that is mostly orthogonal to the trajectories of muons throughout the majority of the muon spectrometer.
+The spectrometer itself is build out of different types of muon chambers that are designed either for precise or fast tracking measurements.
+The fast chambers are mainly used for muon triggers, which must perform at the high LHC collission rate.
+The precision measurements come from Monitored Drift Tubes (MDTs) and Cathode Strip Chambers (CSCs), while the trigger chambers include Resistive Plate Chambers (RPCs) and Thin Gap Chambers (TGCs).
+The barrel section of the Muon spectrometer, chambers are arranged in three cylindrical layers of radaii 5, 7.5, and 10 m, covering the pseudorapidity range $|\eta| < 1$.
+The end-cap chambers are aligned vertically and stacked into four disks at distances of 7, 10, 14, and 21–23m from the beam spot which collectively cover the rapidty range of $1 <|\eta|< 2.7$. 
+The positioning of all chambers are actively monitored by alignment rays.
+
+% Muon Commissioning: http://arxiv.org/pdf/1006.4384v2.pdf
+% Good image on page 20
+
+% Muon id algorithms: http://cdsweb.cern.ch/record/1209632/files/ATL-PHYS-PROC-2009-113.pdf?version=1
+% staco vs muid, 
+% moore vs muboy
+
 
 \subsection{Measuring Particles with ATLAS}
 
+
 \subsection{Jets}
 Jets are produced when particles with color charge, quarks and gluons, are in the outgoing states of a hard interaction.
-As these particles propogate through space, they will tend to decay into or radiate other color-charged particles, leading to a phenomenon known as the evolution of a ``parton shower.''
+As these particles propogate through space, they will tend to decay into or radiate other color-charged particles, which in turn radiate and decay, leading to what is called a ``parton shower.''
 This shower grows rapidly because QCD, which is an asymptotically free field theory, has a small coupling constant at high energies.  
 As the shower progresses and the average energy of the constituent particles decreases, the QCD coupling constant will grow stronger, and this will cause the quarks and gluons to bind together into stable particles in a process known as ``hadronization.''
 The collection of these hadrons, which move in a wide, cone-like shape, is known as a jet.
 %The average distance for the parton-shower, hadronization evolution process is small compared to the radius of ATLAS, adn so jets are fully formed as they begin to interact with the detector
 
 A jet originating from the beam spot and and moving through ATLAS will first interact with the inner detector.  Since many of the constituent particles of a jet are charged hadrons ($\pi^{+}$, $K^{+}$, etc), they will leave tracks in the ID.
-Jet algorithms can use these tracks when attempting to identify a jet, and there are algorithms that exclusively rely on this collection of tracks to build a set of identified jets (
-
+Jet algorithms can use these tracks when attempting to identify a jet, and there are algorithms that exclusively rely on this collection of tracks to build a set of identified jets.
 %[ Track Jets, 2009: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2010-002 ].
-
 However, the most common way to reconstruct jets is using the calrimetry.
 Jets will deposit a small fraction of their energy in the Electromagnetic Calorimeter, but the majority of the shower's energy is measued by the hadronic calorimeter.
-There are many algorithms used to reconstruct jets using information from the hadronic calorimeter, but most of them consist of clustering algorithms which group together cells of energy deposits.
-The main differences between techniques involve how these energy deposits are calibrated (if at all) and how the cells are clustered (based on fixed geometries, such as cones, or based on iterative algorithms using a distance function to merge cell deposits).
 A small number of jets managed to escape the hadronic calorimeter and enter the muon chambers, where they can be misidentified as mouns.
 In addition, jets with ``heavy flavor'' may contain decays that result in real muons (but not muons that originated from a hard collission in the beam spot), so care must be taken to separate muons originating as jets from muons originating from the hard process.
+
+There are many algorithms used to reconstruct jets using information from the hadronic calorimeter, but most of them consist of clustering algorithms which group together cells of energy deposits.
+The main differences between techniques involve how these energy deposits are calibrated (if at all) and how the cells are clustered (based on fixed geometries, such as cones, or based on iterative algorithms using a distance function to merge cell deposits).
+``Cone algorithms'' are a simple category of jet clustering algorithms that use geometric cones of a fixed radius to merge energy deposits into logical jets.
+An initial collection of jet candidates are collected, usually simply by selecting calorimeter deposits with energies above some threshold.
+For each of these, a code is drawn of a fixed radius surronding the jet candidate (where the radius refers to the the quantity $R = \sqrt{(\Delta \eta)^2 + (\Delta \phi)^2}$) and the centroid of the transverse energy within that cone is determined.
+A new cone of the same radius is drawn around that centroid, and this processes is repeated until the cone becomes stable.
+Any jets that overlap must be either split and merged.
+Most recent ATLAS analyses use more sophisticated techniques for clustering energy deposits to form jets.
+From an initial set of preclusters, $k_T$ algorithms start by defining two sets of quantities:
+\begin{itemize}
+\item $d_{i} = p_{T,i}^2$
+\item $d_{ij} = min(p_{T,i}^2, p_{T,j}^2)\Delta R_{ij} / D^2$
+\end{itemize}
+where $p_{T,i}$ is the transverse energy of a cluster, $R_{ij}$ is the distance between two clusters, and D is a fixed parameter of the algorithm 
+The algorithm then proceeds by identifying the minimum $\hat{d_{i}}$ among all clusters and the minimum $\hat{d_{ij}}$ over all pairs of clusters.
+If $\hat{d_{ij}} < \hat{d_{k}}$, then merge clusters i and j into a new cluster.
+Else, $\hat{d_{k}} > \hat{d_{ij}}$, then cluster k becomes a jet and it is removed from the set of clusters in the algorithm.
+This is repeated until all clusters are added to jets.
+Anti-$k_T$ algorithms are identical to $k_T$ algorithms with the refinition: $d_{ij} = min(p_{T,i}^{-2}, p_{T,j}^{-2})\Delta R_{ij} / D^2$
+
+% Helpful for jet algorithms:
+% http://www.ccsem.infn.it/issp2009/newtalents/KPerez_Erice_JetAlgs_20090905.pdf
 
 % How jets work, and how they shower
 
@@ -181,6 +226,24 @@ The EM calorimeter tends to provide a better energy resoltion for high pT electr
 % [ https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2011-006/ATL-PHYS-PUB-2011-006.pdf ]
 % [ Moriond 2012 Resolution info: https://indico.cern.ch/getFile.py/access?contribId=3&resId=1&materialId=slides&confId=163471]
 % [ https://twiki.cern.ch/twiki/pub/AtlasProtected/EnergyScaleResolutionRecommendations/summary_rel16.pdf ]
+% http://cdsweb.cern.ch/record/1209898
+
+ATLAS employs two types of electron identification.
+High pt electrons are identified using a sliding window algorithm.
+Energy towers are created by adding together the energies in the four layers of the Electromagnetic calorimeter (including the presampler).
+Energy deposits created by electrons are searched for by scanning a 5$\times$5 window of these towers, and electron candidates are seeded when the energy in the window is greater than 3 GeV.
+A 3$\times$7 cluster is then formed using the middle layer of the EM calorimeter, and the energy of the cluster determined as the sum of the energies in the calorimeter layers in that window, including a number of corrections based on the calorimeter layer and the position in the detector.
+
+
+% Sliding window description:
+% https://twiki.cern.ch/twiki/bin/viewauth/Atlas/SlidingWindowClustering
+
+% ATLAS: Electron Reconstruction and Identification CSC
+% http://www.physics.smu.edu/web/research/preprints/SMU-HEP-08-21.pdf
+
+% Electron Reco:
+% http://www-atlas.lbl.gov/physics/Ron_Atlas_EMID.pdf
+
 
 \subsection{Photons}
 Photons are identified as electromagnetic showers that aren't matched to an inner detector track.
