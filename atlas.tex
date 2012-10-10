@@ -59,8 +59,24 @@ A 8T magnetic field is induced across the entire muon system and is produced by 
 
 
 \subsection{Geometry}
-Cylander, eta, phi size, underground, lhc, geneva, Mount Blanc, etc
+The location of ATLAS' components and the properties of identified particles are described using a common coordinate system.
+One can define a right-handed euclidean coordinate system whose origin is the middle of the LHC's beam pipee in themiddle of ATLAS.
+In this system, the z-direction is aligned along the beam pipe, and the x-axis points toward the center of the LHC ring.
+More often, one uses a cylindrical coordinate system, which is aligned along the LHC's beam pipe.
+In this system, $\phi$ referrs to the aximuthal angle around the cylander's axis of rotationall symetry, and $\theta$ is the polar angle defined such that the $\theta=0$ plane cuts the detector into two cylanders of exactly half the size.
+Instead of $\theta$, it is more common to describe the polar angle in terms of the ``pseudorapidity,'' $\eta$, which is defined as $\eta = -log(tan(\frac{\theta}{2}))$
+The transverse direction referrs to the radial direction in the cylindrical coordinate system 
+For example, $p_{T}$ stands for the component of the momentum in the transver plane and $\met$ is the missing energy (or, more accurately, momentum) in the transverse plane.
 
+
+\begin{figure}
+  \begin{center}
+    % Coordinate System: http://www.hep.lu.se/atlas/thesis/egede/thesis-img306.gif
+    \includegraphics[width=100mm]{figures/atlas/AtlasCoordinateSystem.png}
+  \end{center}
+  \caption{A schematic of the euclidean coordinate system used by ATLAS.}
+  \label{img:AtlasCoordinateSystem}
+\end{figure}
 
 \subsection{Inner Detector}
 The inner detector is first part of the ATLAS detector encountered by particles emerging from the interaction point.
