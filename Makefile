@@ -1,5 +1,6 @@
 
-LATEX    = latex
+#LATEX    = latex
+LATEX    = pdflatex
 BIBTEX   = bibtex
 DVIPS    = dvips
 
@@ -8,9 +9,10 @@ NOTENAME = thesis
 all: thesis clean
 
 thesis: 
-	latex  ${NOTENAME}
-	latex  ${NOTENAME}
-	dvipdf -sPAPERSIZE=a4 -dPDFSETTINGS=/prepress ${NOTENAME}
+	${LATEX}  ${NOTENAME}
+	${LATEX}  ${NOTENAME}
+#	dvipdf -sPAPERSIZE=a4 -dPDFSETTINGS=/prepress ${NOTENAME}
+
 #
 # standard Latex targets
 #

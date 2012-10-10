@@ -2,10 +2,9 @@
 %
 %
 
-
 \section{ATLAS}
-ATLAS is a multi-purpose particle detector designed for particle discovery.
-In order to fulfull this broad role, ATLAS must excel in several ways:
+ATLAS is a multi-purpose particle detector designed to identify and reconstruct particles produced in LHC collissions for primary purpose of particle discovery.
+In order to fulfull this broad role, the ATLAS detector must excel in several ways simultaneously:
 
 \begin{itemize}
   \item It must be sensitive to a wide spectrum of particle that can be produced by particle colissions, including Leptons (Electrons and Muons), Hadrons (Pions, Kaons, and the many other bound states of quarks that typically come in the form of Jets), and Photons.
@@ -16,35 +15,66 @@ In order to fulfull this broad role, ATLAS must excel in several ways:
 \end{itemize}
 
 These requirements are entirely non-trivial, and fulfilling them required decades of design, construction, engieneering, and maintenence.  
-The original design for ATLAS
-In order to be successful, ATLAS 
-to use a wide spectrum of detector designed to discover particles and to precisely measure their proproperties.
+ATLAS is a collection of many components whose various measurements are combined and merged to form a complete of a collission event.
 
-Typical descriptions of the ATLAS detector list its various components and describe their properties.
-But perhaps it is more useful to instead approach the detector from the perspective of the different particles that it is designed to detecct, and to use that as a springboard to go into machine's enieneering details.
+%The original design for ATLAS
+%In order to be successful, ATLAS 
+%to use a wide spectrum of detector designed to discover particles and to precisely measure their proproperties.
 
-\subsection{Layout and Geometry}
-Cylander, eta, phi size, underground, lhc, geneva, Mount Blanc, etc
+%Typical descriptions of the ATLAS detector list its various components and describe their properties.
+%But perhaps it is more useful to instead approach the detector from the perspective of the different particles that it is designed to detecct, and to use that as a springboard to go into machine's enieneering details.
 
 
 \subsection{Overview}
+
+The ATLAS detector is designed with a cylindrical geometry that supponds the LCH's beam pipe and is centered around one of the several points where proton bunches are made to collide.
+The detector has a diameter of 25m, is 46m long, and weighs 7000 tonnes.
+It contains about 100 million electronic channels and about 3000 km of electric cables.
+
+\begin{figure}
+  \begin{center}
+    % Detector Images: http://cdsweb.cern.ch/record/1095924
+    \includegraphics[width=100mm]{figures/atlas/AtlasDetecterOverview.jpg}
+  \end{center}
+  \caption{A schematic of the ATLAS detector showing its scale and its subcomponents.}
+  \label{img:AtlasDetectorOverview}
+\end{figure}
+
 ATLAS is a multi-component detector consisting of many individual subsystems, each of which measures a certain number of kinematic properties of particles created or scattered by the LHC.
 Only when combining the measurements of these sub-systems do complete pictures of particles and entire begin to emerge.
 The subcomponents of ATLAS are layered around the central location of the primary interaction.
 The inner-most layer of ATLAS is the ``inner detector'', which consists of silicon strips and pixils and is designed to track the 3-d trajectories of charged particles passing through it.
+
 The inner detector extends for 1.15 m and is surronded by a solonodial magent which provides a 2T field within the inner detector.
 This field causes charged particles to bend and allows the inner detector to measure the momenta of charged particles by fitting their trajectories.
 Surronding the inner detector is the electromagnetic calorimeter, which consists of alternating layers of lead absorbers and active electronics that are baithed in liquid argon.
 The liquid argon must of course remain cooled, and so the electromagnetic calorimeter is located within a cryostat that maintains a temperature of [XX].
 To reduce the amount of upstream material present before the calorimeter systems, the solonodial magent for the inner detector is located within the EM calorimeter's cryostat.
 A dedicated presampler is located directly behind the cryostat's wall to correct for any energy lost within inactive material in front of the EM calorimeter.
+
 Behind the outside of the cyrostat and past the EM calorimeter is the hadronic calorimeter, which consists of alternating layers of iron and scintillating tile.
+
 Finally, the outer-most layer of ATLAS is the muon spectrometer, which consists of many subsystems designed to detect the trajectories of muons at high rates and with good resolution. 
 A 8T magnetic field is induced across the entire muon system and is produced by large superconducting toroid magnets.
+
+
+\subsection{Geometry}
+Cylander, eta, phi size, underground, lhc, geneva, Mount Blanc, etc
+
 
 \subsection{Inner Detector}
 The inner detector is first part of the ATLAS detector encountered by particles emerging from the interaction point.
 The inner detector (ID) consists of three subsystems which are designed to track the trajectories of charged particles as a collection of discrete points where they hit active parts of the detector.
+
+\begin{figure}
+  \begin{center}
+    % Inner Detector: http://www.ge.infn.it/~rossi/leoweb/ID_perspective_layout.jpg
+    \includegraphics[width=100mm]{figures/atlas/InnerDetector.jpg}
+  \end{center}
+  \caption{A schematic of the ATLAS Inner Detector, showing the Pixel Detector, the Semi-Conductor Tracker, and the Transition Radiation Tracker.}
+  \label{img:InnerDetector}
+\end{figure}
+
 
 The first layer of the ID is the pixel detector, which itself consists of three barrel layers of pixel modules at radaii of 5 cm, 10 cm, and 13 cm (on average) as well as three endcap disks on each side of the deterctor to cover the forward region in pseudorapidity.
 The entire barrel cylander is 1.4 m long and .5 m in diameter.
@@ -72,7 +102,7 @@ The spatial resolution is of the SCT is 16 $\mu$m in $R-\phi$ and 580 $\mu$m in 
 The final component of ATLAS' inner detector is the Transition Radiation Tracker (TRT).
 The TRT is designed to cover a large volume and to operate at high rates.
 The TRT is a collection of thin tubes, called ``straws,'' which are 4 mm in diameter and have a maximum length of 144 cm.
-Each straw has a 30 $\mu$m diameter wire at its center and is filled with a mixture of xenon gas (70\%), CO2 (20\%) and CF_{4} (10\5).
+Each straw has a 30 $\mu$m diameter wire at its center and is filled with a mixture of xenon gas (70\%), $CO_2$ (20\%) and $CF_{4}$ (10\%).
 The entire TRT consists of a barrel section, consisting of 50000 straws running parallel to the beam axis and ranging from 56 to 107 cm in perpendicular radius from the beam pipe, and two end caps which contain 320 000 radially oriented straws.
 Each straw in the barrel is divided into two readouts which are separated by an inactive middle region.
 In total, there are 420,000 electronic readouts from the TRT.
@@ -80,8 +110,8 @@ As charged particles pass through a straw, they will ionize the gas, and these i
 The shape of the electronic pulse read out by the central wire can be used to determine the closest radius and the direction of the charged track flying through the tube.
 Each straw is able to provide a spacial reolution of 170 $\mu$m.
 
-
 % Should show a picture here, otherwise one one will get it  
+
 
 \subsection{Electromagnetic Calorimeter}
 The subcomponents that make up ATLAS's electromagnetic calorimeter are each designed to measure the energy of electrons and photons by inducing and absorbing an elecromagnetic shower.
@@ -135,6 +165,7 @@ The scintillating tile is attached to a series of photomultiplier tubes (PMTs) t
 Key to the successful performance of the tile calorimeter is providing enough average interaction lengths for the hadronic shower to be contained.
 The hadronic thickness at the end of the tile calorimeter (at $\eta=0$) is 9.2 $\lambda$, which is enough to ensure good jet resolution and to minimize jet ``punch through'' into the muon system.
 
+
 \subsection{Muon Spectrometer}
 The Muon spectrometer is a set of tracking chambers that cover a large volume on the outside of ATLAS that are used to determine the trajectories of Muons.
 Much of the spectrometer is located within a strong magnetic field of 8 Tesla that is created by large toroidal magnets in the barrel region (which covers $|\eta| < 1.0$ as well as smaller end-cap magnets which cover the range $1.4 < |\eta| < 2.7$. 
@@ -144,16 +175,13 @@ The spectrometer itself is build out of different types of muon chambers that ar
 The fast chambers are mainly used for muon triggers, which must perform at the high LHC collission rate.
 The precision measurements come from Monitored Drift Tubes (MDTs) and Cathode Strip Chambers (CSCs), while the trigger chambers include Resistive Plate Chambers (RPCs) and Thin Gap Chambers (TGCs).
 The barrel section of the Muon spectrometer, chambers are arranged in three cylindrical layers of radaii 5, 7.5, and 10 m, covering the pseudorapidity range $|\eta| < 1$.
+These layers consist of MDTs, and triggering in the barrel uses a collection of RPCs.
 The end-cap chambers are aligned vertically and stacked into four disks at distances of 7, 10, 14, and 21–23m from the beam spot which collectively cover the rapidty range of $1 <|\eta|< 2.7$. 
+The MDTs in the end-cap are complimented by CSC chambers which cover $|\eta| > 2$ and triggering in the end-cap is performed using TGCs.
 The positioning of all chambers are actively monitored by alignment rays.
 
 % Muon Commissioning: http://arxiv.org/pdf/1006.4384v2.pdf
 % Good image on page 20
-
-% Muon id algorithms: http://cdsweb.cern.ch/record/1209632/files/ATL-PHYS-PROC-2009-113.pdf?version=1
-% staco vs muid, 
-% moore vs muboy
-
 
 \subsection{Measuring Particles with ATLAS}
 
@@ -231,9 +259,11 @@ The EM calorimeter tends to provide a better energy resoltion for high pT electr
 ATLAS employs two types of electron identification.
 High pt electrons are identified using a sliding window algorithm.
 Energy towers are created by adding together the energies in the four layers of the Electromagnetic calorimeter (including the presampler).
-Energy deposits created by electrons are searched for by scanning a 5$\times$5 window of these towers, and electron candidates are seeded when the energy in the window is greater than 3 GeV.
+Energy deposits created by electromagnetic showers are searched for by scanning a 5$\times$5 window of these towers, and em-cluster candidates are seeded when the energy in the window is greater than 3 GeV.
 A 3$\times$7 cluster is then formed using the middle layer of the EM calorimeter, and the energy of the cluster determined as the sum of the energies in the calorimeter layers in that window, including a number of corrections based on the calorimeter layer and the position in the detector.
-
+Once an electromagnetic cluster has been identified, an attempt is made to match it to an inner detector track.
+Tracks are extrapolated both to the electromagnetic calorimeter's (the first layer) and to the physical center, and ID tracks are matches to calorimeter clusters if $|\Delta \eta_{track, strips}| < 0.05$ and $-.1 < sign(q)*\Delta \phi_{track, middle} < 0.05$.
+Electromagnetic clusters matching an inner detector track are considered electron candidates, which are then subject to further requirements on the electron properties, including the shape of its electromagnetic shower, its distribution within the calorimeter, and the types of inner detector hits that make up its track.
 
 % Sliding window description:
 % https://twiki.cern.ch/twiki/bin/viewauth/Atlas/SlidingWindowClustering
@@ -249,18 +279,42 @@ A 3$\times$7 cluster is then formed using the middle layer of the EM calorimeter
 Photons are identified as electromagnetic showers that aren't matched to an inner detector track.
 In addition, photons may decay into an electron-positron pair before entering the EM calorimeter.
 If this occurs within or before the inner-detector, the proximity of the electron and positron's tracks can be used to identify the pair as a photon that ``converted'' electromagnetically, and the pair can be reconstructed as a single photon.
-%In addition, photons may be identified as electron-positron pairs  from ``conversions,'' which are electron-positron pairs that 
+Electromagnetic showers created by photons are selected in exactly the same way as those which are used to reconstruct electrons, but the requirement on a matching inner detector track is waived.  
+However, photons that convert into an electron-positron pair will often be identified as electron candidates, and special care must be taken to identify those electron candidates which mostly likely originated as photons.
+First, the inner detector searches for conversion vertex candidates, which are two track vertices that are displaced from the impact point where one or both tracks match an electromagnetic cluster.
+For each vertex candidate, a fit is performed between the vertex, its tracks, and the matched electromagnetic clusters, using the assumption that the photon is massless.
+
+% Photon ID and good description of conversions
+% http://cdsweb.cern.ch/record/1345329/files/ATL-PHYS-PUB-2011-007.pdf
+
+% Expected performance of the Atlas Experiment 
+% (Reconstruction of Photon Conversions is: pp. 112–140 )
+% http://arxiv.org/abs/0901.0512
+
+% In addition, photons may be identified as electron-positron pairs from ``conversions,'' which are electron-positron pairs that 
 
 
 \subsection{Muons}
 Muons, with a mass of 106 MeV, weigh about 200 times more than the electron (which weights .512 MeV).
 This implies that, for a fixed energy, a muon will have a smaller value of $\beta$ than an electron (or, equivalantly $\gamma$), which results in a smaller amount of radiation being emitted as it passes through matter.
 Therefore, a muon's mean radiation length in ATLAS' calorimeters will be much longer than an electron's length, and a significant EM shower will not develop within the detector.
-For this reason, most of a muon's energy escapes ATLAS.  
+For this reason, most of a muon's energy escapes ATLAS' calorimeters.
+As a result, the direction and momentum of muons are measured based on the direction and bending of their tracks in magnetic fields.
+Muons are tracked both by the inner detector and the muon spectrometer, both of which contain large magnetic fields that bend their trajectory.
+There are two main categories of muon reconstruction algorithms, but they both involve creating trajectories in both the inner detector and muon spectrometer, and matching the two to form a ``combined'' muon tractory.
+``Muid'' muons use the Moore algorithm to build ``stand alone'' tracks in the muon spectrometer, which are built out of muon segments in individual drift chambers, and ``Staco'' muons build stand alone tracks using the Muonboy algorithm.
+Both algorithms then perform a backward track extrapolation from the muon spectrometer to the inner detector, taking into account the magnetic field throughout the detector and energy loss from as muons travel through material.
+ 
+% Muon id algorithms: http://cdsweb.cern.ch/record/1209632/files/ATL-PHYS-PROC-2009-113.pdf?version=1
+% staco vs muid, 
+% moore vs muboy
 
+%Instead, a large volume of ATLAS' active detectors are dedicated to measuring the direction and momentum of muons my tracking their positions as they bend through a large magnetic field.
 % [ pdg: Muons through matter: http://pdg.lbl.gov/2000/passagerpp.pdf fig 23.1 ]
+%Since one can not measure its energy through calrimetry, ATLAS instead measures its momentum by estimating its curvature when bent in a magnetic field.
+%The bending of a Muon's track in the inner detector in the magnetic field created by the solenoid can be used to determine its momentum.
+%However, muons with large pt will have nearly straight tracks, which will degrade the pt resolution that can be obtained from the inner detecter alone.
 
-Since one can not measure its energy through calrimetry, ATLAS instead measures its momentum by estimating its curvature when bent in a magnetic field.
-A Muon will create a bent track in the inner detector that can be used to estimate its momentum.
-However, the resolution of the inner detector for high pt muons becomes somewhat poor.
-To vastly improve on the measurement of the inner detector alone, ATLAS has a large set of detectors that comprise the muon spectrometer.
+% magnet can be used to  will create a bent track in the inner detector that can be used to estimate its momentum.
+% However, the resolution of the inner detector for high pt muons becomes somewhat poor.
+% To vastly improve on the measurement of the inner detector alone, ATLAS has a large set of detectors that comprise the muon spectrometer.
