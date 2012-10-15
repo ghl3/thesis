@@ -3,7 +3,7 @@
 %
 
 \section{ATLAS}
-ATLAS is a multi-purpose particle detector designed to identify and reconstruct particles produced in LHC collissions for primary purpose of particle discovery.
+ATLAS is a multi-purpose particle detector designed to identify and reconstruct particles produced in LHC collissions for primary purpose of particle discovery \cite{ATLAS}.
 In order to fulfull this broad role, the ATLAS detector must excel in several ways simultaneously:
 
 \begin{itemize}
@@ -102,6 +102,27 @@ The individual modules contain 61,440 pixel elements, and there are 1500 such mo
 In total, there are about 140 million detector elements. % each 50 μm in the Rφ direction and 300 μm in z,
 The pixel detectors are designed to measure the impact parameters of short-lived particles lead to non-neglegable displaced vertices, such as $\tau$s and b-quarks.
 Charged particles moving through the pixel detector will hit individual pixel diodes, which will create an electrical current that is amplified and sent to the readout system.
+
+
+\begin{figure}
+  \begin{center}
+    \subfigure[Pixel Detector] {
+      % PixelDetector: http://www.fisica.uniud.it/ATLAS/pictures/pixel.png
+      \includegraphics[width=.45\linewidth]{figures/atlas/PixelDetector.png}
+    }
+    \subfigure[Pixel Module] {
+      % PixelModule: http://www.fisica.uniud.it/ATLAS/pictures/pixel2.jpg
+      \includegraphics[width=.45\linewidth]{figures/atlas/PixelModule.jpg}
+    }
+  \end{center}
+  \caption{The ATLAS pixel detector.}
+  \label{img:PixelDetector}
+\end{figure}
+
+
+
+
+
 
 % Pixel Image: http://www.atlas.ch/pixel-detector.html
 % Paper and individual pixel image: http://arxiv.org/pdf/physics/0412138.pdf
@@ -276,6 +297,9 @@ Anti-$k_T$ algorithms are identical to $k_T$ algorithms with the refinition: $d_
 % Helpful for jet algorithms:
 % http://www.ccsem.infn.it/issp2009/newtalents/KPerez_Erice_JetAlgs_20090905.pdf
 
+% anti-kt link:
+% http://iopscience.iop.org/1126-6708/2008/04/063/pdf/jhep042008063.pdf
+
 % How jets work, and how they shower
 
 %% The first step in measuring a jet's energy is stopping it.  
@@ -355,12 +379,14 @@ Muons are tracked both by the inner detector and the muon spectrometer, both of 
 There are two main categories of muon reconstruction algorithms, but they both involve creating trajectories in both the inner detector and muon spectrometer, and matching the two to form a ``combined'' muon tractory.
 ``Muid'' muons use the Moore algorithm to build ``stand alone'' tracks in the muon spectrometer, which are built out of muon segments in individual drift chambers, and ``Staco'' muons build stand alone tracks using the Muonboy algorithm.
 Both algorithms then perform a backward track extrapolation from the muon spectrometer to the inner detector, taking into account the magnetic field throughout the detector and energy loss from as muons travel through material.
- 
+
+
 % Muon id algorithms: http://cdsweb.cern.ch/record/1209632/files/ATL-PHYS-PROC-2009-113.pdf?version=1
 % staco vs muid, 
 % moore vs muboy
 
-%Instead, a large volume of ATLAS' active detectors are dedicated to measuring the direction and momentum of muons my tracking their positions as they bend through a large magnetic field.
+
+ %Instead, a large volume of ATLAS' active detectors are dedicated to measuring the direction and momentum of muons my tracking their positions as they bend through a large magnetic field.
 % [ pdg: Muons through matter: http://pdg.lbl.gov/2000/passagerpp.pdf fig 23.1 ]
 %Since one can not measure its energy through calrimetry, ATLAS instead measures its momentum by estimating its curvature when bent in a magnetic field.
 %The bending of a Muon's track in the inner detector in the magnetic field created by the solenoid can be used to determine its momentum.
@@ -369,3 +395,37 @@ Both algorithms then perform a backward track extrapolation from the muon spectr
 % magnet can be used to  will create a bent track in the inner detector that can be used to estimate its momentum.
 % However, the resolution of the inner detector for high pt muons becomes somewhat poor.
 % To vastly improve on the measurement of the inner detector alone, ATLAS has a large set of detectors that comprise the muon spectrometer.
+
+
+\subsection{b-jets}
+Jets originating from a single b-quark in the hard process have a unique signature that can be used to seperate them from jets originating from lighter quarks or gluons.
+The distinguishing feature of b-jets is the fact that b-quarks live long enough before decaying to travel a non-neglegible distance from the interaction vertex.
+
+\begin{figure}
+  \begin{center}
+    % BTaggedEvent.png: https://twiki.cern.ch/twiki/pub/AtlasPublic/FlavourTaggingPublicResultsCollisionData/display4349994d.png
+    \includegraphics[width=100mm]{figures/atlas/BTaggedEvent.png}
+  \end{center}
+  \caption{An image of an event recorded by ATLAS containing a b-tagged candidate (run 152409, event 4349994).}
+  \label{img:BTaggedEvent}
+\end{figure}
+
+Hence, b-quarks produced in the primary interaction will result in a displaced secondary vertex where the b-quark decays, which can be identified by the tracks of the b-quark's decay products that point back to it.
+The simplest b-jet identification algorithms look for a secondary vertex that is displaced significantly from the primary interaction point.
+The ``SV0'' algorithm attempts to tag a jet as originating from a b-quark by constructing a single secondary vertex from all of the jet's tracks that are displaced from the primary vertex, and the jet is identified as a b-jet if the significance of that displaced vertex, given by $L/ \sigma(L)$, is above some threshold (typically between 4 and 5).
+The ``JetProb'' algorithm calculates for each track associated with a jet the probability that it originated from the primary vertex.
+These probabilities are then combined to create an overall significance for the jet.
+Finally, the ``MV1'' algorithm uses a neural network to combine the result of the SV0 and JetProb algorithms along with some additional information.
+
+
+% b-tagging: http://cdsweb.cern.ch/record/1356198/files/ATLAS-CONF-2011-089.pdf
+% SV0: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2010-099/
+% JetProb: http://cdsweb.cern.ch/record/1299106/files/ATLAS-CONF-2010-091.pdf
+% MV1: http://cdsweb.cern.ch/record/1435193/files/ATLAS-CONF-2012-039.pdf
+
+% Citations:
+% https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2012-097/
+% https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2011-102/
+% https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2010-091/
+
+% http://webcache.googleusercontent.com/search?q=cache:E-fODqcYAygJ:cdsweb.cern.ch/record/685961/files/indet-95-115.ps.gz%3Fversion%3D1+&cd=1&hl=en&ct=clnk&gl=us

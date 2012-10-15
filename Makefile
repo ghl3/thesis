@@ -10,9 +10,10 @@ all: thesis clean
 
 thesis: 
 	${LATEX}  ${NOTENAME}
+	${BIBTEX}  ${NOTENAME}
+	${LATEX}  ${NOTENAME}
 	${LATEX}  ${NOTENAME}
 #	dvipdf -sPAPERSIZE=a4 -dPDFSETTINGS=/prepress ${NOTENAME}
-
 #
 # standard Latex targets
 #

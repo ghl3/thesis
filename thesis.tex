@@ -25,9 +25,18 @@
 \newcommand{\graddate}{Year of the Depends Adult Undergarment}
 %% If you do not want a dedication, scroll down and comment out
 %% the appropriate lines in this file.
-\newcommand{\thesisdedication}{Dedicated to the memory of Kurt Vonnegut (placeholder).}
+\newcommand{\thesisdedication}{Dedicated to the memory of Kurt Vonnegut and David Foster Wallace.}
 
+
+\usepackage{common/atlasphysics}
 \def\met{\ensuremath{\not\!\!{E_{T}}}}
+\newcommand{\metvec}{{\not\!\! \vec{E}_T}}
+\def \Ht {{\rm H}_{\rm T}}
+\def\lum{{\ensuremath{\cal L}}}
+\def\lumten#1{\ensuremath{10^{#1}\,\mathrm{cm}^{-2}\mathrm{s}^{-1}}}
+\def \sp{ \hspace{ 5 pt } }
+
+
 
 %% The following makes chapters and sections, but not subsections,
 %% appear in the TOC (table of contents). Increase to 2 or 3 to
@@ -80,7 +89,8 @@
 
 %\usepackage[pdftex]{graphicx}
 \usepackage{graphicx}
-
+\usepackage{subfigure}
+%\usepackage{atlasphysics}
 
 
 
@@ -172,13 +182,25 @@
 \section*{Introduction}\addcontentsline{toc}{section}{Introduction}
 
 \input{intro}
+\clearpage
+\newpage
+
 \input{atlas}
+\clearpage
+\newpage
+
+\input{xsection}
+\clearpage
+\newpage
 
 \appendix
 
 \input{histfactory}
 
-\input{biblio}
+\bibliographystyle{common/atlasnote}
+\bibliography{references}
+
+%\input{biblio}
 
 %% If your thesis has different "Parts", use commands such as the following:
 %\part{First Part\label{part:one}}%
