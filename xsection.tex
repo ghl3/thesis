@@ -5,7 +5,20 @@
 \section{Top Quark Pair-Production Cross-Section Combination}
 
 A precise measurement of the Top Quark Pair-Production Cross-Section is crucial for understanding the performance of the ATLAS detector, for testing predictions of the standard model, to searching for or constraining many new physical models.
-In particle physics, a cross-section is a way to describe the rate of a specific interaction or class of interactions that is independent of the 
+In particle physics, a cross-section is a way to describe the rate of a specific interaction or class of interactions independently of beam conditions that are used to produce it.
+The value of the top-quark pair-production cross-section in the Standard Model can be predicted using Monte-Carlo simulation techniques \cite{TOP_XSC_THEORY} \cite{TTBAR_HADRON_COLLIDERS} \cite{THRESHOLD_EXPANSION_XSC}.
+This value can be determined using ``Next to Leading Order'' techniques (NLO) and is corrected by adding the ``Next to Next to Leading Order'' soft logarithm terms (approximate NNLO).
+This value is determined to be $\sigma_{\ttbar} = 165^{11}_{16}$ with an uncertainty below 10\%.
+The most accurate experimental determinations of the top quark's cross section previous to the LHC's results were measured by the CDS and the D0 collaborations at the Tevatron \cite{TEVATRON_XSC_LJETS} \cite{TEVATRON_XSC_DILEP}.
+These experiments determined the cross-section at a center-of-mass energy of $\sqrt{s} = 7 TeV$ to a precision of 8\% using individual channels and 6.4\% by combining measurements across multiple channels.
+
+The top-quark pair-production cross section has been measured at ATLAS using many channels and analysis technqiues.
+The most precise measurements use combination of several individual measurements, which reduces both statistical and systematic uncertainties.
+This section presents an ATLAS measurement of the $\ttbar$ cross-section that statistically combined three separate analysies strategies.
+The likelihoods for measurements using single-lepton, dilepton, and all-hadronic channels were modeled as functions of the top cross-section, as well as a variety of nuisance parameters.
+% This combination was performed by modeling the likelihoods of several individual measuremnets as functions of the top cross-section as well as a variety of nuisance parameters.
+These likelihoods were then merged and a simultaneous fit to the measured data across all channels was performed.
+
 
 
 \subsection{Top Quark Pair-Production}
@@ -49,11 +62,84 @@ Hence, a pair of top quarks, which we assume always decay into a pair of W boson
 %%   \label{img:TopQuarkBranchingRatios}
 %% \end{figure}
 
+\subsection{Object Reconstruction}
+
+Measurements of $\ttbar$ event require kinematicaly reconstructing and selecting a variety of physical objects, including electrons, muons, jets, b-jets, and $\MET$.
+
+%% BEGIN
+
+Selected electrons are required to have a calorimeter cluster located in a pseudorapidity range of $0 < |\eta| < 4.47$, excluding the range $1.37 < |\eta| < 1.52$ (this excluded interval, known as the crack region, is a mostly un-insturmented part of the EM calorimeter).
+To reject jets that fake electrons, the electron's energy is required to be isolated in the calorimeter.
+Specifically, electrons with more than 3.5 GeV of energy in a cone of $\sqrt{(\Delta \eta)^2 + (\Delta \phi)^2}$, excluding the energy of the electron itself, are rejected.
+Electrons must pass a variety of cuts related to the shape of its shower and the quality of its corresponding track that are collectively referred to as ``tight'' EM identification cuts.
+Finally, Electrons must have a minimum energy of $E_{T} > 20$ GeV.
 
 
+
+
+
+The selection of l + jets tt ̄ events makes use of reconstructed electrons, muons and jets, and the transverse momentum imbalance referred to as missing transverse energy Emiss.
+T Electron candidates are reconstructed from the energy depositions in the electromagnetic calorimeter
+and are required to have a well-measured track associated with the electromagnetic cluster. The latter is required to have |ηcluster| < 2.47 excluding 1.37 < |ηcluster| < 1.52 corresponding to the transition region between barrel and endcap calorimeters. To ensure that electrons are isolated from the jet activity, as expected for prompt electrons from W boson decay, the energy in a cone of ∆R ≡ 􏰮∆η2 + ∆φ2 = 0.2, centered around the electron, excluding the energy associated with the electron itself, is required to be < 3.5 GeV. This defines the tight electron candidates used for the final analysis. Loose electron candidates employed for the estimation of the QCD multijet background, as described in Section 4, have to fulfill less stringent requirements and the isolation cut is increased to < 6 GeV energy deposition in ∆R = 0.2.
+Muon candidates are reconstructed by searching for track segments in the different layers of the muon spectrometer. These segments are then combined starting from the outermost layer, and matched with the inner detector tracks. The final parameters of muon candidates are obtained from the combined fit using information from both detector systems. Only muons within |η| < 2.5 are included in this measurement. Like electrons, muons are required to be isolated, i.e. (i) be separated from the closest jet by ∆R(μ, jet) > 0.4; (ii) have calorimeter isolation < 4 GeV and (iii) have track isolation < 4 GeV. Track isolation is defined as the sum of track transverse momenta in a cone ∆R ≡ 􏰮∆η2 + ∆φ2 = 0.3, excluding the pT of the muon track, while calorimeter isolation is defined as energy deposition in the calorimeter within a cone of ∆R = 0.3, excluding the energy deposition directly along the muon track. Muons passing all requirements are used in the analysis sample selection and are referred to as tight, while muons with a looser isolation are used for the QCD multijet background estimate described in Section 4. In this case, all requirements except the cuts on calorimeter and track isolation have to be fulfilled and the muons are referred to as loose.
+Jets are reconstructed using the anti-kt algorithm with distance parameter R = 0.4 [9] which sets the relative distance at which jets are resolved from each other. As input, the algorithm uses topological clusters that group together neighboring calorimeter cells with energy deposits above certain thresholds. Their energy accounts correctly for the energy deposited in the calorimeter by electromagnetic showers. Additional correction factors dependent on jet η and pT are applied to the reconstructed jets to correct their energy to the hadronic scale. The jet energy scale (JES) is established using corrections derived from collision and test beam data and calibration constants obtained from MC simulation [10]. Since reconstructed electrons might also be reconstructed as jets in the calorimeter, any jet overlapping with a
+2
+
+tight electron within a cone of ∆R < 0.2 is removed from the list of jets. The analysis reconstructs the missing transverse energy from the vector sum of energy depositions
+in the calorimeter in the transverse plane associated to the objects used in the analysis. The same recon-
+struction and identification algorithms as for the analysis objects are used to identify electrons and jets.
+The corresponding topological clusters in the calorimeters are then included in the calculation of Emiss at T
+the energy scale of the associated object. The muon momenta are calculated using the information from both the inner detector and the muon spectrometer system and corrected for additional energy deposi- tion in the calorimeter. Remaining energy depositions not associated to any object are included at the electromagnetic energy scale.
+
+
+
+%% END
 
 
 \subsection{Lepton+Jets}
+The lepton$+$jets channel is the most statistically powerful decay of the $\ttbar$ system for measuring the pair-production cross-section.
+The leptonic decay of one of the top results in an event topologiy that allows for strong background discrimination, while the hadronic decay of the other top maintains a high branching ratio for this channel.
+The distinguishing features of the lepton$+$jets channel is the presence of a high-pt lepton from the leptonic decay of a W boson,$\MET$ from a neutrino, two b-jets from the decay $t \rightarrow W+b$, and two additional jets from the hadronic decay of a W boson.
+
+
+
+\subsubsection{Backgrounds}
+A selection of events based on the above criteria will be contaminated with several sources of backgrounds, including
+
+\begin{itemize}
+\item QCD Multijet events where a lepton is faked via a background mechanism
+\item $W+Jets$ events where the W decays leptonically (leading to $\MET$) which includes real or fake b-jets
+\item $Z+Jets$ events where one of the two leptons isn't identified and which includes real or fake b-jets
+\item Diboson Events (WW, WZ, or ZZ events), that include some combination of leptonic decays of vector bosons, additional jets, and real or faked b-jets
+\item Single Top events
+\end{itemize}
+
+% Add figures
+
+\begin{figure}
+  \begin{center}
+    \subfigure[$Z+Jets$]{
+      %ZJetsDiagram.png : http://inspirehep.net/record/871058/files/qg_qZ.png
+      \includegraphics[width=.4\linewidth]{figures/xsection/ZJetsDiagram.png}
+    }
+    \subfigure[$W+Jets$]{
+      % 
+      \includegraphics[width=.4\linewidth]{figures/xsection/ZJetsDiagram.png}
+    } \\
+    \subfigure[$QCD$]{
+      %ZJetsDiagram.png : http://inspirehep.net/record/871058/files/qg_qZ.png
+      \includegraphics[width=.4\linewidth]{figures/xsection/ZJetsDiagram.png}
+    }
+    \subfigure[$Single Top$]{
+      % 
+      \includegraphics[width=.4\linewidth]{figures/xsection/ZJetsDiagram.png}
+    } \\
+  \end{center}
+  \caption{Feynman diagrams for the most important backgrounds to $\ttbar$ events.  Shown are $Z+Jets$ events (top, left), $W+jets$ events (top, right), QCD events (bottom, left) and Single Top events (bottom, right).}
+  \label{img:BackgroundsFeynmanDiagrams}
+\end{figure}
+
+To measure the cross-section, the background contributions due to each of the above processes were determined using a variety of techniques.
 
 
 \subsection{Dilepton}

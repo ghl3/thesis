@@ -3,7 +3,7 @@
 %
 
 \section{ATLAS}
-ATLAS is a multi-purpose particle detector designed to identify and reconstruct particles produced in LHC collissions for primary purpose of particle discovery \cite{ATLAS}.
+ATLAS is a multi-purpose particle detector designed to identify and reconstruct particles produced in LHC collissions for primary purpose of particle discovery \cite{ATLAS_TDR}.
 In order to fulfull this broad role, the ATLAS detector must excel in several ways simultaneously:
 
 \begin{itemize}
@@ -29,7 +29,7 @@ ATLAS is a collection of many components whose various measurements are combined
 
 The ATLAS detector is designed with a cylindrical geometry that supponds the LCH's beam pipe and is centered around one of the several points where proton bunches are made to collide.
 The detector has a diameter of 25m, is 46m long, and weighs 7000 tonnes.
-It contains about 100 million electronic channels and about 3000 km of electric cables.
+It contains close to 100 million electronic channels and about 3000 km of electric cables.
 
 \begin{figure}
   \begin{center}
@@ -92,11 +92,11 @@ The inner detector (ID) consists of three subsystems which are designed to track
 \end{figure}
 
 
-The first layer of the ID is the pixel detector, which itself consists of three barrel layers of pixel modules at radaii of 5 cm, 10 cm, and 13 cm (on average) as well as three endcap disks on each side of the deterctor to cover the forward region in pseudorapidity.
+The first layer of the ID is the pixel detector, which itself consists of three barrel layers of pixel modules at radaii of 5 cm, 10 cm, and 13 cm (on average) as well as three endcap disks on each side of the deterctor to cover the forward region in pseudorapidity \cite{PIXEL_DETECTOR}.
 The entire barrel cylander is 1.4 m long and .5 m in diameter.
 The inner-most layer of the barrel pixel detector is known as the ``b-layer'' for its importance in the identification of displaced vertices due to b-quarks.
 % The ``b-layer'' also plays an important role in separating prompt electrons from photons that convert into an electron-positron pair
-(An upgrade to the detector will add an additional b-layer, known as the insertable b-layer, in space that will be freed up the beam pipe is replaced with a smaller version.)
+(An upgrade to the detector will add an additional b-layer, known as the insertable b-layer, in space that will be freed up the beam pipe is replaced with a smaller version) \cite{INSERTABLE_B_LAYER}.
 Each region contains a collection of pixel modules (which are identical across the barrel and disk regions) which are 62.4 mm long and 21.4 mm wide.
 The individual modules contain 61,440 pixel elements, and there are 1500 such modules in the barrel and 700 in the disks. %read out by 16 chips, each serving an array of 24 by 160 pixels 
 In total, there are about 140 million detector elements. % each 50 μm in the Rφ direction and 300 μm in z,
@@ -122,8 +122,6 @@ Charged particles moving through the pixel detector will hit individual pixel di
 
 
 
-
-
 % Pixel Image: http://www.atlas.ch/pixel-detector.html
 % Paper and individual pixel image: http://arxiv.org/pdf/physics/0412138.pdf
 % Tracking performance of the pixel detector: http://www.sciencedirect.com/science/article/pii/S0168900206007157 (2004)
@@ -134,7 +132,7 @@ Since it exists at a larger radius, the SCT must cover a larger area (about 61 $
 For the same reason, it can afford to be coarser than the pixel detector.
 The SCT contains 6.2 million readout channels that are spread across four complete barrels at radii of 30.0, 37.3, 44.7 and 52.0 cm, and three rings of end-cap detectors on either side.
 Each subdetector consists of a collection of 6.36$\times$6.40 $cm^2$ silicon strips (each with 768 readout strips) arranged in an overlapping pattern with each strip aligned at a small angle.
-The spatial resolution is of the SCT is 16 $\mu$m in $R-\phi$ and 580 $\mu$m in z, which can distinguish tracks that are separated by as little as 200 $\mu$m.
+The spatial resolution is of the SCT is 16 $\mu$m in $R-\phi$ and 580 $\mu$m in z, which can distinguish tracks that are separated by as little as 200 $\mu$m \cite{PIXEL_PERFORMANCE}.
 
 The final component of ATLAS' inner detector is the Transition Radiation Tracker (TRT).
 The TRT is designed to cover a large volume and to operate at high rates.
@@ -148,7 +146,6 @@ The shape of the electronic pulse read out by the central wire can be used to de
 Each straw is able to provide a spacial reolution of 170 $\mu$m.
 
 % Should show a picture here, otherwise one one will get it  
-
 
 \subsection{Electromagnetic Calorimeter}
 The subcomponents that make up ATLAS's electromagnetic calorimeter are each designed to measure the energy of electrons and photons by inducing and absorbing an elecromagnetic shower.
@@ -172,7 +169,7 @@ The entire calorimeter is bathed in liquid argon, which is maintained at a tempe
 \end{figure}
 
 
-As charged particles fly through the calorimeter, they will ionize the Liquid Argon, and ionized electrons are drawn toward the active electrodes by a high voltage electric field (of about 1 kV/mm) that is maintained throughout the calorimeter. % [http://arxiv.org/pdf/0912.2642v4.pdf]
+As charged particles fly through the calorimeter, they will ionize the Liquid Argon, and ionized electrons are drawn toward the active electrodes by a high voltage electric field (of about 1 kV/mm) that is maintained throughout the calorimeter \cite{LAR_READINESS}. % [http://arxiv.org/pdf/0912.2642v4.pdf]
 The current absorbed is preportional to the energy deposited, which is used to reconstruct the energy of the electron hitting the calorimeter.
 Each LAr calorimeter is segmented into three or four transverse layers and is divided into cells of varying granularity in  $\Delta \eta \times \Delta \phi$, depending on the location and on the layer.%$ = 0.1 \times 0.1$ for $|\eta| < 2.5$ and up to $\Delta \eta \times \Delta \phi = 0.4 \times 0.4$. for $3.1 < |\eta| < 4.9$.
 In all, the LAr calorimeter has 182,468 readout cells.
