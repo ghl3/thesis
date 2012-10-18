@@ -283,6 +283,27 @@ Contributions from $Z+Jets$ and $W+Jets$ in the QCD control regions were subtrac
   \caption{Predicted and observed event yields in bins of jet number for the $\ttbar$ signal and backgrounds in the $\mu+jets$ channel.  Yields are obtained using Monte Carlo or Data-Driven techniques, depending on the sample.}
 \end{table}
 
+
+\begin{figure}
+  \begin{center}
+    \subfigure[$e+jets$] {
+      % EJetsYieldPlot.eps: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2011-121/fig_01a.eps
+      \includegraphics[width=.45\linewidth]{figures/xsection/EJetsYieldPlot}
+    }
+    \subfigure[$\mu+Jets$] {
+      % MuJetsYieldPlots.eps: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2011-121/fig_01b.eps
+      \includegraphics[width=.45\linewidth]{figures/xsection/MuJetsYieldPlot} %  figures/xsection/MuJetsYieldPlots}
+    }
+  \end{center}
+  \caption{The yields of signal and backgrounds in bins of jet number.}
+  \label{img:JetNumberYieldPlots}
+\end{figure}
+
+
+% https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2011-121/fig_01a.eps
+% https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2011-121/fig_01b.eps
+
+
 The measurement of the $\ttbar$ cross-section is obtained by fitting multiple multivariate distributions to measured data simultaneously.
 These distributions are built out of four kinematic variables: the pseudorapidity of the selected lepton, the $p_{T}$ of the jet with the highest $p_{T}$, the event aplanrity and a variable denoted as $H_{T,3p}$.
 The aplanarity, $A$, is defined as 1.5 times the smallest eivenvalue of the matrix
@@ -297,6 +318,40 @@ and $H_{T, 3p}$, which is the total transverse momentum of all jets except for t
 \begin{equation}
   H_{T, 3p} = \frac{ \sum_{i=3}^{N_{jets}} |p_{T, i}| }{ \sum_{j=1}^{N_{objects}} |p_{Z,j}|  }
 \end{equation}
+
+
+\begin{figure}
+  \begin{center}
+    \subfigure[leading jet $p_{T}$] {
+      % DiscrimPtjet4Jets: https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2011-121/fig_04c.eps
+      \includegraphics[width=.45\linewidth]{figures/xsection/DiscrimPtjet4Jets}
+    }
+    \subfigure[lepton ${\eta}$] {
+      % DiscrimEtaMu4Jets
+      \includegraphics[width=.45\linewidth]{figures/xsection/DiscrimEtaMu4Jets}
+    } 
+    \subfigure[Aplanarity] {
+      % 
+      \includegraphics[width=.45\linewidth]{figures/xsection/DiscrimAplanarity4Jets}
+    }
+    \subfigure[$H_{T,3p}$] {
+      % 
+      \includegraphics[width=.45\linewidth]{figures/xsection/DiscrimHT34Jets}
+    } 
+  \end{center}
+  \caption{The discriminating variables used in the multivariate likelihood.}
+  \label{img:DiscriminatingVariables}
+\end{figure}
+
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=.95\linewidth]{figures/xsection/LJetsDiscriminantLikelihood}
+  \end{center}
+  \caption{The multivariate discriminant for $\ttbar$ signal and the dominant $W+Jets$ background.  Distributions are normalized to emphacize the difference in shape between signal and background.}
+  \label{img:LJetsLikelihoodDiscriminant}
+\end{figure}
+
 
 \subsection{Dilepton}
 
