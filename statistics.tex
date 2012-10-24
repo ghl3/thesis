@@ -1,0 +1,72 @@
+
+
+
+\section{Statistics}
+
+Properly using statistical tools ... blah blah blah
+
+Experimental High Energy Physics is uniquely suited for precise, reliable, and accurate statistical analysis.
+The detailed knowledge of the underlying physics allow one to create extremely accurate probabilistic models.
+Large datasets allow these models to be checked, calibrated, and finely tuned.
+Sufficient computational resources are available for massive amounts of simulation to be generated from different models or similar models with various sets of parameters.
+Finally, there are a plethora of statistical formulae, tools, and techniques dedicated to the types of measurements performed by High Energy Experimental Physicists.
+The above advantages make ATLAS a [blah] environment for statistical analysis.
+
+ATLAS uses a variety of standard statistical techniques for performing measurements.
+The standard set at ATLAS is to use ``frequentist'' techniques, though this is an extremely loaded term.
+Perhaps it is better to say that ATLAS uses ``likelihood'' techniques (a term which is both more specific and leads to less controversy).
+In practice, this means that measurements are made by constructing a likelihood function, which is a real valued function, $L(data | \vec{\alpha})$, whose value is ves the probability of a data point or a set of data points as a function of a number of parameters, $\vec{\alpha}$.
+
+It should be noted that a likelihood and a probability distribution function (pdf) are not synonomous.
+A pdf is required to be strictly normalized such that:
+
+\begin{equation}
+\int pdf(\vec{x}) d\vec{x} = 1
+\end{equation}
+
+This must be true of any given pdf.
+In particular, given a family of pdf's that are paramaterized by a real value $\alpha$, each pdf must obey:
+
+\begin{equation}
+\int pdf(\vec{x}, \alpha) d\vec{x} = 1 \hspace{5mm} \forall \alpha
+\end{equation}
+
+In contrast, likelihoods aren't normalized in this way.
+The reason for this difference becomes clear if one interprets a likelihood as a functional of a pdf which maps that pdf onto a dataset to produce a real (positive) number:
+
+\begin{equation}
+L: \text{ \{pdf, data\} } \rightarrow \mathbb{R}
+\end{equation}
+
+Likelihoods only become useful objects when they are manipulated to produce statistical statements.
+The type of statement that can be made from likelihoods is the source of disagreement between the ``bayesian'' and ``frequentist'' statistical sects.
+We will here take an agnostic position on the philosophical merits of any type of statistical statement, and instead present a common type of statistical
+statement, used and recommended by the ATLAS collaboration, as well as many other experiments, known as the confidence interval.
+
+A confidence inverval is a procedure that maps a likelihood to a set in the space of parameters which describe the pdf domain of the likelihood function.
+This procedure is useful because it has the following property: given many randomly-generated realizations of the dataset described by the likelihood, the
+set obtained using the confidence interval procedure will contain the true value of a parameter (the one which describes the true pdf) a fixed percentage
+of the time, where that percentage is known in advance and determines the procedure for obtaining confidence intervals.
+
+In other words, assuming that we knew the true distribution for a dataset that we're interested in, the following procedure is possible:
+\begin{itemize}
+  \item Assume there exists true pdf, $pdf_{true} = pdf(\vec{\alpha}_{true})$, which describes how a single realization of a dataset was generated
+  \item Create a likelihood function over the space of pdf's and datasets, assuming that the true pdf is contained in the domain of this likelihood function
+  \item Choose a confidence level, which is a value between 0 and 1.
+  \item There exists a specific procedure, based on that chosen confidence level, which produces a set $S_i$ in the space of parameters $\vec{\alpha}$ using our likelihood function, which we denote as the ``confidence interval''.  
+  \item Using the true pdf, generate many datasets, and for each dataset, create a set in parameter space $S_i$ based on the above procedure.
+  \item Given this set of intervals, {$S_i$}, count the fraction which contain $\alpha_{true}$.
+  \item As the number of generated datasets approaches infinity, this fraction will approach the confidence level.
+\end{itemize}
+
+Confidence intervals are only useful because they obey the above property.
+Any other way of arguing for their merit or usefulness is strictly philosophical.
+We will here assume that confidence intervals are a desirable quantity to calculate and will show how they can be obtained for likelihoods that describe data obtained using the ATLAS detector.
+
+\subsection{Systematic Uncertainties}
+
+
+
+\subsection{Profile Likelihood}
+
+

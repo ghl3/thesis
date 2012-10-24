@@ -346,11 +346,58 @@ and $H_{T, 3p}$, which is the total transverse momentum of all jets except for t
 
 \begin{figure}
   \begin{center}
-    \includegraphics[width=.95\linewidth]{figures/xsection/LJetsDiscriminantLikelihood}
+
+    \subfigure[] {
+      \includegraphics[width=.95\linewidth]{figures/xsection/LJetsDiscriminantLikelihood}
+    }
+    \subfigure[] {
+      \includegraphics[width=.95\linewidth]{figures/xsection/LJetsFittedLikelihoodDiscriminant}
+    }
   \end{center}
   \caption{The multivariate discriminant for $\ttbar$ signal and the dominant $W+Jets$ background.  Distributions are normalized to emphacize the difference in shape between signal and background.}
   \label{img:LJetsLikelihoodDiscriminant}
 \end{figure}
+
+
+\subsection{Systematic Uncertainties}
+
+The careful and consistent of the effect of systematic uncertainties and their proper paramaterization in a likelihood are crucial to making precise measurements.
+
+
+
+\subsubsection{Likelihood}
+
+The expected value of the discriminating variable is estimated for every background sample, for every channel, and across all bins.
+Using this information, a likelihood function for the measured data in the signal and control regions is created:
+
+\begin{equation}
+% L(⃗β, ⃗δ) = 􏰁 P(μk , nk ) × 􏰁 G(β j , ∆ j ) × 􏰁 G(δi , 1)
+  L(\vec{\beta}, \vec{\delta}) = \prod Pois(n_{k},\mu_{k}(\vec{\beta},\vec{\delta})) \prod Gauss(\delta_j, \beta_j) \prod( 1, \delta_i),
+\end{equation}
+
+where $n_k$ are the values measured in data of each bin of the observable, $\mu_k$ is the expected value of each bin based on a combination of Monte Carlo and data-driven techniques, including the effects of systematic uncertainties.
+The systematic uncertainties are paramaterized by two sets of parameters: $\vec{\beta}$, which represent the overall normalizations of backgrounds, and $\vec{\delta}$, which describe various experimental or theoretical uncertainties.
+
+\subsubsection{Results}
+
+This likelihood function, which simultaneously describes all bins across channels for the discriminating variables, is fit to the observed data.
+The fitted value of the $\ttbar$ cross section and its uncertainties due to statistical, systematic, and luminosity effects, is found to be $\sigma_{\ttbar} = 179.0 ^{+7.0}_{-6.9}(stat+sys) \pm 6.6 (lumi)$ pb.
+
+Additional uncertainties that are not paramaterized in the Likelihood were added in quadrature to the fitted uncertainties.
+These additional uncertainties consist of Generator Hadronization, QCD shape, W shape, and Monte Carlo statistics.
+
+Including these effects, the total uncertainty on the measurement is given by:
+
+$\sigma_{\ttbar} = 179.0 \pm 9.8 (stat + syst) \pm 6.6 (lumi) pb = 179.0 \pm 11.8$ pb.
+
+%%  σtt ̄ =
+%% 179.0+7.0 (stat + syst) ± 6.6 (lumi) pb .
+
+%% The combined fit of the six analysis channels to the likelihood discriminant distribution in data in-
+%% cluding all systematic uncertainties treated within the fit yields a tt ̄ production cross section of σtt ̄ =
+%% 179.0+7.0 (stat + syst) ± 6.6 (lumi) pb . The result of the fit is shown in Fig. 7 and demonstrates an excel- −6.9
+%% lent agreement between data and the background and tt ̄ signal model. After including uncertainties that are not part of the fit, σtt ̄ is measured to be
+%% σtt ̄ = 179.0±3.9 (stat)±9.0 (syst)±6.6 (lumi) pb = 179.0±9.8 (stat + syst)±6.6 (lumi) pb = 179.0±11.8 pb.
 
 
 \subsection{Dilepton}
