@@ -59,9 +59,95 @@ In other words, assuming that we knew the true distribution for a dataset that w
   \item As the number of generated datasets approaches infinity, this fraction will approach the confidence level.
 \end{itemize}
 
-Confidence intervals are only useful because they obey the above property.
-Any other way of arguing for their merit or usefulness is strictly philosophical.
-We will here assume that confidence intervals are a desirable quantity to calculate and will show how they can be obtained for likelihoods that describe data obtained using the ATLAS detector.
+Confidence intervals are only useful if one finds the above property useful.
+Stricly speaking, a confidence interval alone can not be used to evaluate the value or utility of a decision based on observed data.
+They are, however, objective means of quantifying data, in the sense that they don't depend on assumptions about parameters other than those that are build into the likelihood function.
+%Any other way of arguing for their merit or usefulness is strictly philosophical.
+%We will here assume that confidence intervals are a desirable quantity to calculate and will show how they can be obtained for likelihoods that describe data obtained using the ATLAS detector.
+
+\subsection{Neyman Construction}
+
+A standard way of conceptualizing and constructing confidence intervals is through the use of a ``Neyman Construction.'' 
+
+%% http://inspirehep.net/record/582577
+%% @article{Conrad:2002kn,
+%%       author         = ``Conrad, Jan and Botner, O. and Hallgren, A. and Perez de los Heros, Carlos'',
+%%       title          = ``{Including systematic uncertainties in confidence
+%%                         interval construction for Poisson statistics}'',
+%%       journal        = ``Phys.Rev.'',
+%%       volume         = ``D67'',
+%%       pages          = ``012002'',
+%%       doi            = ``10.1103/PhysRevD.67.012002'',
+%%       year           = ``2003'',
+%%       eprint         = ``hep-ex/0202013'',
+%%       archivePrefix  = ``arXiv'',
+%%       primaryClass   = ``hep-ex'',
+%%       SLACcitation   = ``%%CITATION = HEP-EX/0202013;%%'',
+%% }
+
+%% http://inspirehep.net/record/454197
+%% @article{Feldman:1997qc,
+%%       author         = ``Feldman, Gary J. and Cousins, Robert D.'',
+%%       title          = ``{A Unified approach to the classical statistical analysis
+%%                         of small signals}'',
+%%       journal        = ``Phys.Rev.'',
+%%       volume         = ``D57'',
+%%       pages          = ``3873-3889'',
+%%       doi            = ``10.1103/PhysRevD.57.3873'',
+%%       year           = ``1998'',
+%%       eprint         = ``physics/9711021'',
+%%       archivePrefix  = ``arXiv'',
+%%       primaryClass   = ``physics.data-an'',
+%%       reportNumber   = ``HUTP-97-A096'',
+%%       SLACcitation   = ``%%CITATION = PHYSICS/9711021;%%'',
+%% }
+
+%% http://inspirehep.net/record/1081445
+%% @article{Rolke:2011na,
+%%       author         = ``Rolke, Wolfgang A. and Lopez, Angel M.'',
+%%       title          = ``{Estimating a Signal In the Presence of an Unknown Background}'',
+%%       journal        = ``Nucl.Instrum.Meth.'',
+%%       volume         = ``A685'',
+%%       pages          = ``16-21'',
+%%       doi            = ``10.1016/j.nima.2012.05.029'',
+%%       year           = ``2012'',
+%%       eprint         = ``1112.2299'',
+%%       archivePrefix  = ``arXiv'',
+%%       primaryClass   = ``physics.data-an'',
+%%       SLACcitation   = ``%%CITATION = ARXIV:1112.2299;%%'',
+%% }
+
+A Neyman Construction is a set of points in the set of parameters and possible measured data, as well as a procedure for using those points to obtain confidence intervals.
+The construction is build as follows:
+Consider a likelihood function over a space of parameters, $\vec{\theta}$, and over a space of measured data, $\vec{d}$: $L = L(\vec{d} | \vec{\theta} )$.
+Pick a value $\alpha$ which represents the size (strength) of the confidence interval to be built.  This must be agreed upon in advance.
+Then, for each point in parameter space, $\vec{\theta}$ (which defines a fixed likelihood function), create an a region in the set of data, ${\vec{d}}$, known as an ``acceptance region'', which is constructed such that the total probability measure of that region is $\alpha$: ${\vec{d}_{\vec{\theta}} : P(\vec{d} \ele \vec{d}_{\vec{\theta} | \vec{\theta}) = \alpha$.
+This requires knowing, or at least being able to integrate, the likelihood of data at a fixed point $\vec{\theta}$ (this distribution can be obtained using Monte-Carlo techniques once $\vec{\alpha}$ has been specified).
+Of course, there are many (often infinitely many) such regions for a given parameter point.
+Therefore, one must decide in advance how an acceptance region is to be constructed given a fixed likelihood function.
+Often, this decision is made by creating an ordering rule, which determines the order in which points are used to populate a the region, which is then filled in order until it has total measure $\alpha$.
+
+An acceptance region is constructed for all possible values of $\vec{\theta}$.
+The union of every such region (including both the data and the parameter points) is known as the confidence belt: confidence belt = $\union {(\vec{d}, \vec{\theta}) : (\vec{d}, \vec{\theta}) \ele $ some acceptance region for some $\vec{\theta} }$.
+%(the name comes from the cases where there is 1 parameter and 1 data value in the likelihood; in more complicated situations, it is better described as a volume or a multidimensional set).
+%We do this for all values of theta to define a belt (or, if theta is a vector, we define a volume in parameter space).
+
+Using this set, a confidence region for a given measured data point, $\vec{d}_0$, can be constructed as the union of all points in the confidence belt which include the measured data point: ${(\vec{theta}, \vec{d}) \ele belt : d = d_{0}}$.
+Specifically, confidence region for a particular parameter, $\alpha$, is union of all values of alpha in the confidence belt that contain $\vec{d}_0$.
+
+If $\theta_0$ were the true value, all the data would fall in the interval in defined by $\theta_0$ $\apha$ percent of the time.
+In addition, if the data were to fall in the confidence region of $\theta_0$, then the interval of parameter points would include $\theta_0$.
+These two imply the statement: $\theta_0$ is in the confidence interval $\iff$ the data falls in the region of the likelihood function L($\theta_0$).
+Thus, the coverage of the region is identical to the coverage of the interval, which is $\alpha$.
+Therefore, the confidence interval defined by the above construction is guaranteed proper coverage.
+
+In this sense, a confidence interval is the inversion of a hypothesis.
+It represents the set of all points in parameter space for which the measured data falls within an acceptance region of size $\alpha$ (given some ordering rule).
+For any single parameter in parameter space, the confidence interval is the the union of all points of that parameter that fall in the confidence band (confidence volume) in the full parameter space.
+
+
+\subsection{Hypothesis Testing}
+% Kyle:  Said yet another way, to claim a discovery, the confidence interval for the nuisance parameter(s) must be empty (when the construction is made assuming the null hypothesis).
 
 \subsection{Systematic Uncertainties}
 
