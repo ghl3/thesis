@@ -1,2 +1,15 @@
 info.txt
-thesis.pdf
+#thesis.pdf
+
+
+
+comb/
+common/
+dilep/
+ljets/
+old_ref.bib
+samesign/
+samesign_paper/
+allhad/
+thesis.*
+!thesis.tex
