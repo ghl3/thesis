@@ -91,9 +91,9 @@
 \usepackage{graphicx}
 \usepackage{subfigure}
 %\usepackage{atlasphysics}
-\usepackage{hyperref}
 \usepackage{amsfonts}
-
+%\usepackage{hyperref}
+\usepackage[bookmarks]{hyperref}
 
 \begin{document}
 %% Produces a test "layout" page, for "debugging" purposes only.
@@ -110,7 +110,6 @@
 \begin{center}
   {\large\textbf{\thesistitle}}
   \vspace{.7in}
-
   by
   \vspace{.7in}
 
@@ -189,22 +188,24 @@
 \clearpage
 \newpage
 
-\input{statistics}
-\clearpage
-\newpage
-
 \input{xsection}
 \clearpage
 \newpage
 
 \appendix
 
+\input{statistics}
+\clearpage
+\newpage
+
 \input{histfactory}
+\clearpage
+\newpage
 
 \bibliographystyle{common/atlasnote}
 \bibliography{references}
 
-%\input{biblio}
+\input{biblio}
 
 %% If your thesis has different "Parts", use commands such as the following:
 %\part{First Part\label{part:one}}%

@@ -31,7 +31,7 @@ Often, one describes a family of similar pdf's by paramaterizing the density as 
 These parameters may include parameters that one wants to measure, collectively known as the parameter(s) of interested and here referred to as $\mu$, and it may also include additional parameters, known as nuisance parameters and referred to as $\nu$. %writing the density as a function of one or more parameters.
 Every pdf in this paramaterized set much individually be normalized over the space of data. 
 \begin{equation}
-\int pdf(\vec{x}, \theta) d\vec{x} = 1 \hspace{5mm} \forall \theta \ele {\theta}
+  \int pdf(\vec{x}, \theta) d\vec{x} = 1 \hspace{5mm} \forall \theta %\ele \{\theta\}
 \end{equation}
 
 %Each individual pdf, , given a family of pdf's that are paramaterized by a real value $\alpha$, each pdf must obey:
@@ -49,7 +49,7 @@ Likelihoods are always associated with data, and they describe how the probabili
 %The reason for this difference becomes clear if one interprets a likelihood as a functional of a pdf which maps that pdf onto a dataset to produce a real (positive) number:
 One can interpret a likelihood as a functional that maps a probability distribution function, for a given dataset, to a real number between 0 and 1:
 \begin{equation}
-L: \text{ \{pdf, data\} } \rightarrow [0, 1] \ele \mathbb{R}
+  L: \text{ \{pdf, data\} } \rightarrow % \[0, 1\] \ele \mathbb{R}
 \end{equation}
 
 %Likelihoods only become useful objects when they are manipulated to produce statistical statements.
@@ -107,8 +107,8 @@ We will denote this region as $K_{\alpha}$, emphacizing the fact that the size o
 This 
 Clearly, there are many such regions (often infinitely many), and the task of choosing an arbitrary volume in data space may seem daunting.
 Typically, this region is selected by first choosing a ``test statistic,'' which is a mapping of the space of data to the real number line.
-With such a function in hand, the task then becomes picking a 1-dimensional region in the range of the Test Statistic such that $ P(T(d) \ele K_{\alpha} | NULL) = \alpha$ (typically, this region is determined by picking a cut-off value, $k_{\alpha}$, such that $K_{\alpha} = {d : T(d) > k_{\alpha} }$).
-Given a region $K_{a}$, the ``power'' of this region is defined to be $1 - \beta$, where $\beta = P(D \ele K_{\alpha} | Alternate)$ and is commonly known as the probability of a Type-II error.
+With such a function in hand, the task then becomes picking a 1-dimensional region in the range of the Test Statistic such that $ P( T(d) in K_{ \alpha } | NULL) = \alpha$ (typically, this region is determined by picking a cut-off value, $k_{\alpha}$, such that $K_{\alpha} = \{d : T(d) > k_{\alpha} \}$).
+Given a region $K_{a}$, the ``power'' of this region is defined to be $1 - \beta$, where $\beta = P(D element K_{ \alpha } | Alternate)$ and is commonly known as the probability of a Type-II error.
 For a chosen size $\alpha$, an ideal test maximizes $\beta$.
 In practice, this task boils down to choosing the most powerful test statistic, from which the value of $k_{\alpha}$ and the region in data $K_{\alpha}$ are determined (though, it may take some analytic or computational to determine the value of $k_{\alpha}$).
 
@@ -181,21 +181,21 @@ A Neyman Construction is a set of points in the set of parameters and possible m
 The construction is build as follows:
 Consider a likelihood function over a space of parameters, $\vec{\theta}$, and over a space of measured data, $\vec{d}$: $L = L(\vec{d} | \vec{\theta} )$.
 Pick a value $\alpha$ which represents the size (strength) of the confidence interval to be built.  This must be agreed upon in advance.
-Then, for each point in parameter space, $\vec{\theta}$ (which defines a fixed likelihood function), create an a region in the set of data, ${\vec{d}}$, known as an ``acceptance region'', which is constructed such that the total probability measure of that region is $\alpha$: ${\vec{d}_{\vec{\theta}} : P(\vec{d} \ele \vec{d}_{\vec{\theta} | \vec{\theta}) = \alpha$.
+Then, for each point in parameter space, $\vec{ \theta }$ (which defines a fixed likelihood function), create an a region in the set of data, ${ \vec{d} }$, known as an ``acceptance region'', which is constructed such that the total probability measure of that region is $\alpha$: ${ \vec{d}_{ \vec{ \theta } } : P( \vec{d} element \vec{d}_{ \vec{ \theta } } | \vec{ \theta } ) = \alpha }$.
 This requires knowing, or at least being able to integrate, the likelihood of data at a fixed point $\vec{\theta}$ (this distribution can be obtained using Monte-Carlo techniques once $\vec{\alpha}$ has been specified).
 Of course, there are many (often infinitely many) such regions for a given parameter point.
 Therefore, one must decide in advance how an acceptance region is to be constructed given a fixed likelihood function.
 Often, this decision is made by creating an ordering rule, which determines the order in which points are used to populate a the region, which is then filled in order until it has total measure $\alpha$.
 
 An acceptance region is constructed for all possible values of $\vec{\theta}$.
-The union of every such region (including both the data and the parameter points) is known as the confidence belt: confidence belt = $\union {(\vec{d}, \vec{\theta}) : (\vec{d}, \vec{\theta}) \ele $ some acceptance region for some $\vec{\theta} }$.
+The union of every such region (including both the data and the parameter points) is known as the confidence belt: confidence belt = $ union ( \vec{d}, \vec{ \theta }) : ( \vec{d}, \vec{ \theta }) element $ some acceptance region for some $\vec{ \theta } $.
 %(the name comes from the cases where there is 1 parameter and 1 data value in the likelihood; in more complicated situations, it is better described as a volume or a multidimensional set).
 %We do this for all values of theta to define a belt (or, if theta is a vector, we define a volume in parameter space).
 
-Using this set, a confidence region for a given measured data point, $\vec{d}_0$, can be constructed as the union of all points in the confidence belt which include the measured data point: ${(\vec{theta}, \vec{d}) \ele belt : d = d_{0}}$.
+Using this set, a confidence region for a given measured data point, $\vec{d}_0$, can be constructed as the union of all points in the confidence belt which include the measured data point: ${ ( \vec{ \theta }, \vec{d}) element belt : d = d_{0}}$.
 Specifically, confidence region for a particular parameter, $\alpha$, is union of all values of alpha in the confidence belt that contain $\vec{d}_0$.
 
-If $\theta_0$ were the true value, all the data would fall in the interval in defined by $\theta_0$ $\apha$ percent of the time.
+If $\theta_0$ were the true value, all the data would fall in the interval in defined by $\theta_0$ $\alpha$ percent of the time.
 In addition, if the data were to fall in the confidence region of $\theta_0$, then the interval of parameter points would include $\theta_0$.
 These two imply the statement: $\theta_0$ is in the confidence interval $\iff$ the data falls in the region of the likelihood function L($\theta_0$).
 Thus, the coverage of the region is identical to the coverage of the interval, which is $\alpha$.
