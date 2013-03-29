@@ -9,7 +9,7 @@ NOTENAME = thesis
 all: thesis clean
 
 thesis: 
-	${LATEX}  ${NOTENAME}
+	${LATEX}  -interaction=errorstopmode  ${NOTENAME}
 	${BIBTEX}  ${NOTENAME}
 	${LATEX}  ${NOTENAME}
 	${LATEX}  ${NOTENAME}
