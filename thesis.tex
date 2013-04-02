@@ -27,6 +27,7 @@
 %% the appropriate lines in this file.
 \newcommand{\thesisdedication}{Dedicated to my parents, Sharon and Herb Lewis, for their continual support and to my thesis advisor, Kyle Cranmer, for his invaluable advice and mentorship.}
 
+%\usepackage[nottoc,numbib]{tocbibind} 
 
 \usepackage{common/atlasphysics}
 \def\met{\ensuremath{\not\!\!{E_{T}}}}
@@ -200,6 +201,12 @@
 \newpage
 
 \input{samesign}
+\clearpage
+\newpage
+
+\input{conclusion}
+\clearpage
+\newpage
 
 \appendix
 
@@ -207,10 +214,12 @@
 \clearpage
 \newpage
 
-\input{histfactory}
-\clearpage
-\newpage
+%\input{histfactory}
+%\clearpage
+%\newpage
 
+%\section{Bibliography}
+\addcontentsline{toc}{section}{Bibliography}
 \bibliographystyle{common/atlasnote}
 \bibliography{references}
 
