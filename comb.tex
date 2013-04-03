@@ -11,7 +11,7 @@ which are together denoted $\vec{\theta} = (\sigma_{\ttbar}, \vec{\alpha})$.
 The maximum likelihood estimator of this single-lepton combination is denoted $\hat{\vec{\theta}}$.
 The largest sources of systematic uncertainty in the single-lepton channel come from the Monte Carlo generator for signal, the jet energy scale, and the modeling of initial-state and final-state radiation.
 Uncertainties that affect the background only, including uncertainties on the shape of $W+$jets and QCD templates, contribute less than those affecting signal only.
-More information on the cross-section measurement using single-lepton final states can be found in reference~\cite{lepjetsCONF}.
+More information on the cross-section measurement using single-lepton final states can be found in reference~\cite{LEPTON_JETS_NOTE_2011}.
 
 For the purposes of the six-measurement combination, the likelihood from the single-lepton channels is approximated using a multivariate Gaussian.
 This approximation facilitates the combination with the dilepton and all-hadronic likelihoods, which are implemented in a different software framework.  
@@ -44,7 +44,7 @@ With the covariance matrix, one can construct the multivariate Gaussian likeliho
   L_{l+\rm jets}(\vec{\theta}) = G(\hat{\vec{\theta}}\, |\, \vec{\theta}, V) = \frac{1}{(2\pi)^{k/2} | V|^{1/2}} \exp\left( -\frac{1}{2} (\hat{\vec{\theta}} - \vec{\theta})^T  V^{-1} (\hat{\vec{\theta}} - \vec{\theta})  \right) \;, 
 \end{equation}
 where $k=46$ is the dimensionality of the parameter space.  
-Uncertainties that are evaluated outside of the fit in in reference~\cite{lepjetsCONF} are here modeled as factors which scale $\sigma_{\ttbar}/\sigma_{\rm SM}$ and are described by Gaussian terms.
+Uncertainties that are evaluated outside of the fit in in reference~\cite{LEPTON_JETS_NOTE_2011} are here modeled as factors which scale $\sigma_{\ttbar}/\sigma_{\rm SM}$ and are described by Gaussian terms.
 %Uncertainties that are evaluated outside of the fit in the single-lepton analysis are here modeled as scalings on $\sigma_{\ttbar}/\sigma_{\rm SM}$ and are constrained by Gaussian terms.
 %Uncertainties that are evaluated outside of the fit in the single-lepton analysis are here modeled as parameterized uncertainties on $\sigma_{\ttbar}/\sigma_{\rm SM}$ in the multivariate gaussian likelihood.
 
@@ -122,7 +122,7 @@ The dilepton likelihood function contains 65 parameters, including the parameter
 The profile likelihood ratios for the individual channels as well as the dilepton combination are shown in Figure~\ref{fig:dilep_profiles}.  
 The dominant systematic uncertainties for the dilepton analysis are lepton identification efficiencies, fake lepton rates, modeling of the signal, and jet energy scale, which is modeled identically in the single-lepton and dilepton channels.
 %To match the single-lepton analysis, the effect of the jet energy scale uncertainty is parameterized by several components, each of which is considered independent.
-More information on the measurement using dilepton final states can be found in reference \cite{dileptCONF}.
+More information on the measurement using dilepton final states can be found in reference \cite{DILEPTON_PAPER}.
 
 \begin{figure}[htbp]
   \begin{center}
@@ -162,7 +162,7 @@ The observable described by these templates is based on the reconstructed top-qu
 \begin{equation}\label{Eq:chisquare}
   \chi^2 =  \frac{ \left(m_{j_1, j_2} - m_{W}\right)^2}{\sigma_W^2} + \frac{ \left(m_{j_1, j_2, b_1} - m_{t}\right)^2}{\sigma_t^2} + \frac{ \left(m_{j_3, j_4} - m_{W}\right)^2}{\sigma_W^2} + \frac{ \left(m_{j_3, j_4, b_2} - m_{t}\right)^2}{\sigma_t^2},
   \end{equation}
-where the particular jet combination used per event is the one that minimizes this sum~\cite{allhadCONF}.
+where the particular jet combination used per event is the one that minimizes this sum~\cite{ALL_HADRONIC_NODE}.
 % where the choice of jet labeling per event is the one that minimizes this $\chi^2$d.
 % where the set of jets labeling that minimizes this $\chi^2$d per event is chosen.
 % where the choice of jets per event is that which minimize this $\chi^2$d.
@@ -196,7 +196,7 @@ where $s_{i}(\vec{\alpha})$ and $b_{i}(\vec{\alpha})$ are the expected number of
 
 The largest sources of systematic uncertainty in the all-hadronic model are the jet energy scale, the $b-$tagging efficiency, and modeling of initial-state and final-state radiation.
 Other significant sources of uncertainty include the jet energy resolution, the efficiency of the multijet trigger, and modeling of the multijet background.
-Further details on cross-section measurement using all-hadronic final states can be found in reference~\cite{allhadCONF}.
+Further details on cross-section measurement using all-hadronic final states can be found in reference~\cite{ALL_HADRONIC_NOTE}.
 The likelihood function for the all-hadronic channel is shown in Figure ~\ref{fig:allhad_likelihood}.
 
 \begin{figure}[htbp]

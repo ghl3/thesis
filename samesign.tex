@@ -2,64 +2,93 @@
 \section{Same-Sign Top quark production}
 
 \subsection{Introduction}
-The Standard Model (SM) of the electroweak and strong interactions is extremely successful in
-explaining most of the measurements in particle physics at energies accessible today. Its
-predicted behaviour at higher energies, however, presents some theoretical problems that
-have motivated a large number of extensions to the theory. Due to the large
-variety of models proposed, signature-based searches are often useful when exploring the
-consequences of these theories. In hadron collisions it is useful to
-group final states by the number of charged leptons (electrons or muons). Within this
-classification, a signal with two leptons of the same electric charge, same-sign
-dileptons, is interesting since it has a low background rate in the SM, and
-potentially large contributions from new phenomena.
+%% The Standard Model (SM) of the electroweak and strong interactions is extremely successful in
+%% explaining most of the measurements in particle physics at energies accessible today. Its
+%% predicted behaviour at higher energies, however, presents some theoretical problems that
+%% have motivated a large number of extensions to the theory. Due to the large
+%% variety of models proposed, signature-based searches are often useful when exploring the
+%% consequences of these theories. In hadron collisions it is useful to
+%% group final states by the number of charged leptons (electrons or muons). Within this
+%% classification, a signal with two leptons of the same electric charge, same-sign
+%% dileptons, is interesting since it has a low background rate in the SM, and
+%% potentially large contributions from new phenomena.
 
-In this note, we present a search for events characterized by two isolated same-sign leptons
-in association with at least two jets, including jets arising from $b$ quarks. Three specific signal
-processes are considered: pair production of down-type heavy quarks of charge -1/3, denoted $b^\prime$;
-single and pair production of heavy top quark partners of charge +5/3, denoted $T_{5/3}$; and
-production of events containing four top quarks, i.e. $t\bar{t}t\bar{t}$, 
-produced via a four-top quark contact interaction.
+While the Standard Model has been extremely successful at explaining the vast majority of measurements in particle physics at energies accessable today, its behavior at larger energies has motivated a large number of extensions.
+Due to the large number models proposed to extend the standard model, it is desireable from an experimental perspective to provide signature-based searches that are sensitive a large number of models that lead to similar final state topologies.
+Moreover, signature based searches for exotic models that have small backgrounds in the Standard Model tend to be sensitive to a large measure of new physics scenerios.
 
-Apart from single production of the $T_{5/3}$, the final states of the three different
-signals contain four $W$ bosons, and each can decay either leptonically or hadronically. 
-With four $W$ bosons in the event, many different topologies are possible. A good compromise between
-high branching ratio and low background is the topology where two $W$ bosons decay leptonically
-and the two other $W$ bosons decay hadronically. Moreover, requiring that the two leptons have the same
-electric charge reduces further the level of background processes since very few SM processes 
-generate this topology. 
+With this motivation in mind, we present a search for events containing two isolated, high-pt, same-sign leptons in association with at least two jets, including jets arising from $b$ quarks. 
+We will refer to this final state definition as a same-sign top topologoy, since it is characteristic of events that lead to two like-sign, high-energy top quarks with subsequent decays into b-jets and leptons.
+Using this final state definition, we study three specific exotic processes: pair production of down-type heavy quarks of charge -1/3, denoted $b^\prime$; single and pair production of heavy top quark partners of charge +5/3, denoted $T_{5/3}$; and production of events containing four top quarks, i.e. $t\bar{t}t\bar{t}$, produced via a four-top quark contact interaction with various values of coupling constant.
 
-Therefore, in this note, we study the decay channels with two $W$ bosons decaying to leptons (electrons
-and muons) of the same electric charge, including contributions from $\tau\rightarrow e$ and
-$\tau\rightarrow\mu$. 
-The signature will then be two leptons of the same electric charge in addition to missing 
-transverse momentum from the neutrinos and several jets. Moreover, among the jets 
-of these events, we expect to have at least two jets arising from $b$ quarks, a feature which is
-exploited in this search.
+%% Three specific signal
+%% processes are considered: pair production of down-type heavy quarks of charge -1/3, denoted $b^\prime$;
+%% single and pair production of heavy top quark partners of charge +5/3, denoted $T_{5/3}$; and
+%% production of events containing four top quarks, i.e. $t\bar{t}t\bar{t}$, 
+%% produced via a four-top quark contact interaction.
 
-The CMS Collaboration searched for fourth-generation down-type heavy quarks in same-sign dilepton
-or trilepton events with at least one $b$-tagged jet, and set a lower mass limit at 
-611~\GeV{}~\cite{Chatrchyan:2012yea} at 95\% confidence level (C.L.), 
-with 4.9~\ifb{} of $pp$ data at $\sqrt{s}=7 \TeV$.
-In the same channel, ATLAS published a mass limit of 450~\GeV{}~\cite{Aad:2012bb} at 95\% C.L.
-using 1~\ifb{} of data.
-The CDF Collaboration searched for the pair production of $T_{5/3}$ in the same-sign dilepton
-channel with several jets and missing transverse momentum, and set a lower mass limit at
-365~\GeV{}~\cite{Aaltonen:2009nr} at 95\% C.L., with 2.7~\ifb{} of $p\bar{p}$ data.
-There is no published result yet on the experimental search for the production 
-of events containing four top quarks.
+Each of the leading order diagrams of these signatures lead to four $W$ bosons, including two pairs of same-sign $W$ bosons.
+These $W$'s can decay either leptonically or hadronically, leading to a wide variety of possible final state topologies.
+The case where two $W$ bosons of the same sign decay leptonically leads to a pair of like-sign leptons in the final state, which has a very small background from the standard model.
+Moreover, defining a final state that allows the other $W$ bosons to decay either leptonic or hadronically maintains a relatively high branching ratio.
 
-This note is organized as follows. Section~\ref{sect:models} contains a description of the
-three signals which are studied in this note. The data and Monte Carlo samples are discussed in
-Section~\ref{sect:samples}. The object reconstruction and event selection are described in 
-Sections~\ref{sect:objects} and \ref{sect:selection}, respectively. The SM backgrounds,
-in particular the data-driven ones, are detailed in Section~\ref{sect:back}. The systematic
-uncertainties are discussed in Section~\ref{sect:syst}, before the presentation of the results
-in Section~\ref{sect:results}. Finally, the interpretation of these results in the framework of the
-three signals is discussed in Section~\ref{sect:interpretation}, before the presentation of the
-conclusions in Section~\ref{sect:conclusion}.
+%% Apart from single production of the $T_{5/3}$, the final states of the three different
+%% signals contain four $W$ bosons, and each can decay either leptonically or hadronically. 
+%% With four $W$ bosons in the event, many different topologies are possible. A good compromise between
+%% high branching ratio and low background is the topology where two $W$ bosons decay leptonically
+%% and the two other $W$ bosons decay hadronically. Moreover, requiring that the two leptons have the same
+%% electric charge reduces further the level of background processes since very few SM processes 
+%% generate this topology. 
+
+Therefore, we define a final state signature to study a wide variety of exotic models by requiring two $W$ bosons decaying leptonically (to an electron or a muon) of the same electric change, including contributions from $\tau\rightarrow e$ and $\tau\rightarrow\mu$.
+Additional activity in the event, including the presence of neutrinos from the decay of the $W$ bosons and b-jets associated with the decay of top quarks motivate requiring additional jets and significant missing transverse momentum.
+Moreever, at least two of the jets in the event arise from b-quarks, which is exploited in this search through the use of b-tagging.
+
+%% Therefore, in this note, we study the decay channels with two $W$ bosons decaying to leptons (electrons
+%% and muons) of the same electric charge, including contributions from $\tau\rightarrow e$ and
+%% $\tau\rightarrow\mu$. 
+%% The signature will then be two leptons of the same electric charge in addition to missing 
+%% transverse momentum from the neutrinos and several jets. Moreover, among the jets 
+%% of these events, we expect to have at least two jets arising from $b$ quarks, a feature which is
+%% exploited in this search.
+
+Several similar searches have been performed by the ATLAS, CMS, and CDF collaborations which search for either b' or $T_{5/3}$ particles.
+The CMS Collaboration performed a similar search, looking for fourth-generation down-type heavy quarks by examining same-sign dilepton or trilepton events with at least one $b$-tagged jet.
+Using this search, CMS set a lower mass limit at 611~\GeV{} ~\cite{Chatrchyan:2012yea} at 95\% confidence level using 4.9 ~\ifb{} of $pp$ data obtained at a center-of-mass-energy of $\sqrt{s}=7 \TeV$.
+ATLAS, using a similar channel, measured a limit of 450 450~\GeV{}~\cite{Aad:2012bb} at 95\% C.L. using 1~\ifb{} of data.                                     
+CDF performed a search for $T_{5/3}$ by studying the same-sign dilepton channel with requirements on jets and missing transverse moentum.
+They measured a lower mass limit at 365~\GeV{}~\cite{Aaltonen:2009nr} at 95\% C.L., with 2.7~\ifb{} of $p\bar{p}$ data from the Tevatron.  
+No collaboration to date has published an experimental search for four tops production.
+The measurement presented here searches for all of these signatures using a unified analysis strategy, including consistent treatments of systematic uncertainties.
+Moreover, the larger dataset available to this search allows for a further reduction in background by introducing harder cuts on kinematic variables, including misssing transverse momentum.
+
+%% The CMS Collaboration searched for fourth-generation down-type heavy quarks in same-sign dilepton
+%% or trilepton events with at least one $b$-tagged jet, and set a lower mass limit at 
+%% 611~\GeV{}~\cite{Chatrchyan:2012yea} at 95\% confidence level (C.L.), 
+%% with 4.9~\ifb{} of $pp$ data at $\sqrt{s}=7 \TeV$.
+%% In the same channel, ATLAS published a mass limit of 450~\GeV{}~\cite{Aad:2012bb} at 95\% C.L.
+%% using 1~\ifb{} of data.
+%% The CDF Collaboration searched for the pair production of $T_{5/3}$ in the same-sign dilepton
+%% channel with several jets and missing transverse momentum, and set a lower mass limit at
+%% 365~\GeV{}~\cite{Aaltonen:2009nr} at 95\% C.L., with 2.7~\ifb{} of $p\bar{p}$ data.
+%% There is no published result yet on the experimental search for the production 
+%% of events containing four top quarks.
+
+%% This note is organized as follows. Section~\ref{sect:models} contains a description of the
+%% three signals which are studied in this note. The data and Monte Carlo samples are discussed in
+%% Section~\ref{sect:samples}. The object reconstruction and event selection are described in 
+%% Sections~\ref{sect:objects} and \ref{sect:selection}, respectively. The SM backgrounds,
+%% in particular the data-driven ones, are detailed in Section~\ref{sect:back}. The systematic
+%% uncertainties are discussed in Section~\ref{sect:syst}, before the presentation of the results
+%% in Section~\ref{sect:results}. Finally, the interpretation of these results in the framework of the
+%% three signals is discussed in Section~\ref{sect:interpretation}, before the presentation of the
+%% conclusions in Section~\ref{sect:conclusion}.
+
+
 
 \subsection{Signal processes}\label{sect:models}
-The three different signal processes considered in this note are discussed in this section.
+The analysis strategy presented in this section is sensitive to a wide variety of exotic models, as the presence of leptons, multiple jets (including $b$-tagged jets) and missing transverse energy is a common signature of new physics involving the production of heavy particles.
+Here, we present a search for three different example signal processes which demonstrate the effectiveness of this search strategy across varying models.
 
 \begin{figure}[t]
 \centering
@@ -71,132 +100,150 @@ The three different signal processes considered in this note are discussed in th
 single (c) productions, and four top quarks event production through a four-top quark contact interaction (d).}
 \end{figure}
 
-\subsection{Pair production of down-type heavy quarks ($b^\prime$)}
-The first signal process is based on the hypothesis that a fourth
-generation of fermions may extend the particle content of the
-SM~\cite{Holdom:2006mr}. Direct Higgs searches combining the search
-channels $\gamma \gamma$, $ZZ$, $WW$, $b\bar{b}$, and $\tau^{+}
-\tau^{-}$ disfavor a sequential fourth
-generation~\cite{Eberhardt:2012gv,Djouadi:2012ae,Eberhardt:2012sb,Eberhardt:2012ck}
-as the model predicts a specific hierarchy of signal strengths which
-is not supported by the experimental results: while Higgs production
-cross section in gluon-gluon fusion at the Tevatron and LHC is
-enhanced by about a factor of nine for a Higgs boson mass of 126 GeV,
-associated Higgs production ($HW$ and $HZ$) relevant for searching for
-$H \rightarrow b\bar{b}$ does not get such an enhancement factor from
-the presence of fourth generation. However, the Higgs decay branching fraction
-to $\gamma \gamma$ is heavily suppressed in a sequential fourth
-generation model and can even over-compensate the gluon-gluon fusion
-enhancement factor. Moreover, all Higgs branching fractions can be suppressed by
-a common reduction factor by adjusting the heavy neutrino mass of the
-fourth generation Dirac neutrino so that invisible Higgs decays become
-possible. Additionally a fourth generation extension might still be in accordance
-with experimental constraints when extending the Higgs sector, like in
-Two-Higgs-Doublet models~\cite{BarShalom:2012ms}.
 
-Electroweak precision observables favour the region $m_{t^\prime}>m_{b^\prime}$ 
-(although $m_{t^\prime}<m_{b^\prime}$ is not excluded), with differences as large 
-as $m_{t^\prime}-m_{b^\prime}=m_{W}$ being disfavoured. In the scenario studied in this
-note, the $b^\prime$ can not decay into a $t^\prime$ and decays into the 
-final states $u/c+W^{-}$ as well as $t+W^{-}$, as long as $m_{b^\prime}-m_{t}> m_W$, which is equivalent 
-to $m_{b^\prime} > 255 \GeV{}$. If one assumes $V_{u(c) b^\prime}\ll V_{t b^\prime}$ the dominant decay is 
-$b^\prime \rightarrow t+ W^{-}$. In this case it is possible to search for $b^\prime$ 
-quarks by looking for pairs of same-sign charged leptons accompanied by a large number of jets,
-two of them arising from $b$ quarks, as illustrated in Figure~\ref{feynman_bprime}.
+\subsection{Pair production of down-type heavy quarks ($b^\prime$)}
+
+%% \subsection{Pair production of down-type heavy quarks ($b^\prime$)}
+%% The first signal process is based on the hypothesis that a fourth
+%% generation of fermions may extend the particle content of the
+%% SM~\cite{Holdom:2006mr}. Direct Higgs searches combining the search
+%% channels $\gamma \gamma$, $ZZ$, $WW$, $b\bar{b}$, and $\tau^{+}
+%% \tau^{-}$ disfavor a sequential fourth
+%% generation~\cite{Eberhardt:2012gv,Djouadi:2012ae,Eberhardt:2012sb,Eberhardt:2012ck}
+%% as the model predicts a specific hierarchy of signal strengths which
+%% is not supported by the experimental results: while Higgs production
+%% cross section in gluon-gluon fusion at the Tevatron and LHC is
+%% enhanced by about a factor of nine for a Higgs boson mass of 126 GeV,
+%% associated Higgs production ($HW$ and $HZ$) relevant for searching for
+%% $H \rightarrow b\bar{b}$ does not get such an enhancement factor from
+%% the presence of fourth generation. However, the Higgs decay branching fraction
+%% to $\gamma \gamma$ is heavily suppressed in a sequential fourth
+%% generation model and can even over-compensate the gluon-gluon fusion
+%% enhancement factor. Moreover, all Higgs branching fractions can be suppressed by
+%% a common reduction factor by adjusting the heavy neutrino mass of the
+%% fourth generation Dirac neutrino so that invisible Higgs decays become
+%% possible. Additionally a fourth generation extension might still be in accordance
+%% with experimental constraints when extending the Higgs sector, like in
+%% Two-Higgs-Doublet models~\cite{BarShalom:2012ms}.
+
+%% Electroweak precision observables favour the region $m_{t^\prime}>m_{b^\prime}$ 
+%% (although $m_{t^\prime}<m_{b^\prime}$ is not excluded), with differences as large 
+%% as $m_{t^\prime}-m_{b^\prime}=m_{W}$ being disfavoured. In the scenario studied in this
+%% note, the $b^\prime$ can not decay into a $t^\prime$ and decays into the 
+%% final states $u/c+W^{-}$ as well as $t+W^{-}$, as long as $m_{b^\prime}-m_{t}> m_W$, which is equivalent 
+%% to $m_{b^\prime} > 255 \GeV{}$. If one assumes $V_{u(c) b^\prime}\ll V_{t b^\prime}$ the dominant decay is 
+%% $b^\prime \rightarrow t+ W^{-}$. In this case it is possible to search for $b^\prime$ 
+%% quarks by looking for pairs of same-sign charged leptons accompanied by a large number of jets,
+%% two of them arising from $b$ quarks, as illustrated in Figure~\ref{feynman_bprime}.
 
 \subsection{Single and pair production of heavy top quark partners ($T_{5/3}$)}
-The second signal process is based on a model where the Higgs is a pseudo-Goldstone 
-boson~\cite{Contino:2008hi}. This natural, non-supersymmetric solution to the hierarchy 
-problem requires fermionic partners of the top quark. 
-These heavy fermions are coupled to the SM quarks through a $W$ boson,
-preferentially to the third generation.
-We study here the pair (Figure~\ref{feynman_t53pair}) and single (Figure~\ref{feynman_t53single}) 
-productions of the top partners with electric charge $Q_{e}=5/3$, denoted $T_{5/3}$. It must be
-noted that the pair production is kinematically equivalent to the pair production
-of $b^\prime$ heavy quarks, and therefore the production cross sections are the same
-for a given $b^\prime$ or $T_{5/3}$ mass. For the single production, the production 
-cross section depends on the coupling constant $\lambda$ of the t$WT_{5/3}$ vertex.
-In this analysis, we study the cases $\lambda=1$, $\lambda=3$ and $\lambda\ll 1$. In the
-latter case, the single production vanishes and the study corresponds to the pair production
-of $b^\prime$ quarks. 
-Other top partners predicted in~\cite{Contino:2008hi}, such as $T_{2/3} \rightarrow Zt$, would slightly 
-increase the number of expected signal events. Their contribution has
-not been taken into account here.
+
+%% \subsection{Single and pair production of heavy top quark partners ($T_{5/3}$)}
+%% The second signal process is based on a model where the Higgs is a pseudo-Goldstone 
+%% boson~\cite{Contino:2008hi}. This natural, non-supersymmetric solution to the hierarchy 
+%% problem requires fermionic partners of the top quark. 
+%% These heavy fermions are coupled to the SM quarks through a $W$ boson,
+%% preferentially to the third generation.
+%% We study here the pair (Figure~\ref{feynman_t53pair}) and single (Figure~\ref{feynman_t53single}) 
+%% productions of the top partners with electric charge $Q_{e}=5/3$, denoted $T_{5/3}$. It must be
+%% noted that the pair production is kinematically equivalent to the pair production
+%% of $b^\prime$ heavy quarks, and therefore the production cross sections are the same
+%% for a given $b^\prime$ or $T_{5/3}$ mass. For the single production, the production 
+%% cross section depends on the coupling constant $\lambda$ of the t$WT_{5/3}$ vertex.
+%% In this analysis, we study the cases $\lambda=1$, $\lambda=3$ and $\lambda\ll 1$. In the
+%% latter case, the single production vanishes and the study corresponds to the pair production
+%% of $b^\prime$ quarks. 
+%% Other top partners predicted in~\cite{Contino:2008hi}, such as $T_{2/3} \rightarrow Zt$, would slightly 
+%% increase the number of expected signal events. Their contribution has
+%% not been taken into account here.
 
 \subsection{Production of events containing four top quarks}
-The third and last signal process is the production of events containing four top quarks ($t\bar{t}t\bar{t}$). 
-Indeed, many new physics models couple strongly to the top quark, including a new interaction 
-related to electroweak symmetry breaking that couples uniquely to the top quark,
-models where only the top quark is composite, 
-or new coloured heavy particles that decay preferentially
-to top quarks. Many of these new physics models predict an enhanced rate
-of events containing four top quarks with respect to the SM production, which is of the order of 1~fb 
-at 7~\TeV. Therefore, searching for events containing four top quarks could open
-a window on new physics phenomena which do not affect $t\bar{t}$ production, for which
-no deviation from the SM expectations has been observed so far.
 
-This analysis follows the approach described in Ref.~\cite{Degrande:2010kt}, which consists of searching 
-for the experimental signature of a four right-handed top quark contact interaction 
-(Figure~\ref{feynman_4t}). Only the contact interaction operator with right-handed top quarks 
-is considered, as left-handed top operators are already strongly constrained by electroweak precision 
-data \cite{PhysRevD.51.3888}. This analysis therefore does not aim at testing a particular theory 
-but rather a class of theories where new physics manifests itself at low energy as a four right-handed 
-top contact interaction. This is the case for theories predicting new heavy vector particles strongly 
-coupled to the right-handed top quark such as top 
-compositeness~\cite{PhysRevD.78.074026,1126-6708-2008-04-087,1126-6708-2009-05-022} or 
-Randall-Sundrum theories~\cite{Guchait:2007jd}.
+%% \subsection{Production of events containing four top quarks}
+%% The third and last signal process is the production of events containing four top quarks ($t\bar{t}t\bar{t}$). 
+%% Indeed, many new physics models couple strongly to the top quark, including a new interaction 
+%% related to electroweak symmetry breaking that couples uniquely to the top quark,
+%% models where only the top quark is composite, 
+%% or new coloured heavy particles that decay preferentially
+%% to top quarks. Many of these new physics models predict an enhanced rate
+%% of events containing four top quarks with respect to the SM production, which is of the order of 1~fb 
+%% at 7~\TeV. Therefore, searching for events containing four top quarks could open
+%% a window on new physics phenomena which do not affect $t\bar{t}$ production, for which
+%% no deviation from the SM expectations has been observed so far.
+
+%% This analysis follows the approach described in Ref.~\cite{Degrande:2010kt}, which consists of searching 
+%% for the experimental signature of a four right-handed top quark contact interaction 
+%% (Figure~\ref{feynman_4t}). Only the contact interaction operator with right-handed top quarks 
+%% is considered, as left-handed top operators are already strongly constrained by electroweak precision 
+%% data \cite{PhysRevD.51.3888}. This analysis therefore does not aim at testing a particular theory 
+%% but rather a class of theories where new physics manifests itself at low energy as a four right-handed 
+%% top contact interaction. This is the case for theories predicting new heavy vector particles strongly 
+%% coupled to the right-handed top quark such as top 
+%% compositeness~\cite{PhysRevD.78.074026,1126-6708-2008-04-087,1126-6708-2009-05-022} or 
+%% Randall-Sundrum theories~\cite{Guchait:2007jd}.
 
 \subsection{Data and Monte Carlo samples}\label{sect:samples}
 
-\subsection{Data sample}
-The data used in this search were collected by the ATLAS detector~\cite{1748-0221-3-08-S08003} 
-at the CERN LHC in 2011, using an
-unprescaled single electron or muon trigger. The data sample corresponds to an integrated luminosity of
-$4.7\pm0.2~\ifb{}$~\cite{Aad:2011dr,ATLAS-CONF-2011-116}.
+The search presented in this section was performed using data collected by the ATLAS detector in 2011 at a center-of-mass-energy of $7 TeV$.~\cite{1748-0221-3-08-S08003}
+A total integrated luminisoty of $4.7\pm0.2~\ifb{}$~\cite{Aad:2011dr,ATLAS-CONF-2011-116} was used, and the data was selected using triggers on single electrons or muons.
 
-\subsection{Monte Carlo samples}\label{sect:MCsamples}
-Monte Carlo simulation samples have been used to develop and validate the analysis procedures,
-calculate the acceptance for signal events and to evaluate the contributions from some background
-processes. The ATLAS software uses {\sc Geant4}~\cite{Agostinelli:2002hh} 
-to simulate the detector response~\cite{Aad:2010ah}. Unless explicitely stated,
-all simulated samples were generated with the {\sc Cteq6l1}~\cite{Pumplin:2002vw} parton distribution 
-functions (PDF).
-The generation of simulated samples includes the effect of multiple $pp$ interactions per bunch
-crossing. Events are reweighted so that the distribution of the number of $pp$ collisions occurring
-in addition to the hard scatter process matches that in data.
 
-The generation of signal events for the $b^\prime$ search has been done at leading-order (LO) with
-{\sc Pythia 6.425}~\cite{PYTHIA6.4} and the LO$^{**}$ PDF~\cite{Sherstnev:2008dm}.
-The main production mode is through the dominant lowest order
-$gg$ and $q\bar{q}$ interactions, and the heavy $b^\prime$ are produced in pairs, for different
-mass values, in the range 300-800~\GeV{} in steps of 50~\GeV{}. 
-The corresponding cross sections have been rescaled to the ones calculated 
-using {\sc Hathor} 1.2~\cite{Aliev:2010zk} to approximate next-to-next-to leading 
-order (NNLO).
+%% \subsection{Data and Monte Carlo samples}\label{sect:samples}
 
-The single production of $T_{5/3}$ was simulated at LO using {\sc MadGraph}~4~\cite{Alwall:2007st} and hadronized with 
-{\sc Pythia}~\cite{PYTHIA6.4} (as this model is not implemented in
-{\sc MadGraph} we used a custom implementation). Samples with two different
-values of the coupling constant $(\lambda=1,3$)\footnote{This study is limited to two 
-values: $\lambda=1$ because it is the natural coupling value, and $\lambda=3$ because it is the most
-pertinent value for theorists to test top compositeness.} have been generated with
-masses in the range 450-750~\GeV{}, in steps of 100~\GeV{}. In order to reduce
-the time needed to simulate these large Monte Carlo samples, a fast detector simulation has been used for
-the $T_{5/3}$ samples to replace the {\sc Geant4}-based full simulation. 
-The fast simulation used is {\sc AtlFastII}~\cite{Richter-Was:683751}, which employs 
-{\sc FastCaloSim}~\cite{Yamanaka:1322202} for the
-simulation of electromagnetic and hadronic showers in the calorimeter.
+%% \subsection{Data sample}
+%% The data used in this search were collected by the ATLAS detector~\cite{1748-0221-3-08-S08003} 
+%% at the CERN LHC in 2011, using an
+%% unprescaled single electron or muon trigger. The data sample corresponds to an integrated luminosity of
+%% $4.7\pm0.2~\ifb{}$~\cite{Aad:2011dr,ATLAS-CONF-2011-116}.
 
-The {\sc MadGraph} 5 model used for the generation of four top quarks events has been provided by 
-the authors of Ref.~\cite{Degrande:2010kt}. In this model, the contact interaction is not directly implemented. 
-Instead, a new heavy colorless vector particle ($\rho$) coupling to the right-handed top quark is introduced. 
-This model has two parameters in addition to those in the SM: the coupling constant between 
-the top quark and $\rho$ ($g_\rho$), and the mass of $\rho$ ($m_\rho$). The values of the two new
-parameters are arbitrary, provided that $m_\rho$ is sufficiently large to be in the contact interaction 
-regime. The values used in this analysis are the same as the ones used in \cite{Degrande:2010kt}: 
-$g_\rho=100\sqrt{8\pi}$ and $m_\rho=100$~TeV. The production cross section computed by {\sc MadGraph} 
-using these values is 12.6~fb. Note that only the cross section depends on the parameters, while
-the event kinematics do not, as long as the parameters leave the model in the contact interaction regime.
+Background predictions were evaluated using a combination of state-of-the-art Monte Carlo simulation and data-driven techniques which estimate backgrounds directly using measured data.
+Monte Carlo samples were used, when possible, to motivate analysis strategy and to directly estimate the contribution of signals and a number of backgrounds to the signal region, including acceptance efficiencies and the effect of systematic uncertainties.
+Geant4 {\sc Geant4}~\cite{Agostinelli:2002hh} interfaced with ATLAS software was used to simulate the response of the ATLAS detector,
+Monte Carlo simulations include the effect of parton distribution functions when describing $p-p$ collissions, which were calculated using {\sc Cteq6l1}~\cite{Pumplin:2002vw} parton distribution functions (PDF).
+
+%% \subsection{Monte Carlo samples}\label{sect:MCsamples}
+%% Monte Carlo simulation samples have been used to develop and validate the analysis procedures,
+%% calculate the acceptance for signal events and to evaluate the contributions from some background
+%% processes. The ATLAS software uses {\sc Geant4}~\cite{Agostinelli:2002hh} 
+%% to simulate the detector response~\cite{Aad:2010ah}. Unless explicitely stated,
+%% all simulated samples were generated with the {\sc Cteq6l1}~\cite{Pumplin:2002vw} parton distribution 
+%% functions (PDF).
+%% The generation of simulated samples includes the effect of multiple $pp$ interactions per bunch
+%% crossing. Events are reweighted so that the distribution of the number of $pp$ collisions occurring
+%% in addition to the hard scatter process matches that in data.
+
+%% The generation of signal events for the $b^\prime$ search has been done at leading-order (LO) with
+%% {\sc Pythia 6.425}~\cite{PYTHIA6.4} and the LO$^{**}$ PDF~\cite{Sherstnev:2008dm}.
+%% The main production mode is through the dominant lowest order
+%% $gg$ and $q\bar{q}$ interactions, and the heavy $b^\prime$ are produced in pairs, for different
+%% mass values, in the range 300-800~\GeV{} in steps of 50~\GeV{}. 
+%% The corresponding cross sections have been rescaled to the ones calculated 
+%% using {\sc Hathor} 1.2~\cite{Aliev:2010zk} to approximate next-to-next-to leading 
+%% order (NNLO).
+
+%% The single production of $T_{5/3}$ was simulated at LO using {\sc MadGraph}~4~\cite{Alwall:2007st} and hadronized with 
+%% {\sc Pythia}~\cite{PYTHIA6.4} (as this model is not implemented in
+%% {\sc MadGraph} we used a custom implementation). Samples with two different
+%% values of the coupling constant $(\lambda=1,3$)\footnote{This study is limited to two 
+%% values: $\lambda=1$ because it is the natural coupling value, and $\lambda=3$ because it is the most
+%% pertinent value for theorists to test top compositeness.} have been generated with
+%% masses in the range 450-750~\GeV{}, in steps of 100~\GeV{}. In order to reduce
+%% the time needed to simulate these large Monte Carlo samples, a fast detector simulation has been used for
+%% the $T_{5/3}$ samples to replace the {\sc Geant4}-based full simulation. 
+%% The fast simulation used is {\sc AtlFastII}~\cite{Richter-Was:683751}, which employs 
+%% {\sc FastCaloSim}~\cite{Yamanaka:1322202} for the
+%% simulation of electromagnetic and hadronic showers in the calorimeter.
+
+%% The {\sc MadGraph} 5 model used for the generation of four top quarks events has been provided by 
+%% the authors of Ref.~\cite{Degrande:2010kt}. In this model, the contact interaction is not directly implemented. 
+%% Instead, a new heavy colorless vector particle ($\rho$) coupling to the right-handed top quark is introduced. 
+%% This model has two parameters in addition to those in the SM: the coupling constant between 
+%% the top quark and $\rho$ ($g_\rho$), and the mass of $\rho$ ($m_\rho$). The values of the two new
+%% parameters are arbitrary, provided that $m_\rho$ is sufficiently large to be in the contact interaction 
+%% regime. The values used in this analysis are the same as the ones used in \cite{Degrande:2010kt}: 
+%% $g_\rho=100\sqrt{8\pi}$ and $m_\rho=100$~TeV. The production cross section computed by {\sc MadGraph} 
+%% using these values is 12.6~fb. Note that only the cross section depends on the parameters, while
+%% the event kinematics do not, as long as the parameters leave the model in the contact interaction regime.
 
 Several background processes contribute to the final state of same-sign dileptons with associated jets.
 The largest backgrounds --- including top-quark pair production, $W+$jets and single top quark production ---
