@@ -200,6 +200,8 @@ Background predictions were evaluated using a combination of state-of-the-art Mo
 Monte Carlo samples were used, when possible, to motivate analysis strategy and to directly estimate the contribution of signals and a number of backgrounds to the signal region, including acceptance efficiencies and the effect of systematic uncertainties.
 Geant4 {\sc Geant4}~\cite{Agostinelli:2002hh} interfaced with ATLAS software was used to simulate the response of the ATLAS detector,
 Monte Carlo simulations include the effect of parton distribution functions when describing $p-p$ collissions, which were calculated using {\sc Cteq6l1}~\cite{Pumplin:2002vw} parton distribution functions (PDF).
+The simulated events attempt to model the effects of pile-up by including multiple $pp$ interactions per simulated bunch crossing.
+Event-by-event weights are included to match the simulated pile-up distribution to the distribution measured in data.
 
 %% \subsection{Monte Carlo samples}\label{sect:MCsamples}
 %% Monte Carlo simulation samples have been used to develop and validate the analysis procedures,
@@ -212,6 +214,11 @@ Monte Carlo simulations include the effect of parton distribution functions when
 %% crossing. Events are reweighted so that the distribution of the number of $pp$ collisions occurring
 %% in addition to the hard scatter process matches that in data.
 
+$b^\prime$ signal events were generated at leading-order using {\sc Pythia 6.425}~\cite{PYTHIA6.4} and the LO$^{**}$ PDF~\cite{Sherstnev:2008dm}.
+However, the cross-sections of $b^\prime$ samples were rescaled to match next-to-leading-order calculations, which were measured using {\sc Hathor} 1.2~\cite{Aliev:2010zk}.
+Signal samples were generated for mass points in the range 300-800~\GeV{} in steps of 50~\GeV{}.
+
+
 %% The generation of signal events for the $b^\prime$ search has been done at leading-order (LO) with
 %% {\sc Pythia 6.425}~\cite{PYTHIA6.4} and the LO$^{**}$ PDF~\cite{Sherstnev:2008dm}.
 %% The main production mode is through the dominant lowest order
@@ -220,6 +227,12 @@ Monte Carlo simulations include the effect of parton distribution functions when
 %% The corresponding cross sections have been rescaled to the ones calculated 
 %% using {\sc Hathor} 1.2~\cite{Aliev:2010zk} to approximate next-to-next-to leading 
 %% order (NNLO).
+
+Both single production and pair production samples of $T_{5/3}$ were generated at leading order using {\sc MadGraph}~4~\cite{Alwall:2007st}.
+The decay chains of these samples were hadronized using {\sc Pythia}~\cite{PYTHIA6.4}.
+Masses in the range of 450-750~\GeV{} in steps of 100~\GeV{} were generated, and the pair production samples were generated for several values of the $tWT_{\frac{5}{3}}$ coupling constant.
+In order to reduce the total computation time for the generation of the many $T_{5/3}$ samples, a fast detector simulation was used in place of the full {\sc Geant4}-based simulation. 
+The fast simulation used is {\sc AtlFastII}~\cite{Richter-Was:683751}, which uses {\sc FastCaloSim}~\cite{Yamanaka:1322202} for the simulation of electromagnetic and hadronic showers in the calorimeters.
 
 %% The single production of $T_{5/3}$ was simulated at LO using {\sc MadGraph}~4~\cite{Alwall:2007st} and hadronized with 
 %% {\sc Pythia}~\cite{PYTHIA6.4} (as this model is not implemented in
@@ -234,6 +247,8 @@ Monte Carlo simulations include the effect of parton distribution functions when
 %% {\sc FastCaloSim}~\cite{Yamanaka:1322202} for the
 %% simulation of electromagnetic and hadronic showers in the calorimeter.
 
+The {\sc MadGraph} 5 model... HERE
+
 %% The {\sc MadGraph} 5 model used for the generation of four top quarks events has been provided by 
 %% the authors of Ref.~\cite{Degrande:2010kt}. In this model, the contact interaction is not directly implemented. 
 %% Instead, a new heavy colorless vector particle ($\rho$) coupling to the right-handed top quark is introduced. 
@@ -245,10 +260,11 @@ Monte Carlo simulations include the effect of parton distribution functions when
 %% using these values is 12.6~fb. Note that only the cross section depends on the parameters, while
 %% the event kinematics do not, as long as the parameters leave the model in the contact interaction regime.
 
-Several background processes contribute to the final state of same-sign dileptons with associated jets.
-The largest backgrounds --- including top-quark pair production, $W+$jets and single top quark production ---
-are estimated from data, as described in detail below (thereafter referred to as ``data-driven''). Additional
-background estimates are derived using simulated Monte Carlo samples as listed here:
+%% Several background processes contribute to the final state of same-sign dileptons with associated jets.
+%% The largest backgrounds --- including top-quark pair production, $W+$jets and single top quark production ---
+%% are estimated from data, as described in detail below (thereafter referred to as ``data-driven''). Additional
+%% background estimates are derived using simulated Monte Carlo samples as listed here:
+
 \begin{itemize}
 \item Di-boson production:
   \begin{itemize}
@@ -270,79 +286,81 @@ background estimates are derived using simulated Monte Carlo samples as listed h
   are rescaled to NLO calculations~\cite{Campbell:2012dh,Garzelli:2011is}.
 \end{itemize}
 
-\subsection{Object reconstruction}\label{sect:objects}
-From the various signals recorded in the ATLAS detector after the $pp$ collision, we reconstruct
-physics objects that are candidates for jets, electrons and muons. The primary vertex is defined
-as the vertex with the highest summed track $\pT^2$, each having $\pT>0.4 \GeV{}$.
+%% \subsection{Object reconstruction}\label{sect:objects}
+%% From the various signals recorded in the ATLAS detector after the $pp$ collision, we reconstruct
+%% physics objects that are candidates for jets, electrons and muons. The primary vertex is defined
+%% as the vertex with the highest summed track $\pT^2$, each having $\pT>0.4 \GeV{}$.
 
-Jets are reconstucted in the calorimeter using the anti-$k_t$~\cite{Cacciari:2008gp} algorithm with
-a distance parameter of 0.4. Jets are required to satisfy $\pt>25 \GeV$ and $|\eta|<2.5$. They are
-calibrated to the hadronic energy scale using $\pt$- and $\eta$-dependent corrections derived from
-collision and test-beam data as well as simulation~\cite{Aad:2011he}. To reject jets from pileup, 
-a quantity called jet-vertex-fraction, $JVF$, is defined as the ratio of the sum
-of the $\pt$ of all tracks, with $\pt>0.4~\GeV{}$, within the jet that originate from the primary 
-vertex associated to the hard-scattering collision, over the sum of the $\pt$ of all tracks 
-matched to the jet. Jets with associated tracks are required to have $JVF>0.75$; we also
-accept jets without any associated tracks. In order to avoid reconstructing electrons as jets,
-the latter are required to have an angular separation 
-$\Delta R(\mathrm{jet},e)$\footnote{$\Delta R=\sqrt{\Delta\eta^2+\Delta\phi^2}$ is the distance 
-between two objects, in
-the plane $\eta-\phi$, where $\eta$ is the pseudo-rapidity and $\phi$ the angle in the transverse
-plane.} of at least 0.2.
+%% Jets are reconstucted in the calorimeter using the anti-$k_t$~\cite{Cacciari:2008gp} algorithm with
+%% a distance parameter of 0.4. Jets are required to satisfy $\pt>25 \GeV$ and $|\eta|<2.5$. They are
+%% calibrated to the hadronic energy scale using $\pt$- and $\eta$-dependent corrections derived from
+%% collision and test-beam data as well as simulation~\cite{Aad:2011he}. To reject jets from pileup, 
+%% a quantity called jet-vertex-fraction, $JVF$, is defined as the ratio of the sum
+%% of the $\pt$ of all tracks, with $\pt>0.4~\GeV{}$, within the jet that originate from the primary 
+%% vertex associated to the hard-scattering collision, over the sum of the $\pt$ of all tracks 
+%% matched to the jet. Jets with associated tracks are required to have $JVF>0.75$; we also
+%% accept jets without any associated tracks. In order to avoid reconstructing electrons as jets,
+%% the latter are required to have an angular separation 
+%% $\Delta R(\mathrm{jet},e)$\footnote{$\Delta R=\sqrt{\Delta\eta^2+\Delta\phi^2}$ is the distance 
+%% between two objects, in
+%% the plane $\eta-\phi$, where $\eta$ is the pseudo-rapidity and $\phi$ the angle in the transverse
+%% plane.} of at least 0.2.
 
-Jets from the decay of heavy flavor hadrons are selected by a multivariate $b$-tagging 
-algorithm~\cite{ATLAS-CONF-2012-043} at an operating point of 70\% efficiency for $b$-jets, which
-corresponds to a
-mis-tag rate of less than 1\%, as determined in simulated $t\bar{t}$ events.
+%% Jets from the decay of heavy flavor hadrons are selected by a multivariate $b$-tagging 
+%% algorithm~\cite{ATLAS-CONF-2012-043} at an operating point of 70\% efficiency for $b$-jets, which
+%% corresponds to a
+%% mis-tag rate of less than 1\%, as determined in simulated $t\bar{t}$ events.
 
-Electrons are required to have a shower shape in the electromagnetic calorimeter consistent with
-expectation, as well as a good quality track pointing to the cluster in the calorimeter.
-Candidate electrons with transverse energy $\ET>25 \GeV$ are required to pass the ``tight''
-ATLAS electron quality cuts~\cite{Aad:2011mk}, and to fall inside a well instrumented region
-of the detector ($|\eta_\mathrm{cluster}|<2.47$, excluding $1.37<|\eta_\mathrm{cluster}|<1.52$). 
-In addition, \ET{} and $\eta_\mathrm{cluster}$ dependent isolation cuts are imposed on the transverse 
-energy in a cone of $\Delta R = 0.2$ around the electron ($\ET^{\Delta R=0.2}$) and on the total 
-transverse momentum of all tracks within $\Delta R = 0.3$ of the electron ($\pT^{\Delta R=0.3}$).
-The cuts are chosen such that the efficiency of each isolation requirement is 90\%. The values used
-in the cuts range from 1.4~\GeV{} to 3.7~\GeV{} for $\ET^{\Delta R=0.2}$ and from 1~\GeV{} to 1.05~\GeV{}
-for $\pT^{\Delta R=0.3}$. Electrons are also required to be well 
-isolated from jets ($\Delta R(e,\mathrm{jet})>0.4$).
+%% Electrons are required to have a shower shape in the electromagnetic calorimeter consistent with
+%% expectation, as well as a good quality track pointing to the cluster in the calorimeter.
+%% Candidate electrons with transverse energy $\ET>25 \GeV$ are required to pass the ``tight''
+%% ATLAS electron quality cuts~\cite{Aad:2011mk}, and to fall inside a well instrumented region
+%% of the detector ($|\eta_\mathrm{cluster}|<2.47$, excluding $1.37<|\eta_\mathrm{cluster}|<1.52$). 
+%% In addition, \ET{} and $\eta_\mathrm{cluster}$ dependent isolation cuts are imposed on the transverse 
+%% energy in a cone of $\Delta R = 0.2$ around the electron ($\ET^{\Delta R=0.2}$) and on the total 
+%% transverse momentum of all tracks within $\Delta R = 0.3$ of the electron ($\pT^{\Delta R=0.3}$).
+%% The cuts are chosen such that the efficiency of each isolation requirement is 90\%. The values used
+%% in the cuts range from 1.4~\GeV{} to 3.7~\GeV{} for $\ET^{\Delta R=0.2}$ and from 1~\GeV{} to 1.05~\GeV{}
+%% for $\pT^{\Delta R=0.3}$. Electrons are also required to be well 
+%% isolated from jets ($\Delta R(e,\mathrm{jet})>0.4$).
 
-Muons are required to have transverse momentum $\pt>20 \GeV$, to pass standard ATLAS muon quality
-cuts~\cite{ATLAS-CONF-2011-063}, to be well measured in both the inner detector and the muon 
-spectrometer and to fall within $|\eta|<2.5$. In addition, isolation cuts require the transverse energy 
-within a cone of $\Delta R = 0.2$ and the total transverse momentum of all tracks within $\Delta R = 0.3$
-of the muon candidate to be less than 4~\GeV{} and 2.5~\GeV{}, respectively. 
-Muons are also required to be well isolated from jets ($\Delta R(\mu,\mathrm{jet})>0.4$).
-Events that contain two muons which could originate from a cosmic muon passing
-through the center of the detector are rejected, when the angle between them in the transverse plane
-is larger than 3.1~rad. Events are also rejected if there is a candidate electron that shares a track
-with a candidate muon.
+%% Muons are required to have transverse momentum $\pt>20 \GeV$, to pass standard ATLAS muon quality
+%% cuts~\cite{ATLAS-CONF-2011-063}, to be well measured in both the inner detector and the muon 
+%% spectrometer and to fall within $|\eta|<2.5$. In addition, isolation cuts require the transverse energy 
+%% within a cone of $\Delta R = 0.2$ and the total transverse momentum of all tracks within $\Delta R = 0.3$
+%% of the muon candidate to be less than 4~\GeV{} and 2.5~\GeV{}, respectively. 
+%% Muons are also required to be well isolated from jets ($\Delta R(\mu,\mathrm{jet})>0.4$).
+%% Events that contain two muons which could originate from a cosmic muon passing
+%% through the center of the detector are rejected, when the angle between them in the transverse plane
+%% is larger than 3.1~rad. Events are also rejected if there is a candidate electron that shares a track
+%% with a candidate muon.
 
-The missing transverse momentum (denoted \met{}) is calculated using calorimeter clusters and corrected
-for the presence of electrons, muons and jets~\cite{Aad:2012re}.
+%% The missing transverse momentum (denoted \met{}) is calculated using calorimeter clusters and corrected
+%% for the presence of electrons, muons and jets~\cite{Aad:2012re}.
 
-\subsection{Event selection}\label{sect:selection}
-All events used in the analysis are required to have a primary vertex
-determined from at least five tracks.
-Events in the signal region are selected with the following criteria:
-\begin{itemize}
-\item Events must contain at least two isolated leptons of the same charge. In events with more than one
-  same-sign pair, the pairs are sorted according to the leading lepton
-  \pT, then by the subleading lepton \pT. The first pair is chosen. An additional cut
-  is performed on the leading lepton of the pair, requiring it to have \pT\ $>25$ \GeV{}. At this
-  stage, each event is categorized as being a $ee$, $e\mu$ or $\mu\mu$ candidate, depending on the
-  selected lepton flavors. At least one of the selected leptons must match the one that triggered
-  the readout of the event.
-\item Events must contain at least two jets, including at least one $b$-tagged jet.
-\item In the $ee$ or $\mu\mu$ channel, the invariant mass of the two selected leptons must exceed 15 \GeV{} and be out of the $Z$-boson mass window; i.e. $|m_{\ell\ell} - m_Z| > 10 \GeV$.
-\item The \met{} must be greater than 40 \GeV{}.
-\item The \HT{}, defined as the scalar sum of the \pt\  of all leptons and jets, must exceed 550 \GeV{}.
-\end{itemize}
-These selection criteria are the result of an optimization, performed separately for the three different
-signals, varying the requirements on \HT{}, on the number of jets and on the number of $b$-jets.
-Finally, a common selection has been defined. The final acceptance for the different
-signals is shown in Table~\ref{effsignal}.
+%% \subsection{Event selection}\label{sect:selection}
+%% All events used in the analysis are required to have a primary vertex
+%% determined from at least five tracks.
+%% Events in the signal region are selected with the following criteria:
+%% \begin{itemize}
+%% \item Events must contain at least two isolated leptons of the same charge. In events with more than one
+%%   same-sign pair, the pairs are sorted according to the leading lepton
+%%   \pT, then by the subleading lepton \pT. The first pair is chosen. An additional cut
+%%   is performed on the leading lepton of the pair, requiring it to have \pT\ $>25$ \GeV{}. At this
+%%   stage, each event is categorized as being a $ee$, $e\mu$ or $\mu\mu$ candidate, depending on the
+%%   selected lepton flavors. At least one of the selected leptons must match the one that triggered
+%%   the readout of the event.
+%% \item Events must contain at least two jets, including at least one $b$-tagged jet.
+%% \item In the $ee$ or $\mu\mu$ channel, the invariant mass of the two selected leptons must exceed 15 \GeV{} and be out of the $Z$-boson mass window; i.e. $|m_{\ell\ell} - m_Z| > 10 \GeV$.
+%% \item The \met{} must be greater than 40 \GeV{}.
+%% \item The \HT{}, defined as the scalar sum of the \pt\  of all leptons and jets, must exceed 550 \GeV{}.
+%% \end{itemize}
+%% These selection criteria are the result of an optimization, performed separately for the three different
+%% signals, varying the requirements on \HT{}, on the number of jets and on the number of $b$-jets.
+%% Finally, a common selection has been defined. The final acceptance for the different
+%% signals is shown in Table~\ref{effsignal}.
+
+
 
 % \begin{table}[t]
 %   \begin{center}
