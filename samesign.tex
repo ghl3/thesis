@@ -1443,21 +1443,42 @@ Uncertainties on the estimate of background coming from fake leptons are 50\% fo
 For the electron case, the uncertainty was estimated by using different {\it loose} electron definitions. For the muon case, it was estimated by changing the definition of the multijet enriched region, and using the number of jets, instead of the leading jet \pT{}, for the weight parametrization.
 
 
+%% \subsection{Systematic uncertainties}\label{sect:syst}
+%% Several systematic uncertainties have been considered, and their estimates are summarized below.
 
+%% \subsection{Uncertainties affecting the Monte Carlo samples}
+%% Uncertainties in the jet and lepton efficiency,
+%% energy or momentum calibration, and resolution lead to systematic uncertainties on the signal
+%% and background acceptance. Their effect is evaluated by varying each parameter independently
+%% within its uncertainty and recomputing the yield of each sample.
 
+%% The uncertainty on the luminosity has been estimated from van der Meer 
+%% scans and is 3.9\%~\cite{Aad:2011dr,ATLAS-CONF-2011-116}. 
+%% Uncertainties on Monte Carlo background cross sections depend on the process:
+%% 30\% for the $t\bar{t}W$(+jet) sample, 34\% for the $WZ$ and $ZZ$ samples,
+%% $+35$\% and $-24$\% for the $t\bar{t}W^{\pm}W^{\mp}$ sample, and
+%% 50\% for the $W^{\pm}W^{\pm}$+2 jets
+%% and $t\bar{t}Z$(+jet) samples. They are the largest systematic uncertainties for the
+%% backgrounds estimated from simulation.
 
+%% \subsection{Uncertainties affecting the data-driven backgrounds}
 
+%% The uncertainty on the overall scale of the charge mis-identification background in the signal region 
+%% is derived  from a comparison of the mis-id rate extracted by the three different methods already
+%% discussed. Based on this comparison, an overall uncertainty of 12\% is attributed to the mis-id background.
 
-
-
+%% Uncertainties on the estimate of background coming from fake leptons are 50\% for the $ee$ 
+%% channel, 40\% for the $e\mu$ channel, and 30\% for the $\mu\mu$ channel.
+%% For the electron case, the uncertainty was estimated by using different {\it loose} electron 
+%% definitions. For the muon case, it was estimated by changing the definition of the multijet 
+%% enriched region, and using the number of jets, instead of the leading jet \pT{}, for the
+%% weight parametrization.
 
 
 \subsection{Results}\label{sect:results}
 After applying the selection to the data, we find four events in the signal region, with $5.6\pm1.7$ expected background events. 
 The details of the observed number of events are shown in Table~\ref{finalyield}, as well as the total expected number of background events. 
 No significant excess is observed in the data, therefore limits on the signals are computed in the following section.
-
-INCLUDE THE DETAILED SYSTEMATIC NUMBERS
 
 The distributions of the \met{} and \HT{} variables observed in data are compared to the background estimates in Figure~\ref{fig:signal} and show a good agreement.
 
@@ -1503,37 +1524,6 @@ and $\mu\mu$ (e) channels. Distribution of \HT{} after applying the selection ex
 statistical uncertainties on the background while the external shaded areas correspond to the total uncertainties. For the Monte Carlo samples, systematic uncertainties include only the production cross section uncertainties.}\label{fig:signal}
 \end{figure}
 
-
-%% \subsection{Systematic uncertainties}\label{sect:syst}
-%% Several systematic uncertainties have been considered, and their estimates are summarized below.
-
-%% \subsection{Uncertainties affecting the Monte Carlo samples}
-%% Uncertainties in the jet and lepton efficiency,
-%% energy or momentum calibration, and resolution lead to systematic uncertainties on the signal
-%% and background acceptance. Their effect is evaluated by varying each parameter independently
-%% within its uncertainty and recomputing the yield of each sample.
-
-%% The uncertainty on the luminosity has been estimated from van der Meer 
-%% scans and is 3.9\%~\cite{Aad:2011dr,ATLAS-CONF-2011-116}. 
-%% Uncertainties on Monte Carlo background cross sections depend on the process:
-%% 30\% for the $t\bar{t}W$(+jet) sample, 34\% for the $WZ$ and $ZZ$ samples,
-%% $+35$\% and $-24$\% for the $t\bar{t}W^{\pm}W^{\mp}$ sample, and
-%% 50\% for the $W^{\pm}W^{\pm}$+2 jets
-%% and $t\bar{t}Z$(+jet) samples. They are the largest systematic uncertainties for the
-%% backgrounds estimated from simulation.
-
-%% \subsection{Uncertainties affecting the data-driven backgrounds}
-
-%% The uncertainty on the overall scale of the charge mis-identification background in the signal region 
-%% is derived  from a comparison of the mis-id rate extracted by the three different methods already
-%% discussed. Based on this comparison, an overall uncertainty of 12\% is attributed to the mis-id background.
-
-%% Uncertainties on the estimate of background coming from fake leptons are 50\% for the $ee$ 
-%% channel, 40\% for the $e\mu$ channel, and 30\% for the $\mu\mu$ channel.
-%% For the electron case, the uncertainty was estimated by using different {\it loose} electron 
-%% definitions. For the muon case, it was estimated by changing the definition of the multijet 
-%% enriched region, and using the number of jets, instead of the leading jet \pT{}, for the
-%% weight parametrization.
 
 %% \subsection{Results}\label{sect:results}
 %% After applying the selection to the data, we find four events in the signal region, with $5.6\pm1.7$ 
@@ -1593,7 +1583,14 @@ statistical uncertainties on the background while the external shaded areas corr
 %% cross section uncertainties.}\label{fig:signal}
 %% \end{figure}
 
+
 \subsection{Interpretation of the results}\label{sect:interpretation}
+
+Each model is studied using a likelihood function that models the number of expected events in the three signal regions, including the presents of both signal and background and the effect of systematic uncertainties.
+For models that include the mass of a particle as a free parameter, several likelihood functions are constructed, each built to model a specific mass point.
+Parameters representing the total cross-section of each signal process at each mass point are included in the likelihood function, and statistical tests are run to place limits on the size of these parameters.
+For each model studied, upper limits at 95\% C.L. on the cross sections of the hypothetical processes are derived using the $CL_S$ method~\cite{Junk:1999kv,0954-3899-28-10-313}.
+Systematic uncertainties enter the likelihood as parameters constrained by gaussian distributions which allow the expected number of signal or background events to fluctuate upwards or downwards coherently across the three signal regions.
 
 %% \subsection{Interpretation of the results}\label{sect:interpretation}
 %% For each model, upper limits at 95\% C.L. on the cross sections of the hypothetical
@@ -1607,6 +1604,11 @@ statistical uncertainties on the background while the external shaded areas corr
 %% log-normal distribution and the results are very similar.}, in order to avoid negative contributions, 
 %% in particular for the samples which have a very low yield and a large statistical uncertainty.
 
+
+The 95\% C.L. upper limits on the production cross sections of a pair of $b^\prime$ or $T_{5/3}$ are extracted for each hypothesis of mass of the new particle.
+A model is considered to be excluded when the 95\% confidence limit on the upper limit of the cross-section is less than the model's nominal cross-section.
+Comparing these limits to the predicted cross section as a function of the mass, as can be seen in Figure~\ref{limit:bprime}, we set a lower limit of 0.67~\TeV{} on the mass of the $b^\prime$ quark and of the $T_{5/3}$ in the case $\lambda\ll1$, with an expected limit of 0.64~\TeV{}.
+
 %% \subsection{Pair production of $b^\prime$ and $T_{5/3}$}
 %% The 95\% C.L. upper limits on the production cross sections of a pair of $b^\prime$ or $T_{5/3}$ 
 %% are extracted
@@ -1615,24 +1617,29 @@ statistical uncertainties on the background while the external shaded areas corr
 %% 0.67~\TeV{} on the mass of the $b^\prime$ quark and of the $T_{5/3}$ in the case $\lambda\ll1$, with an
 %% expected limit of 0.64~\TeV{}.
 
-%% \begin{figure}[t]  
-%%   \begin{center}
-%%     \includegraphics[width=0.8\textwidth]{figures/samesign/Limit_bprime_final_obs_CS}
-%%     \caption{Expected and observed upper limits on the pair production cross section 
-%%         of the $b^\prime$ and $T_{5/3}$, as a function of their mass.}
-%%     \label{limit:bprime}
+\begin{figure}[t]  
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{figures/samesign/Limit_bprime_final_obs_CS}
+    \caption{Expected and observed upper limits on the pair production cross section 
+        of the $b^\prime$ and $T_{5/3}$, as a function of their mass.}
+    \label{limit:bprime}
 
-%%     \vspace{1cm}
+    \vspace{1cm}
 
-%%     \includegraphics[width=0.8\textwidth]{figures/samesign/limit_observed_T53}
-%%     \caption{Expected and observed lower limits on the $T_{5/3}$ signal, as a function 
-%%         of the $T_{5/3}$ mass and the coupling constant $\lambda$. The shaded area  is excluded 
-%%         at 95\% C.L.}
-%%     \label{limit:t53}
-%%   \end{center}
-%% \end{figure}
+    \includegraphics[width=0.8\textwidth]{figures/samesign/limit_observed_T53}
+    \caption{Expected and observed lower limits on the $T_{5/3}$ signal, as a function 
+        of the $T_{5/3}$ mass and the coupling constant $\lambda$. The shaded area  is excluded 
+        at 95\% C.L.}
+    \label{limit:t53}
+  \end{center}
+\end{figure}
+
 
 \subsection{Single and pair production of the $T_{5/3}$}
+
+Contributions from both the single and pair production of $T_{5/3}$ are included when the coupling constants  $\lambda=1$ and $\lambda=3$ are studied.
+The 95\% C.L. upper limits on the production cross sections are used to derive lower limits on the mass of the $T_{5/3}$ at 0.68~\TeV{} for $\lambda=1$ and 0.70~\TeV{} for $\lambda=3$, with expected limits of 0.64~\TeV{} and 0.66~\TeV{}, respectively. 
+These results, combined with the pair production result, are summarized in Figure~\ref{limit:t53}.
 
 %% \subsection{Single and pair production of the $T_{5/3}$}
 %% For the two cases $\lambda=1$ and $\lambda=3$, both the single and pair production of the $T_{5/3}$
@@ -1641,7 +1648,17 @@ statistical uncertainties on the background while the external shaded areas corr
 %% $\lambda=3$, with expected limits of 0.64~\TeV{} and 0.66~\TeV{}, respectively. These results, combined with
 %% the pair production result, are summarized in Figure~\ref{limit:t53}.
 
+
 \subsection{Four top quarks production}
+
+An upper limit at 95\% C.L. of 61~fb is derived for the production cross section of four top quarks events through a contact interaction, with an expected limit of 90~fb.
+%Because the final state produced by this model is kinematically similar to the four-tops final state produced in the Standard Model, this result can be used to place an approximate limit on the Standard
+This result can be used as a benchmark of comparison for other models that lead to four-top interactions provided that the kinematics of their final states are comparable.
+
+
+%This result can be extrapolated to other models, as long as the kinematical properties of the produced events are similar to the ones generated by the four-top quark contact interaction. 
+%In particular, a study at parton level of SM four-top quark events has shown that the global acceptance of this SM signal is only about 15\% lower than the acceptance for the four top quarks signal considered in this analysis. 
+%Therefore, one can set an upper limit on the SM four top quarks production of the same order of magnitude.
 
 %% \subsection{Four top quarks production}
 %% An upper limit
@@ -1655,6 +1672,15 @@ statistical uncertainties on the background while the external shaded areas corr
 %% SM four top quarks production of the same order of magnitude.
 
 \subsection{Conclusion}\label{sect:conclusion}
+
+This section described a search for exotic processes in the same-sign dilepton plus jets signature with the ATLAS detector at LHC at $\sqrt{s}=7 \TeV$.
+The searched used the full 2011 ATLAS $pp$ dataset, and selected events by requiring at least two jets, including at least one $b$-tagged jet, $\met>40 \GeV$ and $\HT>550 \GeV$, where \HT{} denotes the scalar sum of the \pT{} of all leptons and jets. 
+
+Four events have been observed in this signal region with an expected background of $5.6\pm1.7$ events. 
+This result has been interpreted in terms of several new physics models, including the pair production of down-type heavy quarks ($b^\prime$), the single and pair production of heavy quark partners ($T_{5/3}$), and the production of events containing four top quarks through a four-top quark contact interaction. 
+The various limits which have been set are summarized in Table~\ref{limit:all}.
+
+
 
 %% \subsection{Conclusion}\label{sect:conclusion}
 %% In conclusion, a search for exotic processes in the same-sign dilepton plus jets signature with the
@@ -1673,29 +1699,29 @@ statistical uncertainties on the background while the external shaded areas corr
 %% single production, and on four top quark event production are the first results on these signals.
 
 
-%% \begin{table}[t]
-%%   \begin{center}
-%%     \caption{Expected and observed limits on the masses of the $b^\prime$ and $T_{5/3}$
-%%         and on the four top quark events production cross-section.}\label{limit:all}
-%%     \begin{tabular}{l|c|c}
-%%       \hline\hline
-%%       & \multicolumn{2}{c}{95\% C.L. limits} \\
-%%       \cline{2-3}
-%%       Constrained parameter & Expected & Observed \\
-%%       \hline
-%%       \multicolumn{3}{c}{$b^\prime$ / $T_{5/3}$ pair production} \\
-%%       \hline
-%%       $b^\prime$ mass or $T_{5/3}$ mass for $\lambda\ll1$ & $>0.64 \TeV$ & $>0.67 \TeV$ \\
-%%       \hline
-%%       \multicolumn{3}{c}{$T_{5/3}$ single and pair production} \\
-%%       \hline
-%%       $T_{5/3}$ mass for $\lambda=1$ & $>0.64 \TeV$ & $>0.68 \TeV$ \\
-%%       $T_{5/3}$ mass for $\lambda=3$ & $>0.66 \TeV$ & $>0.70 \TeV$ \\
-%%       \hline
-%%       \multicolumn{3}{c}{Four top quark event production} \\
-%%       \hline
-%%        Four top quark production cross-section & $<90$ fb & $<61$ fb \\
-%%       \hline
-%%     \end{tabular}
-%%   \end{center}
-%% \end{table}
+\begin{table}[t]
+  \begin{center}
+    \caption{Expected and observed limits on the masses of the $b^\prime$ and $T_{5/3}$
+        and on the four top quark events production cross-section.}\label{limit:all}
+    \begin{tabular}{l|c|c}
+      \hline\hline
+      & \multicolumn{2}{c}{95\% C.L. limits} \\
+      \cline{2-3}
+      Constrained parameter & Expected & Observed \\
+      \hline
+      \multicolumn{3}{c}{$b^\prime$ / $T_{5/3}$ pair production} \\
+      \hline
+      $b^\prime$ mass or $T_{5/3}$ mass for $\lambda\ll1$ & $>0.64 \TeV$ & $>0.67 \TeV$ \\
+      \hline
+      \multicolumn{3}{c}{$T_{5/3}$ single and pair production} \\
+      \hline
+      $T_{5/3}$ mass for $\lambda=1$ & $>0.64 \TeV$ & $>0.68 \TeV$ \\
+      $T_{5/3}$ mass for $\lambda=3$ & $>0.66 \TeV$ & $>0.70 \TeV$ \\
+      \hline
+      \multicolumn{3}{c}{Four top quark event production} \\
+      \hline
+       Four top quark production cross-section & $<90$ fb & $<61$ fb \\
+      \hline
+    \end{tabular}
+  \end{center}
+\end{table}
