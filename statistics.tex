@@ -3,9 +3,8 @@
 \section{Statistics}
 
 %Properly using statistical tools ... blah blah blah
-
 Experimental High Energy Physics is uniquely suited for precise, reliable, and accurate statistical analysis.
-The detailed knowledge of the underlying physics allow one to create extremely accurate probabilistic models and detailed simulations of measureable physical phenomena.
+The detailed knowledge of the underlying physics allow one to create accurate probabilistic models and detailed simulations of measureable physical phenomena.
 Large datasets allow these models to be checked, calibrated, and finely tuned to better describe the underlying physics.
 Sufficient computational resources are available for massive amounts of simulation to be generated from different models or similar models with various sets of parameters.
 Finally, there are a plethora of statistical formulae, tools, and techniques dedicated to the types of measurements performed by High Energy Experimental Physicists.
@@ -112,16 +111,15 @@ For a chosen size $\alpha$, an ideal test maximizes $\beta$.
 In practice, this task boils down to choosing the most powerful test statistic, from which the value of $k_{\alpha}$ and the region in data $K_{\alpha}$ are determined (though, it may take some analytic or computational to determine the value of $k_{\alpha}$).
 
 In the case of comparing two probability models without any parameters (or equivalantly, comparing models with fixed parameters), a result known as the Neyman-Pearson lemma states that the most powerful test statistic is the likelihood ratio, defined as the ratio of the likelihoods of data under the two models being compared.
-Although this result is powerful, its usefulness is often limited due to the fact that the presence of systematic uncertainties requires models to be paramaterized.
+Although this result is powerful, its usefulness is often limited due to the fact that the presence of systematic uncertainties requires one to consider continuous families of models.
 
 The presence of systematic uncertainties makes the determination of the region $K_{\alpha}$ more complicated.
 One convention is to choose $K_{\alpha}$ such that the supremum of the measure of probability in that region under all possible Null models over the space of parameters is $\alpha$.
 In other words, $\alpha = max( \int P(D|\theta) d(D) )$ where the maximum runs over all values of $\theta$.
 If the alternate hypothesis is also paramaterized, then the power of this test will no longer be well defined, but rather it will depend on the values of the parameters.
 
-
-The symmetry between these regions is broken by the alternate hypothesis.
-Given a fixed region
+%The symmetry between these regions is broken by the alternate hypothesis.
+%Given a fixed region
 
 
 \subsection{Neyman Construction}
@@ -204,8 +202,6 @@ In this sense, a confidence interval is the inversion of a hypothesis.
 It represents the set of all points in parameter space for which the measured data falls within an acceptance region of size $\alpha$ (given some ordering rule).
 For any single parameter in parameter space, the confidence interval is the the union of all points of that parameter that fall in the confidence band (confidence volume) in the full parameter space.
 
-
-\subsection{Hypothesis Testing}
 % Kyle:  Said yet another way, to claim a discovery, the confidence interval for the nuisance parameter(s) must be empty (when the construction is made assuming the null hypothesis).
 
 \subsection{Systematic Uncertainties}

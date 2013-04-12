@@ -27,7 +27,7 @@
 %% the appropriate lines in this file.
 \newcommand{\thesisdedication}{Dedicated to my parents, Sharon and Herb Lewis, for their continual support and to my thesis advisor, Kyle Cranmer, for his invaluable advice and mentorship.}
 
-%\usepackage[nottoc,numbib]{tocbibind} 
+%\usepackage[nottoc,numbib]{tocbibind}
 
 \usepackage{common/atlasphysics}
 \def\met{\ensuremath{\not\!\!{E_{T}}}}
@@ -36,6 +36,38 @@
 \def\lum{{\ensuremath{\cal L}}}
 \def\lumten#1{\ensuremath{10^{#1}\,\mathrm{cm}^{-2}\mathrm{s}^{-1}}}
 \def \sp{ \hspace{ 5 pt } }
+
+
+\def\into{\mbox{$\rightarrow\:$}}
+\def\half{\mbox{\small $\frac{1}{2}$}}
+\newcommand{\onehalf}{\frac{1}{2}}
+
+\def\hlf{\mbox{\footnotesize $\frac{1}{2}$}}
+\def\quarter{\mbox{\small $\frac{1}{4}$}}
+\def\eighth{\mbox{\small $\frac{1}{8}$}}
+\def\sixth{\mbox{\small $\frac{1}{6}$}}
+\def\twelfth{\mbox{\small $\frac{1}{12}$}}
+\def\twentyfourth{\mbox{\small $\frac{1}{24}$}}
+\def\nth{\mbox{\small $\frac{1}{n}$}}
+
+%% %\def\vec#1{\ifmmode
+
+
+\newcommand{\Pois}{{\ensuremath{\rm Pois}}}
+\newcommand{\LN}{{\ensuremath{P_{\rm LN}}}}
+\newcommand{\Gauss}{{\ensuremath{\rm Gauss}}}
+\newcommand{\PGamma}{{\ensuremath{P_{\;\Gamma}}}}
+%\newcommand{\NF}{\texttt{NormFactor}}
+\newcommand{\OS}{\texttt{OverallSys}}
+\newcommand{\HS}{\texttt{HistoSys}}
+\newcommand{\SF}{\texttt{ShapeFactor}}
+\renewcommand{\SS}{\texttt{ShapeSys}}
+
+\newcommand{\ROOT}{\texttt{HistFactory}}
+\newcommand{\RooFit}{\texttt{RooFit}}
+\newcommand{\RooStats}{\texttt{RooStats}}
+\newcommand{\HF}{\texttt{HistFactory}}
+
 
 
 %% The following makes chapters and sections, but not subsections,
@@ -216,9 +248,9 @@
 \clearpage
 \newpage
 
-%\input{histfactory}
-%\clearpage
-%\newpage
+\input{histfactory}
+\clearpage
+\newpage
 
 %\section{Bibliography}
 \addcontentsline{toc}{section}{Bibliography}
