@@ -2,39 +2,123 @@
 
 \section{HistFactory}
 
-The \HF\ is a tool to build parametrized probability density functions (pdfs) in the \RooFit/\RooStats\ framework based based on simple ROOT histograms organized in an XML file.  The pdf has a restricted form, but it is sufficiently flexible to describe many analyses based on template histograms. The tool takes a modular approach to build complex pdfs from more primative conceptual building blocks.  The resulting PDF is stored in a RooWorkspace which can be saved to and read from a ROOT file.  This document describes the defaults and interface in \ROOT\ 5.32.  Note, \ROOT\ 5.34 provides a C++ and python interface fully interoperable with the XML interface and classes for analytically fitting bin-by-bin statistical uncertainties on the templates.  These developments will be included in a future version of this document.
+Statistical measurements, including estimates of physical parameters, the setting of confidence intervals, and the setting of upper and lower limits, require the construction of a likelihood function that incorporates one's knowledge of physical theories, experimental properties, and underlying uncertainties.
+Moreover, it is a practical requirement that such a likelihood be expressable in software, and that the software be simple, widely applicable, and fast.
+
+To make complicated statistical techniques widely available and to enable the construction of models complicated enough to accurately describe the details of physical theories, particle detectors, and the LHC, physicists built a software library consisting of tools specifically designed for the creation and evaluation of likelihood functions.
+
+HistFactory is a software tool designed to build paramaterized probability density functions and likelihood functions and is specifically designed to use histograms as inputs.
+
+HistFactory is written in c++, is a part of the ROOT framework, and was built using a statistical modeling library called RooFit.
+It can be interfaced with as a c++ library or using both XML or python as a front end.
+HistFactory produces standard but highly flexible and customizable likelihood functions using minimal input from the end user.
+It does this by taking a modular approach to the construction of probability density functions, where terms in a distribution describing different measurements can be built individually or combined to form larger distributions that describe a bigger space of measurements.
+
+HistFactory is designed to allow systematic uncertainties, both theoretical or experimental in source, to be built into a likelihood function and treated consistently throughout a probability density function, properly taking into account correlations between effects that arise from a single source of systematic error.
+
+
+%% The \HF\ is a tool to build parametrized probability density functions (pdfs) in the \RooFit/\RooStats\ framework based based on simple ROOT histograms organized in an XML file.  The pdf has a restricted form, but it is sufficiently flexible to describe many analyses based on template histograms. The tool takes a modular approach to build complex pdfs from more primative conceptual building blocks.  The resulting PDF is stored in a RooWorkspace which can be saved to and read from a ROOT file.  This document describes the defaults and interface in \ROOT\ 5.32.  Note, \ROOT\ 5.34 provides a C++ and python interface fully interoperable with the XML interface and classes for analytically fitting bin-by-bin statistical uncertainties on the templates.  These developments will be included in a future version of this document.
+
 
 \subsubsection{Preliminaries}
 
-Let us begin by considering the simple case of a single channel with one signal and one background contribution and no systematics based on the discriminating variable is $x$.  While we will not continue with this notation, let us start with the familiar convention where the number of signal events is denoted as $S$ and the number of background events as $B$.  Similarly, denote the signal and background ``shapes'' as $f_{\rm S}(x)$ and $f_{\rm B}(x)$ and note the these are probability density functions normalized so that $\int dx f(x)=1$.  It is common to introduce a ``signal strength'' parameter $\mu$ such that $\mu=0$ corresponds to the background-only hypothesis  and $\mu=1$ corresponds to the nominal signal+background hypothesis.  This continuous parameter $\mu$ is our parameter of interest.
+To understand the likelihood functions that are constructed by HistFactory, we will describe a simple example.
+Consier a measurement of the rate of a single process that is performed by measuring the distribution a variable over events of an experiment that satisfy a certain, predefined criteria.
+This criteria, which is a function of observables, defines the signal region.
+Assume that there are two classes of events that are present in the signal region, the signal process that we're studying, ``S'', and a background process, ``B''.
+Denoting the observalbe we're studying is ``x'', we begin by assuming that we know the distribution of this variable under both the signal and background process individually.
+We will refer to these distributions as $f_{\rm S}(x)$ and $f_{\rm B}(x)$, noting that, as probability distribution functions, they each individually integrate to 1.
+%Typically in high energy physics, these distributions are modeled as histograms having a finite number of bins.
+%If we make this assumption, then we denote $f_{\rm S}$
 
-Now we ask what the probability model is for obtaining $n$ events in the data where the discriminating variable for event $e$ has a value $x_e$; thus the full dataset will be denoted $\{x_1\dots x_n\}$.  First one must include the Poisson probability of obtaining $n$ events when $\mu S + B$ are expected.  Secondly, one must take into account the probability density of obtaining $x_e$ based on the  relative mixture $f_{\rm S}(x)$ and $f_{\rm B}(x)$ for a given value of $\mu$.   Putting those two ingredients together one obtains what statisticians call a ``marked Poisson model'':
+We will also define a parameter which scales with the expected number of signal events in the signal region, which we referr to as the signal strength, or simply $\mu$.
+And finally, we introduce a parameter, $B$, that scales with the number of background events.
+We will initially assume that this parameter is known and fixed.
+
+%Thus, given a value of the parameter $\mu$, the expected number of events in the $i
+
+%% Let us begin by considering the simple case of a single channel with one signal and one background contribution and no systematics based on the discriminating variable is $x$.  
+%% While we will not continue with this notation, let us start with the familiar convention where the number of signal events is denoted as $S$ and the number of background events as $B$.  
+%% Similarly, denote the signal and background ``shapes'' as $f_{\rm S}(x)$ and $f_{\rm B}(x)$ and note the these are probability density functions normalized so that $\int dx f(x)=1$.  
+%% It is common to introduce a ``signal strength'' parameter $\mu$ such that $\mu=0$ corresponds to the background-only hypothesis  and $\mu=1$ corresponds to the nominal signal+background hypothesis.  
+%% This continuous parameter $\mu$ is our parameter of interest.
+
+
+Thus, given a value of the parameter $\mu$, the distribution of a number of measured values of x is given by:
+
 \begin{eqnarray}
 {\cal P}(\{x_1\dots x_n\} | \mu)=  \textrm{Pois}(n | \mu S+B) \left[ \prod_{e=1}^n \frac{\mu S f_{\rm S}(x_e) + B f_{\rm B}(x_e)}{\mu S+B}\right ] \; .
 \end{eqnarray}
-If one imagines the data as being fixed, then this equation depends on $\mu$ and is called the likelihood function $L(\mu)$.  Simply taking the logarithm of the equation above and remembering that $\textrm{Pois}(n|\nu) = \nu^n e^{-\nu} / n!$ gives us a familiar formula referred to by physicists as an ``extended maximum likelihood fit'' :
-\begin{eqnarray}\nonumber
--\ln L( \mu) &=&  -n \ln(\mu S + B) 	+ (\mu S + B) + \ln n! - \sum_{e=1}^n \ln \left[ \frac{\mu S f_{\rm S}(x_e) + B f_{\rm B}(x_e)}{\mu S+B}\right] \\
-%&=&\underbrace{ (\mu S + B)}_{\rm extended~term} - \sum_{e=1}^n \ln \left[ \mu S f_{\rm S}(x_e) + B f_{\rm B}(x_e)\right] + \underbrace{\ln n!}_{\rm irrelevant~constant} \; .
-&=& (\mu S + B) + \ln n!- \sum_{e=1}^n \ln \left[ \mu S f_{\rm S}(x_e) + B f_{\rm B}(x_e)\right]  \; .
-\end{eqnarray}
 
-Since \HF\ is based on histograms, it is natural to think of the binned equivalent of the probability model above.  Denoted the signal and background histograms as $\nu_b^{\rm sig}$ and $\nu_b^{\rm bkg}$, where $b$ is the bin index and the histograms contents correspond to the number of events expected in the data.   We can relate the bin $\nu_b$ and the shape $f(x)$ via
- \begin{equation}
- \label{eq:shape}
-%   S \int _{b_e} dx f_S(x_e ) = \nu_{b_e}^{\rm sig}  \hspace{.5in}  \textrm{and}  \hspace{.5in}  f_B(x_e ) = \frac{\nu_{b_e}^{\rm bkg}}{B} \;,
-    f_S(x_e ) = \frac{\nu_{b_e}^{\rm sig}}{S \Delta_{b_e}}   \hspace{.5in}  \textrm{and}  \hspace{.5in}  f_B(x_e ) = \frac{\nu_{b_e}^{\rm bkg}}{B \Delta_{b_e}} \;,
-\end{equation}
-where $b_e$ is the index of the bin containing $x_e$ and $\Delta_{b_e}$ is the width of that same bins.  Note, because the $f(x)$ are normalized to unity we have $S=\sum_b  \nu_{\rm b}^{\rm sig}$ and $B=\sum_b  \nu_{\rm b}^{\rm bkg}$.
+The first term on the right hand side describes the total number of events measured as a poisson process whose mean is the sum of the expected number of signal and background events.
+The remaining of the right side describes the probability of each individual event having the value $x_i$.
+In total, this distribution is known as a marked poisson model.
 
+Often, in high energy physics, the distributions $f_{\rm S}(x)$ and $f_{\rm B}(x)$ are described as histograms.
+In this case, we denote the signal and background histograms as $\nu_b^{\rm sig}$ and $\nu_b^{\rm bkg}$, where $b$ is the bin index.
+In the case of histograms,  marked poisson process becomes
 
- Formally one can either write the probability model in terms of a product over Poisson distributions for each bin of the histogram,  or one can also continue to use the unbinned expression above recognizing that the shapes $f(x)$ look like histograms (ie. they are discontinuous at the bin boundaries and constant between them).  Technically, the \HF\ makes a model that looks more like the unbinned expression with a single RooAbsPdf that is ``extended'' with a discontinuous shape in $x$.  Nevertheless, it can be more convenient to express the model in terms of the individual bins.  Then we have
 \begin{eqnarray}
 {\cal P}(n_b |\mu)=  \textrm{Pois}(n_{\rm tot} | \mu S + B) \left[\, \prod_{b\in\rm bins}\frac{\mu \nu_b^{\rm sig} + \nu_b^{\rm bkg}}{\mu S + B}\right ] = \mathcal{N}_{\rm comb} \prod_{b\in\rm bins} \textrm{Pois}(n_b | \mu \nu_{b}^{\rm sig} + \nu_{b}^{\rm bkg}) \; ,
 \end{eqnarray}
-where $n_b$ is the data histogram and $\mathcal{N}_{\rm comb}$ is a combinatorial factor that can be neglected since it is constant.   Similarly, denote the data histogram is $n_b$. 
+where $n_b$ is the histogram of the observed data and and $\mathcal{N}_{\rm comb}$ is a constant combinatorial factor that can be neglected for the purpose of statistical analysis.   
+Similarly, denote the data histogram is $n_b$.
 
 
+%% Now we ask what the probability model is for obtaining $n$ events in the data where the discriminating variable for event $e$ has a value $x_e$; thus the full dataset will be denoted $\{x_1\dots x_n\}$.  First one must include the Poisson probability of obtaining $n$ events when $\mu S + B$ are expected.  Secondly, one must take into account the probability density of obtaining $x_e$ based on the  relative mixture $f_{\rm S}(x)$ and $f_{\rm B}(x)$ for a given value of $\mu$.   Putting those two ingredients together one obtains what statisticians call a ``marked Poisson model'':
+%% \begin{eqnarray}
+%% {\cal P}(\{x_1\dots x_n\} | \mu)=  \textrm{Pois}(n | \mu S+B) \left[ \prod_{e=1}^n \frac{\mu S f_{\rm S}(x_e) + B f_{\rm B}(x_e)}{\mu S+B}\right ] \; .
+%% \end{eqnarray}
+%% If one imagines the data as being fixed, then this equation depends on $\mu$ and is called the likelihood function $L(\mu)$.  Simply taking the logarithm of the equation above and remembering that $\textrm{Pois}(n|\nu) = \nu^n e^{-\nu} / n!$ gives us a familiar formula referred to by physicists as an ``extended maximum likelihood fit'' :
+%% \begin{eqnarray}\nonumber
+%% -\ln L( \mu) &=&  -n \ln(\mu S + B) + (\mu S + B) + \ln n! - \sum_{e=1}^n \ln \left[ \frac{\mu S f_{\rm S}(x_e) + B f_{\rm B}(x_e)}{\mu S+B}\right] \\
+%% %&=&\underbrace{ (\mu S + B)}_{\rm extended~term} - \sum_{e=1}^n \ln \left[ \mu S f_{\rm S}(x_e) + B f_{\rm B}(x_e)\right] + \underbrace{\ln n!}_{\rm irrelevant~constant} \; .
+%% &=& (\mu S + B) + \ln n!- \sum_{e=1}^n \ln \left[ \mu S f_{\rm S}(x_e) + B f_{\rm B}(x_e)\right]  \; .
+%% \end{eqnarray}
+
+%% Since \HF\ is based on histograms, it is natural to think of the binned equivalent of the probability model above.  Denoted the signal and background histograms as $\nu_b^{\rm sig}$ and $\nu_b^{\rm bkg}$, where $b$ is the bin index and the histograms contents correspond to the number of events expected in the data.   We can relate the bin $\nu_b$ and the shape $f(x)$ via
+%%  \begin{equation}
+%%  \label{eq:shape}
+%% %   S \int _{b_e} dx f_S(x_e ) = \nu_{b_e}^{\rm sig}  \hspace{.5in}  \textrm{and}  \hspace{.5in}  f_B(x_e ) = \frac{\nu_{b_e}^{\rm bkg}}{B} \;,
+%%     f_S(x_e ) = \frac{\nu_{b_e}^{\rm sig}}{S \Delta_{b_e}}   \hspace{.5in}  \textrm{and}  \hspace{.5in}  f_B(x_e ) = \frac{\nu_{b_e}^{\rm bkg}}{B \Delta_{b_e}} \;,
+%% \end{equation}
+%% where $b_e$ is the index of the bin containing $x_e$ and $\Delta_{b_e}$ is the width of that same bins.  Note, because the $f(x)$ are normalized to unity we have $S=\sum_b  \nu_{\rm b}^{\rm sig}$ and $B=\sum_b  \nu_{\rm b}^{\rm bkg}$.
+
+
+%%  Formally one can either write the probability model in terms of a product over Poisson distributions for each bin of the histogram,  or one can also continue to use the unbinned expression above recognizing that the shapes $f(x)$ look like histograms (ie. they are discontinuous at the bin boundaries and constant between them).  Technically, the \HF\ makes a model that looks more like the unbinned expression with a single RooAbsPdf that is ``extended'' with a discontinuous shape in $x$.  Nevertheless, it can be more convenient to express the model in terms of the individual bins.  Then we have
+%% \begin{eqnarray}
+%% {\cal P}(n_b |\mu)=  \textrm{Pois}(n_{\rm tot} | \mu S + B) \left[\, \prod_{b\in\rm bins}\frac{\mu \nu_b^{\rm sig} + \nu_b^{\rm bkg}}{\mu S + B}\right ] = \mathcal{N}_{\rm comb} \prod_{b\in\rm bins} \textrm{Pois}(n_b | \mu \nu_{b}^{\rm sig} + \nu_{b}^{\rm bkg}) \; ,
+%% \end{eqnarray}
+%% where $n_b$ is the data histogram and $\mathcal{N}_{\rm comb}$ is a combinatorial factor that can be neglected since it is constant.   Similarly, denote the data histogram is $n_b$.
+
+This is a simple but powerful example of the type of probability distribution function that can be produced by HistFactory.
+For a given set of observed data, it can be interpreted as a likelihood function of $\mu$, the parameter of interest.
+
+
+\subsubsection{Generalizations}
+
+HistFactory make it easy to include a number of generalizations of this problem which all one to create flexible and powerful models.
+A simple generalization is the inclusion of additional search channels.
+The model described above considers a single observable defined in a single signal region.
+But if one simultaneously studies a (potentially) different variable in a different signal region (that has no overlap with the original signal region), then one can simply express the joint likelihood function as the prodicut of the individual likelihood functions.
+However, when making this product, one should be sure to use a single variable to express parameters that are meant to be identified across likelihoods.
+For example, in the joint likelihood function, one should use a single parameter $\mu$ to describe a signal strength that is coherent across search channels.
+One can include any number of channels in this way.
+In addition, it is easy to include multiple discriminating variables in each channel by using multidimensional histograms.
+Similarly, one can consider any number of background distributions, which simply get added to equation BLAH.
+
+Most importantly, however, is the ability to include parameters to describe systematic uncertainties in additional to the parameter of interest.
+HistFactory has developed a number ways to describe the effect of systematic uncertainties, some of which are quite intricate and sophisticated.
+For the purpose of explanation, we will here only describe the two most common cases.
+
+The first is the inclusion of overall scaling terms.
+The distribution of a signal or background process can be scaled by an overall factor.
+This factor may be interpreted as a parameter that describes on uncertainty on the overall number of events for either signal and background.
+Commonly, this is used to describe an uncertainty on an efficiency, including a trigger, identification, or reconstruction efficiency.
+
+%%
+%% HEREy
+%%
 
 \subsubsection{Generalizations and Use-Cases}
 
