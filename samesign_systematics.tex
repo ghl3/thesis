@@ -1,0 +1,290 @@
+
+
+\section{Systematic uncertainties determination}  
+\label{sec:systematicdetermination}
+
+Several sources of systematic uncertainties have been considered; each of them is described below, together with its estimate. The main sources of systematic uncertainties are estimated
+by following the prescriptions of the TopSystematicUncertainties2011.
+
+\subsection{Uncertainties on Monte Carlo samples}
+
+\subsubsection{Trigger and object reconstruction}
+The modeling of lepton triggers as well as reconstruction and identification efficiencies in
+Monte Carlo simulation are corrected by scale factors, which are a function of lepton kinematics.
+These scale factors, as well as their uncertainties, are obtained from studies of $Z \rightarrow \mu \mu$ and $Z \rightarrow e e$ decays.
+The uncertainty on the overall yield due uncertainties on trigger, reconstruction, and identification efficiencies 
+are obtained by independently shifting these scale factors up and down by one standard deviation.
+
+\subsubsection{Object scales and resolutions}
+% jet %~\cite{atlasjets} 
+Uncertainties on the efficiency, energy or momentum calibration, and resolution of leptons and jets 
+lead to systematic uncertainties on the signal and background acceptances and distributions of discriminating variables.
+These uncertainties are summarised in Tables~\ref{tab:systematicsBprime}, \ref{tab:systematicsT53} and
+\ref{tab:systematics4t} for signals and in Table~\ref{tab:systematicsBG} for the background samples.
+They are evaluated by shifting the energy or momenta of objects by one standard deviation in each direction, 
+where the size of each standard deviation associated with each uncertainty is determined by detailed studies.
+Shifts for each systematic are applied separately.
+%These shifts are propagated to templates of discriminating variables, 
+%meaning that the effect of calibration and resolution systematic uncertainties are considered for each bin.
+
+\subsubsection{Luminosity and production cross-sections}
+Uncertainty on the measured value of integrated luminosity leads to an uncertainty on the overall scale of backgrounds that are derived using Monte-Carlo.
+%These uncertainties affect the overall scale of the various samples.
+The uncertainty on the measured luminosity from van der Meer scans was estimated to be 3.7\%. %~\cite{lumi}. 
+% Not sure what the most up-to-date reference is for this...
+% ATLAS Collaboration, ATLAS-CONF-2011-116, http://cdsweb.cern.ch/record/1376384.
+% ATLAS Collaboration, Eur. Phys. J. C71, 1630 (2011).
+In addition, uncertainties on the cross-sections of Monte-Carlo samples are considered, 
+and these are determined using dedicated studies of Monte-Carlo generators.
+Uncertainties on Monte Carlo cross sections are included separately for each background processes considered.
+The uncertainty on $t \overline{t}$ processes with an additional boson are taken to be 30\% for a W boson and 50\% for a Z boson\footnote{\url{https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/TTplusV}}.
+% Cite these references
+% Page: https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/TTplusV
+% Reference: http://arxiv.org/pdf/1204.5678v1.pdf
+The uncertainty on the cross-section of $WZ$ and $ZZ$ events is taken to be 5\% with an additional contribution of 24\% per jet added in quadrature included, making the total cross-section uncertainty 34\%.
+% From Here: https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/TopSystematicUncertainties2011#Systematics_Affecting_Other_MC
+% Reference: arXiv:1012.1792
+For the $W^{\pm}W^{\pm}$+2 jets sample, the uncertainty on the
+cross-section is 50\%.  The uncertainty on the
+$t\bar{t}W^{\pm}W^{\mp}$ has been evaluated by setting the renormalization
+and factorization scales to the values of 0.5 and 2, and rerunning the
+Madgraph event generator in these two configurations. The difference
+with respect to the standard configuration has been used to set the up
+(+35\%) and down (-24\%) cross-section uncertainties.
+
+
+\subsubsection{Missing transverse momentum}
+When measuring the effect of systematic uncertaities, changes in the momenta of reconstructed objects are applied to the calculation of \met{}.
+In addition, uncertainties specific to the calculation of \met{} are considered.  
+The effect of Pile-Up on the \met{} resolution is taken to be 6.6\%, 
+and uncertainties on \met{} also include contributions arising from calorimeter cells not associated with jets and from soft jets with 7 \GeV\ < \pt\ < 20 \GeV{}.
+The latter two uncertainties are not considered to be independent, but rather are applied coherently.
+
+\subsubsection{PDF uncertainty}
+Partonic distribution functions (PDFs) along with parton-parton interaction cross sections 
+determine hadronic cross sections of inelastic processes in proton-proton collisions according 
+to the formula,
+%
+\begin{equation}
+\sigma^{pp\rightarrow X,Y,...}=\sum_{i,j=q(g),\bar{q}(g)} \int f^A_i(f_1,x_1,Q^2) f^B_j(f_2,x_2,Q^2)\sigma^{i j \rightarrow X,Y,...} dx_1dx_2.
+\label{eq:QQbarCX}
+\end{equation}
+%
+%\ref{eq:QQbarCX}
+Here $\sigma^{i j \rightarrow X,Y,...}$ is a parton-parton cross section of the interacting partons 
+$i$-th and $j$-th in incoming protons A and B, $f^A_i(f_1,x_1,Q^2)$ and $ f^B_j(f_2,x_2,Q^2)$ 
+represent PDFs of the $i$-th and $j$-th partons, with $f_1$ and $f_2$ being the flavors, $x_1$ and 
+$x_2$ momentum fractions of the interacting partons and $Q^2$ an energy scale (transfer). Since PDFs 
+are not calculable from first principles but are determined experimentally with uncertainties coming 
+from experimental measurements and theoretical models used to extract PDFs, usage of any PDF in the 
+calculations introduces an additional systematic uncertainty into the calculated cross section. 
+Similarly enters this effect into the estimate of the signal event selection efficiency from a Monte-Carlo 
+(MC) simulation.
+
+
+\vspace{0.4cm}
+\noindent
+{\bf Method:} 
+PDF systematics uncertainty estimation in this analysis is done using {\bf Reweighting method}~\cite{PDF_RW}.
+The idea of the method is as follows: suppose, we have a sample of events modeling hard scattering 
+interactions in proton-proton collisions produced using an MC event generator. Let $PDF^0$ be a PDF 
+used in the generator to produce these events. If we apply some selection cuts to these events, then 
+the signal event selection efficiency, $\epsilon^0$, by definition is,
+%
+\begin{equation}
+\epsilon^0 = \frac{N_{cuts}^0}{N_{gen}^0},
+\label{eq:eff}
+\end{equation}
+%
+where $N_{gen}^0$ is the total number of events generated by the generator before applying any cut and 
+$N_{cuts}^0$ is the number of selected signal events after applying all selection criteria (including 
+object and event selections). If an event filter of an efficiency $\epsilon^0_{gen}$ is applied to 
+the generator, then the event selection efficiency will look like 
+%
+\begin{equation}
+\label{eq:epsilon}
+\epsilon^0 =\epsilon_{gen}^0 \cdot \frac{N_{cuts}^0}{N_{ef}^0}.
+\end{equation}
+%
+
+Now, had these events been generated with the same generator but using another PDF (let call it $PDF^l$), 
+then the relative probability of producing a particular event $e_i$ as a result of an interaction of two 
+partons with the same flavor, momentum fraction and energy scale, as in the case of using the default PDF 
+$PDF^0$, will be defined, as obvious from the formula~\eqref{eq:QQbarCX}, by the relative PDFs weight, 
+$w^i$, defined as
+% 
+\begin{equation}
+\label{eq:PDFrw}
+w^i=\frac{f_{PDF^l}(f_1,x_1,Q^2)}{f_{PDF^0}(f_1,x_1,Q^2)} \times \frac{f_{PDF^l}(f_2,x_2,Q^2)}{f_{PDF^0}(f_2,x_2,Q^2)}.
+\end{equation}
+%
+
+$N^l_{cuts}$ and $N^l_{gen}$ relevant to the sample produced using PDF $PDF^l$ in the generator will be 
+defined as $N^l_{cuts} = \sum^{N^0_{cuts}}_{i=1}w^i $ and $N^l_{gen} = \sum^{N^0_{gen}}_{i=1}w^i $ and the 
+event selection efficiency will look like
+%
+\[ 
+\epsilon^l = \epsilon^l_{gen} \cdot \frac{N^l_{cuts}}{N^l_{gen}} = \epsilon^l_{gen} \cdot \frac{ \sum^{N^1_{cuts}}_{i=1}w^i }{ \sum^{N^1_{gen}}_{i=1}w^i}. 
+\]
+%
+The generator filter efficiencies $\epsilon^0_{gen}$ and $\epsilon^l_{gen}$ have to be determined by separate 
+runs of the generator including the PDFs $PDF^0$ and $PDF^l$ into the generator each time. 
+
+The systematic uncertainty on the event selection efficiency is then $\delta \epsilon^l = \epsilon^l-\epsilon^0$ 
+and the corresponding relative uncertainty is
+%
+\begin{equation}
+\label{eq:}
+\frac{\delta \epsilon^l}{\epsilon^0} =\frac{\epsilon^0 - \epsilon^l}{\epsilon^0}.
+\end{equation}
+%
+
+To extract the necessary PDF info of the signal events from samples (ntuple level) and to calculate the corresponding 
+relative per event PDF weights, $w^i$ (formula~\ref{eq:PDFrw}), the {\bf TopPdfUncertainty 
+package}~\cite{TopPdfUncert} from the ATLAS Top working group has been used.
+
+
+\vspace{0.4cm}
+\noindent
+{\bf PDF choice:}
+The PDF systematics study has been applied to an analysis searching for fourth generation down-type 
+quark $b'$ (a mass point of 500~GeV) in the process 
+$pp \rightarrow b'\bar{b'}\rightarrow tW^-\bar{t}W^+ \rightarrow bW^+W^-\bar{b}W^-W^+$ with two same 
+sign ($+ +$ or $- -$) leptons (electrons or muons in the combinations $e e$, $e \mu$ and $\mu \mu$) 
+in the final state. The signal samples used in this analysis have been generated with the Pythia6 
+generator using the ATLAS MC11c production setup. In this setup MRST LO** PDF (LHAPDF set number 
+20651)~\cite{LOstar,LOstarstar} is the default PDF and the "ATLAS Underlying Event Tune 2B" (AUET2B)
+%(ATL-PHYS-PUB-2011-009) 
+tune~\cite{AUET2B} is the corresponding UE tune. MRST LO** is an LO generator, thus the following 
+alternative LO PDFs have been used in this study:
+\begin{itemize}
+%
+\item CTEQ6L1 (10042) - with LO fit and LO $\alpha_S$~\cite{CTEQ6};
+%
+\item MSTW2008LO (21000)~\cite{MSTW2008LO};
+%
+\item MRST LO* (20650)~\cite{MRSTLOX};
+%
+\item CT09MC2 (10772)~\cite{CT09MC2};
+%
+\end{itemize}
+
+
+\vspace{0.4cm}
+\noindent
+{\bf Results:}
+The uppermost and lowest shifts in the signal event selection efficiency extracted from the reweighting method
+considering all, $e$-$e$, $e$-$\mu$ and $\mu$-$\mu$, channels are $+1.4$\% and $-1.1$\% , with the average 
+shifts being around 0.6\%.
+
+
+
+ 
+
+\subsubsection{Initial and final state radiation}
+Initial and final state radiation (ISR, FSR) will generate additional
+jets, through the emission of gluons from the initial and final legs
+in the Feynman diagrams. To evaluate the uncertainty of this effect,
+dedicated samples were produced, by changing the parton shower (PS)
+parameters in Pythia, as reported in table~\ref{tab:ISFFRS}.
+\begin{table}[htbp]
+\begin{center}
+\caption{\textit{Pythia parameters changed to produce samples with more and less parton shower. Those samples were used to estimate ISR, FSR systematic uncertainty.}}
+\label{tab:ISFFRS}
+\begin{tabular}{c|c|c|l}
+\hline\hline
+Pythia parameter & Less PS & More PS & Comment\\
+PARP(67) & 0.70   & 1.75   & controls high-pt ISR branchings phase-space \\
+PARP(64) & 3.60   & 0.60   & multiplicative factor of the momentum scale squared\\
+         &        &        & in running $\alpha_s$, used in ISR \\
+PARP(72) & 0.2150 & 0.6450 & multiplicative factor of the $\Lambda_{QCD}$\\
+         &        &        & in running $\alpha_s$, used in FSR \\
+PARJ(82) & 1.66   & 0.5    & FSR low-pt cutoff \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+The full analysis was run on the 150k events done for each dataset, with more or less PS, at the b' mass point of 500~GeV.
+By observing the changes in the yields, the ISR/FSR systematic uncertainty has been evaluated of the order of 6\%.
+
+\subsubsection{Systematic uncertainties on $b^\prime$ signals}
+\begin{centering}
+\tiny
+Channel: $ee$ \\
+\input{Tables/SysTable_BPrime_SameSign_EE_formatted.tex}
+\\
+Channel: $e \mu$ \\
+\input{Tables/SysTable_BPrime_SameSign_EM_formatted.tex}
+\\
+Channel: $\mu \mu$ \\
+\input{Tables/SysTable_BPrime_SameSign_MM_formatted.tex}
+\\
+\label{tab:systematicsBprime}
+\end{centering}
+
+
+\subsubsection{Systematic uncertainties on $T_{5/3}$ signals}
+\begin{centering}
+\tiny
+Channel: $ee$ \\
+\input{Tables/SysTable_T53_SameSign_EE_formatted.tex}
+\\
+Channel: $e \mu$ \\
+\input{Tables/SysTable_T53_SameSign_EM_formatted.tex}
+\\
+Channel: $\mu \mu$ \\
+\input{Tables/SysTable_T53_SameSign_MM_formatted.tex}
+\\
+\label{tab:systematicsT53}
+\end{centering}
+
+
+\subsubsection{Systematic uncertainties on four top quarks signal}
+\begin{centering}
+\tiny
+Channel: $ee$ \\
+\input{Tables/SysTable_FourTops_SameSign_EE_formatted.tex}
+\\
+Channel: $e \mu$ \\
+\input{Tables/SysTable_FourTops_SameSign_EM_formatted.tex}
+\\
+Channel: $\mu \mu$ \\
+\input{Tables/SysTable_FourTops_SameSign_MM_formatted.tex}
+\\
+\label{tab:systematics4t}
+\end{centering}
+
+
+\subsubsection{Systematic uncertainties on Monte Carlo backgrounds}
+\begin{centering}
+\tiny
+Channel: $ee$ \\
+\input{Tables/SysTable_Background_SameSign_EE_formatted.tex}
+\\
+Channel: $e \mu$ \\
+\input{Tables/SysTable_Background_SameSign_EM_formatted.tex}
+\\
+Channel: $\mu \mu$ \\
+\input{Tables/SysTable_Background_SameSign_MM_formatted.tex}
+\\
+\label{tab:systematicsBG}
+\end{centering}
+
+\subsection{Uncertainties on data-driven backgrounds}
+
+\subsubsection{Charge flip background}
+ The uncertainty on the overall scale of the charge-flip background in the signal regions is derived from a comparison of the charge-flip rate extracted by several methods.
+The primary technique, which uses the likelihood method, is compared to the alternative Tag-and-Probe and Direct Extraction methods (see section~\ref{chap:smbkg}).
+Based on these methods, an overall uncertainty of 12\% is attributed to the Charge-Flip background.
+
+\subsubsection{Fake lepton background}
+
+Uncertainties on the estimate of background coming from fake leptons are 50\% for the $ee$ channel, 40\% for the $e\mu$ channel, and 30\% for the $\mu\mu$ channel.
+For the electron case, the uncertainty was estimated by using different {\it loose} electron definitions. For the muon case, it was estimated by changing the definition of the multijet enriched region, and using the number of jets, instead of the leading jet \pT{}, for the weight parametrization.
+
+
+
+
+
+
+
