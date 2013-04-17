@@ -2,6 +2,44 @@
 \section{Dilepton}
 
 
+\newcommand{\dr} {\ensuremath{\Delta R({\rm lepton},{\rm jet})}}
+\newcommand{\pmasym}[2]{^{+#1}_{-#2}}
+\newcommand{\sigmattbar}{\ensuremath{\sigma_{\ttbar}}}
+\newcommand{\sigmaz}{\ensuremath{\sigma_{\Zboson}}}
+\newcommand{\lumitot}{\mbox{0.70~fb$^{-1}$}}
+\newcommand{\lumitotpm}{\mbox{0.70$\pm$0.03~fb$^{-1}$}}
+
+
+%\newcommand{\sigmattbar}{\ensuremath{\sigma_{\ttbar}}}
+%\newcommand{\sigmaz}{\ensuremath{\sigma_{\Zboson}}}
+%\newcommand{\lumitot}{\mbox{0.70~fb$^{-1}$}}
+%\newcommand{\lumitotpm}{\mbox{0.70$\pm$0.03~fb$^{-1}$}}
+%cut & count numbers:
+\newcommand{\xsectot}{171}
+\newcommand{\xsecstat}{\pm 6}
+\newcommand{\xsecsyst}{\pmasym{16}{14}}
+\newcommand{\xseclumi}{\pm 8}
+
+%cut & count w btagging numbers? or the simultaneous fit?
+\newcommand{\xsecbtot}{177}
+\newcommand{\xsecbstat}{\pm 6}
+\newcommand{\xsecbsyst}{\pmasym {17}{14}}
+\newcommand{\xsecblumi}{\pmasym {8}{7}}
+
+
+\newcommand{\AKT}{anti-k$_{t}$}
+\def\lum{{\ensuremath{\cal L}}}
+\def \intlum {\int {\cal L} dt}
+\def\MCatNLO{{\sc MC@NLO}}
+\def\FigMerit{F_M}
+\def\JetProb{{\sc JetProb}}
+\def\SVZero{{\sc SV0}}
+\def\Nn{N_n}  %  ntags in an event
+\def\Zg{\Zboson/\gamma^{*}}
+\def\GEANT{{\sc GEANT4}}
+
+
+
 \subsection{Introduction}
 
 While the branching ratio into the dilepton decay channel for top-quark pair production events
@@ -29,8 +67,8 @@ and two $b$-jets from the decay of the top quarks.
 %% reported in Ref.~\cite{ATL-CONF-2011-034}.
 
 The high efficiency of lepton selection and the relatively small contribution of backgrounds
-to the dilepton final state combined with a requirement on a $b$-jet that further reduces
-background gives this channel a strong signal-to-background ratio.
+to the dilepton final state %combined with a requirement on a $b$-jet that further reduces background 
+gives this channel a strong signal-to-background ratio.
 The dilepton decay topology is divided into three sub-channels based on the flavor of the
 final-state leptons.
 The $ee$ channel contains two high-pt, isolated leptons identified using 
@@ -63,13 +101,12 @@ These channels are mutually exclusive to facilitate their statistical combinatio
 %% $b$-tag requirement uses only identified leptons.
 
 The analysis uses collision data with a center-of-mass energy of
-$\sqrt{s}$ = 7~\TeV\ from 2011, with an integrated luminosity
-of \lumitotpm~\cite{lumiPub, lumi}.
+$\sqrt{s}$ = 7~\TeV\ from 2011, with an integrated luminosity of \lumitotpm~\cite{lumiPub, lumi}.
 The main backgrounds considered in this analysis come from
 $\Z$+jets events, events with a single top quark,
 diboson events, and events with misidentified leptons originating from hadronic activity.
 Background contributions from
-$\Zg\rightarrow ee$+jets, $\Zg\rightarrow\mu\mu$+jets and events with
+$\Zg \rightarrow ee$+jets, $\Zg \rightarrow\mu\mu$+jets and events with
 misidentified leptons are estimated using data-driven techniques, and all
 other background estimations are obtained using Monte Carlo simulation.
 
@@ -282,16 +319,19 @@ Finally, jets are required to have $\pt>25$~GeV and $|\eta|<2.5$.
 %% The jets used in the analysis are required to have $\pt>25$~GeV
 %% and $|\eta|<2.5$.
 
-Selected jet candidates can be further classified as originating from a
-$b$-quark using an algorithm based on a likelihood ratio.
-The likelihood discriminates bewteen $b$-jets and jets originating from
-light quarks using a number of features, including the impact parameter
-of the jet, the decay length significance associated with the secondary
-vertex, the invariant mass of the tracks associated with the jet, 
-and the ratio of the sum of energies of the tracks to the total
-energy of the jet itself.
-The classifier is designed to have an efficiency of $\approx 80\%$\
-when applied to $b$-jets arising from $\ttbar$ events.
+
+% We don't use b-tagging here
+% My Writing:
+%% Selected jet candidates can be further classified as originating from a
+%% $b$-quark using an algorithm based on a likelihood ratio.
+%% The likelihood discriminates bewteen $b$-jets and jets originating from
+%% light quarks using a number of features, including the impact parameter
+%% of the jet, the decay length significance associated with the secondary
+%% vertex, the invariant mass of the tracks associated with the jet, 
+%% and the ratio of the sum of energies of the tracks to the total
+%% energy of the jet itself.
+%% The classifier is designed to have an efficiency of $\approx 80\%$\
+%% when applied to $b$-jets arising from $\ttbar$ events.
 
 
 %% Jets are identified as $b$-quark candidates (`$b$-tagged') by an
@@ -334,27 +374,42 @@ reconstructed object.
 \subsection{Event selection}
 \label{s:event}
 
-The analysis requires collision data selected by an inclusive single
-%lepton trigger ($e$ or $\mu$)
-electron or muon trigger with offline-reconstructed
-candidates satisfying $\pt>25\GeV$ for electrons, and $\pt>20\GeV$ for muons, to ensure a constant trigger efficiency.
-To ensure that the event was triggered by the lepton candidates used
-in the analysis,  one of the identified leptons and the triggered
-lepton are required to match within $\Delta R < 0.15$.
+The dilepton analysis selects events based on the kinematic properties of the selected objects described above.
+Events are triggered using inclusive single-lepton triggers that were present and unprescaled throughout
+the 2011 data taking period.
+To ensure a consistent understanding of trigger efficiency, the lepton feature that caused the trigger to fire
+is required to be within $\Delta R < 0.15$ of a selected lepton.
+Events are required to have a primary interaction vertex that has at least five tracks associated to it,
+each of which must have a minimum of $\pt>400~\MeV$.
+The entire event is rejected if a jet is considered likely to be the result of calorimeter noise or
+if a jet is inconsistent with the timing of the bunch crossing~\cite{jetcor}.
 
-Events are required to have a primary interaction vertex with at
-least five tracks with $\pt>400~\MeV$.  The event is discarded if
-any jet with $\pt>20$~GeV fails quality cuts designed to reject jets
-arising from calorimeter noise or activity inconsistent with the
-bunch-crossing time~\cite{jetcor}. If an electron candidate and a
-muon candidate share a track, the event is also discarded.
 
-The selection of events in the signal region consists of a series of kinematic requirements on
-the reconstructed objects.
-The requirements on $\MET$, the lepton-lepton invariant
-mass ($m_{\ell\ell}$), and the scalar $\pt$ sum of all selected jets and leptons ($\HT$) are optimized
-to minimize the expected total uncertainty on the cross-section measurement.
-The resulting event selection, referred to as the `non-$b$-tag' selection, is listed below.
+%% The analysis requires collision data selected by an inclusive single
+%% electron or muon trigger with offline-reconstructed
+%% candidates satisfying $\pt>25\GeV$ for electrons, and $\pt>20\GeV$ for muons, to ensure a constant trigger efficiency.
+%% To ensure that the event was triggered by the lepton candidates used
+%% in the analysis,  one of the identified leptons and the triggered
+%% lepton are required to match within $\Delta R < 0.15$.
+
+%% Events are required to have a primary interaction vertex with at
+%% least five tracks with $\pt>400~\MeV$.  The event is discarded if
+%% any jet with $\pt>20$~GeV fails quality cuts designed to reject jets
+%% arising from calorimeter noise or activity inconsistent with the
+%% bunch-crossing time~\cite{jetcor}. If an electron candidate and a
+%% muon candidate share a track, the event is also discarded.
+
+The remaining kinmeatic selections on objects were chosen based on detailed studies
+to minimize the expected uncertainty on the cross-section measurement before
+considering the actual data measured.
+The remaining selection requires:
+
+%% The selection of events in the signal region consists of a series of kinematic requirements on
+%% the reconstructed objects.
+%% The requirements on $\MET$, the lepton-lepton invariant
+%% mass ($m_{\ell\ell}$), and the scalar $\pt$ sum of all selected jets and leptons ($\HT$) are optimized
+%% to minimize the expected total uncertainty on the cross-section measurement.
+%% The resulting event selection, referred to as the `non-$b$-tag' selection, is listed below.
 
 \begin{itemize}
 
@@ -374,121 +429,163 @@ Events in the $e\mu$ channel are required to satisfy $\HT>130\GeV$. No \MET\ or 
 %In this case, remaining background from $\Zg$+jets production
 %is suppressed by requiring $\HT>130~\GeV$.
 
-\item The lepton+track event candidates must have  $\MET>45\GeV$, \HT\ (including the
-track lepton) $>150\GeV$, and $|m_{\ell\ell} - m_Z| > 10\GeV$.
-
 \end{itemize}
 
-A parallel selection with the additional requirement of at least one
-$b$-tagged jet is made. Because of the enhanced background rejection
-afforded by the $b$-tag requirement, the selection is further
-optimized, resulting in an $\MET$\ requirement for $ee$ and $\mu\mu$
-events that is relaxed to $\MET>40\GeV$, while the $\HT$\
-requirement for $e\mu$ events remains the same as for the
-non-$b$-tag selection, i.e. $\HT> 130\GeV$.  We refer to the
-analysis that requires at least one $b$-tagged jet as the `$b$-tag
-analysis', and the events selected therein as the `$b$-tagged
-sample'.  The subset of the $b$-tagged sample with $40\GeV<
-\MET<60\GeV$ is referred to as the `exclusive $b$-tagged sample' and
-has no overlap with the non-$b$-tag sample.
+%% A parallel selection with the additional requirement of at least one
+%% $b$-tagged jet is made. Because of the enhanced background rejection
+%% afforded by the $b$-tag requirement, the selection is further
+%% optimized, resulting in an $\MET$\ requirement for $ee$ and $\mu\mu$
+%% events that is relaxed to $\MET>40\GeV$, while the $\HT$\
+%% requirement for $e\mu$ events remains the same as for the
+%% non-$b$-tag selection, i.e. $\HT> 130\GeV$.  We refer to the
+%% analysis that requires at least one $b$-tagged jet as the `$b$-tag
+%% analysis', and the events selected therein as the `$b$-tagged
+%% sample'.  The subset of the $b$-tagged sample with $40\GeV<
+%% \MET<60\GeV$ is referred to as the `exclusive $b$-tagged sample' and
+%% has no overlap with the non-$b$-tag sample.
 
-The acceptance times the branching fraction of $\ttbar$ to
-dileptons, for the selection described above, is 0.96\% for the $ee
-+ \mu\mu +e\mu$ channels without $b$-tagging, 0.11\% for the
-exclusive $b$-tagged sample, and 0.19\% for $e$TL + $\mu$TL
-channels.
+Based on studies of Monte-Carlo simulation, the acceptance of this selection
+on the $\ttbar$ signal is 0.96\% when averaged over all three channels.
+
+%% The acceptance times the branching fraction of $\ttbar$ to
+%% dileptons, for the selection described above, is 0.96\% for the $ee
+%% + \mu\mu +e\mu$ channels without $b$-tagging, 0.11\% for the
+%% exclusive $b$-tagged sample, and 0.19\% for $e$TL + $\mu$TL
+%% channels.
 
 
 \subsection{Background evaluation}
 \label{s:backgrounds}
 
-The $\ttbar$ event selection rejects $\Zg$+jets
-events with $ee$ and $\mu\mu$ invariant mass below $15 \GeV$, or within $10 \GeV$ of the $Z$-boson mass. However, $\Zg$+jets events with $ee$ or $\mu\mu$  invariant mass outside of these regions can enter the signal sample when there is large $\met$, typically from mismeasurement.
-These events are difficult to properly model in simulations
-due to uncertainties on the non-Gaussian tails of the $\met$\ distribution,
-on the cross section for $Z$~boson production with multiple jets, and on the
-lepton energy resolution.
-
-To evaluate the $\Zg$+jets background in dielectron and dimuon events
-($Z \to \tau\tau$ is considered below), the MC prediction for the number of events in the signal region is normalized to the data using the number of
-$\Zg$+jets events measured in a control region~\cite{ATL-CONF-2011-034}.
-%orthogonal to the \ttbar\ dilepton signal region.
-The control region is formed by
-events with the same jet requirements as the signal region, but with
- $m_{\ell \ell}$ within 10 GeV of the $Z$-boson mass, and a $\MET$ cut of
-$\met>45~\GeV$ for the lepton+track candidates and $\met>30~\GeV$
-for the others. Contamination in the control region from other
-physics processes (signal and other background processes considered
-for the analysis) is subtracted according to MC predictions.
-The ratio of data events to MC expectation in the control region
-provides a scale factor that is used to correct the MC prediction
-for $\Zg$+jets events in the signal region.
+Although the event selection attempts to reject $\Zg$+jets events by requiring a minimum dilepton invariant mass of $15 GeV$ and exlcuding a
+mass window within 10 GeV of the around the $Z$-boson, there remains a non-neglegive contribution to the signal region from this background.
+Moreover, because these events have little ``real'' missing energy (which typically referrs to missing energy arising from neutrinos),
+and the event selection requires a large amount of missing energy, $\Zg$+jets must have significant missing energy arising
+from mismeasurements, which is channelging to model accurately using Monte-Carlo simulation.
+For this reason, the size of this background is measured directly in-data using a control region, and the  contribution to the signal regions
+is evaluated by extrapolating from that control region using a factor determined using Monte-Carlo~\cite{ATL-CONF-2011-034}..
+This control region is identical to the signal region with the exception that it inverts the cut on the invariant mass of the reconstructed
+lepton, requiring instead that they be within 10 GeV of the $Z$-boson mass.
+In addition, the missing energy cut is relaxed to only require $\met>30~\GeV$.
+The presence of signal and other backgrounds in this control region is corrected for using
+Monte-Carlo simulation
 
 
-Other backgrounds mainly come from $W$+jets, \ttbar\, lepton+jets,
-and single top-quark production with fake leptons. The term `fake
-lepton' is used to refer to both misidentified and non-prompt lepton
-candidates, the latter category arising from hadron decays in
-flight. The yield of events with fake identified leptons is
-evaluated from the data using a matrix method~\cite{top2010}. In
-addition to the standard lepton selection requirements, a selection
-with a looser isolation requirement is defined.  Dilepton events are
-selected using the loose isolation requirement and events are
-categorized according to whether each lepton passes the standard
-selection or the loose selection but not the standard selection.
-There are four such categories for the two leptons: loose-loose,
-loose-standard, standard-loose, and standard-standard.  Each of the
-four categories is related to the number of events with two `real'
-(prompt) leptons, two fake leptons, or one of each, through a set of
-linear equations with coefficients given by the products of
-probabilities for real or fake lepton satisfying the loose selection
-to also satisfy the standard selection.  These linear expressions
-form a matrix that is inverted in order to extract the real and fake
-lepton content of the observed dilepton event sample.
-The probability for real leptons is measured as a function of jet
-multiplicity using data samples of
-$\Zee$ and $\Zmm$ events.
-The corresponding probability for
-fake leptons is measured in a data sample dominated by dijet production,
-with events containing one lepton candidate passing the looser isolation cuts and having $\met <20 \GeV$.
-Contributions from real leptons due to $W$+jets final states are
-subtracted using simulated events.
 
-For lepton+track events the largest background is from events with
-fake leptons, dominated by fake track leptons. The
-probability of a jet being reconstructed as a track lepton is
-determined from a $\gamma$+jets data sample selected with photon
-triggers. The fake probability is applied to a second sample
-enriched in $W$+jets events with exactly one identified lepton and
-no track leptons, but using the same kinematic cuts as for the
-signal sample. In this second sample the fake probabilities are
-summed for each jet in each event and the fake track-lepton
-contribution is calculated as a function of the number of jets.
+%% The $\ttbar$ event selection rejects $\Zg$+jets
+%% events with $ee$ and $\mu\mu$ invariant mass below $15 \GeV$, or within $10 \GeV$ of the $Z$-boson mass. However, $\Zg$+jets events with $ee$ or $\mu\mu$  invariant mass outside of these regions can enter the signal sample when there is large $\met$, typically from mismeasurement.
+%% These events are difficult to properly model in simulations
+%% due to uncertainties on the non-Gaussian tails of the $\met$\ distribution,
+%% on the cross section for $Z$~boson production with multiple jets, and on the
+%% lepton energy resolution.
 
-The contributions from other electroweak background processes with
-two real leptons,  such as single top quarks, $Z \to \tau\tau$,
-$WW$, $ZZ$ and $WZ$ production are determined from Monte Carlo
-simulations.   The expected numbers of background events are given
-in Table~\ref{t:signal}.  The absence of $\Zg$+jets background in
-the $e\mu$ channel, coupled with the larger branching fraction for
-the $e\mu$ signal, allows relatively loose selection criteria to be
-used in this channel. %The $b$-tagged $e\mu$ events require the same
+%% To evaluate the $\Zg$+jets background in dielectron and dimuon events
+%% ($Z \to \tau\tau$ is considered below), the MC prediction for the number of events in the signal region is normalized to the data using the number of
+%% $\Zg$+jets events measured in a control region~\cite{ATL-CONF-2011-034}.
+%% %orthogonal to the \ttbar\ dilepton signal region.
+%% The control region is formed by
+%% events with the same jet requirements as the signal region, but with
+%%  $m_{\ell \ell}$ within 10 GeV of the $Z$-boson mass, and a $\MET$ cut of
+%% $\met>45~\GeV$ for the lepton+track candidates and $\met>30~\GeV$
+%% for the others. Contamination in the control region from other
+%% physics processes (signal and other background processes considered
+%% for the analysis) is subtracted according to MC predictions.
+%% The ratio of data events to MC expectation in the control region
+%% provides a scale factor that is used to correct the MC prediction
+%% for $\Zg$+jets events in the signal region.
 
-The background contributions for the $b$-tag analysis are determined
-using the same techniques described above, with the additional
-requirement of a $b$-tagged jet.
+A number of sources of background enter the signal region due to a false postive reconstruction
+of a lepton, which is referred to as a fake lepton.
+The background due to fake leptons comes mostly from $W$+jets, \ttbar\, lepton+jets,
+and single top-quark production.
+The contribution to the signal region from these events is collectively evaluated
+using the Matrix-Method (described in detail elsewhere) which uses loose and tight
+leptons selections to disentangle the contribution to the signal region from 
+real leptons from fake leptons.
+The Matrix-Method requires knowing the reconstruction and identification efficiencies of both
+real and fake leptons for both the loose and tight selections.
+The efficiencies for real leptons to be identified as tight given that they are identified as loose
+were measured using $\Zee$ and $\Zmm$ candidate events, and the efficiencies for fake leptons
+(known as the fake rate) was measured using using $W$+jets events
+The contribution of real leptons in the control region for measuring the fake rate was 
+subtracted using estimates obtained from Monte Carlo.
 
-The modeled acceptances, efficiencies and data-driven background
-evaluation methods are validated by comparing predictions from Monte
-Carlo simulations with data in control regions with kinematics
-similar to the signal region but dominated by backgrounds. In
-particular, the \met, $m_{\ell\ell}$ and jet multiplicity
-distributions are studied in a sample of $Z$-boson candidates,
-defined by requiring $|m_{\ell\ell} - m_Z| < 10 \GeV$ and $\met
-<$~60 GeV. The predictions from MC simulations in the control
-regions are in reasonable agreement with data, although small
-discrepancies exist in regions that do not affect the $\ttbar$
-cross-section measurement.
+
+%% Other backgrounds mainly come from $W$+jets, \ttbar\, lepton+jets,
+%% and single top-quark production with fake leptons. The term `fake
+%% lepton' is used to refer to both misidentified and non-prompt lepton
+%% candidates, the latter category arising from hadron decays in
+%% flight. The yield of events with fake identified leptons is
+%% evaluated from the data using a matrix method~\cite{top2010}. In
+%% addition to the standard lepton selection requirements, a selection
+%% with a looser isolation requirement is defined.  Dilepton events are
+%% selected using the loose isolation requirement and events are
+%% categorized according to whether each lepton passes the standard
+%% selection or the loose selection but not the standard selection.
+%% There are four such categories for the two leptons: loose-loose,
+%% loose-standard, standard-loose, and standard-standard.  Each of the
+%% four categories is related to the number of events with two `real'
+%% (prompt) leptons, two fake leptons, or one of each, through a set of
+%% linear equations with coefficients given by the products of
+%% probabilities for real or fake lepton satisfying the loose selection
+%% to also satisfy the standard selection.  These linear expressions
+%% form a matrix that is inverted in order to extract the real and fake
+%% lepton content of the observed dilepton event sample.
+%% The probability for real leptons is measured as a function of jet
+%% multiplicity using data samples of
+%% $\Zee$ and $\Zmm$ events.
+%% The corresponding probability for
+%% fake leptons is measured in a data sample dominated by dijet production,
+%% with events containing one lepton candidate passing the looser isolation cuts and having $\met <20 \GeV$.
+%% Contributions from real leptons due to $W$+jets final states are
+%% subtracted using simulated events.
+
+%% For lepton+track events the largest background is from events with
+%% fake leptons, dominated by fake track leptons. The
+%% probability of a jet being reconstructed as a track lepton is
+%% determined from a $\gamma$+jets data sample selected with photon
+%% triggers. The fake probability is applied to a second sample
+%% enriched in $W$+jets events with exactly one identified lepton and
+%% no track leptons, but using the same kinematic cuts as for the
+%% signal sample. In this second sample the fake probabilities are
+%% summed for each jet in each event and the fake track-lepton
+%% contribution is calculated as a function of the number of jets.
+
+The contributions of events with two real leptons and missing energy
+distributions that are well-modeled using simulation, including
+single top quarks, $Z \to \tau\tau$, $WW$, $ZZ$ and $WZ$, are evaluated
+using Monte Carlo simulation.
+The expected background rate in all three channels is given in table Table~\ref{t:signal}
+
+
+%% The contributions from other electroweak background processes with
+%% two real leptons,  such as single top quarks, $Z \to \tau\tau$,
+%% $WW$, $ZZ$ and $WZ$ production are determined from Monte Carlo
+%% simulations.   The expected numbers of background events are given
+%% in Table~\ref{t:signal}.  The absence of $\Zg$+jets background in
+%% the $e\mu$ channel, coupled with the larger branching fraction for
+%% the $e\mu$ signal, allows relatively loose selection criteria to be
+%% used in this channel. %The $b$-tagged $e\mu$ events require the same
+
+%% The background contributions for the $b$-tag analysis are determined
+%% using the same techniques described above, with the additional
+%% requirement of a $b$-tagged jet.
+
+%
+% Consider including the below
+%
+
+%% The modeled acceptances, efficiencies and data-driven background
+%% evaluation methods are validated by comparing predictions from Monte
+%% Carlo simulations with data in control regions with kinematics
+%% similar to the signal region but dominated by backgrounds. In
+%% particular, the \met, $m_{\ell\ell}$ and jet multiplicity
+%% distributions are studied in a sample of $Z$-boson candidates,
+%% defined by requiring $|m_{\ell\ell} - m_Z| < 10 \GeV$ and $\met
+%% <$~60 GeV. The predictions from MC simulations in the control
+%% regions are in reasonable agreement with data, although small
+%% discrepancies exist in regions that do not affect the $\ttbar$
+%% cross-section measurement.
 
 
 \newcommand{\DYZeeNJetsTwoJet}{$4.0^{+2.5}_{-1.2}$}
@@ -580,25 +677,25 @@ cross-section measurement.
 
 \begin{table*}[htb]
 \begin{footnotesize}
-\begin{adjustwidth}{-6em}{-6em}
+%\begin{adjustwidth}{-6em}{-6em}
 \centering
-\begin{tabular}{|l|c|c|c|c|c||c|c|c|} \hline
-                          & $ee$                    & $\mu\mu$                & $e\mu$                  & $e$TL                & $\mu$TL      & $b$-tag $ee$         & $b$-tag $\mu\mu$      & $b$-tag $e\mu$          \\ [0.2ex] \hline
-                          &                         &                         &                         &                      &              &                      &                       &                         \\ [-1.9ex]
-                          $\Zg$+~jets              & \DYZeeNJetsTwoJet       & \DYZmmNJetsTwoJet       & -                       & \DYZeTLNJetsTwoJet  & \DYZmTLNJetsTwoJet         & \DYZeeNJetsTwoJetb     & \DYZmmNJetsTwoJetb    & $-$                             \\ [0.3ex]
-$\Zg \to \tau\tau$+jets  & \ZtteeNJetsTwoJet       & \ZttmmNJetsTwoJet       & \ZttemNJetsTwoJet       & \ZtteTLNJetsTwoJet  & \ZttmTLNJetsTwoJet                & \ZtteeNJetsTwoJetb            & \ZttmmNJetsTwoJetb     &  \ZttemNJetsTwoJetb           \\ [0.3ex]
- Fake leptons & \FakeWeeNJetsTwoJet     & \FakeWmmNJetsTwoJet     & \FakeWemNJetsTwoJet     & \FakeWeTLNJetsTwoJet          & \FakeWmTLNJetsTwoJet                   & \FakeWeeNJetsTwoJetb     & \FakeWmmNJetsTwoJetb     & \FakeWemNJetsTwoJetb           \\ [0.3ex]
-Single top quark              & \singletopeeNJetsTwoJet & \singletopmmNJetsTwoJet & \singletopemNJetsTwoJet & \singletopeTLNJetsTwoJet         & \singletopmTLNJetsTwoJet         & \singletopeeNJetsTwoJetb & \singletopmmNJetsTwoJetb & \singletopemNJetsTwoJetb       \\ [0.3ex]
-Diboson                  & \dibosoneeNJetsTwoJet   & \dibosonmmNJetsTwoJet   & \dibosonemNJetsTwoJet   & \dibosoneTLNJetsTwoJet          & \dibosonmTLNJetsTwoJet         & \dibosoneeNJetsTwoJetb   & \dibosonmmNJetsTwoJetb   & \dibosonemNJetsTwoJetb        \\ [0.3ex] \hline
-                          &                         &                         &                         &                      &              &                      &                       &                         \\ [-1.9ex]
- Total background         & \TotalNonttbaree        & \TotalNonttbarmm        & \TotalNonttbarem        & \TotalNonttbareTL     & \TotalNonttbarmTL       & \TotalNonttbareeb        & \TotalNonttbarmmb        & \TotalNonttbaremb           \\ [0.3ex]
-Predicted \ttbar\       & \ttbareeNJetsTwoJet     & \ttbarmmNJetsTwoJet     & \ttbaremNJetsTwoJet     & \ttbareTLNJetsTwoJet       & \ttbarmTLNJetsTwoJet         & \ttbareeNJetsTwoJetb     & \ttbarmmNJetsTwoJetb     & \ttbaremNJetsTwoJetb \\ [0.3ex] \hline
-                          &                         &                         &                         &                      &              &                      &                       &                         \\ [-1.9ex]
-Total                 & \TotalExpectedee        & \TotalExpectedmm        & \TotalExpectedem        & \TotalExpectedeTL & \TotalExpectedmTL                 & \TotalExpectedeeb        & \TotalExpectedmmb       & \TotalExpectedemb \\ [0.3ex] \hline \hline
-                          &                         &                         &                         &                      &              &                      &                       &                         \\ [-1.9ex]
-Observed               & \DataeeNJetsTwoJet      & \DatammNJetsTwoJet      & \DataemNJetsTwoJet      & \DataeTLNJetsTwoJet                   & \DatamTLNJetsTwoJet                                    & \DataeeNJetsTwoJetb      & \DatammNJetsTwoJetb      & \DataemNJetsTwoJetb                      \\ \hline
+\begin{tabular}{|l|c|c|c|} \hline
+                          & $ee$                    & $\mu\mu$                & $e\mu$                  \\ [0.2ex] \hline
+                          &                         &                         &                         \\ [-1.9ex]
+$\Zg$+~jets               & \DYZeeNJetsTwoJet       & \DYZmmNJetsTwoJet       & -                       \\ [0.3ex]
+$\Zg \to \tau\tau$+jets   & \ZtteeNJetsTwoJet       & \ZttmmNJetsTwoJet       & \ZttemNJetsTwoJet       \\ [0.3ex]
+Fake leptons              & \FakeWeeNJetsTwoJet     & \FakeWmmNJetsTwoJet     & \FakeWemNJetsTwoJet     \\ [0.3ex]
+Single top quark          & \singletopeeNJetsTwoJet & \singletopmmNJetsTwoJet & \singletopemNJetsTwoJet \\ [0.3ex]
+Diboson                   & \dibosoneeNJetsTwoJet   & \dibosonmmNJetsTwoJet   & \dibosonemNJetsTwoJet   \\ [0.3ex] \hline
+                          &                         &                         &                         \\ [-1.9ex]
+Total background          & \TotalNonttbaree        & \TotalNonttbarmm        & \TotalNonttbarem        \\ [0.3ex]
+Predicted \ttbar\         & \ttbareeNJetsTwoJet     & \ttbarmmNJetsTwoJet     & \ttbaremNJetsTwoJet     \\ [0.3ex] \hline
+                          &                         &                         &                         \\ [-1.9ex]
+Total                     & \TotalExpectedee        & \TotalExpectedmm        & \TotalExpectedem        \\ [0.3ex] \hline \hline
+                          &                         &                         &                         \\ [-1.9ex]
+Observed                  & \DataeeNJetsTwoJet      & \DatammNJetsTwoJet      & \DataemNJetsTwoJet      \\ \hline
 \end{tabular}
-\end{adjustwidth}
+%\end{adjustwidth}
 \end{footnotesize}
 \caption {Breakdown of the expected {\ttbar} signal and background
 events in the signal region compared to the observed event yields,
@@ -609,11 +706,51 @@ uncertainty. The largest contribution to the line labeled 'Fake
 leptons' comes from $W+$jets events.} \label{t:signal}
 \end{table*}
 
+%
+% THEIRS:
+%
 
+%% \begin{table*}[htb]
+%% \begin{footnotesize}
+%% \begin{adjustwidth}{-6em}{-6em}
+%% \centering
+%% \begin{tabular}{|l|c|c|c|c|c||c|c|c|} \hline
+%%                           & $ee$                    & $\mu\mu$                & $e\mu$                  & $e$TL                & $\mu$TL      & $b$-tag $ee$         & $b$-tag $\mu\mu$      & $b$-tag $e\mu$          \\ [0.2ex] \hline
+%%                           &                         &                         &                         &                      &              &                      &                       &                         \\ [-1.9ex]
+%%                           $\Zg$+~jets              & \DYZeeNJetsTwoJet       & \DYZmmNJetsTwoJet       & -                       & \DYZeTLNJetsTwoJet  & \DYZmTLNJetsTwoJet         & \DYZeeNJetsTwoJetb     & \DYZmmNJetsTwoJetb    & $-$                             \\ [0.3ex]
+%% $\Zg \to \tau\tau$+jets  & \ZtteeNJetsTwoJet       & \ZttmmNJetsTwoJet       & \ZttemNJetsTwoJet       & \ZtteTLNJetsTwoJet  & \ZttmTLNJetsTwoJet                & \ZtteeNJetsTwoJetb            & \ZttmmNJetsTwoJetb     &  \ZttemNJetsTwoJetb           \\ [0.3ex]
+%%  Fake leptons & \FakeWeeNJetsTwoJet     & \FakeWmmNJetsTwoJet     & \FakeWemNJetsTwoJet     & \FakeWeTLNJetsTwoJet          & \FakeWmTLNJetsTwoJet                   & \FakeWeeNJetsTwoJetb     & \FakeWmmNJetsTwoJetb     & \FakeWemNJetsTwoJetb           \\ [0.3ex]
+%% Single top quark              & \singletopeeNJetsTwoJet & \singletopmmNJetsTwoJet & \singletopemNJetsTwoJet & \singletopeTLNJetsTwoJet         & \singletopmTLNJetsTwoJet         & \singletopeeNJetsTwoJetb & \singletopmmNJetsTwoJetb & \singletopemNJetsTwoJetb       \\ [0.3ex]
+%% Diboson                  & \dibosoneeNJetsTwoJet   & \dibosonmmNJetsTwoJet   & \dibosonemNJetsTwoJet   & \dibosoneTLNJetsTwoJet          & \dibosonmTLNJetsTwoJet         & \dibosoneeNJetsTwoJetb   & \dibosonmmNJetsTwoJetb   & \dibosonemNJetsTwoJetb        \\ [0.3ex] \hline
+%%                           &                         &                         &                         &                      &              &                      &                       &                         \\ [-1.9ex]
+%%  Total background         & \TotalNonttbaree        & \TotalNonttbarmm        & \TotalNonttbarem        & \TotalNonttbareTL     & \TotalNonttbarmTL       & \TotalNonttbareeb        & \TotalNonttbarmmb        & \TotalNonttbaremb           \\ [0.3ex]
+%% Predicted \ttbar\       & \ttbareeNJetsTwoJet     & \ttbarmmNJetsTwoJet     & \ttbaremNJetsTwoJet     & \ttbareTLNJetsTwoJet       & \ttbarmTLNJetsTwoJet         & \ttbareeNJetsTwoJetb     & \ttbarmmNJetsTwoJetb     & \ttbaremNJetsTwoJetb \\ [0.3ex] \hline
+%%                           &                         &                         &                         &                      &              &                      &                       &                         \\ [-1.9ex]
+%% Total                 & \TotalExpectedee        & \TotalExpectedmm        & \TotalExpectedem        & \TotalExpectedeTL & \TotalExpectedmTL                 & \TotalExpectedeeb        & \TotalExpectedmmb       & \TotalExpectedemb \\ [0.3ex] \hline \hline
+%%                           &                         &                         &                         &                      &              &                      &                       &                         \\ [-1.9ex]
+%% Observed               & \DataeeNJetsTwoJet      & \DatammNJetsTwoJet      & \DataemNJetsTwoJet      & \DataeTLNJetsTwoJet                   & \DatamTLNJetsTwoJet                                    & \DataeeNJetsTwoJetb      & \DatammNJetsTwoJetb      & \DataemNJetsTwoJetb                      \\ \hline
+%% \end{tabular}
+%% \end{adjustwidth}
+%% \end{footnotesize}
+%% \caption {Breakdown of the expected {\ttbar} signal and background
+%% events in the signal region compared to the observed event yields,
+%% for each of the dilepton channels. All systematic uncertainties are
+%% included, and correlations between different background sources are
+%% taken into account, when calculating the total background
+%% uncertainty. The largest contribution to the line labeled 'Fake
+%% leptons' comes from $W+$jets events.} \label{t:signal}
+%% \end{table*}
 
 
 \subsection{Systematic uncertainties}
 \label{s:objsyst}
+
+A number of systematic uncertainties contribute to the error on the measured $\ttbar$ cross section, which are summarized in Table~\ref{tab:syssum}.
+
+MUST DO THIS
+%%% MUST DO THIS SECTION
+
+
 A summary of the systematic uncertainties on the measured $\ttbar$ production cross section is given in Table~\ref{tab:syssum}.
 
 Lepton trigger and identified-lepton and track-lepton
@@ -703,52 +840,101 @@ the likelihood function.
 
 % Table for 7 ch. combination
 %
+
+
 \begin{table*}[htb]
 \begin{footnotesize}
-\begin{adjustwidth}{-6em}{-6em}
+%\begin{adjustwidth}{-6em}{-6em}
 \centering
-\begin{tabular}{|l|c|c|c|c|c|c|}
+\begin{tabular}{|l|c|c|c|}
 \hline
-           Uncertainties       $\Delta\sigma/\sigma$[\%]        & $ee$              & $\mu\mu$          & $e\mu$            &  $e$TL  & $\mu$TL   &Combined         \\ \hline
+           Uncertainties  $\Delta\sigma/\sigma$[\%]        & $ee$              & $\mu\mu$          & $e\mu$ \\ \hline
 
-% Uncertainties (\%)       & \multicolumn{6}{|c|}{$\Delta\sigma/\sigma$[\%]} \\ \hline
-
-Data statistics           &    $\pm 8.1$  &    $\pm 6.1$  &    $\pm 3.9$  &   $\pm 14.1$  &   $\pm 14.2$  &    $\pm 2.9$\\
+Data statistics           &    $\pm 8.1$  &    $\pm 6.1$  &    $\pm 3.9$  \\
 \hline
-Luminosity                &    +4.4/-3.8 &    +4.4/-3.9  &    $\pm 4.2$  &    +5.1/-4.2  &    +5.4/-4.4  &    $\pm 4.3$ \\
+Luminosity                &    +4.4/-3.8 &    +4.4/-3.9   &    $\pm 4.2$  \\
 \hline
-MC statistics             &    $\pm 1.6$  &    $\pm 1.2$  &    $\pm 0.8$  &    $\pm 5.5$  &    $\pm 4.6$  &    +0.7/-0.6 \\
-Lepton uncertainties      &    +6.2/-5.4   &    +2.9/-1.3  &    $\pm 3.1$  &    $\pm 4.1$  &    +1.8/-1.6  &    +2.6/-2.2 \\
-Track-leptons             &     ---          &    ---          & ---          &    $\pm 4.4$  &    $\pm 1.9$  &    +0.3/-0.2 \\
-Jet/$\met$ uncertainties  &    +5.7/-5.7  &    +6.4/-3.5  & +4.7/-3.2  &    +14.8/-6.4  &   $\pm 13.1$  &    +4.4/-3.4 \\
-$b$-tagging uncertainties &    +1.2/-1.0  &    $\pm 0.7$   &     ---          &     ---          &     ---          &    +0.4/-0.0 \\
-$\Zg$+~jets evaluation    &    $\pm 0.4$  &    +0.5/-0.0  &      --- &    $\pm 6.2$  &    +2.4/-2.7  &    +0.3/-0.2 \\
-Fake lepton evaluation    &    $\pm 3.3$  &    1.5/-1.3  &    $\pm 3.0$  &   $\pm 13.7$  &   $\pm 15.1$  &    $\pm 1.7$  \\
-Generator                 &   +12/-11     &    +4.5/-4.3   &    +4.8/-4.5   &   +14/-11    &   +14/-13     &    +5.1/-4.9  \\
+MC statistics             &    $\pm 1.6$  &    $\pm 1.2$  &    $\pm 0.8$  \\
+Lepton uncertainties      &    +6.2/-5.4  &    +2.9/-1.3  &    $\pm 3.1$  \\
+Track-leptons             &     ---       &    ---        & ---           \\
+Jet/$\met$ uncertainties  &    +5.7/-5.7  &    +6.4/-3.5  & +4.7/-3.2     \\
+$b$-tagging uncertainties &    +1.2/-1.0  &    $\pm 0.7$  &     ---       \\
+$\Zg$+~jets evaluation    &    $\pm 0.4$  &    +0.5/-0.0  &     ---       \\
+Fake lepton evaluation    &    $\pm 3.3$  &    1.5/-1.3   &    $\pm 3.0$  \\
+Generator                 &   +12/-11     &    +4.5/-4.3  &   +4.8/-4.5   \\
 \hline
-All syst.(except lumi.)    &   +16.4/-14.4  &    +8.8/-6.4  &    +8.2/-6.8  &   +27.9/-20.7  &   +26.5/-23.7   &    +8.0/-6.5 \\
+All syst.(except lumi.)   &   +16.4/-14.4 &    +8.8/-6.4  &    +8.2/-6.8  \\
 \hline \hline
-Stat. + syst.              &   +18.9/-16.9  &    +11.6/-9.5  &    +10.1/-8.8  &   +31.8/-25.2  &   +30.7/-27.8  &    +9.6/-8.2  \\
+Stat. + syst.             &   +18.9/-16.9 &    +11.6/-9.5 &    +10.1/-8.8 \\
 \hline
 
 \end{tabular}
 \caption{Overview of the \ttbar{} cross-section uncertainties.}
 \label{tab:syssum}
-\end{adjustwidth}
+%\end{adjustwidth}
 \end{footnotesize}
 \end{table*}
+
+
+%% THEIRS
+
+%% \begin{table*}[htb]
+%% \begin{footnotesize}
+%% \begin{adjustwidth}{-6em}{-6em}
+%% \centering
+%% \begin{tabular}{|l|c|c|c|c|c|c|}
+%% \hline
+%%            Uncertainties       $\Delta\sigma/\sigma$[\%]        & $ee$              & $\mu\mu$          & $e\mu$            &  $e$TL  & $\mu$TL   &Combined         \\ \hline
+
+%% % Uncertainties (\%)       & \multicolumn{6}{|c|}{$\Delta\sigma/\sigma$[\%]} \\ \hline
+
+%% Data statistics           &    $\pm 8.1$  &    $\pm 6.1$  &    $\pm 3.9$  &   $\pm 14.1$  &   $\pm 14.2$  &    $\pm 2.9$\\
+%% \hline
+%% Luminosity                &    +4.4/-3.8 &    +4.4/-3.9  &    $\pm 4.2$  &    +5.1/-4.2  &    +5.4/-4.4  &    $\pm 4.3$ \\
+%% \hline
+%% MC statistics             &    $\pm 1.6$  &    $\pm 1.2$  &    $\pm 0.8$  &    $\pm 5.5$  &    $\pm 4.6$  &    +0.7/-0.6 \\
+%% Lepton uncertainties      &    +6.2/-5.4   &    +2.9/-1.3  &    $\pm 3.1$  &    $\pm 4.1$  &    +1.8/-1.6  &    +2.6/-2.2 \\
+%% Track-leptons             &     ---          &    ---          & ---          &    $\pm 4.4$  &    $\pm 1.9$  &    +0.3/-0.2 \\
+%% Jet/$\met$ uncertainties  &    +5.7/-5.7  &    +6.4/-3.5  & +4.7/-3.2  &    +14.8/-6.4  &   $\pm 13.1$  &    +4.4/-3.4 \\
+%% $b$-tagging uncertainties &    +1.2/-1.0  &    $\pm 0.7$   &     ---          &     ---          &     ---          &    +0.4/-0.0 \\
+%% $\Zg$+~jets evaluation    &    $\pm 0.4$  &    +0.5/-0.0  &      --- &    $\pm 6.2$  &    +2.4/-2.7  &    +0.3/-0.2 \\
+%% Fake lepton evaluation    &    $\pm 3.3$  &    1.5/-1.3  &    $\pm 3.0$  &   $\pm 13.7$  &   $\pm 15.1$  &    $\pm 1.7$  \\
+%% Generator                 &   +12/-11     &    +4.5/-4.3   &    +4.8/-4.5   &   +14/-11    &   +14/-13     &    +5.1/-4.9  \\
+%% \hline
+%% All syst.(except lumi.)    &   +16.4/-14.4  &    +8.8/-6.4  &    +8.2/-6.8  &   +27.9/-20.7  &   +26.5/-23.7   &    +8.0/-6.5 \\
+%% \hline \hline
+%% Stat. + syst.              &   +18.9/-16.9  &    +11.6/-9.5  &    +10.1/-8.8  &   +31.8/-25.2  &   +30.7/-27.8  &    +9.6/-8.2  \\
+%% \hline
+
+%% \end{tabular}
+%% \caption{Overview of the \ttbar{} cross-section uncertainties.}
+%% \label{tab:syssum}
+%% \end{adjustwidth}
+%% \end{footnotesize}
+%% \end{table*}
 
 
 \subsection{Cross-section measurement}
 \label{s:nobtagging}
 
+
 The expected and measured numbers of events in the signal region,
 after applying all selection cuts for each of the individual
 dilepton channels, are shown in Table~\ref{t:signal}. A total of
-1920 candidate events are observed for the analysis without
-$b$-tagging, and a total of 1400 candidate events are found for the
-$b$-tag analysis.  There are 1221 events in common between the two
-selections, and 179 exclusive $b$-tagged events.
+1429 % 165 + 301 + 963
+candidate events are observed across the three signal regions.
+
+
+%% The expected and measured numbers of events in the signal region,
+%% after applying all selection cuts for each of the individual
+%% dilepton channels, are shown in Table~\ref{t:signal}. A total of
+%% 1920 candidate events are observed for the analysis without
+%% $b$-tagging, and a total of 1400 candidate events are found for the
+%% $b$-tag analysis.  There are 1221 events in common between the two
+%% selections, and 179 exclusive $b$-tagged events.
+
+% May have to adjust the below
+MAY HAVE TO ADJUST THE BELOW
 
 In Fig.~\ref{f:ll_njets} the number of selected jets and the
 expectation for $\lumitot$ are shown for the non-$b$-tag analysis
@@ -766,62 +952,64 @@ single-top events.
 
 \begin{figure*}
   \centering
-   \subfigure[]{
-    \includegraphics[width=0.45\textwidth]{pretag_combined_nJets.eps}
-    }
-   \subfigure[]{
-    \includegraphics[width=0.45\textwidth]{btag_preTagFinalJetnJetJetProbTaggedJet_all_ATLAS2.eps}
-    }
+  \subfigure[]{
+    \includegraphics[width=0.45\textwidth]{figures/dilep/pretag_combined_nJets}
+  }
+  \subfigure[]{
+    \includegraphics[width=0.45\textwidth]{figures/dilep/btag_preTagFinalJetnJetJetProbTaggedJet_all_ATLAS2}
+  }
   \caption{ (a) Jet multiplicity distribution for
-$ee$+$\mu\mu$+$e\mu$+$e$TL+$\mu$TL events without a $b$-tagging requirement. (b)
- Multiplicity distribution of $b$-tagged jets in the $ee$+$\mu\mu$+$e\mu$ channels. Contributions from diboson and
-single top-quark events are summarized as `Other EW'. The
-events in (b) are not a simple subset of those in (a) because the
-event selections for the $b$-tag and non-$b$-tag analyses differ.
-Uncertainties shown are statistical and systematic combined. The
-distributions are shown as stacked histograms.}
+    $ee$+$\mu\mu$+$e\mu$+$e$TL+$\mu$TL events without a $b$-tagging requirement. (b)
+    Multiplicity distribution of $b$-tagged jets in the $ee$+$\mu\mu$+$e\mu$ channels. Contributions from diboson and
+    single top-quark events are summarized as `Other EW'. The
+    events in (b) are not a simple subset of those in (a) because the
+    event selections for the $b$-tag and non-$b$-tag analyses differ.
+    Uncertainties shown are statistical and systematic combined. The
+    distributions are shown as stacked histograms.}
   \label{f:ll_njets}
 \end{figure*}
 
 \begin{figure*}
   \centering
-     \subfigure[]{
-    \includegraphics[width=0.41\textwidth]{pretag_combined_Met_log.eps}
-    }
-   \subfigure[]{
-    \includegraphics[width=0.41\textwidth]{btag_jetProbTaggedInSRMEt_all_logscale_ATLAS2.eps}
-    }
+  \subfigure[]{
+    \includegraphics[width=0.41\textwidth]{figures/dilep/pretag_combined_Met_log}
+  }
+  \subfigure[]{
+    \includegraphics[width=0.41\textwidth]{figures/dilep/btag_jetProbTaggedInSRMEt_all_logscale_ATLAS2}
+  }
   \caption{
-The $\met$ distribution in the signal region for (a) the five
-non-$b$-tag channels combined and, (b) the three $b$-tagged channels
-combined.  Contributions from diboson and single top-quark events
-are summarized as `Other EW'. Uncertainties shown are statistical
-and systematic combined. The last bin in each figure is an
-overflow bin, including all events above 190 GeV. The distributions
-are shown as stacked histograms.}
+    The $\met$ distribution in the signal region for (a) the five
+    non-$b$-tag channels combined and, (b) the three $b$-tagged channels
+    combined.  Contributions from diboson and single top-quark events
+    are summarized as `Other EW'. Uncertainties shown are statistical
+    and systematic combined. The last bin in each figure is an
+    overflow bin, including all events above 190 GeV. The distributions
+    are shown as stacked histograms.}
   \label{f:ll_met_ht}
 \end{figure*}
+
 
 The cross-section results are obtained with a profile likelihood
 technique, as described in Ref.~\cite{ATL-CONF-2011-034}. The
 branching fraction for $t\rightarrow Wb$ is taken to be 100\% and
 the acceptance is calculated for a top mass of 172.5 GeV.
 
-The top-quark pair production cross section measured by combining
-the seven channels, the non-$b$-tagged $ee$, $\mu\mu$, $e\mu$, $e$TL
-and $\mu$TL and the exclusive $b$-tagged $ee$ and $\mu\mu$, is
-\[
-\sigmattbar=\mathrm{}\xsecctot \xseccstat
-\mathrm{(stat.)}\xseccsyst \mathrm{(syst.)} \xsecclumi
-\mathrm{(lumi.)}~\rm pb.
-\]
+%% The top-quark pair production cross section measured by combining
+%% the seven channels, the non-$b$-tagged $ee$, $\mu\mu$, $e\mu$, $e$TL
+%% and $\mu$TL and the exclusive $b$-tagged $ee$ and $\mu\mu$, is
+%% \[
+%% \sigmattbar=\mathrm{}\xsecctot \xseccstat
+%% \mathrm{(stat.)}\xseccsyst \mathrm{(syst.)} \xsecclumi
+%% \mathrm{(lumi.)}~\rm pb.
+%% \]
+
 Figure~\ref{fig:XsecSummary} summarizes the cross sections
 for the individual channels,  and the combination of the non-$b$-tag and
 the exclusive $b$-tagged data sets.
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=0.5\textwidth]{summary_dilep_atlforaproval.eps}
+\includegraphics[width=0.5\textwidth]{figures/dilep/summary_dilep_atlforaproval}
     \caption{Summary of the individual cross section measurements and the combination of non-$b$-tag and
     exclusive $b$-tagged results. The vertical dashed line and yellow band are the approximate NNLO theory calculation and its uncertainty.}
     \label{fig:XsecSummary}
@@ -861,19 +1049,22 @@ Using $b$-tagging, the cross section is
 \]
 These results have been cross checked with other techniques,
 confirming their robustness.
-Finally the combination of the non-$b$-tagged and the exclusive $b$-tagged
-data sets yields
-\[
-\sigmattbar=\mathrm{}\xsecctot \xseccstat  \mathrm{(stat.)}\xseccsyst \mathrm{(syst.)} \xsecclumi  \mathrm{(lumi.)}~\rm pb.
-\]
+
+
+%% Finally the combination of the non-$b$-tagged and the exclusive $b$-tagged
+%% data sets yields
+%% \[
+%% \sigmattbar=\mathrm{}\xsecctot \xseccstat  \mathrm{(stat.)}\xseccsyst \mathrm{(syst.)} \xsecclumi  \mathrm{(lumi.)}~\rm pb.
+%% \]
+
 The cross-section results are summarized in Fig.~\ref{fig:XsecSummary}.
 %Along with the cross-checks, the kinematic properties of the selected events
 %have been found to be compatible with a heavy particle pair where each particle decays into a jet, lepton and neutrino~\cite{ATL-CONF-2011-034}.
 
 \begin{figure}[!h]
 \centering
-%    \includegraphics[width=0.5\textwidth]{f/summary_dilepDetail_atlprelim.eps}
-\includegraphics[width=0.5\textwidth]{f/summary_dilepDetail.eps}
+%    \includegraphics[width=0.5\textwidth]{f/summary_dilepDetail_atlprelim}
+\includegraphics[width=0.5\textwidth]{figures/dilep/summary_dilepDetail}
     \caption{ Cross section summary.}
     \label{fig:XsecSummary}
 \end{figure}
