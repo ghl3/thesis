@@ -83,49 +83,51 @@ The lepton+jets analysis uses a technique to extract the rate and distribution o
 Known as the ``Matrix Method,'' this technique exploits the fact that the efficiencies of real and fake leptons differ as a function of cuts on the reconstructed lepton's isolation and shower shape.
 The technique involves creating two subsets of lepton identifications, denoted as ``loose'' and ``tight'' (with ``tight'' corresponding to the nominal selection requirements).
 The Matrix Method relies on knowing the effecienciy for both real and fake leptons which pass loose selection to also pass the tight selection.
+It uses these efficiencies as a discriminating variable to separate real and fake leptons.
+As the matrix method is used extensively throughout the analyses that coprise this thesis, it is described in detail in appendix ~\ref{app:matrixmethod}.
+%% \begin{equation}
+%%   \epsilon_{real} = \frac{N^{tight}_{real}}{N^{loose}_{real}} and \epsilon_{fake} = \frac{N^{tight}_{fake}}{N^{loose}_{fake}},
+%% \end{equation}
 
-\begin{equation}
-  \epsilon_{real} = \frac{N^{tight}_{real}}{N^{loose}_{real}} and \epsilon_{fake} = \frac{N^{tight}_{fake}}{N^{loose}_{fake}},
-\end{equation}
+%% where $N^{tight}$ and $N^{loose}$ represent the number of events with tight or loose (and not tight) lepton, respectively, in the region of phase space where the efficiency is being measured.
+%% Given these values, one can write a set of equations relating the number of events with a measured loose or tight lepton to the number  
 
-where $N^{tight}$ and $N^{loose}$ represent the number of events with tight or loose (and not tight) lepton, respectively, in the region of phase space where the efficiency is being measured.
-Given these values, one can write a set of equations relating the number of events with a measured loose or tight lepton to the number  
+%% \begin{eqnarray}
+%%   \bar{N^{tight}} = \epsilon_{real} N_{real} + \epsilon_{fake} N_{fake} \\
+%%   \bar{N^{loose}} = (1-\epsilon_{real}) N_{real} + (1-\epsilon_{fake}) N_{fake}.
+%%   \label{eq:MatrixMethod}
+%% \end{eqnarray}
 
-\begin{eqnarray}
-  \bar{N^{tight}} = \epsilon_{real} N_{real} + \epsilon_{fake} N_{fake} \\
-  \bar{N^{loose}} = (1-\epsilon_{real}) N_{real} + (1-\epsilon_{fake}) N_{fake}.
-  \label{eq:MatrixMethod}
-\end{eqnarray}
+%% The above equations can be inverted to obtain $N_{fake}$ and $N_{real}$, quantities we're interested in estimating, as a function of  $N^{tight}$ and $N^{loose}$, quantities that can be measured.
+%% By solving and isolating the variables $N^{tight}_{real}$ and $N^{tight}_{fake}$ (which represent the real and fake lepton contributions to the tight, or signal, region), and expressing the solution as a matrix, we obtain the following:
 
-The above equations can be inverted to obtain $N_{fake}$ and $N_{real}$, quantities we're interested in estimating, as a function of  $N^{tight}$ and $N^{loose}$, quantities that can be measured.
-By solving and isolating the variables $N^{tight}_{real}$ and $N^{tight}_{fake}$ (which represent the real and fake lepton contributions to the tight, or signal, region), and expressing the solution as a matrix, we obtain the following:
+%% \begin{eqnarray}
+%%   N^{tight}_{real} = \frac{N^{tight} - \epsilon_{fake}N^{loose}}{\epsilon_{fake} - \epsilon_{real}} \\
+%%   N^{tight}_{fake} = \frac{\epsilon_{real}N^{loose} - N^{tight}}{\epsilon_{fake} - \epsilon_{real}}
+%% \end{eqnarray}
 
-\begin{eqnarray}
-  N^{tight}_{real} = \frac{N^{tight} - \epsilon_{fake}N^{loose}}{\epsilon_{fake} - \epsilon_{real}} \\
-  N^{tight}_{fake} = \frac{\epsilon_{real}N^{loose} - N^{tight}}{\epsilon_{fake} - \epsilon_{real}}
-\end{eqnarray}
+%% \begin{equation}
+%% \begin{pmatrix} N^{tight}_{real} \\ N^{tight}_{fake} \\ \end{pmatrix} 
+%%   = 
+%%   \begin{pmatrix} 
+%%     \frac{\epsilon_{real}}{\epsilon_{real} - \epsilon_{fake}} & \frac{-\epsilon_{real}\epsilon_{fake}}{\epsilon_{real} - \epsilon_{fake}} \\ 
+%%     \frac{-\epsilon_{fake}}{\epsilon_{real} - \epsilon_{fake}} & \frac{\epsilon_{real}\epsilon_{fake}}{\epsilon_{real} - \epsilon_{fake}} \\ 
+%%   \end{pmatrix}  
+%%   \begin{pmatrix} N^{tight} \\ N^{loose} \\ \end{pmatrix}
+%%   \label{eq:MatrixMethodInverted}
+%% \end{equation}
 
-\begin{equation}
-\begin{pmatrix} N^{tight}_{real} \\ N^{tight}_{fake} \\ \end{pmatrix} 
-  = 
-  \begin{pmatrix} 
-    \frac{\epsilon_{real}}{\epsilon_{real} - \epsilon_{fake}} & \frac{-\epsilon_{real}\epsilon_{fake}}{\epsilon_{real} - \epsilon_{fake}} \\ 
-    \frac{-\epsilon_{fake}}{\epsilon_{real} - \epsilon_{fake}} & \frac{\epsilon_{real}\epsilon_{fake}}{\epsilon_{real} - \epsilon_{fake}} \\ 
-  \end{pmatrix}  
-  \begin{pmatrix} N^{tight} \\ N^{loose} \\ \end{pmatrix}
-  \label{eq:MatrixMethodInverted}
-\end{equation}
+%% One should note that the solution is linear in the number of tight or loose events.
+%% In particular, this means that we can associate any given event (be it loose or tight) with a weight for real or fake, and these weights are simply the (1,1) and (2,1) elements of the matrix in equation \ref{eq:MatrixMethodInverted}.
+%% Therefore, in the case that the $\epsilon$ values are functions of arbitrary variables associated with an event, one can still estimate the number of fakes in the tight (signal) region as:
 
-One should note that the solution is linear in the number of tight or loose events.
-In particular, this means that we can associate any given event (be it loose or tight) with a weight for real or fake, and these weights are simply the (1,1) and (2,1) elements of the matrix in equation \ref{eq:MatrixMethodInverted}.
-Therefore, in the case that the $\epsilon$ values are functions of arbitrary variables associated with an event, one can still estimate the number of fakes in the tight (signal) region as:
+%% \begin{equation}
+%%   N^{tight}_{fake} = \sum_{e \in tight} (\frac{-\epsilon_{fake}}{\epsilon_{real} - \epsilon_{fake}}) + \sum_{e \in loose} (\frac{\epsilon_{real}\epsilon_{fake}}{\epsilon_{real} - \epsilon_{fake}})
+%%   \label{eq:MatrixMethodSum}
+%% \end{equation}
 
-\begin{equation}
-  N^{tight}_{fake} = \sum_{e \in tight} (\frac{-\epsilon_{fake}}{\epsilon_{real} - \epsilon_{fake}}) + \sum_{e \in loose} (\frac{\epsilon_{real}\epsilon_{fake}}{\epsilon_{real} - \epsilon_{fake}})
-  \label{eq:MatrixMethodSum}
-\end{equation}
-
-Equation \ref{eq:MatrixMethodSum} is used to estimate the amount of QCD multijet events that enter the signal region (assuming that all fakes in the loose or tight regions come from QCD Multijet events).
+%% Equation \ref{eq:MatrixMethodSum} is used to estimate the amount of QCD multijet events that enter the signal region (assuming that all fakes in the loose or tight regions come from QCD Multijet events).
+%Equation \ref{eq:MatrixMethodSum} is used to estimate the amount of QCD multijet events that enter the signal region (assuming that all fakes in the loose or tight regions come from QCD Multijet events).
 In that estimation, loose electrons are defined identically as tight electrons, except their isolation cut is relaxed, requiring that $E_{T} < 6 GeV$ in a cone defined by $\Delta R = 0.2$.
 Similarly, loose muons are identical to tight muons, but the cuts on $E_{T}$ and $p_{T}$ isolation are removed entirely.
 The efficiencies for loose leptons, as defined above, to also pass tight requirements for both real and fake muons are measured directly in data.

@@ -847,6 +847,20 @@ These events are then rescaled based on their probability of having the charge o
 
 The largest backgrond for this analysis comes from Standard Model events that include at least one or more ``fake'' leptons in additional to any number of real leptons.
 Fake leptons primary come either from the semi-leptonic decay of a $b$ or $c$ hadron which is falsely identified as an isolated lepton originating from the primary vertex or the mis-reconstruction of  $\pi^0$ or photons as leptons.
+This background due to fake leptons entering the signal region is estimated using the Matrix Method, as described in appendix~\ref{app:matrixmethod}.
+For use in the matrix method,  {\it loose} electron selection is equivalent to the {\it tight} 
+electron selection with a looser isolation cut.
+The {\it loose} muon definition completely removes the isolation requirement relative to the nominal tight selection.
+
+In this analysis, the application of the matrix method is made more complicated by the fact that
+Trident Electrons have a high probability of contributing both to the charge mis-identification data driven background estimate
+and to the background estimate obtained by the matrix method.
+Therefore, they are succeptable to being double counted by appearing in both background estimates.
+We correct for this fact by applying to the matrix method to same-sign events within the $Z$-peak,
+which we assume is dominated by charge-flip leptons coming primarily from Trident electrons.
+Using this method, we estimate that 22\% of events characterized as charge mis-id are also
+captured as fake background by the matrix method.
+We therefore scale the charge mis-identification estimate down by this factor to remove this effect.
 
 %% \section{Backgrounds with leptons originating from jets or photons}\label{sect:fakes}
 %% The largest SM background source is from events with at least one ``fake'' lepton,
@@ -854,14 +868,6 @@ Fake leptons primary come either from the semi-leptonic decay of a $b$ or $c$ ha
 %% The fake leptons may come from the semi-leptonic decay of a $b$ or $c$ hadron,
 %% falsely identified as an isolated lepton, or $\pi^0$ or photons mis-reconstructed as leptons.
 
-The nominal object selection uses quality requirements on the track and cluster of selected electrons and muons to reduce the systematic effect of mis-identified leptons.
-Cuts on these variables, by design, disproportionatly reject fake leptons relative to real ones.
-This fact can be used to directly estimate in data the rate of fake lepton production by reinterpreting the quality criteria as a discriminating variable with discrete values.
-
-To estimate the rate background from fake leptons, we define a looser working point for electron and muon quality in addition to the ``tight'' definition described in the nominal object selection.
-Using these definitions, we define probabilities ... BLAH BLAH BLAH
-
-BLAH BLAH BLAH
 %% BEGIN BLAH BLAH BLAH HERE
 
 %% To estimate this background, two sets of lepton selection criteria are defined, named 
@@ -905,7 +911,7 @@ BLAH BLAH BLAH
 %%   \begin{bmatrix}  r_1 r_2        & r_1 f_2       & f_1 r_2        & f_1 f_2         \\
 %%     r_1 (1-r_2)     & r_1 (1-f_2)     & f_1 (1-r_2)     & f_1 (1-f_2)     \\
 %%     (1-r_1)r_2    & (1-r_1)f_2     & (1-f_1)r_2     & (1-f_1)f_2     \\
-%%     (1-r_1)(1-r_2) & (1-r_1)(1-f_2) & (1-f_1)(1-r_2) & (1-f_1)(1-f_2) \\             
+%%     (1-r_1)(1-r_2) & (1-r_1)(1-f_2) & (1-f_1)(1-r_2) & (1-f_1)(1-f_2) \\
 %%   \end{bmatrix}
 %%   \begin{bmatrix} N_{RR}^{ll} \\ N_{RF}^{ll} \\ N_{FR}^{ll} \\ N_{FF}^{ll} \\ \end{bmatrix}
 %%   \label{matrice}
@@ -940,9 +946,6 @@ BLAH BLAH BLAH
 %% the $Z$-peak, dominated by trident electrons. This estimate results in 22\% of mis-id events that
 %% are captured as fake background: we scale the estimated charge mis-identification 
 %% contribution down by 78\% to remove the overlap between the two estimates.
-
-BLAH BLAH BLAH
-%% END BLAH BLAH BLAH HERE
 
 \subsection{Background control regions}
 
