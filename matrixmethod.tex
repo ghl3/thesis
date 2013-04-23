@@ -1,0 +1,133 @@
+
+\section{Matrix Method}
+\label{s:matrix}
+
+The Matrix Method is data-driven technique used estimate the number of events in a signal region coming from fake particles.
+While it is a general technique that can be applied to a wide class of analyses, we here will discuss its application to measuring the rate of fake lepton events.
+However, our treatment can easily be generalized to similar classes of analyses.
+In this context, the Matrix Method measures the rate of fake lepton background events using estimates of efficiencies and fake rates, which can be extracted from control regions, as well as measurements of signal-like regions, which are orthogonal to the signal region of interest.
+
+
+\subsection{Single Lepton}
+
+
+While the matrix method described in section (blah) is purely algebraic, the number of real and fake lepton events in a sample can be derived asd the Maximum Likelihood Estimators (MLEs) for a likelihood function that we will introduce.
+For simplicity, we will begin with the example where there is only 1 lepton in an event that be either a real or a fake lepton.
+In such a case, the Single Lepton Matrix Method can be written as:
+
+\begin{equation}
+  \label{eqn:single_lepton_matrix_standard}
+  \hspace{-0.5cm}
+  \begin{pmatrix}
+    N_{T}\\
+    N_{L} \\
+  \end{pmatrix} 
+  = 
+  \begin{pmatrix}
+    \epsilon & f \\
+    (1-\epsilon) & (1-f) \\
+  \end{pmatrix}
+  \begin{pmatrix}
+    N_{R} \\
+    N_{F} \\
+  \end{pmatrix}
+\end{equation}
+
+In this example, we will assume that the efficiency, $\epsilon$, and the fake rate, f, are constant across all events (we will later generalize our result to allow these to vary between events).
+To determine the amount of real leptons in the sample, $N_{R}$, one inverts the above matrix equation and obtains the following:
+
+\begin{equation}
+  \label{eqn:single_lepton_matrix_standard_inverted}
+  \hspace{-0.5cm}
+  \begin{pmatrix}
+    N_{R}\\
+    N_{F} \\
+  \end{pmatrix} 
+  = \frac{1}{\epsilon - f}
+  \begin{pmatrix}
+    1-f & -f \\
+    \epsilon-1 & \epsilon \\
+  \end{pmatrix}
+  \begin{pmatrix}
+    N_{T} \\
+    N_{L} \\
+  \end{pmatrix}
+\end{equation}
+
+It immediately follows that the number of real leptons in our sample as estimated by the matrix method is given by:
+
+\begin{equation}
+  \label{eqn:single_lepton_matrix_standard_num_real}
+  N_{R} = \frac{N_T(1-f) - f N_L}{\epsilon - f}
+\end{equation}
+
+
+\subsection{Dilepton}
+
+As an example, consider an analysis in which signal region is required to contain two leptons (among other features, possibly including some number of jets or MET).
+In this case, an event can contain one or more jets which are misidentified as leptons, and this misidentification would promote those events into the signal region.
+The Matrix Method can be used to estimate the number of these types of events.
+To preform this estimation, one considers two object definitions of what constatutes a lepton.  
+Those leptons qualities which will be required of events entering the signal region will be labeled as ``tight leptons.''
+In addition, we will define a definition of objects denoted as ``loose leptons,'' and we will further require that our tight criteria be a subset of our loose criteria in the sense that all tight leptons be loose leptons (but not necesarily the other way around).
+As input to the fake background estimate, one must measure the number of events falling into several signal-like regions which are based on these two object definitions.
+The ``Tight-Tight'' region is synonomous with the signal region because it requires two leptons that both pass the tight object criteria.
+At the same time, we will define the ``Loose-Loose'' region as the phase space which contains the exact same definition as the tight-tight signal region with the exception that the two identified leptons pass only the loose criteria and not the tight criteria.
+Thus, no events falling into the tight-tight region will apear in the loose-loose region, and visa-versa.
+In addition, we define a ``Tight-Loose'' region in which exactly one lepton is loose but not tight and the other is tight.
+
+With these definitions, one can define efficiencies and fake rates relative to these loose and tight definitions.
+Define the efficiency $r$ to be the probability that a lepton that is tagged as loose is also tagged as tight.
+If we have a large sample of loose leptons, we can estimate this probability as:
+
+\begin{center}
+$ r = \frac{N_{tight \, leptons} }{N_{loose \, leptons}}$ \\
+\end{center}
+
+Similarly, we can define a fake rate $f$ which describes how often some other object is misidentified as a lepton.
+In our example, we can assume that the overwhelming majority of fake leptons are misidentified jets.
+Thus, using a large sample of jets that have at least been misidentified as loose, we can define a loose-to-tight fake rate as:
+
+\begin{center}
+$ f = \frac{N_{fake \, tight \, leptons} }{ N_{fake \, loose \, leptons} } $ \\
+\end{center}
+
+Using these definitions and assuming that the efficiencies and fake rates of leptons and jets in an event are uncorrelated to other objects in an event, one can write an equation to estimate the number of signal region, or tight-tight, events one would expect.
+Consider a mixed sample of N events given by:
+
+$ N = N_{RR} + N_{RF} + N_{FF} $,
+
+where $N_{RR}$ is the number of events with two real leptons that have been tagged as loose, $N_{FF}$ is the number of events with two jets that have been misidentified as a loose lepton (which are therefore fake leptons), and $N_{RF}$ is the number of events with one real lepton passing loose and one jet misidentifeid as loose.
+
+One can relate these numbers, using the known efficiencies and fake rates, to the number of events in the signal-like regions as follows:
+
+
+\begin{equation}
+  \label{eqn:mm_matrix}
+  \hspace{-0.5cm}
+  \begin{pmatrix}N_{TT}\\N_{TL}\\N_{LL}\end{pmatrix} 
+  = 
+  \begin{pmatrix}rr& rf& ff\\ 2r(1-r)& r(1-f) + f(1-r)& 2f(1-f)\\ (1-r)(1-r) & (1-r)(1-f)& (1-f)(1-f)& \\\end{pmatrix}
+  \begin{pmatrix}N_{RR}\\N_{RF}\\N_{FF}
+  \end{pmatrix}
+\end{equation}
+
+
+One can then invert this relationship to to obtain the vector of $N_{RR}$, $N_{RF}$, and $N_{FF}$.
+Using these numbers, one can calculate the number of events with real or fake leptons that would appear in the signal region.
+The number of real events can be related to these numbers as follows
+
+\begin{eqnarray*}
+  N_{RR}^{TT} & = & r^2 N_{RR} \\  
+  N_{RF}^{TT} & = & r r N_{RR} \\
+  N_{RR}^{TT} & = & r^2 N_{RR} \\
+\end{eqnarray*}
+
+Putting these together in terms of the numbers that are actually measured, the estimate for the number of events containing one or more fake leptons in the signal region is given by
+
+\begin{equation}
+N_{fakes}^{signal \, region} =  N_{RF}^{TT} + N_{FF}^{TT} = \frac{ N_{tt}(2r^2 + f - fr^2-2r) + N_{tl}(fr^2-f^2r^2) + N_{ll}(-f^2r^2) }{(f-r)^2} 
+\end{equation}
+
+
+To obtain errors on this measurement, one can simply propogate the errors on the underlying measurements of the number of events and efficiencies through this equation.
