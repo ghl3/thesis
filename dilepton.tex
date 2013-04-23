@@ -927,22 +927,15 @@ candidate events are observed across the three signal regions.
 %% $b$-tag analysis.  There are 1221 events in common between the two
 %% selections, and 179 exclusive $b$-tagged events.
 
-% May have to adjust the below
-MAY HAVE TO ADJUST THE BELOW
-
-In Fig.~\ref{f:ll_njets} the number of selected jets and the
-expectation for $\lumitot$ are shown for the non-$b$-tag analysis
-with the five channels combined, and for the $b$-tag analysis with
-the three channels combined. In the non-$b$-tag case, all
-requirements except the jet multiplicity selection are applied, and
-in the $b$-tag case all requirements except the $b$-tag requirement
-are applied. The $\met$ distributions for the combination of the
-five non-$b$-tag and three $b$-tagged channels are
-shown in Fig.~\ref{f:ll_met_ht}. All requirements except $\met$ are
-applied.
-The dominant backgrounds are $\Zg +$jets and $W$+jets
-production with a fake lepton and, for the $b$-tag analysis,
-single-top events.
+Figure~\ref{f:ll_njets} shows the expected and measured distribution
+of the jet multiplicity in the three signal regions with all selection
+except for the cut on jet multiplicity applied.
+Figure~\ref{f:ll_met_ht} shows the distribution of missing energy for the
+$ee$ and $\mu\mu$ channels and the distribution of ht for the $e\mu$
+channel with all selections except for the requirements on met and
+ht applied.
+The dominant backgrounds in these channels are $\Zg +$jets and $W$+jets
+production with a fake lepton.
 
 \begin{figure}[htbp]
   \begin{center}
@@ -957,8 +950,6 @@ single-top events.
   \end{center}
 \end{figure}
 
-
-
 \begin{figure}[htbp]
   \begin{center}
     \subfigure[$ee$]{       \includegraphics[width=.40\textwidth]{figures/dilep/ee_met} }
@@ -968,7 +959,7 @@ single-top events.
       Contributions from diboson and single top-quark events are summarized as `Other EW'.
       Uncertainties shown are statistical and systematic combined.
       The distributions are shown as stacked histograms.}
-    \label{f:ll_njets}
+    \label{f:ll_met_ht}
   \end{center}
 \end{figure}
 
@@ -1010,98 +1001,36 @@ single-top events.
 %%   \label{f:ll_met_ht}
 %% \end{figure*}
 
-
-The cross-section results are obtained with a profile likelihood
-technique, as described in Ref.~\cite{ATL-CONF-2011-034}. The
-branching fraction for $t\rightarrow Wb$ is taken to be 100\% and
-the acceptance is calculated for a top mass of 172.5 GeV.
-
-%% The top-quark pair production cross section measured by combining
-%% the seven channels, the non-$b$-tagged $ee$, $\mu\mu$, $e\mu$, $e$TL
-%% and $\mu$TL and the exclusive $b$-tagged $ee$ and $\mu\mu$, is
-%% \[
-%% \sigmattbar=\mathrm{}\xsecctot \xseccstat
-%% \mathrm{(stat.)}\xseccsyst \mathrm{(syst.)} \xsecclumi
-%% \mathrm{(lumi.)}~\rm pb.
-%% \]
-
-Figure~\ref{fig:XsecSummary} summarizes the cross sections
-for the individual channels,  and the combination of the non-$b$-tag and
-the exclusive $b$-tagged data sets.
-
-\begin{figure}[!h]
-\centering
-\includegraphics[width=0.5\textwidth]{figures/dilep/summary_dilep_atlforaproval}
-    \caption{Summary of the individual cross section measurements and the combination of non-$b$-tag and
-    exclusive $b$-tagged results. The vertical dashed line and yellow band are the approximate NNLO theory calculation and its uncertainty.}
-    \label{fig:XsecSummary}
-\end{figure}
-
-The measured cross section is in good agreement with a similar
-measurement made with 2010 data by the CMS
-collaboration~\cite{Chatrchyan:2011nb}, %with 2010 ATLAS measurements
-with an ATLAS measurement in the dilepton channel with earlier
-data~\cite{ATL-CONF-2011-034}, and with the SM
-prediction of
-$165\pmasym{11}{16}$~pb. Compared to the earlier ATLAS measurement
-in the dilepton channel, the statistical uncertainty of the
-measurement has been reduced by a factor of four with the addition
-of more data, and a small reduction in the systematic uncertainty,
-which now dominates, has been achieved.
+%The branching fraction for $t\rightarrow Wb$ is taken to be 100\% and the acceptance is calculated for a top mass of 172.5 GeV.
+The estimated value of the cross-section is obtained as the maximum
+likelihood estimator using the likelihood function produced by
+HistFactory, and the uncertainty on that estimation is obtained using
+the profile likelihood technique, as described in Ref.~\cite{ATL-CONF-2011-034}. 
+The results of this analysis are summarized in table~\ref{tab:dilep_results}.
 
 
 
-\subsection{Results}
-\label{s:summary}
+% Note, the dilepton numbers differ from those in the
+% dilepton paper due to the use of separated jes.
+\begin{table}[htdp]
+  \begin{center}
+    \begin{tabular}{|l|c|}\hline
+      Channel & $\sigma_{\ttbar}$ (pb) \\ 
+      \hline
+      & \\
+      $ee$      & $186 \pm 17  \textrm{(stat.)} \sp {}^{+31}_{-26} \textrm{(syst.)} \sp {}^{+9}_{-7} \textrm{(lumi.)}$ \\ 
+      & \\
+      $\mu\mu$  & $167 \pm 12 \textrm{(stat.)}  \sp {}^{+15}_{-11} \textrm{(syst.)} \sp {}^{+8}_{-7} \textrm{(lumi.)}$ \\ 
+      & \\
+      $e\mu$    & $177 \pm 7  \textrm{(stat.)}  \sp {}^{+15}_{-12} \textrm{(syst.)} \sp \pm 8        \textrm{(lumi.)}$ \\ 
+      & \\
+      % \hline
+      % & \\
+      Combined & $173 \pm 6  \textrm{(stat.)}  \sp {}^{+14}_{-11} \textrm{(syst.)} \sp {}^{+8}_{-7} \textrm{(lumi.)}$ \\
+      \hline
+    \end{tabular}
+  \end{center}
+  \caption{\label{tab:dilep_results}
+    Measured values of $\sigma_{\ttbar}$ obtained in the individual dilepton channels ($ee$, $e \mu$ and $\mu \mu$) and well as the three-channel dilepton combination.}
+\end{table}
 
-
-The top-quark pair production cross section is measured using  events
-selected by requiring two oppositely-charged lepton candidates, at least two
-additional jets and missing transverse energy.
-%A measurement is also made requiring one of the jets to be identified as a $b$-quark jet.
-
-The top-quark pair production cross section measured without
-$b$-tagging is
-\[
-\sigmattbar=\mathrm{}\xsectot \xsecstat \mathrm{(stat.)}\xsecsyst \mathrm{(syst.)} \xseclumi \mathrm{(lumi.)}~\rm pb.
-\]
-Using $b$-tagging, the cross section is
-\[
-\sigmattbar=\mathrm{}\xsecbtot \xsecbstat  \mathrm{(stat.)}\xsecbsyst \mathrm{(syst.)} \xsecblumi  \mathrm{(lumi.)}~\rm pb.
-\]
-These results have been cross checked with other techniques,
-confirming their robustness.
-
-
-%% Finally the combination of the non-$b$-tagged and the exclusive $b$-tagged
-%% data sets yields
-%% \[
-%% \sigmattbar=\mathrm{}\xsecctot \xseccstat  \mathrm{(stat.)}\xseccsyst \mathrm{(syst.)} \xsecclumi  \mathrm{(lumi.)}~\rm pb.
-%% \]
-
-The cross-section results are summarized in Fig.~\ref{fig:XsecSummary}.
-%Along with the cross-checks, the kinematic properties of the selected events
-%have been found to be compatible with a heavy particle pair where each particle decays into a jet, lepton and neutrino~\cite{ATL-CONF-2011-034}.
-
-\begin{figure}[!h]
-\centering
-%    \includegraphics[width=0.5\textwidth]{f/summary_dilepDetail_atlprelim}
-\includegraphics[width=0.5\textwidth]{figures/dilep/summary_dilepDetail}
-    \caption{ Cross section summary.}
-    \label{fig:XsecSummary}
-\end{figure}
-
-The measured cross sections are in good agreement with a similar
-measurement made with 2010 data by the CMS
-collaboration~\cite{Chatrchyan:2011nb}, with 2010 ATLAS measurements
-made in the complementary lepton+jets
-channels~\cite{ATLAS-CONF-2011-023,ATLAS-CONF-2011-035}, with an
-ATLAS measurement in the dilepton channel with earlier
-data~~\cite{ATL-CONF-2011-034}, and with the SM prediction of
-$165\pmasym{11}{16}$~pb. The agreement between the measurements with
-and without $b$-tagging requirements confirms that the candidate
-events arise from top quark pair production.
-%Together,
-%they set the stage for top production and decay studies with an
-%order of magnitude more data that will be collected at the LHC in
-%the near future.
