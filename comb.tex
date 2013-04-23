@@ -1,48 +1,51 @@
 
 \section{Combination}
 
-\subsubsection{Introduction}
+
 This note presents a combined measurement of the \ttbar\ production cross-section at a center-of-mass energy of $\sqrt{s}= 7\, \TeV$ using ATLAS results in the single-lepton, dilepton, and all-hadronic channels.
-The measurements in the single-lepton~\cite{lepjetsCONF} and dilepton~\cite{dileptCONF} channels use 0.70 \ifb\ of data and the measurement in the all-hadronic channel use 1.02 \ifb\ of data~\cite{allhadCONF}, all of which was taken in 2011 with the ATLAS detector.
-The uncertainty on the integrated luminosity is estimated to be 3.7\%~\cite{luminew}.
-The single-lepton channel measurements are based on a multivariate discriminant distribution that is simultaneously fit to both lepton final states, which are each divided into samples containing $3,4,$ and $\ge 5$ jets (Section~\ref{sec:lepjets}).
-The measurements in the dilepton channel, which is comprised of electron-electron, electron-muon, and muon-muon final states, are cut-based analyses which require at least 2 jets (Section~\ref{sec:dilep}).
-Dilepton measurements requiring only a single isolated lepton plus an isolated track or an isolated lepton plus a hadronically decaying $\tau$ are not used in this combination because they have significant overlap with events used in the single-lepton measurement~\cite{mutauCONF}.
-% The measurements in the dilepton channel use || The dilepton channel is comp
-For both the dilepton and single-lepton channels, no requirement on $b$-tagging is imposed.
-The all-hadronic channel measurement is based on a binned maximum-likelihood fit of signal and background templates, which use the $\chi^2$ of the reconstructed top-quark mass per
-event as a discriminant (Section~\ref{sec:allhad}).
-%  where the discriminating variable for each event is the chi-square of a kinematic fit assuming the $\ttbar$ event hypothesis.
-% of a chi-square of the reconstructed top-quark mass per event as a   discriminant
-The results of the various cross-section measurements in the single-lepton, dilepton, and all-hadronic channels are shown in Table~\ref{tab:results}.  
-% Even though the dilepton and single-lepton analyses do not require $b$-tagging, the combination with the single-lepton channel assumes that the branching ratio of $t\to W b$ is $100\%$.
 
-The individual measurements share several common sources of systematic uncertainty, which must be treated consistently in order to form a statistical combination (Section~\ref{sec:comb}).  
+The previous sections described individual analysis efforts used to measure the top-quark pair-production cross-section.
+In this section, each of these measurements is combined to obtain a single measurement of the $\ttbar$ cross-section 
+that uses the events of all three channels simultaneously.
+This is performed by constructing likelihood functions for the three individual measurements, including the effect of all
+systematic uncertainties, and using these to create a join likelihood that spans each individual analysis.
+This combination results in a reduction in both statistical and systematic uncertainties.
+The measurements being used in this simultaneous likelihood are the single-lepton~\cite{lepjetsCONF} and dilepton~\cite{dileptCONF} channels,
+which used 0.70 \ifb\ of data, and the measurement in the all-hadronic channel, 
+which used1.02 \ifb\ of data~\cite{allhadCONF}, all of which was taken in 2011 with the ATLAS detector.
+
+%% The uncertainty on the integrated luminosity is estimated to be 3.7\%~\cite{luminew}.
+%% The single-lepton channel measurements are based on a multivariate discriminant distribution that is simultaneously fit to both lepton final states, which are each divided into samples containing $3,4,$ and $\ge 5$ jets (Section~\ref{sec:lepjets}).
+%% The measurements in the dilepton channel, which is comprised of electron-electron, electron-muon, and muon-muon final states, are cut-based analyses which require at least 2 jets (Section~\ref{sec:dilep}).
+%% Dilepton measurements requiring only a single isolated lepton plus an isolated track or an isolated lepton plus a hadronically decaying $\tau$ are not used in this combination because they have significant overlap with events used in the single-lepton measurement~\cite{mutauCONF}.
+%% % The measurements in the dilepton channel use || The dilepton channel is comp
+%% For both the dilepton and single-lepton channels, no requirement on $b$-tagging is imposed.
+%% The all-hadronic channel measurement is based on a binned maximum-likelihood fit of signal and background templates, which use the $\chi^2$ of the reconstructed top-quark mass per
+%% event as a discriminant (Section~\ref{sec:allhad}).
+%% %  where the discriminating variable for each event is the chi-square of a kinematic fit assuming the $\ttbar$ event hypothesis.
+%% % of a chi-square of the reconstructed top-quark mass per event as a   discriminant
+%% The results of the various cross-section measurements in the single-lepton, dilepton, and all-hadronic channels are shown in Table~\ref{tab:results}.
+%% % Even though the dilepton and single-lepton analyses do not require $b$-tagging, the combination with the single-lepton channel assumes that the branching ratio of $t\to W b$ is $100\%$.
+
 The likelihood for each of the channels is a function of the signal cross-section, $\sigma_{\ttbar}$, the integrated luminosity, $\lum$, and several nuisance parameters $\alpha_j$ that correspond to various sources of systematic uncertainty.
-%that parametrize the effect of various sources of systematic uncertainty. 
-The full combination is implemented as a product of the individual likelihoods of the component analyses. %, using approximations when necessary.
+In the joint likelihood, a single parameter is used across all three analysis to represent the value of the $\ttbar$ cross-section.
+In addition, the individual measurements share several common sources of systematic uncertainty,
+which must be treated consistently in order to form a statistical combination (Section~\ref{sec:comb})
+Therefore, when forming the six-measurement combined likelihood, constraint terms for systematic uncertainties that are common across analyses are included only once.
+
+%that parametrize the effect of various sources of systematic uncertainty.
+%The full combination is implemented as a product of the individual likelihoods of the component analyses. %, using approximations when necessary.
 %The single-lepton likelihood function was approximated by a multivariate Gaussian with covariance given by the Hessian matrix from MINUIT's HESSE algorithm~\cite{minuit}.  
-When forming the six-measurement combined likelihood, constraint terms for systematic uncertainties that are common across analyses are included only once.
 
-Each measurement is based on the profile likelihood ratio
-
+The final measurement of the $\ttbar$ cross-section is performed using the profile likelihood ratio,
+which is designed to take into account the effect of nuisance parameters when evaluating the uncertainty on the measured cross-section:
 \begin{equation}\label{Eq:lr_2}
   \lambda(\sigma_{\ttbar}) = \frac{L(\sigma_{\ttbar}, \hat{\hat{\lum}}, \hat{\hat{\alpha}}_j)}{L(\hat \sigma_{\ttbar}, \hat \lum, \hat \alpha_j)}\,,
 \end{equation}
 where  $\hat\sigma_{\ttbar}, \hat \lum, \hat\alpha_j$ denote the maximum likelihood estimate of all the parameters and  $\hat{\hat{\lum}}$ and $\hat{\hat{\alpha}}_j$ represent the conditional maximum likelihood estimates of $\lum$ and $\alpha_j$ holding $\sigma_{\ttbar}$ fixed.   The best fit value of the cross-section is $\hat\sigma_{\ttbar}$ and the 68\% confidence interval is derived from the values of $\sigma_{\ttbar}$ which give $-2\log \lambda(\sigma_{\ttbar})= 1$~\cite{minuit}~\cite{asimov}.
 
 
-%The top-quark pair-production cross section has been measured at ATLAS using many channels and analysis technqiues.
-The most precise measurements use combination of several individual measurements, which reduces both statistical and systematic uncertainties.
-This section presents an ATLAS measurement of the $\ttbar$ cross-section that statistically combined three separate analysies strategies.
-The likelihoods for measurements using single-lepton, dilepton, and all-hadronic channels were modeled as functions of the top cross-section, as well as a variety of nuisance parameters.
-% This combination was performed by modeling the likelihoods of several individual measuremnets as functions of the top cross-section as well as a variety of nuisance parameters.
-These likelihoods were then merged and a simultaneous fit to the measured data across all channels was performed.
-
-The combined measurement of the $\ttbar$ cross-section used a measurement in the lepton+jets channel which was performed using 0.7$\ifb$ of data recorded in 2011 \cite{LEPTON_JETS_NOTE_2011}, a measurement in the dilepton channel which was performed using 0.7 $\ifb$ of data collected in 2011 \cite{DILEPTON_PAPER}, and a measurement in the all-hadronic channel, which was performed using 1.02 $\ifb$ of data collected in 2011 \cite{ALL_HADRONIC_NOTE}.
-
-
-\subsubsection{Lepton + Jets Likelihood}
+\subsection{Likelihood function for the Lepton + Jets Analysis}
 
 \label{sec:lepjets}
 
@@ -130,7 +133,8 @@ In particular, the values and slopes of those curves match each other well near 
   \end{center}
 \end{figure}
 
-\subsubsection{Dilepton}
+
+\subsection{Likelihood function for the Dilepton Analysis}
 \label{sec:dilep}
 
 
@@ -191,7 +195,8 @@ More information on the measurement using dilepton final states can be found in 
  \end{figure}
 
 
-\subsubsection{all hadronic}
+
+\subsection{Likelihood function for the All Hadronic Analysis}
 \label{sec:allhad}
 
 The top quark cross-section is measured in the all-hadronic channel by performing a binned likelihood fit of signal and background templates to data.
@@ -251,7 +256,7 @@ The likelihood function for the all-hadronic channel is shown in Figure ~\ref{fi
 
 
 
-\subsubsection{Combined Likelihood}
+\subsection{The Combined Likelihood}
 \label{sec:comb}
 
 The component analyses share several common sources of systematic uncertainty:
@@ -306,7 +311,7 @@ The full likelihood contains 89 parameters in all, 26 of which are shared betwee
 % LocalWords:  dileptons
 
 
-\subsubsection{results}
+\subsection{Results}
 \label{sec:results}
 %\section{Results and conclusions}
 
@@ -340,10 +345,6 @@ The fitted cross-section and its errors were found to agree, within rounding, wi
 The size of individual systematic uncertainties in that fit varied only minimially from those obtained in the nominal fit.
 
 
-
-
-
-
 The fitted values, uncertainties, and correlations to $\sigma_{ \ttbar }$ for all parameters that are shared by two or more analysis are shown in Table~\ref{tab:commonFittedParams}.
 The uncertainties and correlations were measured using Minuit's HESSE algorithm.
 With the exception of ``SigXsecOverSM'', ``dibosonxs'', ``stxs'', and ``Lumi'', which have nominal means of 1.0, all parameters nominally have a mean value of 0.0 and a nominal uncertainty of 1.0.
@@ -354,13 +355,13 @@ With the exception of ``SigXsecOverSM'', ``dibosonxs'', ``stxs'', and ``Lumi'', 
 \begin{table}[htbp]
 
   \begin{center}  
+    \tiny
     \begin{tabular}{|r|ccc|ccc|ccc|ccc|} 
       \hline
       Common & \multicolumn{3}{|c|}{Dilepton}  & \multicolumn{3}{|c|}{Single-Lepton} & \multicolumn{3}{|c|}{All-Hadronic} & \multicolumn{3}{|c|}{Combined} \\
       \hline
       Uncertainty source & Value & Error & Corr. & Value & Error & Corr. & Value & Error & Corr. & Value & Error & Corr. \\
       \hline
-      \tiny
       \input{table/comb/CommonSys.tex}
       \hline
     \end{tabular}
@@ -371,8 +372,6 @@ With the exception of ``SigXsecOverSM'', ``dibosonxs'', ``stxs'', and ``Lumi'', 
 Because the all-hadronic measurement has the largest total uncertainties of the component analyes, an auxiliary combination was performed using only the single-lepton and dilepton channels.
 The fitted cross-section and its errors were found to agree, within rounding, with the values obtained in the nominal three-channel fit.
 The size of individual systematic uncertainties in that fit varied only minimially from those obtained in the nominal fit.
-
-\clearpage
 
 In the full fit, systematics that are common between analyses are described by a single parameter and therefore the systematic effects for those uncertainties across channels are fully correlated.
 To test the self-consistency of extracted errors on the total fit and to better understand the effect of correlated systematics across channels, 
