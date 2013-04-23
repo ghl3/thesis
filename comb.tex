@@ -1,6 +1,47 @@
 
 \section{Combination}
 
+\subsubsection{Introduction}
+This note presents a combined measurement of the \ttbar\ production cross-section at a center-of-mass energy of $\sqrt{s}= 7\, \TeV$ using ATLAS results in the single-lepton, dilepton, and all-hadronic channels.
+The measurements in the single-lepton~\cite{lepjetsCONF} and dilepton~\cite{dileptCONF} channels use 0.70 \ifb\ of data and the measurement in the all-hadronic channel use 1.02 \ifb\ of data~\cite{allhadCONF}, all of which was taken in 2011 with the ATLAS detector.
+The uncertainty on the integrated luminosity is estimated to be 3.7\%~\cite{luminew}.
+The single-lepton channel measurements are based on a multivariate discriminant distribution that is simultaneously fit to both lepton final states, which are each divided into samples containing $3,4,$ and $\ge 5$ jets (Section~\ref{sec:lepjets}).
+The measurements in the dilepton channel, which is comprised of electron-electron, electron-muon, and muon-muon final states, are cut-based analyses which require at least 2 jets (Section~\ref{sec:dilep}).
+Dilepton measurements requiring only a single isolated lepton plus an isolated track or an isolated lepton plus a hadronically decaying $\tau$ are not used in this combination because they have significant overlap with events used in the single-lepton measurement~\cite{mutauCONF}.
+% The measurements in the dilepton channel use || The dilepton channel is comp
+For both the dilepton and single-lepton channels, no requirement on $b$-tagging is imposed.
+The all-hadronic channel measurement is based on a binned maximum-likelihood fit of signal and background templates, which use the $\chi^2$ of the reconstructed top-quark mass per
+event as a discriminant (Section~\ref{sec:allhad}).
+%  where the discriminating variable for each event is the chi-square of a kinematic fit assuming the $\ttbar$ event hypothesis.
+% of a chi-square of the reconstructed top-quark mass per event as a   discriminant
+The results of the various cross-section measurements in the single-lepton, dilepton, and all-hadronic channels are shown in Table~\ref{tab:results}.  
+% Even though the dilepton and single-lepton analyses do not require $b$-tagging, the combination with the single-lepton channel assumes that the branching ratio of $t\to W b$ is $100\%$.
+
+The individual measurements share several common sources of systematic uncertainty, which must be treated consistently in order to form a statistical combination (Section~\ref{sec:comb}).  
+The likelihood for each of the channels is a function of the signal cross-section, $\sigma_{\ttbar}$, the integrated luminosity, $\lum$, and several nuisance parameters $\alpha_j$ that correspond to various sources of systematic uncertainty.
+%that parametrize the effect of various sources of systematic uncertainty. 
+The full combination is implemented as a product of the individual likelihoods of the component analyses. %, using approximations when necessary.
+%The single-lepton likelihood function was approximated by a multivariate Gaussian with covariance given by the Hessian matrix from MINUIT's HESSE algorithm~\cite{minuit}.  
+When forming the six-measurement combined likelihood, constraint terms for systematic uncertainties that are common across analyses are included only once.
+
+Each measurement is based on the profile likelihood ratio
+
+\begin{equation}\label{Eq:lr_2}
+  \lambda(\sigma_{\ttbar}) = \frac{L(\sigma_{\ttbar}, \hat{\hat{\lum}}, \hat{\hat{\alpha}}_j)}{L(\hat \sigma_{\ttbar}, \hat \lum, \hat \alpha_j)}\,,
+\end{equation}
+where  $\hat\sigma_{\ttbar}, \hat \lum, \hat\alpha_j$ denote the maximum likelihood estimate of all the parameters and  $\hat{\hat{\lum}}$ and $\hat{\hat{\alpha}}_j$ represent the conditional maximum likelihood estimates of $\lum$ and $\alpha_j$ holding $\sigma_{\ttbar}$ fixed.   The best fit value of the cross-section is $\hat\sigma_{\ttbar}$ and the 68\% confidence interval is derived from the values of $\sigma_{\ttbar}$ which give $-2\log \lambda(\sigma_{\ttbar})= 1$~\cite{minuit}~\cite{asimov}.
+
+
+%The top-quark pair-production cross section has been measured at ATLAS using many channels and analysis technqiues.
+The most precise measurements use combination of several individual measurements, which reduces both statistical and systematic uncertainties.
+This section presents an ATLAS measurement of the $\ttbar$ cross-section that statistically combined three separate analysies strategies.
+The likelihoods for measurements using single-lepton, dilepton, and all-hadronic channels were modeled as functions of the top cross-section, as well as a variety of nuisance parameters.
+% This combination was performed by modeling the likelihoods of several individual measuremnets as functions of the top cross-section as well as a variety of nuisance parameters.
+These likelihoods were then merged and a simultaneous fit to the measured data across all channels was performed.
+
+The combined measurement of the $\ttbar$ cross-section used a measurement in the lepton+jets channel which was performed using 0.7$\ifb$ of data recorded in 2011 \cite{LEPTON_JETS_NOTE_2011}, a measurement in the dilepton channel which was performed using 0.7 $\ifb$ of data collected in 2011 \cite{DILEPTON_PAPER}, and a measurement in the all-hadronic channel, which was performed using 1.02 $\ifb$ of data collected in 2011 \cite{ALL_HADRONIC_NOTE}.
+
+
 \subsubsection{Lepton + Jets Likelihood}
 
 \label{sec:lepjets}

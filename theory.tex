@@ -17,10 +17,51 @@
 % http://arxiv.org/abs/1109.3202
 
 % http://xxx.lanl.gov/abs/arXiv:1102.3374
+At the beginning of the LHC program, there was tremedous potential for the discovery new physical particles, the confirmation of theoretical models, and the answering many open  questions in fundamental physics.
+Among the many hopes for the early LHC program was the potential for discovering the nature of electroweak symmetry breaking, including the potential confirmation of the Higgs mechanism through the discovery of the Higgs boson, and the resolution of the Hierarchy problem.
+In addition, the high energy and large luminosity of the LHC would enable the detailed study of fundamental particles and the possible discovery of deviations from the Standard Model.
+Finally, the LHC had the potential to confirm experimental deviations from the Standard Model measured by previous experiments.
+% the Standard Model and the possible discovery of deviations
 
-Recent experimental results have found statistically significant deviations from standard model predictions in events involving top quarks.
-These deviations suggest that new physical models may play a role in the top sector that is experimentally testable at the LHC.
+Arguably the primary goal of the LHC was to determine the source of electroweak symmetry breaing by discovering the Higgs boson.
+The Higgs mechanism was almost universally accepted as the means of breaking the electroweak gauge symmetry of the Standard Model.
+It did this by introducing a complex scalar field with a non-zero vacuum expectation value (VEV).
+Fluctuations in this field are identified with a massive scalar boson, known as the Higgs Boson.
+At the beginning of the LHC, the Higgs had yet to be discovered and its mass had not been measured directly, but constraints based on precision electroweak studies required its mass to be on the order of 100 $\GeV$.
+% ``A combination of preliminary electroweak measurements and constraints on the standard model''
+It remains unknown why the higgs mass is at this scale. %this mass, on the order of 100 $\GeV$, is so small compared to the plank mass,
+The renormalized mass of the higgs receives contributions from loop diagrams of massive fermions.
 
+\begin{figure}
+  \begin{center}
+    % CDF Paper: http://arxiv.org/abs/1101.0034
+    \includegraphics[width=80mm]{figures/theory/HiggsMassCorrection}
+  \end{center}
+  \caption{Feynman diagram for fermionic loop corrections to the mass of the Higgs boson.}
+  \label{img:HiggsMassCorrection}
+\end{figure}
+
+The total contribution from these diagrams grows with the cutoff scale of the theory:
+
+\begin{equation}
+  \Delta m^{2} = \frac{|\lambda_f|^2}{8\pi^2}\Lambda_{UV}^2 ,
+\end{equation}
+where $\Delta m^{2}$ is the correction to the higgs mass from a massive fermion,  $\lambda_f$ is the coupling constant of the higgs field to that fermion, and $\Lambda_{UV}$ is the ultraviolet cutoff scale of the theory.
+Because the top quark has the largest coupling to the higgs field of the fermions of the Standard Model, then this contribution to the mass of the higgs is dominated by loop corrections involving the top quark.
+If $\Lambda_{UV}$ were to be the plank mass, then we would expect the Higgs mass to be 30 orders of magnitude larger than it is.
+The fact that the Higgs mass is not on the order of the Plank scale is known as the hierarchy problem.
+The hierarchy problem implies either that there are new particles that also contribute to the above loop diagrams and cancel the effect of the fermions of the standard model or that the cutoff scale of the Standard Model is on the order of the Higgs Mass (meaning, we should expect to see new physics emerge at the Electroweak Scale).
+Both of these scenerios give rise to the hope that new physical theories could be discovered at the LHC.
+
+A common solution to the hierarchy problem is the introduction of supersymmetric partners to the standard model fermions that cancel out the standard model fermionic loop corrections to the higgs mass.
+However, there exist many non-supersymmetric solutions to the hierarchy problem.
+In particular, because the correction to the higgs mass is dominated by a top quark loop, many of these scenerios introduce new partners to the top quark.
+For this reason, the top quark sector is a promising place to look for new physical signatures.
+% T 5/3 and hierarchy problem:
+% http://arxiv.org/abs/0801.1679v2
+
+In addition to the prospect of seeing new physical signatures at the LHC, recent experimental results have found suggestive deviations from standard model predictions in events involving top quarks.
+The validity of these deviations or the existance of models proposed to explain them is directly testable at the LHC.
 The most promising amoung these results is the measurement of an excess in forward-backward asymmetry in top quark pair production events by both the CDF and D0 experiments.
 These experiments both operate on the Tevatron, which is a circular $p-\overline{p}$ collider with a center-of-mass-energy of 1.8 TeV located at Fermilab outide of Chicaco, Illinois.
 The initial directions of the proton and anti-proton beams can be used to define forward and backward directions, which are separated by a plane perpendicular to the beam line and going through the beam spot.
@@ -53,75 +94,72 @@ Both CDF and D0 measured this variable using $\ttbar$ events where one top quark
 The presence of the charged final-state lepton can be used to differentiate the top quark from the anti-top quark's decay products.
 The selection of hadronic decays on the other quark results in a higher branching ratio than a selection requiring a dileptonically decaying $\ttbar$ system.
 
+%% % CDF Subsection
+%% \subsection{CDF}
 
-% CDF Subsection
-\subsection{CDF}
+%% The CDF collaboration tagged $\ttbar$ events using the following event selection:
+%% \begin{itemize}
+%%   \item 1 selected lepton with $E_T \ge 20$ GeV and $| \eta | <$ 1
+%%   \item 4 hadronic jets with $E_T  > 20$ GeV and $| \eta | <$ 2
+%%   \item $\met >$ 20 GeV
+%% \end{itemize}
 
-The CDF collaboration tagged $\ttbar$ events using the following event selection:
-\begin{itemize}
-  \item 1 selected lepton with $E_T \ge 20$ GeV and $| \eta | <$ 1
-  \item 4 hadronic jets with $E_T  > 20$ GeV and $| \eta | <$ 2
-  \item $\met >$ 20 GeV
-\end{itemize}
+%% The choice of jets to associate with the hadronically decaying top was made using a $\chi^2$ kinematic fit to the full $\ttbar$ system using the mass of the W-bosons and top quarks as constraints and assigning b-tagged jets, if any, to b quarks at the parton level.
+%% Expected signal and background distributions were evaluated using PYTHIA Monte-Carlo simulation.
 
-The choice of jets to associate with the hadronically decaying top was made using a $\chi^2$ kinematic fit to the full $\ttbar$ system using the mass of the W-bosons and top quarks as constraints and assigning b-tagged jets, if any, to b quarks at the parton level.
-Expected signal and background distributions were evaluated using PYTHIA Monte-Carlo simulation.
+%% The CDF measurement found a forward-backward asymmetry of $A = 0.150 \pm 0.055$ (stat+sys), which is two standard deviations away from the predicted value from NLO simulations.
+%% In addition, the significance of this deviation was examined as a function of both the difference in rapidity ($Y$) and the invariant mass of the $\ttbar$ system:
 
-The CDF measurement found a forward-backward asymmetry of $A = 0.150 \pm 0.055$ (stat+sys), which is two standard deviations away from the predicted value from NLO simulations.
-In addition, the significance of this deviation was examined as a function of both the difference in rapidity ($Y$) and the invariant mass of the $\ttbar$ system:
+%% % From Here: http://arxiv.org/pdf/1101.0034v1.pdf
+%% % Page 13: http://arxiv.org/abs/1101.0034
+%% \begin{tabular}{lcc}
+%% Selection                         &   CDF Result    & SM Prediction \\
+%% $A^{\ttbar}_{FB}( \Delta Y < 1.0)$  & 0.026 $\pm$ 0.118 & 0.039 $\pm$ 0.006 \\
+%% $A^{\ttbar}_{FB}( \Delta Y > 1.0)$  & 0.611 $\pm$ 0.256 & 0.123 $\pm$ 0.008 \\
+%% \hline
+%% $A^{\ttbar}_{FB}( M_{\ttbar} < 450 GeV)$   & -0.116 $\pm$ 0.153 & 0.040 $\pm$ 0.006 \\
+%% $A^{\ttbar}_{FB}( M_{\ttbar} \ge 450 GeV)$ & 0.475 $\pm$ 0.114  & 0.088 $\pm$ 0.013 \\
+%% \hline
+%% \end{tabular}
 
-% From Here: http://arxiv.org/pdf/1101.0034v1.pdf
-% Page 13: http://arxiv.org/abs/1101.0034
-\begin{tabular}{lcc}
-\hline
-Selection                         &   CDF Result    & SM Prediction \\
-\hline
-$A^{\ttbar}_{FB}( \Delta Y < 1.0)$  & 0.026 $\pm$ 0.118 & 0.039 $\pm$ 0.006 \\
-$A^{\ttbar}_{FB}( \Delta Y > 1.0)$  & 0.611 $\pm$ 0.256 & 0.123 $\pm$ 0.008 \\
-\hline
-$A^{\ttbar}_{FB}( M_{\ttbar} < 450 GeV)$   & -0.116 $\pm$ 0.153 & 0.040 $\pm$ 0.006 \\
-$A^{\ttbar}_{FB}( M_{\ttbar} \ge 450 GeV)$ & 0.475 $\pm$ 0.114  & 0.088 $\pm$ 0.013 \\
-\hline
-\end{tabular}
+%% Of note is the fact that the deviance of the asymmetry from prediction is a function of the invariant mass of the $\ttbar$ system.
 
-Of note is the fact that the deviance of the asymmetry from prediction is a function of the invariant mass of the $\ttbar$ system.
-
-\begin{figure}
-  \begin{center}
-    % CDF Paper: http://arxiv.org/abs/1101.0034
-    \includegraphics[width=80mm]{figures/theory/CDFAsymmetryMass}
-  \end{center}
-  \caption{Graph of the forward-backward asymmetry as a function of the invariant mass of the $\ttbar$ system.}
-  \label{img:CDFAsymmetryMass}
-\end{figure}
+%% \begin{figure}
+%%   \begin{center}
+%%     % CDF Paper: http://arxiv.org/abs/1101.0034
+%%     \includegraphics[width=80mm]{figures/theory/CDFAsymmetryMass}
+%%   \end{center}
+%%   \caption{Graph of the forward-backward asymmetry as a function of the invariant mass of the $\ttbar$ system.}
+%%   \label{img:CDFAsymmetryMass}
+%% \end{figure}
 
 
-% D0 Subsection
-\subsection{D0}
+%% % D0 Subsection
+%% \subsection{D0}
 
-The D0 experiment selected $\ttbar$ events by triggering on either a lepton or a lepton+jet and further requiring
-\begin{itemize}
-  \item An isolated lepton with $p_T >$ 20 GeV and $|\eta| <$ 1.1 for electrons or $|\eta| <$ 2.0 for muons
-  \item $\met >$ 20 GeV for electron events or $20 GeV < \met < 250 GeV$ for muon events
-  \item $\Delta \phi(e, \met) > (2.2 - 0.045*\met / GeV)$ radians for electron events or $(p_T^\mu + \met)^2 - (p_x^\mu + \met_x)^2 - (p_y^\mu + \met_y)^2 < (250 GeV)^2$
-  \item 4 jets, each with $pt > 20 GeV$ and $|\eta < 2.5|$ where the leading jet has $p_t > 40 GeV$
-\end{itemize}
+%% The D0 experiment selected $\ttbar$ events by triggering on either a lepton or a lepton+jet and further requiring
+%% \begin{itemize}
+%%   \item An isolated lepton with $p_T >$ 20 GeV and $|\eta| <$ 1.1 for electrons or $|\eta| <$ 2.0 for muons
+%%   \item $\met >$ 20 GeV for electron events or $20 GeV < \met < 250 GeV$ for muon events
+%%   \item $\Delta \phi(e, \met) > (2.2 - 0.045*\met / GeV)$ radians for electron events or $(p_T^\mu + \met)^2 - (p_x^\mu + \met_x)^2 - (p_y^\mu + \met_y)^2 < (250 GeV)^2$
+%%   \item 4 jets, each with $pt > 20 GeV$ and $|\eta < 2.5|$ where the leading jet has $p_t > 40 GeV$
+%% \end{itemize}
 
-D0 measured an overall forward-backward asymmetry of $(9.2 \pm 3.7)$\%, where the predicted value is $(2.4 \pm 0.7)$ \%.
+%% D0 measured an overall forward-backward asymmetry of $(9.2 \pm 3.7)$\%, where the predicted value is $(2.4 \pm 0.7)$ \%.
 
-\begin{tabular}{lcc}
-\hline
-Selection                         &   CDF Result    & SM Prediction \\
-\hline
-$A^{\ttbar}_{FB}( \Delta Y < 1.0)$ &   6.1 $\pm$ 4.1 & 1.4 $\pm$ 0.6 \\
-$A^{\ttbar}_{FB}( \Delta Y > 1.0)$ &  21.3 $\pm$ 9.7 & 6.3 $\pm$ 1.6 \\
-\hline
-$A^{\ttbar}_{FB}( M_{\ttbar} < 450 GeV)$ & 7.8 $\pm$ 4.8 & 1.3 $\pm$ 0.6 \\   
-$A^{\ttbar}_{FB}( M_{\ttbar} \ge 450 GeV)$ & 11.5 $\pm$ 6.0 & 4.3 $\pm$ 1.3 \\
-\hline
-\end{tabular}
+%% \begin{tabular}{lcc}
+%% \hline
+%% Selection                         &   CDF Result    & SM Prediction \\
+%% \hline
+%% $A^{\ttbar}_{FB}( \Delta Y < 1.0)$ &   6.1 $\pm$ 4.1 & 1.4 $\pm$ 0.6 \\
+%% $A^{\ttbar}_{FB}( \Delta Y > 1.0)$ &  21.3 $\pm$ 9.7 & 6.3 $\pm$ 1.6 \\
+%% \hline
+%% $A^{\ttbar}_{FB}( M_{\ttbar} < 450 GeV)$ & 7.8 $\pm$ 4.8 & 1.3 $\pm$ 0.6 \\
+%% $A^{\ttbar}_{FB}( M_{\ttbar} \ge 450 GeV)$ & 11.5 $\pm$ 6.0 & 4.3 $\pm$ 1.3 \\
+%% \hline
+%% \end{tabular}
 
-\subsection{Discussion}
+%\subsection{Discussion}
 Both CDF and D0 see an enhancement in the $\ttbar$ system's forward-backward asymmetry above the small Standard Model prediction.
 Of particular interest is the fact that CDF finds this inhance to increase significantly as a function of the invariant mass of the $\ttbar$ system.
 If new physical models are responsible for the enhanced forward-backward asymmetry, the invariant mass dependence suggests the deviation from the Standard Model prediction may be the result of interactions with a new massive particle. % http://arxiv.org/abs/1109.3202
@@ -148,11 +186,6 @@ This process can produce two same-sign top quarks in the final state, which is a
 %CDF : 20.1 \pm 6.7 
 %D0 : 19.6 \pm 6.5 % D0 http://arxiv.org/abs/1107.4995
 
-% T 5/3 and hierarchy problem: 
-% http://arxiv.org/abs/0801.1679v2
-
-\subsection{Consequences for LHC}
-
 Because the LHC is a proton-proton collider, one cannot define a consistent forward-backward direction in the lab frame (the incoming beam is mirror-symmetric about the collision point).
 For this reason, directly verifying the tevatron's forward-backward asymmetry anomoly at the LHC requires defining a different discriminating variable than the one used by CDF and D0.
 Moreover, the larger gluon-gluon contribution to the top pair production cross-section increases the background rate, since in the Standard Model and most non-standard models explaining the forward-backward asymmetry, the asymmetry occurs among $\ttbar$ events with initial-state quarks. % made up: http://arxiv.org/pdf/0709.1652v1.pdf
@@ -163,13 +196,11 @@ In this quantity, one measures $\Delta|Y| = |y_t| - |y_{\overline{t}} |$ and def
   \hat{A}^{\ttbar} = \frac{N(\Delta |y|>0) - N(\Delta |y|>0)}{N(\Delta |y|>0) + N(\Delta |y|>0)}
 \end{equation}
 
-
 % ...describe a bit more
-
 However, because direct measurements of the forward-backward asymmetry as observed at the Tevatron are difficult at the LHC, indirect measurements of new physics models designed to explain the forward-backward asymmetry may be more promising.
 These indirect studies include precise measurements of the top quark pair-production cross-section and searches for excesses of events with same-sign top quark pairs.
 
-
+However, because the The early measurements at the LHC d
 
 Futhermore, an accurate understanding of the top-quark pair-production cross-section has a plethora of applications toward understanding particle physics phenomena.
 A good example is a recent analysis which uses the \ttbar cross-section to constrian the gluon parton distribution function. % http://arxiv.org/abs/1303.7215
