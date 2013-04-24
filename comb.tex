@@ -134,9 +134,11 @@ In particular, the values and slopes of those curves match each other well near 
 \end{figure}
 
 
+
+
+
 \subsection{Likelihood function for the Dilepton Analysis}
 \label{sec:dilep}
-
 
 The likelihood function for each of the dilepton channels consists of a single Poisson term for the number of observed events with $\ge2$ jets and several Gaussian constraint terms for the nuisance parameters $\vec{\alpha}$.   
 These nuisance parameters are defined such that the nominal value of a systematic uncertainty corresponds to $\alpha_j = 0$ and a one standard deviation shift corresponds to $\alpha_j = \pm 1$.
@@ -181,10 +183,6 @@ More information on the measurement using dilepton final states can be found in 
   \end{center}
 \end{figure}
 
-
-
-
-
 % INT ONLY
  \begin{figure}[htbp]
    \begin{center}
@@ -193,7 +191,6 @@ More information on the measurement using dilepton final states can be found in 
      \label{fig:dilepton_profile}
    \end{center}
  \end{figure}
-
 
 
 \subsection{Likelihood function for the All Hadronic Analysis}
@@ -344,13 +341,11 @@ Because the all-hadronic measurement has the largest total uncertainties of the 
 The fitted cross-section and its errors were found to agree, within rounding, with the values obtained in the nominal three-channel fit.
 The size of individual systematic uncertainties in that fit varied only minimially from those obtained in the nominal fit.
 
-
 The fitted values, uncertainties, and correlations to $\sigma_{ \ttbar }$ for all parameters that are shared by two or more analysis are shown in Table~\ref{tab:commonFittedParams}.
 The uncertainties and correlations were measured using Minuit's HESSE algorithm.
 With the exception of ``SigXsecOverSM'', ``dibosonxs'', ``stxs'', and ``Lumi'', which have nominal means of 1.0, all parameters nominally have a mean value of 0.0 and a nominal uncertainty of 1.0.
 
 % INT ONLY
-
 
 \begin{table}[htbp]
 
@@ -410,3 +405,31 @@ The result of these fits are shown in Table~\ref{tab:SystematicDecorrelation}.
     \label{fig:fullcombined_likelihood_curve}
   \end{center}
 \end{figure}
+
+
+
+%This note presents a determination of the top quark pair production cross-section using a statistical combination of single-lepton, dilepton, and all-hadronic final states.
+%The measured value, $\hat\sigma_{\ttbar} = 177 \pm 3~\textrm{(stat.)} \sp {}^{+8}_{-7}~\textrm{(syst.)} \pm 7~\textrm{(lumi.)}~\textrm{pb}$, is in good agreement with the Standard Model prediction.
+Figure~\ref{fig:summary_summary} shows a summary of the cross-section measurements made by ATLAS that are combined in this note as well as the result obtained by this combination.
+This measurement, which has a total uncertainty of 6\%, has a smaller relative uncertainty than recent Tevatron cross-section combinations, which measured $7.50 \pm 0.48~\textrm{pb}$ at $\sqrt{s}= 1.96\, \TeV$ for an uncertainty of 6.4\%~\cite{CDFResult}.
+Figure~\ref{fig:xsec_vs_roots} shows various cross-section measurements from Tevatron and ATLAS experiments overlaid on the theoretical predictions as a function of center-of-mass energy.
+
+\begin{figure}[ht!]
+  \begin{center}
+    % \includegraphics[width=.7\textwidth]{figures/comb/summary_summary.eps}
+    \includegraphics[width=.8\textwidth]{figures/comb/summary_summary_atlprelim}
+    \caption{The measured value of $\sigma_{\ttbar}$ in the single-lepton channel, the dilepton channel, the all-hadronic channel, and the combination of these three measurements, including error bars for both statistical uncertainties only (blue) and including systematic uncertainties (red).  The approximate NNLO prediction with its uncertainty (yellow) is also shown.}
+    \label{fig:summary_summary}
+  \end{center}
+\end{figure}
+
+
+\begin{figure}[ht!]
+  \begin{center}
+    \includegraphics[width=.8\textwidth]{figures/comb/top_crosssection_rootS.eps}
+    \caption{Dependence of $\sigma_{\ttbar}$ on $\sqrt{s}$ from theoretical predictions based on a top-quark mass of 172.5 GeV together with the dilepton, single-lepton, and all-hadronic measurements from ATLAS, as well as the combined measurement presented in this note.  Uncertainties on measurements are shown as vertical error bars and include statistical, systematic, and luminosity contributions.  Selected results obtained by Tevatron experiments are also shown~\cite{CDF}~\cite{D0}. Measurements made at the same center-of-mass energy are slightly offset for clarity. }
+    \label{fig:xsec_vs_roots}
+  \end{center}
+\end{figure}
+
+
