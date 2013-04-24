@@ -97,7 +97,7 @@ These channels are mutually exclusive to facilitate their statistical combinatio
 %% $b$-tag requirement uses only identified leptons.
 
 The analysis uses collision data with a center-of-mass energy of
-$\sqrt{s}$ = 7~\TeV\ from 2011, with an integrated luminosity of \lumitotpm~\cite{lumiPub, lumi}.
+$\sqrt{s}$ = 7~\TeV\ from 2011, with an integrated luminosity of \lumitotpm~\cite{Aad:2011dr, ATLAS:2011cia}.
 The main backgrounds considered in this analysis come from
 $\Z$+jets events, events with a single top quark,
 diboson events, and events with misidentified leptons originating from hadronic activity.
@@ -137,11 +137,11 @@ to simulate the ATLAS detector.
 %% and events are passed through the same analysis chain as the data.
 
 Events containing top quarks, including the $\ttbar$ signal and the single-top background,
-were generated using \MCatNLO\ generator~\cite{mcatnlo1,Frixione:2003ei,Frixione:2005vw}\
-with the CTEQ6.6~\cite{cteq66}\ parton distribution function (PDF)
+were generated using \MCatNLO\ generator~\cite{Frixione:2007vw,Frixione:2003ei,Frixione:2005vw}\
+with the CTEQ6.6~\cite{Nadolsky:2008zw}\ parton distribution function (PDF)
 set and a top-quark mass of 172.5~\GeV.
 However, the reference for the overall $\ttbar$ cross-section was calculated using
-{\sc Hathor}\cite{Aliev:2010}, which employs an NNLO perturbative QCD calculation.
+{\sc Hathor}\cite{Aliev:2010gj}, which employs an NNLO perturbative QCD calculation.
 
 
 %% The generation of \ttbar{} and single top-quark events uses the
@@ -155,7 +155,7 @@ However, the reference for the overall $\ttbar$ cross-section was calculated usi
 %% used to reduce overlap with the $\ttbar$\ final state.
 
 Drell-Yan events are simulated using the {\sc Alpgen} generator using
-CTEQ6L1 \cite{cteq6l}\ to model the parton distribution function (pdf),
+CTEQ6L1 \cite{Pumplin:2002vw}\ to model the parton distribution function (pdf),
 and the overall cross-section is scaled to the NNLO prediction, which
 requires a scale factor (k-factor) of 1.25.
 Diboson events are also modeled using the {\sc Alpgen}\ generator
@@ -178,7 +178,7 @@ which were calculated using the MCFM program~\cite{Campbell:1999ah}.
 %% events are evaluated from the data.
 
 All simulated event uses the {\sc Herwig} to model the parton shower ~\cite{herwig1,Corcella:2002jc}
-as well as {\sc Jimmy} to simulate the effect of the underlying event model~\cite{jimmy}.
+as well as {\sc Jimmy} to simulate the effect of the underlying event model~\cite{JButterworth:1996zw}.
 In addition, all events include additional background interactions, generated using Pythia,
 to simulate the effect of in-time pile-up at the LHC.
 Individual simulation events have been re-weighed so the overall distribution of
@@ -378,7 +378,7 @@ is required to be within $\Delta R < 0.15$ of a selected lepton.
 Events are required to have a primary interaction vertex that has at least five tracks associated to it,
 each of which must have a minimum of $\pt>400~\MeV$.
 The entire event is rejected if a jet is considered likely to be the result of calorimeter noise or
-if a jet is inconsistent with the timing of the bunch crossing~\cite{jetcor}.
+if a jet is inconsistent with the timing of the bunch crossing~\cite{Aad:2011he}.
 
 
 %% The analysis requires collision data selected by an inclusive single
@@ -763,7 +763,7 @@ mostly by the electron selection efficiency uncertainty.
 
 The jet energy scale (JES) and its uncertainty are derived by
 combining information from test-beam data, LHC collision data and
-simulation~\cite{jetcor}.
+simulation~\cite{Aad:2011he}.
 For jets within the acceptance, the JES uncertainty varies
 %in the range $2-8\%$
 in the range 4--8\%
@@ -795,7 +795,7 @@ The uncertainty due to ISR/FSR is evaluated using the {\sc AcerMC} generator~\ci
 interfaced to the {\sc Pythia}\ shower model, and by varying the parameters controlling ISR
 and FSR in a range consistent with those used in the Perugia Hard/Soft tune variations~\cite{Skands}.
 Finally, the PDF uncertainty is evaluated using a range of
-current PDF sets~\cite{cteq6l}.
+current PDF sets~\cite{Pumplin:2002vw}.
 The dominant uncertainties in this category of systematics are the
 modeling of ISR/FSR and the generator choice.
 
@@ -813,8 +813,7 @@ resolution is poorer.
 The systematic uncertainty on the fake identified lepton background prediction is 50\%, as measured using control regions with different flavor composition and photon conversion rates, as determined by Monte Carlo studies. A 20\% systematic uncertainty is set on the prediction of the fake track-lepton background, derived from a comparison of predicted and observed fake track leptons in control
 regions defined as opposite-sign events with zero or one jet without an $\HT$ cut, and same-sign events with more than one jet.
 %
-The uncertainty on the measured integrated luminosity of the dataset
-is 3.7\%~\cite{lumi}.
+The uncertainty on the measured integrated luminosity of the dataset is 3.7\%~\cite{ATLAS:2011cia}.
 
 Table~\ref{tab:syssum} lists the contributions to the cross-section
 measurement of each of the systematic uncertainties considered, in

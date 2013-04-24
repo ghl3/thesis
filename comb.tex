@@ -10,9 +10,9 @@ that uses the events of all three channels simultaneously.
 This is performed by constructing likelihood functions for the three individual measurements, including the effect of all
 systematic uncertainties, and using these to create a join likelihood that spans each individual analysis.
 This combination results in a reduction in both statistical and systematic uncertainties.
-The measurements being used in this simultaneous likelihood are the single-lepton~\cite{lepjetsCONF} and dilepton~\cite{dileptCONF} channels,
+The measurements being used in this simultaneous likelihood are the single-lepton~\cite{LEPTON_JETS_NOTE_2011} and dilepton~\cite{DILEPTON_PAPER} channels,
 which used 0.70 \ifb\ of data, and the measurement in the all-hadronic channel, 
-which used1.02 \ifb\ of data~\cite{allhadCONF}, all of which was taken in 2011 with the ATLAS detector.
+which used1.02 \ifb\ of data~\cite{ATLAS-CONF-2011-140}, all of which was taken in 2011 with the ATLAS detector.
 
 %% The uncertainty on the integrated luminosity is estimated to be 3.7\%~\cite{luminew}.
 %% The single-lepton channel measurements are based on a multivariate discriminant distribution that is simultaneously fit to both lepton final states, which are each divided into samples containing $3,4,$ and $\ge 5$ jets (Section~\ref{sec:lepjets}).
@@ -206,7 +206,7 @@ The observable described by these templates is based on the reconstructed top-qu
 \begin{equation}\label{Eq:chisquare}
   \chi^2 =  \frac{ \left(m_{j_1, j_2} - m_{W}\right)^2}{\sigma_W^2} + \frac{ \left(m_{j_1, j_2, b_1} - m_{t}\right)^2}{\sigma_t^2} + \frac{ \left(m_{j_3, j_4} - m_{W}\right)^2}{\sigma_W^2} + \frac{ \left(m_{j_3, j_4, b_2} - m_{t}\right)^2}{\sigma_t^2},
   \end{equation}
-where the particular jet combination used per event is the one that minimizes this sum~\cite{ALL_HADRONIC_NODE}.
+where the particular jet combination used per event is the one that minimizes this sum~\cite{ATLAS-CONF-2011-140}.
 % where the choice of jet labeling per event is the one that minimizes this $\chi^2$d.
 % where the set of jets labeling that minimizes this $\chi^2$d per event is chosen.
 % where the choice of jets per event is that which minimize this $\chi^2$d.
@@ -240,7 +240,7 @@ where $s_{i}(\vec{\alpha})$ and $b_{i}(\vec{\alpha})$ are the expected number of
 
 The largest sources of systematic uncertainty in the all-hadronic model are the jet energy scale, the $b-$tagging efficiency, and modeling of initial-state and final-state radiation.
 Other significant sources of uncertainty include the jet energy resolution, the efficiency of the multijet trigger, and modeling of the multijet background.
-Further details on cross-section measurement using all-hadronic final states can be found in reference~\cite{ALL_HADRONIC_NOTE}.
+Further details on cross-section measurement using all-hadronic final states can be found in reference~\cite{ATLAS-CONF-2011-140}.
 The likelihood function for the all-hadronic channel is shown in Figure ~\ref{fig:allhad_likelihood}.
 
 \begin{figure}[htbp]
@@ -411,7 +411,7 @@ The result of these fits are shown in Table~\ref{tab:SystematicDecorrelation}.
 %This note presents a determination of the top quark pair production cross-section using a statistical combination of single-lepton, dilepton, and all-hadronic final states.
 %The measured value, $\hat\sigma_{\ttbar} = 177 \pm 3~\textrm{(stat.)} \sp {}^{+8}_{-7}~\textrm{(syst.)} \pm 7~\textrm{(lumi.)}~\textrm{pb}$, is in good agreement with the Standard Model prediction.
 Figure~\ref{fig:summary_summary} shows a summary of the cross-section measurements made by ATLAS that are combined in this note as well as the result obtained by this combination.
-This measurement, which has a total uncertainty of 6\%, has a smaller relative uncertainty than recent Tevatron cross-section combinations, which measured $7.50 \pm 0.48~\textrm{pb}$ at $\sqrt{s}= 1.96\, \TeV$ for an uncertainty of 6.4\%~\cite{CDFResult}.
+This measurement, which has a total uncertainty of 6\%, has a smaller relative uncertainty than recent Tevatron cross-section combinations, which measured $7.50 \pm 0.48~\textrm{pb}$ at $\sqrt{s}= 1.96\, \TeV$ for an uncertainty of 6.4\%~\cite{CDFCombination}.
 Figure~\ref{fig:xsec_vs_roots} shows various cross-section measurements from Tevatron and ATLAS experiments overlaid on the theoretical predictions as a function of center-of-mass energy.
 
 \begin{figure}[ht!]
@@ -427,7 +427,7 @@ Figure~\ref{fig:xsec_vs_roots} shows various cross-section measurements from Tev
 \begin{figure}[ht!]
   \begin{center}
     \includegraphics[width=.8\textwidth]{figures/comb/top_crosssection_rootS.eps}
-    \caption{Dependence of $\sigma_{\ttbar}$ on $\sqrt{s}$ from theoretical predictions based on a top-quark mass of 172.5 GeV together with the dilepton, single-lepton, and all-hadronic measurements from ATLAS, as well as the combined measurement presented in this note.  Uncertainties on measurements are shown as vertical error bars and include statistical, systematic, and luminosity contributions.  Selected results obtained by Tevatron experiments are also shown~\cite{CDF}~\cite{D0}. Measurements made at the same center-of-mass energy are slightly offset for clarity. }
+    \caption{Dependence of $\sigma_{\ttbar}$ on $\sqrt{s}$ from theoretical predictions based on a top-quark mass of 172.5 GeV together with the dilepton, single-lepton, and all-hadronic measurements from ATLAS, as well as the combined measurement presented in this note.  Uncertainties on measurements are shown as vertical error bars and include statistical, systematic, and luminosity contributions.  Selected results obtained by Tevatron experiments are also shown~\cite{CDF1p8,CDF2p6,D01p8,D04p3}. Measurements made at the same center-of-mass energy are slightly offset for clarity. }
     \label{fig:xsec_vs_roots}
   \end{center}
 \end{figure}

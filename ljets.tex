@@ -271,13 +271,13 @@ These data-driven normalization uncertainties are considered to be uncorrelated 
 Uncertainties on the identification, reconstruction, and measurement of physical objects (jets, leptons, and $\MET$) effect the number of events that are selected, which channels those events may fall into, and the shape of discriminating variables within that channel.
 These uncertainties include the energies of reconstructed objects as well as the rate at which they are triggered and identified.
 Uncertainties on the measured energies of particles include uncertainties on both the energy scale and the energy resolution (roughly, these correspond to the mean and width of the distribution of measured energy, respectively).
-The size of the uncertainties on object energy scale and energy resolution are paramaterized by many parameters of the object, but most importantly its position in the detector (in $\eta$ and $\phi$) and its nominal measured energy. [**]
+The size of the uncertainties on object energy scale and energy resolution are paramaterized by a number of object variables, but most important are their position in the detector (in $\eta$ and $\phi$) and their nominal measured energy.
 The effect of energy uncertainties are estimated by rescaling or randomly smearing the energy of objects in Monte-Carlo and obtaining new histograms of the discriminating variables for each background and sample.
 Two such sets of template histograms are created for each source of systematic uncertainty corresponding to the effect of a +1 sigma and -1 sigma shift in these parameters (in addition to the nominal histograms, which in this language correspond to a 0 sigma shift in all systematic uncertainties).
 The shapes of discriminating histograms for arbitrary shifts in uncertainty parameters are obtained by interpolating between these templates.
 Furthermore, uncertainties in the Jet Energy Scale are broken down into subcomponents which consider separately uncertainties on the JES due to the calorimeter, uncertainties due to extrapolating from a low b-jet region to a high b-jet region, the dependence of calibration on pseudorapidity, the modeling of jets across generators, the effect of pile-up, and the effect of the underlying event.
 
-Similarly, uncertainties on the rate at which leptons are identified and triggered are paramaterized by the object's location and energy.[**]
+Similarly, uncertainties on the rate at which leptons are identified and triggered are paramaterized by the object's location and energy.
 The effect of these uncertainties on the expected distribution of signal and background events estimated from Monte-Carlo are estimatied by scaling the weight of individual events by a factor corresponding to the estimated difference between trigger, reconstruction, and identification rates between Monte-Carlo and data.
 These scale factors are derived by studying known processes in data and comparing these processes to Monte Carlo (for leptons, these measurements are performed using Z boson events, where one can create a set of events with a high rate of real to fake leptons).
 
