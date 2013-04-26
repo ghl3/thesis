@@ -4,7 +4,7 @@
 \label{app:histfactory}
 
 Statistical measurements, including estimates of physical parameters, the setting of confidence intervals, and the setting of upper and lower limits, require the construction of a likelihood function that incorporates one's knowledge of physical theories, experimental properties, and underlying uncertainties.
-Moreover, it is a practical requirement that such a likelihood be expressable in software, and that the software be simple, widely applicable, and fast.
+Moreover, it is a practical requirement that such a likelihood be expressible in software, and that the software be simple, widely applicable, and fast.
 
 To make complicated statistical techniques widely available and to enable the construction of models complicated enough to accurately describe the details of physical theories, particle detectors, and the LHC, physicists built a software library consisting of tools specifically designed for the creation and evaluation of likelihood functions.
 
@@ -23,15 +23,15 @@ HistFactory is designed to allow systematic uncertainties, both theoretical or e
 \subsubsection{Preliminaries}
 
 To understand the likelihood functions that are constructed by HistFactory, we will describe a simple example.
-Consier a measurement of the rate of a single process that is performed by measuring the distribution a variable over events of an experiment that satisfy a certain, predefined criteria.
+Consider a measurement of the rate of a single process that is performed by measuring the distribution a variable over events of an experiment that satisfy a certain, predefined criteria.
 This criteria, which is a function of observables, defines the signal region.
 Assume that there are two classes of events that are present in the signal region, the signal process that we're studying, ``S'', and a background process, ``B''.
-Denoting the observalbe we're studying is ``x'', we begin by assuming that we know the distribution of this variable under both the signal and background process individually.
+Denoting the observable we're studying is ``x'', we begin by assuming that we know the distribution of this variable under both the signal and background process individually.
 We will refer to these distributions as $f_{\rm S}(x)$ and $f_{\rm B}(x)$, noting that, as probability distribution functions, they each individually integrate to 1.
 %Typically in high energy physics, these distributions are modeled as histograms having a finite number of bins.
 %If we make this assumption, then we denote $f_{\rm S}$
 
-We will also define a parameter which scales with the expected number of signal events in the signal region, which we referr to as the signal strength, or simply $\mu$.
+We will also define a parameter which scales with the expected number of signal events in the signal region, which we refer to as the signal strength, or simply $\mu$.
 And finally, we introduce a parameter, $B$, that scales with the number of background events.
 We will initially assume that this parameter is known and fixed.
 
@@ -50,13 +50,13 @@ Thus, given a value of the parameter $\mu$, the distribution of a number of meas
 {\cal P}(\{x_1\dots x_n\} | \mu)=  \textrm{Pois}(n | \mu S+B) \left[ \prod_{e=1}^n \frac{\mu S f_{\rm S}(x_e) + B f_{\rm B}(x_e)}{\mu S+B}\right ] \; .
 \end{eqnarray}
 
-The first term on the right hand side describes the total number of events measured as a poisson process whose mean is the sum of the expected number of signal and background events.
+The first term on the right hand side describes the total number of events measured as a Poisson process whose mean is the sum of the expected number of signal and background events.
 The remaining of the right side describes the probability of each individual event having the value $x_i$.
-In total, this distribution is known as a marked poisson model.
+In total, this distribution is known as a marked Poisson model.
 
 Often, in high energy physics, the distributions $f_{\rm S}(x)$ and $f_{\rm B}(x)$ are described as histograms.
 In this case, we denote the signal and background histograms as $\nu_b^{\rm sig}$ and $\nu_b^{\rm bkg}$, where $b$ is the bin index.
-In the case of histograms,  marked poisson process becomes
+In the case of histograms,  marked Poisson process becomes
 
 \begin{eqnarray}
 {\cal P}(n_b |\mu)=  \textrm{Pois}(n_{\rm tot} | \mu S + B) \left[\, \prod_{b\in\rm bins}\frac{\mu \nu_b^{\rm sig} + \nu_b^{\rm bkg}}{\mu S + B}\right ] = \mathcal{N}_{\rm comb} \prod_{b\in\rm bins} \textrm{Pois}(n_b | \mu \nu_{b}^{\rm sig} + \nu_{b}^{\rm bkg}) \; ,
@@ -104,7 +104,7 @@ The model described above considers a single observable defined in a single sign
 However, it is common for analyses to define several categories of events defined by different criteria for the purpose of making a measurement.
 Each of these categories is known as a search channel, or simply a channel.
 Within each channel, one or more discriminating variables are measured.
-The total distribution for this variable (or the join distribution if multiple variables are used) is compirised of events coming from many types of physical processes, 
+The total distribution for this variable (or the join distribution if multiple variables are used) is comprised of events coming from many types of physical processes, 
 some of which are considered signal and some of which are background.
 Each of these underlying physical processes, be it signal or background, is known in ``HistFactory'' as a sample.
 A sample may appear in one, several, or all channels considered by an analysis (but only once per channel).
@@ -127,13 +127,13 @@ For the purpose of explanation, we will here only describe the two most common c
 The two types of systematic uncertainties modeled by HistFactory that we will describe here are uncertainties that can scale the overall yield of a channel (or several channels coherently), and systematic uncertainties that can effect the shape of binned distributions in a channel (or across several channels coherently).
 
 The first type of uncertainty is modeled by including a parameter per channel and per sample in that channel (if necessary) that scales the overall expected yield from that sample in that channel.
-If several samples (either in the same channel or across multiple channels) are effected by the same logical source of systematic uncertainty, each will have a separate parameter that determines the relative size of the change in yield for that each sample indivudually.
-However, because the source of uncertainty is common across those channels, a single, global parameter will control the size, as measured in standard deviations, of the effect, which is then propogated to each sample.
+If several samples (either in the same channel or across multiple channels) are effected by the same logical source of systematic uncertainty, each will have a separate parameter that determines the relative size of the change in yield for that each sample individually.
+However, because the source of uncertainty is common across those channels, a single, global parameter will control the size, as measured in standard deviations, of the effect, which is then propagated to each sample.
 The relative size of the response in each sample to the underlying source of systematic uncertainty is an input provided by the user.
-For each source of systmeatic uncertainty and for each sample effected by the uncertainty, the user provides the relative change in yield (where 1.0 means no change) when the parameter describing the underlying source of systematic uncertainy has a one standard deviation upward fluctuation, and likewise for a downward fluctuation of one standard deviation.
+For each source of systematic uncertainty and for each sample effected by the uncertainty, the user provides the relative change in yield (where 1.0 means no change) when the parameter describing the underlying source of systematic uncertainty has a one standard deviation upward fluctuation, and likewise for a downward fluctuation of one standard deviation.
 The size of the response for values other than exactly $\pm 1$ sigma are obtained as interpolations between the relative size of the $\pm 1$ sigma response sizes per channel as a function of the parameter describing the underlying source of uncertainty.
 In the language of HistFactory, this type of systematic uncertainty is known as an ``OverallSys.''
-Typically, a linear interpolation is used, though other schemes are available, and smoother interpolations (which don't have discontinous derivitives) tend to perform better under gradient descent minimization schemes.
+Typically, a linear interpolation is used, though other schemes are available, and smoother interpolations (which don't have discontinuous derivatives) tend to perform better under gradient descent minimization schemes.
 
 To illustrate, for a channel consisting of only 1 bin, the expected number of events in that channel is given by equation\ref{Eq:alphaInterpolation}.
 \begin{eqnarray}\label{Eq:alphaInterpolation}
@@ -158,8 +158,8 @@ In this case, an uncertainty on the overall jet energy scale will causes changes
 
 Both categories of systematic uncertainties described above use a single, global parameter to model the underlying source of that uncertainty.
 When building the full likelihood function, constraint terms are added to the likelihood which describe the certainty with which these parameters are known.
-Each parameter describing a source of systematic uncertainty is constrained by a gaussian product in the likelihood.
-However, it may be desirable to not include a contraint term on a source of systematic uncertainty.
+Each parameter describing a source of systematic uncertainty is constrained by a Gaussian product in the likelihood.
+However, it may be desirable to not include a constraint term on a source of systematic uncertainty.
 In HistFactory, a ``NormFactory'' is effectively an ``OverallSys'' that doesn't include a constraint term in the likelihood.
 In such a case, the parameter described by the NormFactor is said to ``float'' and is unconstrained in likelihood fits.
 This is useful for modeling parameters of interests, and is used throughout the analyses described in this thesis to model the $\ttbar$ cross-section and the various cross-sections of exotic models.
@@ -169,7 +169,7 @@ This is useful for modeling parameters of interests, and is used throughout the 
 HistFactory's more important feature is providing a software representation of the joint likelihood across all channels and including all signals and background considered by an analysis.
 This likelihood function describes the distribution of a discriminating variable (or variables) in each channel as a joint, binned distribution (in ROOT, this is supplied by an n-dimensional histogram).
 It takes into account the effect of several types of systematic uncertainties, including those described above, as well as parameters of interest.
-Moreover, since nearly all analyses made using the ATLAS detector depend on the value of the total integrated luminosity (which has a finite and non-negligable uncertainty),
+Moreover, since nearly all analyses made using the ATLAS detector depend on the value of the total integrated luminosity (which has a finite and non-negligible uncertainty),
 a parameter describing the systematic uncertainty on the measured integrated luminosity is included by default.
 One can turn this effect off for samples that are evaluated in data, meaning their estimates don't depend on the measured value of integrated luminosity (they of course depend on the actual value of integrated luminosity, but not measurements of that value).
 

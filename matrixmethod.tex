@@ -8,7 +8,7 @@ While it is a general technique that can be applied to a wide class of analyses,
 the matrix method is commonly applied to the separation of events containing real and fake leptons
 and for estimations of fake lepton backgrounds. %and is used to  estimation of bawe here will discuss its application to measuring the rate of fake lepton events.
 %However, our treatment can easily be generalized to similar classes of analyses.
-In this context, the matrix method measures the rate of fake lepton background events by exploiting varables that can discriminate
+In this context, the matrix method measures the rate of fake lepton background events by exploiting variables that can discriminate
 between these real and fake leptons.
 It does this by defining two working points for lepton definitions, here referred to as ``loose'' and ``tight'',
 and exploits the difference in efficiencies for real and fake leptons between those points.
@@ -110,9 +110,9 @@ The matrix method can be used to estimate the number of these types of events.
 As the events in this example contain two leptons, we classify each events based on whether each lepton
 is identified as loose or tight.
 %As input to the fake background estimate, one must measure the number of events falling into several signal-like regions which are based on these two object definitions.
-The ``Tight-Tight'' region is synonomous with the signal region because it requires two leptons that both pass the tight object criteria.
+The ``Tight-Tight'' region is synonymous with the signal region because it requires two leptons that both pass the tight object criteria.
 We also define the ``Loose-Loose'' region as the phase space which contains the exact same definition as the tight-tight signal region with the exception that the two identified leptons pass only the loose criteria and not the tight criteria.
-Thus, no events falling into the tight-tight region will apear in the loose-loose region, and visa-versa.
+Thus, no events falling into the tight-tight region will appear in the loose-loose region, and visa-versa.
 In addition, we define a ``Tight-Loose'' region in which exactly one lepton is loose but not tight and the other is tight.
 
 Using the individual real lepton efficiencies and fake lepton fake rates defined in~\ref{eqn:efficiency_fake_rate},
@@ -143,7 +143,7 @@ N = N_{RR} + N_{RF} + N_{FF},
 \end{equation}
 where $N_{RR}$ is the number of events with two real leptons that have been tagged as loose,
 $N_{FF}$ is the number of events with two jets that have been misidentified as a loose lepton (which are therefore fake leptons),
-and $N_{RF}$ is the number of events with one real lepton passing loose and one jet misidentifeid as loose.
+and $N_{RF}$ is the number of events with one real lepton passing loose and one jet misidentified as loose.
 
 One can relate these numbers, using the known efficiencies and fake rates, to the number of events in the signal-like regions as follows:
 
@@ -173,9 +173,9 @@ Putting these together in terms of the numbers that are actually measured, the e
 N_{fakes}^{signal \, region} =  N_{RF}^{TT} + N_{FF}^{TT} = \frac{ N_{tt}(2r^2 + f - fr^2-2r) + N_{tl}(fr^2-f^2r^2) + N_{ll}(-f^2r^2) }{(f-r)^2} 
 \end{equation}
 
-To obtain errors on this measurement, one can simply propogate the errors on the underlying measurements of the number of events and efficiencies through this equation.
+To obtain errors on this measurement, one can simply propagate the errors on the underlying measurements of the number of events and efficiencies through this equation.
 
-One should note that this entire procedulre is linear in the number of tight or loose events.
+One should note that this entire procedure is linear in the number of tight or loose events.
 In particular, this means that we can associate any given event (be it loose or tight) with a weight for real or fake,
 and these weights are simply the (1,1) and (2,1) elements of the matrix in equation~\ref{eqn:mm_matrix}.
 Therefore, in the case that the $\epsilon$ values are functions of arbitrary variables associated with an event, one can still estimate the number of fakes in the tight (signal) region as:

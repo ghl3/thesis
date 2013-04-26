@@ -4,7 +4,7 @@
 
 %Properly using statistical tools ... blah blah blah
 Experimental High Energy Physics is uniquely suited for precise, reliable, and accurate statistical analysis.
-The detailed knowledge of the underlying physics allow one to create accurate probabilistic models and detailed simulations of measureable physical phenomena.
+The detailed knowledge of the underlying physics allow one to create accurate probabilistic models and detailed simulations of measurable physical phenomena.
 Large datasets allow these models to be checked, calibrated, and finely tuned to better describe the underlying physics.
 Sufficient computational resources are available for massive amounts of simulation to be generated from different models or similar models with various sets of parameters.
 Finally, there are a plethora of statistical formulae, tools, and techniques dedicated to the types of measurements performed by High Energy Experimental Physicists.
@@ -17,7 +17,7 @@ The above advantages make ATLAS a nearly ideal environment for detailed statisti
 
 In high energy physics, the process of performing a statistical analysis consists of two separate steps: the modeling of data and the act of measurement using that model.
 The first step requires understanding the underlying theory behind a data, the experimental setup that produced the data, and sources of uncertainty or noise that are present in the data.
-The second part requires determing what parameters on is intersting in measuring, the types of questions one would like to answer with those measurements, and what mathematical techniques or approximations one is willing to make when making those measurements.
+The second part requires determining what parameters on is interesting in measuring, the types of questions one would like to answer with those measurements, and what mathematical techniques or approximations one is willing to make when making those measurements.
 
 
 \subsection{Likelihood}
@@ -58,13 +58,13 @@ One can interpret a likelihood as a functional that maps a probability distribut
 %\subsection{Building Likelihoods at ATLAS}
 
 The creation of a likelihood function is often the most important step in an analysis of physical data.
-It encapsulates (hopefully) the entirelty of one's knowledge about an experiment, including important parameters that one wants to study and theoretical or experimental uncertainties that effect those parameters.
+It encapsulates (hopefully) the entirety of one's knowledge about an experiment, including important parameters that one wants to study and theoretical or experimental uncertainties that effect those parameters.
 Specific techniques for creating likelihood functions to describe the data measured by the ATLAS experiment are described in section ~\ref{app:histfactory}.
 
-A likelihood serves as the common starting point for statistical techniques (many statistical techniques don't explicitely require a likelihood function, but they often imply the presence of a particular likelihood function).
+A likelihood serves as the common starting point for statistical techniques (many statistical techniques don't explicitly require a likelihood function, but they often imply the presence of a particular likelihood function).
 %frequentist statistical statements (bayesian methods require the use of one or more ``prior'' pdfs in order to make statistical statements).
 The majority of statistical measurements performed by the ATLAS collaboration use frequentist techniques (or approximations to strict frequentist techniques).
-However, both frequentist and bayesian techniques require that physical observables be properly modeled and described by a likelihood function.
+However, both frequentist and Bayesian techniques require that physical observables be properly modeled and described by a likelihood function.
 In the following sections, we will review the concept of hypothesis testing as applied to the ATLAS experiment.
 We will then describe two main categories of statistical measurements known as ``confidence intervals'' and ``limit setting.''
 %These two quantities are interrelated to one another.
@@ -76,12 +76,12 @@ At ATLAS, this often means comparing a new physical theory to the Standard Model
 %These two types of tests are applications of a common frequentists procedure to select between potential probabilistic models.
 % High Energy Physics at the LHC follows the perscriptions defined by Neyman and Pearson.
 In a more general case, one considers two separate physical models, each with their own likelihood functions that describe the same data, which we will refer to as the ``Null'' hypothesis and the ``Alternate'' hypothesis.
-At the LHC, the ``Null'' hypotheis is often the Standard Model, and an ``Alternate'' hypothesis may be a new physical process that one is searching for (in the case of the Higgs Boson, the presence of a Higgs is considered an ``Alternate'' hypothesis, even though, in a strict sense, it is necessary for the Standard Model to be mathematically consistent).
+At the LHC, the ``Null'' hypothesis is often the Standard Model, and an ``Alternate'' hypothesis may be a new physical process that one is searching for (in the case of the Higgs Boson, the presence of a Higgs is considered an ``Alternate'' hypothesis, even though, in a strict sense, it is necessary for the Standard Model to be mathematically consistent).
 
 The general procedure for performing a hypothesis is to accept one hypothesis or another based on the outcome of an experiment.
 Formally, this means considering the full space spanned by all possible outcomes of an experiment and dividing that space into two segments.
 If the outcome of the actual experiment performed falls into one part of the space, one chooses to accept the corresponding hypothesis, and if it falls into the other, then one chooses to believe the other hypothesis.
-The determination of the boundary bewteen these regions and the probability measure of the two regions is the core challenge of setting up a hypothesis test.
+The determination of the boundary between these regions and the probability measure of the two regions is the core challenge of setting up a hypothesis test.
 
 In frequentist hypothesis testing, one treats the two hypotheses being tested in an asymmetric manor.
 One first decides upon a threshold for rejecting the background hypothesis, known as the size of the test, or the probability of a Type-I error, or simply as $\alpha$.
@@ -90,7 +90,7 @@ In high energy experimental physics, one often chooses an extremely small value 
 
 The choice of $\alpha$ determines the size, or volume, or measure of the space out experimental outcomes that will result in the alternate hypothesis being accepted (and therefore rejecting the null hypothesis).
 Given a choice of $\alpha$, one then chooses a region in the space of possible measured data with a total probability measure under the Null hypothesis of size $\alpha$.
-We will denote this region as $K_{\alpha}$, emphacizing the fact that the size of the region is determined by the chosen value $\alpha$.
+We will denote this region as $K_{\alpha}$, emphasizing the fact that the size of the region is determined by the chosen value $\alpha$.
 
 Clearly, there are many such regions (often infinitely many), and the task of choosing an arbitrary volume in data space may seem daunting, as the space of all experimental outcomes can be both conceptually and computationally massive.
 Typically, this region is selected by first choosing a ``test statistic,'' which is a mapping of the full space of experimental outcomes to a smaller dimensional space, which is usually the real number line.
@@ -99,21 +99,21 @@ Given a region $K_{a}$, the ``power'' of this region is defined to be $1 - \beta
 For a chosen size $\alpha$, an ideal test maximizes $\beta$, and better tests have higher values of $\beta$.
 In practice, this task boils down to choosing the most powerful test statistic, from which the value of $k_{\alpha}$ and the region in data $K_{\alpha}$ are determined (though, it may take some analytic or computational to determine the value of $k_{\alpha}$).
 
-In the case of comparing two probability models without any parameters (or equivalantly, comparing models with fixed parameters), a result known as the Neyman-Pearson lemma states that the most powerful test statistic is the likelihood ratio, defined as the ratio of the likelihoods of data under the two models being compared.
+In the case of comparing two probability models without any parameters (or equivalently, comparing models with fixed parameters), a result known as the Neyman-Pearson lemma states that the most powerful test statistic is the likelihood ratio, defined as the ratio of the likelihoods of data under the two models being compared.
 Although this result is powerful, its usefulness is often limited due to the fact that the presence of systematic uncertainties requires one to compare not just two but rather a continuous families of models to each other.
-Often, both the null and the alternate hypothesis are parameterized by variables describing a continuium of experimental or theoretical effects.
+Often, both the null and the alternate hypothesis are parameterized by variables describing a continuum of experimental or theoretical effects.
 
 The presence of systematic uncertainties makes the determination of the region $K_{\alpha}$ more complicated.
 One convention is to choose $K_{\alpha}$ such that the supremum of the measure of probability in that region under all possible Null models over the space of parameters is $\alpha$.
 In other words, $\alpha = max( \int P(D|\theta) d(D) )$ where the maximum runs over all values of $\theta$.
-If the alternate hypothesis is also paramaterized, then the power of this test will no longer be well defined, but rather it will depend on the values of the parameters.
+If the alternate hypothesis is also parameterized, then the power of this test will no longer be well defined, but rather it will depend on the values of the parameters.
 
 
 \subsection{Confidence Interval}
 
 A common application of frequentist hypothesis testing techniques is the creation of confidence intervals.
-A confidence interval is a procedure that produces a set of parameter points that are compatable with measured data, where compatable  in a very specific, well-defined sense.
-Each confidence interval is a function of the level of compatability, here referred to as $\alpha$, which is determined before the interval is created.
+A confidence interval is a procedure that produces a set of parameter points that are compatible with measured data, where compatible  in a very specific, well-defined sense.
+Each confidence interval is a function of the level of compatibility, here referred to as $\alpha$, which is determined before the interval is created.
 An instance confidence interval is a set obtained using measured data, and in a frequentist sense, any given confidence interval either contains the true parameter points or it doesn't.
 However, when the procedure for producing a confidence interval is applied over many (hypothetical) realizations of measured data, the true values of the parameters will be contained in the confidence interval at a rate of $\alpha$.
 
@@ -250,13 +250,13 @@ The profile likelihood ratio is defined as
   \lambda(\sigma_{\ttbar}) = \frac{L(\sigma_{\ttbar}, \hat{\hat{\lum}}, \hat{\hat{\alpha}}_j)}{L(\hat \sigma_{\ttbar}, \hat \lum, \hat \alpha_j)}\,,
 \end{equation}
 
-The profile likelihood techniques transforms a full likelihood function (including nuisance parameters) into a function resembling a likleihood of only parameters of interst my minimizing over the the nuisance parameters for each value of the parameter of interest (and including an overall scale of the global minimum of the likelihood function).
+The profile likelihood techniques transforms a full likelihood function (including nuisance parameters) into a function resembling a likelihood of only parameters of interest my minimizing over the the nuisance parameters for each value of the parameter of interest (and including an overall scale of the global minimum of the likelihood function).
 This construction is useful because its frequentist properties can be understood generally in the asymptotic regime.
 Specifically, the distribution of this ratio under the data approaches a $\chi^2$ distribution as the size of the data increases (in practice, this convergence happens extremely quickly, which underlies the usefulness of the profile likelihood ratio).
 Thus, a confidence interval for a parameter of interest can be obtained using the known properties of the $\chi^2$ distribution.
 Specifically, a 65\% confidence interval is defined by the region about the global minimum between the points where the negative log likelihood of the profile likelihood ratio equals $-\frac{1}{2}$ of its maximum value.
 
-This can be intrepreted as searching for values of the nuisance parameters that make the probability of the data given the full set of parameters as large as possible.
-Near the global minimum of the likelihood, this will have the effect of expanding the confidence interval of a parameter of interest since the the worse-case-scenerio of the nuisance parameters will be chosen for each value of the parameter of interest, causing the likelihood function to be more flat around the global minimum, and therefore causing confidence intervals to be wider.
+This can be interpreted as searching for values of the nuisance parameters that make the probability of the data given the full set of parameters as large as possible.
+Near the global minimum of the likelihood, this will have the effect of expanding the confidence interval of a parameter of interest since the the worse-case-scenario of the nuisance parameters will be chosen for each value of the parameter of interest, causing the likelihood function to be more flat around the global minimum, and therefore causing confidence intervals to be wider.
 
 %\subsection{Systematic Uncertainties}
