@@ -981,6 +981,7 @@ The resulting number of events can be seen in Table~\ref{ctrl:met_yield} and sho
 
 
 \begin{table}[p]
+  \small
   \begin{center}
     \caption{Observed number of events in the main control regions and the expected number of background events in those regions, including statistical (first) and systematic (second) uncertainties.
         For the Monte Carlo samples, systematic uncertainties shown here include only uncertainties on the overall production cross-section
@@ -1019,9 +1020,14 @@ The resulting number of events can be seen in Table~\ref{ctrl:met_yield} and sho
       Observed & 9 & 23 & 13 \\
       \hline
     \end{tabular}
+  \end{center}
+\end{table}
 
-    \vspace{1cm}
+%    \vspace{1cm}
 
+\begin{table}[p]
+  \small
+  \begin{center}
     \caption{Observed number of events in the data and expected number of background events with 
         statistical (first) and systematic (second) uncertainties for the second control region
         selection. For the Monte Carlo samples, systematic uncertainties include only the production 
@@ -1036,12 +1042,12 @@ The resulting number of events can be seen in Table~\ref{ctrl:met_yield} and sho
       Fakes & $2.3\pm 3.2 \pm 1.1$ & $1.2\pm 1.2 \pm 0.5$ & $0.71\pm 0.32\pm 0.21$ \\
       \hline
       Diboson & & & \\
-      $\bullet$ $WZ/ZZ$+jets & $0.20\pm 0.21 \pm 0.05$ & $0.92\pm 0.33\pm 0.15$ & $0.25\pm 0.19\pm 0.06$ \\
-      $\bullet$ $W^{\pm}W^\pm$+2 jets & $0\pm 0.01$ & $0.014\pm 0.014\pm 0.007$ & $0.03\pm 0.02\pm 0.01$ \\
+      $\bullet$ $WZ/ZZ$+jets          & $0.20\pm 0.21 \pm 0.05$ & $0.92\pm 0.33\pm 0.15$    & $0.25\pm 0.19\pm 0.06$ \\
+      $\bullet$ $W^{\pm}W^\pm$+2 jets & $0\pm 0.01$             & $0.014\pm 0.014\pm 0.007$ & $0.03\pm 0.02\pm 0.01$ \\
       \hline
       $t\bar{t}+W/Z$ & & & \\
-      $\bullet$ $t\bar{t}W$(+jet) & $0.10\pm 0.02\pm 0.02$ & $0.31\pm 0.03\pm 0.07$ & $0.18\pm 0.02\pm 0.04$ \\
-      $\bullet$ $t\bar{t}Z$(+jet) & $0.10\pm 0.01\pm 0.03$ & $0.33\pm 0.02\pm 0.12$ & $0.22\pm 0.02\pm 0.08$ \\
+      $\bullet$ $t\bar{t}W$(+jet)      & $0.10\pm 0.02\pm 0.02$       & $0.31\pm 0.03\pm 0.07$       & $0.18\pm 0.02\pm 0.04$ \\
+      $\bullet$ $t\bar{t}Z$(+jet)      & $0.10\pm 0.01\pm 0.03$       & $0.33\pm 0.02\pm 0.12$       & $0.22\pm 0.02\pm 0.08$ \\
       $\bullet$ $t\bar{t}W^{\pm}W^\mp$ & $0.0022\pm 0.0004\pm 0.0007$ & $0.0064\pm 0.0007\pm 0.0019$ & $0.0046\pm 0.0005\pm 0.0014$ \\
       \hline
       Total & $3.0 \pm 3.2 \pm 1.1$ & $2.9 \pm 1.2 \pm 0.5$ & $1.4 \pm 0.4 \pm 0.2$ \\
@@ -1265,28 +1271,28 @@ effect the rate of signal entering the acceptance region, as additional gluon
 emmisions from inital or final state legs of Feynman diagrams will produce
 additional jets.
 To evaluate the size of this effect, dedicated simulation samples with varying levels of
-ISR and FSR were produced by changing the parton shower (PS) parameters in Pythia, 
-as described in table~\ref{tab:ISFFRS}.
-\begin{table}[htbp]
-\begin{center}
-\caption{\textit{Pythia parameters changed to produce samples with more and less parton shower. Those samples were used to estimate ISR, FSR systematic uncertainty.}}
-\label{tab:ISFFRS}
-\begin{tabular}{c|c|c|l}
-\hline\hline
-Pythia parameter & Less PS & More PS & Comment\\
-PARP(67) & 0.70   & 1.75   & controls high-pt ISR branchings phase-space \\
-PARP(64) & 3.60   & 0.60   & multiplicative factor of the momentum scale squared\\
-         &        &        & in running $\alpha_s$, used in ISR \\
-PARP(72) & 0.2150 & 0.6450 & multiplicative factor of the $\Lambda_{QCD}$\\
-         &        &        & in running $\alpha_s$, used in FSR \\
-PARJ(82) & 1.66   & 0.5    & FSR low-pt cutoff \\
-\hline
-\end{tabular}
-\end{center}
-\end{table}
+ISR and FSR were produced by changing the parton shower (PS) parameters in Pythia.
+
+%% as described in table~\ref{tab:ISFFRS}.
+%% \begin{table}[htbp]
+%% \begin{center}
+%% \caption{\textit{Pythia parameters changed to produce samples with more and less parton shower. Those samples were used to estimate ISR, FSR systematic uncertainty.}}
+%% \label{tab:ISFFRS}
+%% \begin{tabular}{c|c|c|l}
+%% \hline\hline
+%% Pythia parameter & Less PS & More PS & Comment\\
+%% PARP(67) & 0.70   & 1.75   & controls high-pt ISR branchings phase-space \\
+%% PARP(64) & 3.60   & 0.60   & multiplicative factor of the momentum scale squared\\
+%%          &        &        & in running $\alpha_s$, used in ISR \\
+%% PARP(72) & 0.2150 & 0.6450 & multiplicative factor of the $\Lambda_{QCD}$\\
+%%          &        &        & in running $\alpha_s$, used in FSR \\
+%% PARJ(82) & 1.66   & 0.5    & FSR low-pt cutoff \\
+%% \hline
+%% \end{tabular}
+%% \end{center}
+%% \end{table}
 About 150k events were produced for each signal dataset, and the full reconstruction and signal selection was run on these events.
 The change in yield due to changes in ISR/FSR is evaluated of the order of 6\%.
-
 
 
 \subsubsection{Uncertainties affecting the data-driven backgrounds}
@@ -1370,6 +1376,9 @@ The distributions of the \met{} and \HT{} variables observed in data are compare
     \end{tabular}
   \end{center}
 \end{table}
+\clearpage
+\newpage
+
 
 \begin{figure}[t]
 \centering
