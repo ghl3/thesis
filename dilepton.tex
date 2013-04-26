@@ -124,7 +124,7 @@ other background estimations are obtained using Monte Carlo simulation.
 
 Monte Carlo simulation is used to estimate the production rate and kinematic distributions of the $\ttbar$ signal as well as several important background, 
 and in addition it is used to evaluate the size of many important sources of systematic uncertianty.
-All Monte Carlo samples used in this analysis were generated using \GEANT~\cite{geant4}\
+All Monte Carlo samples used in this analysis were generated using \GEANT~\cite{Agostinelli:2002hh}\
 to simulate the ATLAS detector.
 
 
@@ -293,7 +293,7 @@ cosmic rays are eliminated by rejecting back-to-back muons with $|d_0|~>~0.5~$mm
 %% from other nearby tracks, following the track isolation defined above, in this case using
 %%  tracks with $\pt>0.5\GeV$.  The summed momentum cut is set to 2~GeV.
 
-Jets are reconstructed from energy clusters in the calorimeter using the {\it \AKT} algorithm~\cite{antikt}
+Jets are reconstructed from energy clusters in the calorimeter using the {\it \AKT} algorithm~\cite{Cacciari:2008gp}
 with a radius parameter $R = 0.4$.
 Jets are calibrated to the hadronic energy scale using $\eta$ and $\phi$ dependent corrections.
 Because both jets and electrons are seeded by energy clusters in the calorimeter,
@@ -747,89 +747,149 @@ MUST DO THIS
 
 A summary of the systematic uncertainties on the measured $\ttbar$ production cross section is given in Table~\ref{tab:syssum}.
 
-Lepton trigger and identified-lepton and track-lepton
-reconstruction and selection efficiencies are assessed using
-$Z\rightarrow ee$ and $Z\rightarrow\mu\mu$ events in the same data
-sample as used for the $\ttbar$ analyses.
-Scale factors are evaluated by comparing these efficiencies with those determined with simulated $Z$-boson events. The scale factors are applied to MC samples when calculating
-acceptances to account for any differences between predicted and observed efficiencies.  Systematic uncertainties on these scale factors are evaluated by varying the selection of events used in the efficiency measurements and by checking the stability of the measurements over the course of the data-taking period.
+The uncertainties on the efficiency of the lepton trigger and the lepton identification algorithms
+are measured using $Z\rightarrow ee$ and $Z\rightarrow\mu\mu$ events.
+Using these events, the efficiencies from simulated Monte Carlo events are compared to data,
+and correction factors are obtained and applied to Monte Carlo samples.
+The uncertainties on these samples are obtained by varying the data sample used to obtain
+these factors, including using data subsamples across data taking periods.
 
-The modeling of lepton momentum scale and resolution is studied using
-reconstructed dilepton invariant mass distributions of $\Zg$\ candidate events, and
-the simulation is adjusted to match the data.  Uncertainties in the scale and resolution are used to
-evaluate the systematic uncertainty due to these corrections.
-The acceptance uncertainty from the lepton modeling is dominated
-mostly by the electron selection efficiency uncertainty.
+%% Lepton trigger and identified-lepton and track-lepton
+%% reconstruction and selection efficiencies are assessed using
+%% $Z\rightarrow ee$ and $Z\rightarrow\mu\mu$ events in the same data
+%% sample as used for the $\ttbar$ analyses.
+%% Scale factors are evaluated by comparing these efficiencies with those determined with simulated $Z$-boson events. The scale factors are applied to MC samples when calculating
+%% acceptances to account for any differences between predicted and observed efficiencies.  Systematic uncertainties on these scale factors are evaluated by varying the selection of events used in the efficiency measurements and by checking the stability of the measurements over the course of the data-taking period.
 
-The jet energy scale (JES) and its uncertainty are derived by
-combining information from test-beam data, LHC collision data and
-simulation~\cite{Aad:2011he}.
-For jets within the acceptance, the JES uncertainty varies
-%in the range $2-8\%$
-in the range 4--8\%
-as a function of jet $\pT$ and $\eta$. This uncertainty is higher than in the previous result~\cite{ATL-CONF-2011-034} because of the additional uncertainty due to multiple $pp$ interactions at high instantaneous luminosity. The jet energy
-resolution and jet reconstruction/identification efficiency measured in data and in
-simulation are in good agreement. The statistical uncertainties on the
-comparisons,  10\%\ and 1--2\%\ for the energy resolution and the efficiency,
-respectively, are taken as systematic uncertainties associated with these effects.
-The effect on the acceptance is dominated by the JES uncertainty.
+The lepton energy scale and resolution uncertainties are obtained using Monte Carlo is evaluated
+by comparing simulated $\Zg$\ events to data.
+
+
+%% The modeling of lepton momentum scale and resolution is studied using
+%% reconstructed dilepton invariant mass distributions of $\Zg$\ candidate events, and
+%% the simulation is adjusted to match the data.  Uncertainties in the scale and resolution are used to
+%% evaluate the systematic uncertainty due to these corrections.
+%% The acceptance uncertainty from the lepton modeling is dominated
+%% mostly by the electron selection efficiency uncertainty.
+
+Uncertainties on the jet energy scale (JES) have been evaluated in detail using
+a number of techniques, including test-beam data and comparisons of simulation
+to collision data ~\cite{Aad:2011he}.
+The uncertainty, which is measured as a function fo $\pt$ and $\eta$
+is found to be between 4\% and 8\%, and is heavily influenced by the effect
+of multiple $pp$ interactions (pile-up).
+The uncertainties on the jet energy resolution and reconstruction efficiency are evaluated using the
+differences between simulation and data and are found to be on the order of 10\% for the 
+jet energy reolution and 1\% to 2\% for the jet reconstruction efficiency.
+
+%% The jet energy scale (JES) and its uncertainty are derived by
+%% combining information from test-beam data, LHC collision data and
+%% simulation~\cite{Aad:2011he}.
+%% For jets within the acceptance, the JES uncertainty varies
+%% %in the range $2-8\%$
+%% in the range 4--8\%
+%% as a function of jet $\pT$ and $\eta$. This uncertainty is higher than in the previous result~\cite{ATL-CONF-2011-034} because of the additional uncertainty due to multiple $pp$ interactions at high instantaneous luminosity. The jet energy
+%% resolution and jet reconstruction/identification efficiency measured in data and in
+%% simulation are in good agreement. The statistical uncertainties on the
+%% comparisons,  10\%\ and 1--2\%\ for the energy resolution and the efficiency,
+%% respectively, are taken as systematic uncertainties associated with these effects.
+%% The effect on the acceptance is dominated by the JES uncertainty.
 
 %\subsection{Systematic uncertainties on the simulated samples}
 %\label{s:mcsyst}
 
-The systematic uncertainty on the efficiency of the $b$-tagging algorithm has been estimated to be $6$\%\ for $b$-quark jets, based on $b$-tagging calibration studies using inclusive lepton and multijet final states.
-The uncertainties on the tagging efficiencies for light and charm quarks are larger, but are not a significant source of uncertainty due to the
-intrinsically high signal-to-background ratios in the dilepton final states.
-The acceptance uncertainty due to $b$-tagging is about 3\% for all three channels.
+% No B Tagging
+%% The systematic uncertainty on the efficiency of the $b$-tagging algorithm has been estimated to be $6$\%\ for $b$-quark jets, based on $b$-tagging calibration studies using inclusive lepton and multijet final states.
+%% The uncertainties on the tagging efficiencies for light and charm quarks are larger, but are not a significant source of uncertainty due to the
+%% intrinsically high signal-to-background ratios in the dilepton final states.
+%% The acceptance uncertainty due to $b$-tagging is about 3\% for all three channels.
 
-The uncertainty in the kinematic distributions of the \ttbar\ signal events
-gives rise to systematic uncertainties in
-the signal acceptance, with contributions from the choice of generator, the modeling of initial- and final-state
-radiation (ISR/FSR) and the PDFs.
-The generator and parton-showering uncertainty (collectively labeled
-`Generator' in Table~\ref{tab:syssum}) are evaluated by comparing the
-{\sc MC@NLO} predictions  with those of
-{\sc Powheg}~\cite{powheg,Frixione:2007vw,Alioli:2010xd} interfaced to
-either {\sc Herwig} or {\sc Pythia}.
-The uncertainty due to ISR/FSR is evaluated using the {\sc AcerMC} generator~\cite{Acer}
-interfaced to the {\sc Pythia}\ shower model, and by varying the parameters controlling ISR
-and FSR in a range consistent with those used in the Perugia Hard/Soft tune variations~\cite{Skands}.
-Finally, the PDF uncertainty is evaluated using a range of
-current PDF sets~\cite{Pumplin:2002vw}.
-The dominant uncertainties in this category of systematics are the
-modeling of ISR/FSR and the generator choice.
+Uncertainties on the kinematic shape and acceptance efficiency of the $\ttbar$ signal
+come from a number of sources associated with the generation of simulated events.
+These sources of uncertainty include the choice of generator, the modeling of
+initial and final state radiation (ISR/FSR), and the parton distribution
+functions used (PDFs).
+The influence of the choice of generator is evaluated by comparing the $\ttbar$ 
+events simulated using {\sc MC@NLO} to those obtained using {\sc Powheg}~\cite{powheg,Frixione:2007vw,Alioli:2010xd}.
+The effect of uncertainties on the level of ISR/FSR is estimated by varying
+parameters in a $\ttbar$ sample obtained using the {\sc AcerMC} generator~\cite{Acer}
+in accordance with the Perugia Hard/Soft tune variations~\cite{Skands}.
+The uncertainty due to the choice of PDF is similarly evaluated by comparing the acceptance
+of the $\ttbar$ sample when using samples generated using a range of PDF sets~\cite{Pumplin:2002vw}.
 
-The overall normalization uncertainties on the backgrounds from
-single top quark and diboson production are taken to be
-8.6\%~\cite{PhysRevD.83.091503} and 5\%~\cite{Campbell:2010ff},
+%% The uncertainty in the kinematic distributions of the \ttbar\ signal events
+%% gives rise to systematic uncertainties in
+%% the signal acceptance, with contributions from the choice of generator, the modeling of initial- and final-state
+%% radiation (ISR/FSR) and the PDFs.
+%% The generator and parton-showering uncertainty (collectively labeled
+%% `Generator' in Table~\ref{tab:syssum}) are evaluated by comparing the
+%% {\sc MC@NLO} predictions  with those of
+%% {\sc Powheg}~\cite{powheg,Frixione:2007vw,Alioli:2010xd} interfaced to
+%% either {\sc Herwig} or {\sc Pythia}.
+%% The uncertainty due to ISR/FSR is evaluated using the {\sc AcerMC} generator~\cite{Acer}
+%% interfaced to the {\sc Pythia}\ shower model, and by varying the parameters controlling ISR
+%% and FSR in a range consistent with those used in the Perugia Hard/Soft tune variations~\cite{Skands}.
+%% Finally, the PDF uncertainty is evaluated using a range of
+%% current PDF sets~\cite{Pumplin:2002vw}.
+%% The dominant uncertainties in this category of systematics are the
+%% modeling of ISR/FSR and the generator choice.
+
+Theoretical uncertainties on the cross-sections of single top and diboson
+backgrounds are taken to be 8.6\%~\cite{PhysRevD.83.091503} and 5\%~\cite{Campbell:2010ff},
 respectively.
+
+%% The overall normalization uncertainties on the backgrounds from
+%% single top quark and diboson production are taken to be
+%% 8.6\%~\cite{PhysRevD.83.091503} and 5\%~\cite{Campbell:2010ff},
+%% respectively.
 %
-The systematic uncertainties from the background evaluations derived from the data include the statistical uncertainties in these methods as well as the systematic uncertainties arising from lepton and jet identification and reconstruction, and the MC estimates that are used.
-An uncertainty on the data-driven $\Zg$+jets evaluation, based on the
-expected $\met$ resolution in these events, is included by varying the
-$\met$ cut in the control region by $\pm 5\GeV$ for $ee$ and $\mu\mu$
-events, and $\pm 10\GeV$ in lepton+track events where the $\met$
-resolution is poorer.
-The systematic uncertainty on the fake identified lepton background prediction is 50\%, as measured using control regions with different flavor composition and photon conversion rates, as determined by Monte Carlo studies. A 20\% systematic uncertainty is set on the prediction of the fake track-lepton background, derived from a comparison of predicted and observed fake track leptons in control
-regions defined as opposite-sign events with zero or one jet without an $\HT$ cut, and same-sign events with more than one jet.
+
+Systematic uncertainties from the data-driven methods employed to estimate the size
+of various backgrounds are evaluated using slight modifications to the control
+regions used in the evaluation of those backgrounds and measuring the corresponding
+change in the size of the background estimate.
+The uncertainties on the data-driven estimate of the $\Zg$ background
+are estimated by varying the $\met$ cut used to define the control
+region by $\pm 5\GeV$.
+The systematic uncertainty on the fake lepton background is estimated by evaluating
+the jet fake rates in control regions with varying flavor composition (where the
+flavor composition is determined using Monte Carlo).
+From these studies, and overall uncertainty of 50\% is obtained.
+
+
+%% The systematic uncertainties from the background evaluations derived from the data include the statistical uncertainties in these methods as well as the systematic uncertainties arising from lepton and jet identification and reconstruction, and the MC estimates that are used.
+%% An uncertainty on the data-driven $\Zg$+jets evaluation, based on the
+%% expected $\met$ resolution in these events, is included by varying the
+%% $\met$ cut in the control region by $\pm 5\GeV$ for $ee$ and $\mu\mu$
+%% events, and $\pm 10\GeV$ in lepton+track events where the $\met$
+%% resolution is poorer.
+%% The systematic uncertainty on the fake identified lepton background prediction is 50\%, as measured using control regions with different flavor composition and photon conversion rates, as determined by Monte Carlo studies. A 20\% systematic uncertainty is set on the prediction of the fake track-lepton background, derived from a comparison of predicted and observed fake track leptons in control
+%% regions defined as opposite-sign events with zero or one jet without an $\HT$ cut, and same-sign events with more than one jet.
+
 %
 The uncertainty on the measured integrated luminosity of the dataset is 3.7\%~\cite{ATLAS:2011cia}.
 
-Table~\ref{tab:syssum} lists the contributions to the cross-section
-measurement of each of the systematic uncertainties considered, in
-percent, with the non-$b$-tag and the exclusive $b$-tag analyses
-combined in the $ee$ and $\mu\mu$ columns.  Only non-$b$-tag events
-are used in the $e\mu$ channel.  The relatively large `Generator'
-uncertainty for $ee$ events is partly a result of the limited size
-of the MC data set.  In the $e$TL and $\mu$TL columns the `MC
-statistics' uncertainty is larger than in the $ee$, $\mu\mu$, and
-$e\mu$ case because the number of events available is reduced by the
-removal of events with two identified leptons.  The combined
-uncertainty comes from the profile likelihood technique used to
-determine the cross section~\cite{ATL-CONF-2011-034}, and takes into
-account all correlations.  The statistical uncertainty is determined
-by fixing all systematic uncertainties at their best-fit values in
-the likelihood function.
+Table~\ref{tab:syssum} summarizes the estimated effect of systematic uncertainties
+on the cross-section measurement.
+The size of the Generator uncertainty in $ee$ events is dominated by statistical uncertainties coming
+from a limited size of simulated events in the Monte Carlo datasets being compared.
+
+
+%% Table~\ref{tab:syssum} lists the contributions to the cross-section
+%% measurement of each of the systematic uncertainties considered, in
+%% percent, with the non-$b$-tag and the exclusive $b$-tag analyses
+%% combined in the $ee$ and $\mu\mu$ columns.  Only non-$b$-tag events
+%% are used in the $e\mu$ channel.  The relatively large `Generator'
+%% uncertainty for $ee$ events is partly a result of the limited size
+%% of the MC data set.  In the $e$TL and $\mu$TL columns the `MC
+%% statistics' uncertainty is larger than in the $ee$, $\mu\mu$, and
+%% $e\mu$ case because the number of events available is reduced by the
+%% removal of events with two identified leptons.  The combined
+%% uncertainty comes from the profile likelihood technique used to
+%% determine the cross section~\cite{ATL-CONF-2011-034}, and takes into
+%% account all correlations.  The statistical uncertainty is determined
+%% by fixing all systematic uncertainties at their best-fit values in
+%% the likelihood function.
 
 % Table for 7 ch. combination
 %
