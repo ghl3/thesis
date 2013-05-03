@@ -47,7 +47,7 @@ We will initially assume that this parameter is known and fixed.
 Thus, given a value of the parameter $\mu$, the distribution of a number of measured values of x is given by:
 
 \begin{eqnarray}
-{\cal P}(\{x_1\dots x_n\} | \mu)=  \textrm{Pois}(n | \mu S+B) \left[ \prod_{e=1}^n \frac{\mu S f_{\rm S}(x_e) + B f_{\rm B}(x_e)}{\mu S+B}\right ] \; .
+{\cal P}(\{x_1\dots x_n\} | \mu) = \textrm{Pois}(n | \mu S+B) \left[ \prod_{e=1}^n \frac{\mu S f_{\rm S}(x_e) + B f_{\rm B}(x_e)}{\mu S+B}\right ] \; .
 \end{eqnarray}
 
 The first term on the right hand side describes the total number of events measured as a Poisson process whose mean is the sum of the expected number of signal and background events.
@@ -194,4 +194,23 @@ The likelihood function created by HistFactory is given by equation~\ref{Eq:Hist
 \item $\eta_{cs}(\vec\alpha)$  - The parametrized normalization uncertainties (ie. \OS) for a given sample within a given channel (a factor around 1).
 \item $\sigma_{csb_e}$  - The parametrized histogram (ie. the nominal histogram and the \HS) for a given sample within a given channel.
 \end{itemize}
+
+
+\subsubsection{Statistical Uncertainties}
+Histfactory uses shape templates to model the distributions of signal and background samples.
+These templates are typically derived using Monte Carlo simulation or by measuring a distribution
+in a control region.
+Both of these methods use a number of training events to construct a distribution.
+When this number is small, the effect of having finite statistics to construct a
+shape template may become important.
+To address this issue, HistFactory introduced a sceme that paramaterizes changes in the shapes
+of distribution templates 
+
+
+
+
+
+
+
+
 

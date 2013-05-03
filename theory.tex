@@ -1,7 +1,6 @@
 
 %
 \section{Motivation}
-
 % Info
 % Resonnaances
 % http://resonaances.blogspot.com/2011/04/update-on-forward-backward-asymmetry.html
@@ -20,23 +19,27 @@
 At the beginning of the LHC program, there was tremendous potential for the discovery new physical particles, the confirmation of theoretical models,
 and the answering many open questions in fundamental physics.
 Among the many hopes for the early LHC program was the potential for discovering the nature of electroweak symmetry breaking,
-including the potential confirmation of the Hies mechanism through the discovery of the Higgs boson, and the resolution of the Hierarchy problem.
+including the potential confirmation of the Higgs mechanism through the discovery of the Higgs boson, and the resolution of the Hierarchy problem
+through the discovery of new phenomena, such as low-scale SUSY.
 In addition, the high energy and large luminosity of the LHC would enable the detailed study of fundamental particles and the possible discovery of deviations from the Standard Model.
-Finally, the LHC had the potential to confirm experimental deviations from the Standard Model measured by previous experiments.
+Finally, the LHC had the potential to confirm deviations from the Standard Model measured by previous experiments.
 % the Standard Model and the possible discovery of deviations
 
 
 \subsection{Hierarchy Problem}
-
-For many, the primary goal of the LHC was to determine the source of electroweak symmetry breaking by discovering the Higgs boson.
-Event before the LHC was turned on, the Higgs mechanism was almost universally accepted
-as the means of breaking the electroweak gauge symmetry of the Standard Model.
-Proposed in the 1960's, the Higgs mechanism breaks electroweak symmetry by introducing a complex scalar field with a non-zero vacuum expectation value (VEV).
+% For many, the primary goal of the LHC was to determine the source of electroweak symmetry breaking by discovering the Higgs boson.
+The LHC was designed with the goal of determining the source of electroweak symmetry breaking,
+potentially through the discovery of the Higgs boson.
+Even before the LHC was turned on, the Higgs mechanism was the almost universally accepted
+means of breaking electroweak gauge symmetry. % of the Standard Model.
+The Higgs mechanism, proposed in the 1960's~\cite{kibble:1964,Higgs:1964}, appears in the Standard Model through the introduction of a complex scalar field
+that spontaneously obtains a non-zero vacuum expectation value (VEV)~\cite{Glashow196159,Weinberg:1967tq,Salam:1968}.
+%the Higgs mechanism breaks electroweak symmetry by introducing a complex scalar field with a non-zero vacuum expectation value (VEV).
 Fluctuations in this field are identified with a massive scalar boson, known as the Higgs Boson.
 At the beginning of the LHC, the Higgs had yet to be discovered and its mass had not been measured directly,
 but constraints based on precision electroweak studies required its mass to be on the order of 100 $\GeV$.
 % ``A combination of preliminary electroweak measurements and constraints on the standard model''
-It remained unknown why the higgs mass is at this scale, as quantum corrections to the mass of the higgs
+It remained unknown why the mass of the Higgs boson is at this scale, as quantum corrections to the mass of the higgs
 tend to drive its mass toward a much higher scale. %this mass, on the order of 100 $\GeV$, is so small compared to the plank mass,
 The renormalized mass of the higgs receives contributions from loop diagrams of massive fermions.
 \begin{figure}
@@ -55,18 +58,26 @@ where $\Delta m^{2}$ is the correction to the higgs mass from a massive fermion,
 and $\Lambda_{UV}$ is the ultraviolet cutoff scale of the theory.
 Because the top quark has the largest coupling to the higgs field of the fermions of the Standard Model,
 this contribution to the mass of the higgs is dominated by loop corrections involving the top quark.
-If one takes $\Lambda_{UV}$ to be the plank mass (a natural choice for this scale),
+If one takes $\Lambda_{UV}$ to be the Plank mass (a natural choice for this scale),
 then one would expect the Higgs mass to be 30 orders of magnitude larger than it is.
 The fact that the Higgs mass is not on the order of the Plank scale is known as the hierarchy problem.
-The hierarchy problem implies either that there are new particles that also contribute to the above loop diagrams
-and cancel the effect of the fermions of the standard model
-or that the cutoff scale of the Standard Model is on the order of the Higgs Mass (meaning, we should expect to see new physics emerge at the Electroweak Scale).
-Both of these scenarios gave rise to the hope that new physical theories would be discovered at the LHC.
+The hierarchy problem is the implication that in order for the Higgs to have a mass on the order of the electroweak scale,
+the Standard Model must be extremely fine tuned, as the bare mass of the Higgs boson must be large and negative to
+almost exactly cancel contributions from higher order corrections.
+%implies that the Standard Model Or that the theory is fine tuned and the bare mass is large and negative almost canceling the correction''
+In order to avoid having a Higgs sector that is extrordinarily finely tuned,
+one can introduce new particles that also contribute to the above loop diagrams
+and cancel the effect of the Standard Model fermions
+or assert that the cutoff scale of the Standard Model is on the order of the Higgs Mass
+(meaning, we should expect to see new physics emerge at the Electroweak Scale).
+Both of these scenarios gave rise to the hope that new physical theories could be confirmed by the LHC.
 
 A common solution to the hierarchy problem is the introduction of supersymmetric partners to the standard model fermions
 that cancel out the standard model fermionic loop corrections to the higgs mass.
 However, there exist many non-supersymmetric solutions to the hierarchy problem.
-In particular, because the correction to the higgs mass is dominated by a top quark loop, many of these scenarios introduce new partners to the top quark.
+In particular, because the correction to the higgs mass is dominated by a top quark loop,
+many of these scenarios introduce new partners to the top quark or new states that couple
+strongly to the top quark~\cite{Contino:2008cx,PhysRevD.78.074026,1126-6708-2008-04-087,1126-6708-2009-05-022}.
 For this reason, the top quark sector is a promising place to look for new physical signatures.
 % T 5/3 and hierarchy problem:
 % http://arxiv.org/abs/0801.1679v2
@@ -92,14 +103,21 @@ However, at higher order, the Standard Model predicts a small forward-backward a
   \caption{Feynman diagrams for the pair production of $\ttbar$ in $q-\overline{q}$ collisions.  Asymmetry in the forward-background distribution of the $\ttbar$ system arises from interference between tree-level diagrams and higher-order box diagrams, as seen above.}
   \label{img:ForwardBackwardFeynman}
 \end{figure}
-This asymmetry can be observed experimentally using an variable that measures the directions of the top quark pairs produced at the tevatron.
-Defining the difference in rapidity between the top and anti-top quarks produced to be $\Delta y = y_{t} - y_{\ttbar}$, one can measure the number of events with $\Delta y>0$ and $\Delta y<0$, which we refer to as $N(\Delta y>0)$ and $N(\Delta y < 0)$, respectively.
+This asymmetry can be observed experimentally using an variable that measures the directions of the top quark pairs produced at the Tevatron.
+Defining the difference in rapidity between the top and anti-top quarks produced to be $\Delta y = y_{t} - y_{\ttbar}$,
+one can measure the number of events with $\Delta y>0$ and $\Delta y<0$, which we refer to as $N(\Delta y>0)$ and $N(\Delta y < 0)$, respectively.
 Using these definitions, one constructs the total $\ttbar$ frame asymmetry as
 \begin{equation}
   \label{eq:FB_Asymmetry}
   A^{\ttbar} = \frac{N(\Delta y>0) - N(\Delta y>0)}{N(\Delta y>0) + N(\Delta y>0)}
 \end{equation}
-The standard model prediction for $A^{\ttbar}$ is on the order of $0.06 \pm 0.01$.%http://arxiv.org/pdf/1101.0034v1.pdf
+The standard model prediction for $A^{\ttbar}$ is on the order of $0.06 \pm 0.01$~\cite{Aaltonen:1318520}.
+The sign of $\Delta y$ is well-defined at the Tevatron, as one can use the directions of the $p$ and $\bar{p}$ beams to 
+define forward and backward regions.
+However, at a $p-p$ collider, such as the LHC, the symmetry of the two incoming proton beams prevents one from consistently
+defining a sign for $\Delta y$.
+% http://arxiv.org/pdf/1101.0034v1.pdf
+
 % [1] L. G. Almeida, G. F. Sterman and W. Vogelsang, Phys. Rev. D 78, 014008 (2008).
 % [2] O. Antunano, J. H. Kuhn, and G. V. Rodrigo, Phys. Rev. D 77, 014003 (2008).
 % [3] M. T. Bowen, S. D. Ellis, and D. Rainwater, Phys. Rev. D 73, 014008 (2006).
@@ -109,10 +127,11 @@ The selection of hadronic decays on the other quark results in a higher branchin
 
 Both CDF and D0 see an enhancement in the $\ttbar$ system's forward-backward asymmetry above the small Standard Model prediction.
 Of particular interest is the fact that CDF finds this enhancement to increase significantly as a function of the invariant mass of the $\ttbar$ system.
-If new physical models are responsible for the enhanced forward-backward asymmetry, the invariant mass dependence suggests the deviation from the Standard Model prediction may be the result of interactions with a new massive particle. % http://arxiv.org/abs/1109.3202
-To explain the observations, a new particle proposed to address the Tevatron's forward-backward asymmetry must couple strongly to both first-generation quarks and top quarks and it must couple chirally to produce an asymmetry.
+If new physics is responsible for the enhanced forward-backward asymmetry, the invariant mass dependence suggests the deviation from the Standard Model prediction may be the result of interactions with a new massive particle. % http://arxiv.org/abs/1109.3202
+To explain the observations, a new particle proposed to address the Tevatron's forward-backward asymmetry must couple strongly
+to both first-generation quarks and top quarks and it must couple chirally to produce an asymmetry.
 
-Several categories of models have been proposed.
+Several categories of models have been proposed~\cite{Almeida:2008,Antunano:2008,Bowen:2006}.
 One example is a model of composite light quarks which is enabled by a low Kaluza-Klein scale of extra dimensions~\cite{Delaunay:2011et}.  % KK Excitation: http://arxiv.org/abs/1101.2902
 The compositiveness of light, right-handed quarks can lead both to a forward-backward asymmetry as well as an enhancement in the rate of high $p_T$ top quark pairs.
 The asymmetry arises from the pair-production of a kk-gluon which subsequently decays into a $\ttbar$ pair, and the decay is asymmetric if there is a large difference between left-handed and right-handed bulk masses.

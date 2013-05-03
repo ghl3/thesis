@@ -18,7 +18,7 @@ These requirements are entirely non-trivial, and fulfilling them required decade
 ATLAS is a collection of many components whose various measurements are combined and merged to form a complete of a collision event.
 
 %The original design for ATLAS
-%In order to be successful, ATLAS 
+%In order to be successful, ATLAS
 %to use a wide spectrum of detector designed to discover particles and to precisely measure their proproperties.
 
 %Typical descriptions of the ATLAS detector list its various components and describe their properties.
@@ -144,8 +144,11 @@ In total, there are 420,000 electronic readouts from the TRT.
 As charged particles pass through a straw, they will ionize the gas, and these ions will drift toward the central wire.
 The shape of the electronic pulse read out by the central wire can be used to determine the closest radius and the direction of the charged track flying through the tube.
 Each straw is able to provide a spacial resolution of 170 $\mu$m.
+%In addition, the TRT has the ability to discriminate bewtween lighter charged particles, primarily electrons, and heavier charged particles,
+%primarily pion and other mesons, by identifying transition radiation.
 
-% Should show a picture here, otherwise one one will get it  
+
+% Should show a picture here, otherwise one one will get it
 
 \subsection{Electromagnetic Calorimeter}
 The subcomponents that make up ATLAS's electromagnetic calorimeter are each designed to measure the energy of electrons and photons by inducing and absorbing an electromagnetic shower.
@@ -358,11 +361,11 @@ For each vertex candidate, a fit is performed between the vertex, its tracks, an
 % Photon ID and good description of conversions
 % http://cdsweb.cern.ch/record/1345329/files/ATL-PHYS-PUB-2011-007.pdf
 
-% Expected performance of the Atlas Experiment 
+% Expected performance of the Atlas Experiment
 % (Reconstruction of Photon Conversions is: pp. 112–140 )
 % http://arxiv.org/abs/0901.0512
 
-% In addition, photons may be identified as electron-positron pairs from ``conversions,'' which are electron-positron pairs that 
+% In addition, photons may be identified as electron-positron pairs from ``conversions,'' which are electron-positron pairs that
 
 
 \subsection{Muons}
@@ -378,7 +381,7 @@ Both algorithms then perform a backward track extrapolation from the muon spectr
 
 
 % Muon id algorithms: http://cdsweb.cern.ch/record/1209632/files/ATL-PHYS-PROC-2009-113.pdf?version=1
-% staco vs muid, 
+% staco vs muid,
 % moore vs muboy
 
 
@@ -412,6 +415,95 @@ The ``SV0'' algorithm attempts to tag a jet as originating from a b-quark by con
 The ``JetProb'' algorithm calculates for each track associated with a jet the probability that it originated from the primary vertex.
 These probabilities are then combined to create an overall significance for the jet.
 Finally, the ``MV1'' algorithm uses a neural network to combine the result of the SV0 and JetProb algorithms along with some additional information.
+
+
+\subsection{Missing Transverse Energy}
+The accurate measurement of missing transverse energy is crucial for many measurements and searches for new physics.
+Missing energy arises from the production of particles that don't interact with the ATLAS detector.
+This primarily refers to neutrinos, but may also include non standard particles, such as the supersymmetric neutralinos.
+Missing transverse energy is measured by summing the transverse energy measured by objects and components of the ATLAS detector.
+Energy deposits that are used to measure the total transverse energy of an event, and therefore the missing transverse energy,
+come from the calorimeter, the muon spectrometer, and the inner detector.
+The calibration of cells or clusters in the calorimeter varies depending on the type of object to which
+it is associated.
+When contributing to the missing transverse energy, Electrons are calibrated to the nominal electron scale, photons
+are calibrated to the electromagnetic scale, tau's are calibrated to local hadronic calibration (LCW)~\cite{BarillariLHC,JetEnergyMeasurement}.
+Jets, which are reconstructed using the anti-kt algorithm with a distance parameter of 0.4, are divided
+into two categories.
+Soft jets, which have $10 GeV < p_T < 20 GeV$, are calibrated using LCW plus the nominal jet energy scale (JES)~\cite{JetEnergyMeasurement}, and
+jets with $p_t > 20 GeV$ are calibrated at the nominal JES.
+Cells not associated with a reconstructed object are also considered in the reconstruction of the missing transverse energy.
+However, to reduce the contribution from calorimeter noise, only cells that belong to topological clusters
+are used.
+
+Using these contributions, each transverse component of the missing energy is given by
+\begin{equation}
+E^{miss}_{x,y} = E^{miss, e}_{x,y} + E^{miss, \gamma}_{x,y} + E^{miss, \tau}_{x,y} + E^{miss, softjets}_{x,y} + E^{miss, jets}_{x,y} + E^{miss, \mu}_{x,y} + E^{miss, cells}_{x,y}
+\end{equation}
+and the total missing energy is given by
+\begin{equation}
+E^{miss}_{T} = \sqrt{E^{miss}_{x}*E^{miss}_{x} + E^{miss}_{y}*E^{miss}_{y}}.
+\end{equation}
+
+
+\section{Trigger}
+The LHC provides the ATLAS detector with collissions at a rate of up to 40 million per second.
+The size in memory of an event recorded by the ATLAS dector in RAW format is about 1.6 megabytes.
+Therefore, to store every event measured by ATLAS would require recording over 60 terabytes
+per second, which is both computationally and economically unfeasible.
+To address this issue, ATLAS chooses a subset of all possible event to record to disk for
+perminent storage, and it chooses these events using a system known as the trigger.
+The Trigger is a complex set of hardware and software tools that chooses a few hundred
+events out of the 40 million total events per second to save and distribute for further
+analysis.
+
+The goal of the trigger is to select events with a priority given by their importance
+for physical analyses and the overall goals of the ATLAS collaboration.
+It does this using a three-tiered system of event processing and reduction.
+These three levels of the ATLAS trigger system are known as the ``Level 1 Trigger'' (L1),
+the ``Level 2 Trigger'' (L2), and the ``Event Filter'' (EF).
+The latter two are collectively known as the ``High Level Trigger,'' or ``HLT.''
+The Level 1 Trigger selects events at a rate of about 75 kHz,
+the Level 2 Trigger selects a subset of the events output by the L1 trigger and
+has an output of about 3 kHz, and finally the Event Filter makes the final selection
+of events to record and outputs at a rate of about 300 Hz~\cite{http://arxiv.org/pdf/1110.1530v2.pdf}.
+
+The L1 trigger must decision at a rate that keeps up with a collission rate of
+up to 1 event every 25 nanoseconds.
+To accomplish this, it consists of custom hardware and makes its decisions based
+on logic circuits that are integrated with the ATLAS detector.
+Those events that are selected by the L1 trigger are sent to the HLT system, which
+consists of a farm of computing cores which are interconnected by gigabit Ethernet
+networks.
+The HLT consists of over 1000 processing nodes that are divided betwen the L2
+and EF triggers and must process events for the trigger in parallel.
+The L2 trigger selects events by looking at specific regions of the detector
+that are flagged by the Level 1 trigger to contain interesting features
+or objects.
+To minimize the time it takes to make a decision, the L2 trigger makes a decision
+based only on these ``Regions of Interest,'' and not on the entire data of an event.
+The each core of the L2 Trigger is allotted a maximum of 5 seconds to process an event,
+though the average time of processing during 2010 was about 50 ms per event.
+The Event Filter, on the other hand, is allowed to fully reconstruct an event, and
+therefore is able to make a more refined and granular decision than both the L1 and L2 triggers.
+It is allotted up to 180 seconds per event, though the average processing time per event
+was on the order of 0.4 seconds.
+
+Events are selected by the trigger by meeting one or more of a number of different
+criteria, each designed to select events of a particular type, and collections
+of similar trigger criteria are labeled as streams.
+%The primary streams, which are defined by a collection of similar trigger criteria,
+%are the Egamma stream, which triggers events based on the presence of
+The Egamma stream triggers events based on the presence of electromagnetic clusters
+and objects likely to be electrons or photons.
+The Muons stream uses triggers based on the Muon spectrometer to select events with
+muon candidates.
+The JetTauEtMiss stream selects events containing jets and tau candidates.
+In addition, it selects events containing significant Missing Energy, total
+transverse energy, or having a high value of Missing Energy significance.
+
+%\subsection{Missing Energy Trigger}
+%As an example of the triggering system.
 
 
 % b-tagging: http://cdsweb.cern.ch/record/1356198/files/ATLAS-CONF-2011-089.pdf
