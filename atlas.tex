@@ -7,11 +7,11 @@ ATLAS is a multi-purpose particle detector designed to identify and reconstruct 
 In order to fulfill this broad role, the ATLAS detector must excel in several ways simultaneously:
 
 \begin{itemize}
-  \item It must be sensitive to a wide spectrum of particle that can be produced by particle collisions, including Leptons (Electrons and Muons), Hadrons (Pions, Kaons, and the many other bound states of quarks that typically come in the form of Jets), and Photons.
+  \item It must be sensitive to a wide spectrum of particle that can be produced by particle collisions, including charged leptons (electrons, muons, and tau), hadrons (pions, kaons, and the many other bound states of quarks that typically come in the form of jets), and photons.
   \item It must be able to identify precisely the kinematic properties of these particles, which includes measuring their energies and directions with a high resolution.
   \item It must maintain its resolution over a large range of energies, roughly from 1 GeV up to and including the TeV scale.
   \item It must make these measurements at an extremely high rate, millions of times a second, and over the entire lifetime of the experiment, which could end up being decades
-  \item It must be able to record, save, and successfully distribute its collected data to experimentalists and analyzers around the world.
+  %\item It must be able to record and save data, and successfully distribute its collected data to experimentalists and analyzers around the world.
 \end{itemize}
 
 These requirements are entirely non-trivial, and fulfilling them required decades of design, construction, engineering, and maintenance.  
@@ -48,7 +48,7 @@ The inner-most layer of ATLAS is the ``inner detector'', which consists of silic
 The inner detector extends for 1.15 m and is surrounded by a solenoid magnet which provides a 2T field within the inner detector.
 This field causes charged particles to bend and allows the inner detector to measure the momenta of charged particles by fitting their trajectories.
 Surrounding the inner detector is the electromagnetic calorimeter, which consists of alternating layers of lead absorbers and active electronics that are bathed in liquid argon.
-The liquid argon must of course remain cooled, and so the electromagnetic calorimeter is located within a cryostat that maintains a temperature of [XX].
+The liquid argon must of course remain cooled, and so the electromagnetic calorimeter is located within a cryostat that maintains a temperature of 88 degrees kelvin.
 To reduce the amount of upstream material present before the calorimeter systems, the solenoid magnet for the inner detector is located within the EM calorimeter's cryostat.
 A dedicated presampler is located directly behind the cryostat's wall to correct for any energy lost within inactive material in front of the EM calorimeter.
 
@@ -286,12 +286,12 @@ From an initial set of preclusters, $k_T$ algorithms start by defining two sets 
 \item $d_{i} = p_{T,i}^2$
 \item $d_{ij} = min(p_{T,i}^2, p_{T,j}^2)\Delta R_{ij} / D^2$
 \end{itemize}
-where $p_{T,i}$ is the transverse energy of a cluster, $R_{ij}$ is the distance between two clusters, and D is a fixed parameter of the algorithm 
+where $p_{T,i}$ is the transverse energy of a cluster, $R_{ij}$ is the distance between two clusters, and D is a fixed parameter of the algorithm.
 The algorithm then proceeds by identifying the minimum $\hat{d_{i}}$ among all clusters and the minimum $\hat{d_{ij}}$ over all pairs of clusters.
 If $\hat{d_{ij}} < \hat{d_{k}}$, then merge clusters i and j into a new cluster.
 Else, $\hat{d_{k}} > \hat{d_{ij}}$, then cluster k becomes a jet and it is removed from the set of clusters in the algorithm.
 This is repeated until all clusters are added to jets.
-Anti-$k_T$ algorithms are identical to $k_T$ algorithms with the redefinition: $d_{ij} = min(p_{T,i}^{-2}, p_{T,j}^{-2})\Delta R_{ij} / D^2$
+Anti-$k_T$ algorithms are identical to $k_T$ algorithms with the redefinition: $d_{ij} = min(p_{T,i}^{-2}, p_{T,j}^{-2})\Delta R_{ij} / D^2$~\cite{Cacciari:2008gp}.
 
 % Helpful for jet algorithms:
 % http://www.ccsem.infn.it/issp2009/newtalents/KPerez_Erice_JetAlgs_20090905.pdf
@@ -350,7 +350,8 @@ Electromagnetic clusters matching an inner detector track are considered electro
 
 
 \subsection{Photons}
-Photons are identified as electromagnetic showers that aren't matched to an inner detector track.
+Photons are identified as electromagnetic showers that aren't matched to an inner detector track,
+or that are identified by an electron-positron pair that a photon converted into.
 In addition, photons may decay into an electron-positron pair before entering the EM calorimeter.
 If this occurs within or before the inner-detector, the proximity of the electron and positron's tracks can be used to identify the pair as a photon that ``converted'' electromagnetically, and the pair can be reconstructed as a single photon.
 Electromagnetic showers created by photons are selected in exactly the same way as those which are used to reconstruct electrons, but the requirement on a matching inner detector track is waived.  

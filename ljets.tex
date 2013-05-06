@@ -137,6 +137,7 @@ Contributions from $Z+Jets$ and $W+Jets$ in the QCD control regions were subtrac
 
 % e + Jets
 \begin{table}
+  \tiny
   \begin{tabular}{lccccc}
     \hline
     $e + Jets$ & 1 Jet & 2 Jet & 3 Jet & 4 Jet & $>=$ 5 Jets \\ 
@@ -157,6 +158,7 @@ Contributions from $Z+Jets$ and $W+Jets$ in the QCD control regions were subtrac
 
 % mu + Jets
 \begin{table}
+  \tiny
   \begin{tabular}{lccccc}
     \hline
     $e + Jets$ & 1 Jet & 2 Jet & 3 Jet & 4 Jet & $>=$ 5 Jets \\ 
@@ -293,7 +295,7 @@ Using this information, a likelihood function for the measured data in the signa
 
 \begin{equation}
 % L(âÎ², âÎ´) = ô° P(Î¼k , nk ) Ã ô° G(Î² j , â j ) Ã ô° G(Î´i , 1)
-  L(\vec{\beta}, \vec{\delta}) = \prod Pois(n_{k},\mu_{k}(\vec{\beta},\vec{\delta})) \prod Gauss(\delta_j, \beta_j) \prod( 1, \delta_i),
+  L(\vec{\beta}, \vec{\delta}) = \prod Pois(n_{k},\mu_{k}(\vec{\beta},\vec{\delta})) \prod Gauss(1, \beta_j) \prod Gauss( 0, \delta_i),
 \end{equation}
 
 where $n_k$ are the values measured in data of each bin of the observable, $\mu_k$ is the expected value of each bin based on a combination of Monte Carlo and data-driven techniques, including the effects of systematic uncertainties.
@@ -312,14 +314,14 @@ These uncertainties are later added in quadrature to the uncertainty obtained fr
 \subsubsection{Results}
 
 This likelihood function, which simultaneously describes all bins across channels for the discriminating variables, is fit to the observed data.
-The fitted value of the $\ttbar$ cross section and its uncertainties due to statistical, systematic, and luminosity effects, is found to be $\sigma_{\ttbar} = 179.0 ^{+7.0}_{-6.9}(stat+sys) \pm 6.6 (lulu)$ PE.
+The fitted value of the $\ttbar$ cross section and its uncertainties due to statistical, systematic, and luminosity effects, is found to be $\sigma_{\ttbar} = 179.0 ^{+7.0}_{-6.9} \mathrm{(stat+sys)} \pm 6.6 \mathrm{(lumi)} $ pb.
 
 Additional uncertainties that are not paramaterized in the Likelihood were added in quadrature to the fitted uncertainties.
 These additional uncertainties consist of Generator Hadronization, QCD shape, W shape, and Monte Carlo statistics.
 
 Including these effects, the total uncertainty on the measurement is given by:
 
-$\sigma_{\ttbar} = 179.0 \pm 9.8 (stat + syst) \pm 6.6 (lumi) pb = 179.0 \pm 11.8$ pb.
+$\sigma_{\ttbar} = 179.0 \pm 9.8 \mathrm{(stat + syst)} \pm 6.6 \mathrm{(lumi)} pb = 179.0 \pm 11.8 $ pb.
 
 %%  Ïtt Ì =
 %% 179.0+7.0 (stat + syst) Â± 6.6 (lumi) pb .
