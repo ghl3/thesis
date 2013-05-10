@@ -1,6 +1,6 @@
 
 
-\section{HistFactory}
+\chapter{HistFactory}
 \label{app:histfactory}
 
 Statistical measurements, including estimates of physical parameters, the setting of confidence intervals, and the setting of upper and lower limits, require the construction of a likelihood function that incorporates one's knowledge of physical theories, experimental properties, and underlying uncertainties.
@@ -20,7 +20,7 @@ HistFactory is designed to allow systematic uncertainties, both theoretical or e
 %% The \HF\ is a tool to build parametrized probability density functions (pdfs) in the \RooFit/\RooStats\ framework based based on simple ROOT histograms organized in an XML file.  The pdf has a restricted form, but it is sufficiently flexible to describe many analyses based on template histograms. The tool takes a modular approach to build complex pdfs from more primative conceptual building blocks.  The resulting PDF is stored in a RooWorkspace which can be saved to and read from a ROOT file.  This document describes the defaults and interface in \ROOT\ 5.32.  Note, \ROOT\ 5.34 provides a C++ and python interface fully interoperable with the XML interface and classes for analytically fitting bin-by-bin statistical uncertainties on the templates.  These developments will be included in a future version of this document.
 
 
-\subsubsection{Preliminaries}
+\section{Preliminaries}
 
 To understand the likelihood functions that are constructed by HistFactory, we will describe a simple example.
 Consider a measurement of the rate of a single process that is performed by measuring the distribution a variable over events of an experiment that satisfy a certain, predefined criteria.
@@ -97,7 +97,7 @@ For a given set of observed data, it can be interpreted as a likelihood function
 
 
 
-\subsubsection{Generalizations}
+\section{Generalizations}
 
 HistFactory make it easy to include a number of generalizations of this problem which all one to create flexible and powerful models.
 A simple generalization is the inclusion of additional search channels.
@@ -165,7 +165,7 @@ In HistFactory, a ``NormFactory'' is effectively an ``OverallSys'' that doesn't 
 In such a case, the parameter described by the NormFactor is said to ``float'' and is unconstrained in likelihood fits.
 This is useful for modeling parameters of interests, and is used throughout the analyses described in this thesis to model the $\ttbar$ cross-section and the various cross-sections of exotic models.
 
-\subsubsection{The likelihood function}
+\section{The likelihood function}
 
 HistFactory's more important feature is providing a software representation of the joint likelihood across all channels and including all signals and background considered by an analysis.
 This likelihood function describes the distribution of a discriminating variable (or variables) in each channel as a joint, binned distribution (in ROOT, this is supplied by an n-dimensional histogram).
@@ -197,7 +197,7 @@ The likelihood function created by HistFactory is given by equation~\ref{Eq:Hist
 \end{itemize}
 
 
-\subsubsection{Statistical Uncertainties}
+\section{Statistical Uncertainties}
 Histfactory uses shape templates to model the distributions of signal and background samples.
 These templates are typically derived using Monte Carlo simulation or by measuring a distribution
 in a control region.

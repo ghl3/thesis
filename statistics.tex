@@ -1,6 +1,6 @@
 
 
-\section{Statistics}
+\chapter{Statistics}
 
 %Properly using statistical tools ... blah blah blah
 Experimental High Energy Physics is uniquely suited for precise, reliable, and accurate statistical analysis.
@@ -20,7 +20,7 @@ The first step requires understanding the underlying theory behind a data, the e
 The second part requires determining what parameters on is interesting in measuring, the types of questions one would like to answer with those measurements, and what mathematical techniques or approximations one is willing to make when making those measurements.
 
 
-\subsection{Likelihood}
+\section{Likelihood}
 A physical, mathematical, or statistical model of data requires the construction of a likelihood, which is a function that returns the probability of a given dataset under a specified model.
 A model is described in terms of its probability density function, or ``pdf'', which returns the probability of generating a measurable value or a set of measurable values, known collectively as the ``data''.
 Because it is a function of data that returns a probability, it must be normalized to unity over the space of datasets such that
@@ -55,7 +55,7 @@ One can interpret a likelihood as a functional that maps a probability distribut
 %The type of statement that can be made from likelihoods is the source of disagreement between the ``bayesian'' and ``frequentist'' statistical sects.
 %We will here take an agnostic position on the philosophical merits of any type of statistical statement, and instead present a common type of statistical statement, used and recommended by the ATLAS collaboration, as well as many other experiments, known as the confidence interval.
 
-%\subsection{Building Likelihoods at ATLAS}
+%\section{Building Likelihoods at ATLAS}
 
 The creation of a likelihood function is often the most important step in an analysis of physical data.
 It encapsulates (hopefully) the entirety of one's knowledge about an experiment, including important parameters that one wants to study and theoretical or experimental uncertainties that effect those parameters.
@@ -70,7 +70,7 @@ We will then describe two main categories of statistical measurements known as `
 %These two quantities are interrelated to one another.
 
 
-\subsection{Hypothesis Testing}
+\section{Hypothesis Testing}
 A typical problem addressed by high energy physics is the comparison of two probability models that describe different underlying physical processes.
 At ATLAS, this often means comparing a new physical theory to the Standard Model for the purpose of either claiming discovery or setting limits.
 %These two types of tests are applications of a common frequentists procedure to select between potential probabilistic models.
@@ -109,7 +109,7 @@ In other words, $\alpha = max( \int P(D|\theta) d(D) )$ where the maximum runs o
 If the alternate hypothesis is also parameterized, then the power of this test will no longer be well defined, but rather it will depend on the values of the parameters.
 
 
-\subsection{Confidence Interval}
+\section{Confidence Interval}
 
 A common application of frequentist hypothesis testing techniques is the creation of confidence intervals.
 A confidence interval is a procedure that produces a set of parameter points that are compatible with measured data, where compatible  in a very specific, well-defined sense.
@@ -145,7 +145,7 @@ They are useful only as far as one finds such sets useful, and a confidence inte
 %We will here assume that confidence intervals are a desirable quantity to calculate and will show how they can be obtained for likelihoods that describe data obtained using the ATLAS detector.
 
 
-\subsection{Neyman Construction}
+\section{Neyman Construction}
 
 The actual determination of a confidence interval is often both conceptually and computationally challenging.
 A standard way of conceptualizing and constructing confidence intervals is through the use of a ``Neyman Construction.''
@@ -232,7 +232,7 @@ For any single parameter in parameter space, the confidence interval is the the 
 
 % Kyle:  Said yet another way, to claim a discovery, the confidence interval for the nuisance parameter(s) must be empty (when the construction is made assuming the null hypothesis).
 
-\subsection{Profile Likelihood}
+\section{Profile Likelihood}
 
 The above procedure is often conceptualized in the case of a 1-dimensional parameter and a single test statistic.
 In this case, the confidence belt represents a 1-d region that consists of confidence intervals for every possible value of the test statistic.
@@ -259,4 +259,4 @@ Specifically, a 65\% confidence interval is defined by the region about the glob
 This can be interpreted as searching for values of the nuisance parameters that make the probability of the data given the full set of parameters as large as possible.
 Near the global minimum of the likelihood, this will have the effect of expanding the confidence interval of a parameter of interest since the the worse-case-scenario of the nuisance parameters will be chosen for each value of the parameter of interest, causing the likelihood function to be more flat around the global minimum, and therefore causing confidence intervals to be wider.
 
-%\subsection{Systematic Uncertainties}
+%\section{Systematic Uncertainties}

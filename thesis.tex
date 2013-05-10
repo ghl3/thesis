@@ -127,6 +127,8 @@
 
 \usepackage{booktabs}
 
+\usepackage[toc,page]{appendix}
+
 \begin{document}
 %% Produces a test "layout" page, for "debugging" purposes only.
 %% Comment out for final version.
@@ -248,8 +250,17 @@
 \clearpage
 \newpage
 
-\chapter{Appendix}
+
+
+
+%\appendix
+
+
+%\begin{appendices}
+
 \appendix
+%\chapter{Appendix Fish}
+%\addcontentsline{toc}{chapter}{Appendix Bear}
 
 \input{matrixmethod}
 \clearpage
@@ -267,12 +278,15 @@
 \clearpage
 \newpage
 
+%\end{appendices}
+
 %\section{Bibliography}
-\addcontentsline{toc}{section}{Bibliography}
+
 %\bibliographystyle{common/atlasnote}
 
 \bibliographystyle{samesign_note/conf/atlasnote}
 \bibliography{papers,all_had}
+\addcontentsline{toc}{chapter}{Bibliography}
 %\bibliography{references}
 
 %\bibliography{references,papers}
