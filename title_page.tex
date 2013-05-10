@@ -1,0 +1,161 @@
+%% NYU PhD thesis format. Created by José Koiller 2007--2008.
+
+%%
+%% PLEASE SEE THE OFFICIAL FORMATTING GUIDE:
+%% http://gsas.nyu.edu/docs/IO/4474/formattingguide.pdf
+%% 
+%% Style obtained from:
+%% http://www.math.nyu.edu/student_resources/misc.php
+%%
+%% Submission Guidelines:
+%% http://gsas.nyu.edu/page/grad.life.dissertation.html
+%%
+
+%% Use the first of the following lines during production to
+%% easily spot "overfull boxes" in the output. Use the second
+%% line for the final version.
+%\documentclass[12pt,draft,letterpaper]{report}
+\documentclass[12pt,letterpaper]{report}
+
+%% Replace the title, name, advisor name, graduation date and dedication below with
+%% your own. Graduation months must be January, May or September.
+\newcommand{\thesistitle}{Measurements and Searches for New Physics Using Top Quarks at the LHC}
+\newcommand{\thesisauthor}{George Herbert Lewis III}
+\newcommand{\thesisadvisor}{Professor Kyle Cranmer}
+\newcommand{\graddate}{May 2013}
+%% If you do not want a dedication, scroll down and comment out
+%% the appropriate lines in this file.
+\newcommand{\thesisdedication}{Dedicated to my parents, Sharon and Herb Lewis, for their continual support and to my thesis advisor, Kyle Cranmer, for his invaluable advice and mentorship.}
+
+%\usepackage[nottoc,numbib]{tocbibind}
+
+\usepackage{common/atlasphysics}
+\def\met{\ensuremath{\not\!\!{E_{T}}}}
+\newcommand{\metvec}{{\not\!\! \vec{E}_T}}
+\def \Ht {{\rm H}_{\rm T}}
+\def\lum{{\ensuremath{\cal L}}}
+\def\lumten#1{\ensuremath{10^{#1}\,\mathrm{cm}^{-2}\mathrm{s}^{-1}}}
+\def \sp{ \hspace{ 5 pt } }
+
+
+\def\into{\mbox{$\rightarrow\:$}}
+\def\half{\mbox{\small $\frac{1}{2}$}}
+\newcommand{\onehalf}{\frac{1}{2}}
+
+\def\hlf{\mbox{\footnotesize $\frac{1}{2}$}}
+\def\quarter{\mbox{\small $\frac{1}{4}$}}
+\def\eighth{\mbox{\small $\frac{1}{8}$}}
+\def\sixth{\mbox{\small $\frac{1}{6}$}}
+\def\twelfth{\mbox{\small $\frac{1}{12}$}}
+\def\twentyfourth{\mbox{\small $\frac{1}{24}$}}
+\def\nth{\mbox{\small $\frac{1}{n}$}}
+
+%% %\def\vec#1{\ifmmode
+
+\newcommand{\Pois}{{\ensuremath{\rm Pois}}}
+\newcommand{\LN}{{\ensuremath{P_{\rm LN}}}}
+\newcommand{\Gauss}{{\ensuremath{\rm Gauss}}}
+\newcommand{\PGamma}{{\ensuremath{P_{\;\Gamma}}}}
+%\newcommand{\NF}{\texttt{NormFactor}}
+\newcommand{\OS}{\texttt{OverallSys}}
+\newcommand{\HS}{\texttt{HistoSys}}
+\newcommand{\SF}{\texttt{ShapeFactor}}
+\renewcommand{\SS}{\texttt{ShapeSys}}
+
+\newcommand{\ROOT}{\texttt{HistFactory}}
+\newcommand{\RooFit}{\texttt{RooFit}}
+\newcommand{\RooStats}{\texttt{RooStats}}
+\newcommand{\HF}{\texttt{HistFactory}}
+
+%% The following makes chapters and sections, but not subsections,
+%% appear in the TOC (table of contents). Increase to 2 or 3 to
+%% make subsections or subsubsections appear, respectively. It seems
+%% to be usual to use the "1" setting, however.
+\setcounter{tocdepth}{1}
+
+%% Sectional units up to subsubsections are numbered. To number
+%% subsections, but not subsubsections, decrease this counter to 2.
+\setcounter{secnumdepth}{3}
+
+%% Page layout (customized to letter paper and NYU requirements):
+\setlength{\oddsidemargin}{.6in}
+\setlength{\textwidth}{5.8in}
+\setlength{\topmargin}{.1in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\textheight}{8.3in}
+\setlength{\footskip}{.5in}
+
+%% Use the following commands, if desired, during production.
+%% Comment them out for final version.
+%\usepackage{layout} % defines the \layout command, see below
+%\setlength{\hoffset}{-.75in} % creates a large right margin for notes and \showlabels
+
+%% Controls spacing between lines (\doublespacing, \onehalfspacing, etc.):
+\usepackage{setspace}
+
+%% Use the line below for official NYU version, which requires
+%% double line spacing. For all other uses, this is unnecessary,
+%% so the line can be commented out.
+\doublespacing % requires package setspace, invoked above
+
+%% Each of the following lines defines the \com command, which produces
+%% a comment (notes for yourself, for instance) in the output file.
+%% Example:    \com{this will appear as a comment in the output}
+%% Choose (uncomment) only one of the three forms:
+%\newcommand{\com}[1]{[/// {#1} ///]}       % between [/// and ///].
+\newcommand{\com}[1]{\marginpar{\tiny #1}} % as (tiny) margin notes
+%\newcommand{\com}[1]{}                     % suppress all comments.
+
+%% This inputs your auxiliary file with \usepackage's and \newcommand's:
+%% It is assumed that that file is called "definitions.tex".
+\input{format/definitions}
+
+%% Cross-referencing utilities. Use one or the other--whichever you prefer--
+%% but comment out both lines for final version.
+%\usepackage{showlabels}
+%\usepackage{showkeys}
+
+%\usepackage[pdftex]{graphicx}
+\usepackage{graphicx}
+\usepackage{subfigure}
+%\usepackage{atlasphysics}
+\usepackage{amsfonts}
+%\usepackage{hyperref}
+\usepackage[bookmarks]{hyperref}
+
+\usepackage{booktabs}
+
+\usepackage[toc,page]{appendix}
+
+\begin{document}
+%% Produces a test "layout" page, for "debugging" purposes only.
+%% Comment out for final version.
+%\layout % requires package layout (see above, on this same file)
+
+%%%%%% Title page %%%%%%%%%%%
+%% Sets page numbering to "roman style" i, ii, iii, iv, etc:
+\pagenumbering{roman}
+%
+%% No numbering in the title page:
+\thispagestyle{empty}
+%
+\begin{center}
+  {\large\textbf{\thesistitle}}
+  \vspace{.3in} \\
+  by
+  \vspace{.3in} \\
+
+  \thesisauthor
+  %\vfill
+
+\begin{doublespace}
+  Advisor: \\
+  Kyle Cranmer\\
+\end{doublespace}
+\end{center}
+%\vfill
+
+\input{abstract}
+ 
+\end{document}

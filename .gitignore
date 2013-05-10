@@ -15,3 +15,5 @@ samesign_paper/
 allhad/
 thesis.*
 !thesis.tex
+.DS_store
+title_page.pdf

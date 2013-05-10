@@ -6,7 +6,7 @@ DVIPS    = dvips
 
 NOTENAME = thesis
 
-all: thesis clean
+all: thesis title clean
 
 thesis: 
 	${LATEX}  -interaction=errorstopmode  ${NOTENAME}
@@ -17,6 +17,9 @@ thesis:
 #
 # standard Latex targets
 #
+
+title:
+	pdflatex title_page.tex 
 
 %.dvi:	%.tex 
 	$(LATEX) $<
