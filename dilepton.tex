@@ -45,7 +45,7 @@
 %makes this a powerful channel for precision measurements of top quark processes.
 
 This section describes a measurement of the top-quark pair-production cross-section using the
-dilepton final state, which is characterized by two high-pt, opposite-sign leptons,
+dilepton final state, which is characterized by two high-$p_T$, opposite-sign leptons,
 significant missing energy due to the presence of neutrinos from the decay of W-bosons,
 and two $b$-jets from the decay of the top quarks.
 The requirement on two high pt-leptons in the final state means this channel has
@@ -72,9 +72,9 @@ to the dilepton final state %combined with a requirement on a $b$-jet that furth
 gives this channel a strong signal-to-background ratio.
 The dilepton decay topology is divided into three sub-channels based on the flavor of the
 final-state leptons.
-The $ee$ channel contains two high-pt, isolated leptons identified using 
+The $ee$ channel contains two high-$p_T$, isolated leptons identified using 
 the inner detector and the electromagnetic calorimeter, the $\mu\mu$ channel contains two
-high-pt, isolated muons which have been identified using the inner detector as well as the muon
+high-$p_T$, isolated muons which have been identified using the inner detector as well as the muon
 spectrometer, and the $e \mu$ final state contains an electron and a muon.
 These channels are mutually exclusive to facilitate their statistical combination.
 
@@ -181,7 +181,7 @@ which were calculated using the MCFM program~\cite{Campbell:1999ah}.
 %% or a heavy-flavor decay. Backgrounds from $W$+jets %and multijet
 %% events are evaluated from the data.
 
-All simulated event uses the {\sc Herwig} to model the parton shower ~\cite{herwig1,Corcella:2002jc}
+All simulated event uses the {\sc Herwig} to model the parton shower~\cite{herwig1,Corcella:2002jc}
 as well as {\sc Jimmy} to simulate the effect of the underlying event model~\cite{JButterworth:1996zw}.
 In addition, all events include additional background interactions, generated using Pythia,
 to simulate the effect of in-time pile-up at the LHC.
@@ -495,11 +495,20 @@ Monte-Carlo simulation
 
 A number of sources of background enter the signal region due to a false positive reconstruction
 of a lepton, which is referred to as a fake lepton.
-The background due to fake leptons comes mostly from $W$+jets, \ttbar\, lepton+jets, and single top-quark production.
-The contribution to the signal region from these events is collectively evaluated
-using the Matrix-Method (described in detail in appendix ~\ref{app:matrixmethod}) which uses loose and tight
-leptons selections to disentangle the contribution to the signal region from
-real leptons from fake leptons.
+The background due to fake leptons comes mostly from $W$+jets, \ttbar, lepton+jets, and single top-quark production.
+The process of a jet faking a lepton depends on the details of the jet's hadronic shower, in particular it's shape and depth in both the electromagnetic and hadronic calorimeters.
+The hadronic shower evolution is of course modeled in detail by simulations used by ATLAS.
+However, small differences in the nature of that simulation can lead to significant changes in the rate of jets faking leptons.
+And because the number of QCD events created at ATLAS is extremely large, changes in the rate will have dramatic differences in the number of background events in the lepton+jets signal region.
+For this reason, it is preferable to estimate the background contribution due to QCD without relying on the details of the Monte-Carlo description of hadronic shower evolution.
+
+The lepton+jets analysis uses a technique to extract the rate and distribution of QCD events from data directly.
+Known as the ``Matrix Method,'' this technique exploits the fact that the efficiencies of real and fake leptons differ as a function of cuts on the reconstructed lepton's isolation and shower shape.
+The technique involves creating two subsets of lepton identifications, denoted as ``loose'' and ``tight'' (with ``tight'' corresponding to the nominal selection requirements).
+The Matrix Method relies on knowing the efficiency for both real and fake leptons which pass loose selection to also pass the tight selection.
+It uses these efficiencies as a discriminating variable to separate real and fake leptons.
+As the matrix method is used extensively throughout the analyses that comprise this thesis, it is described in detail in appendix ~\ref{app:matrixmethod}.
+
 The Matrix-Method requires knowing the reconstruction and identification efficiencies of both
 real and fake leptons for both the loose and tight selections.
 The efficiencies for real leptons to be identified as tight given that they are identified as loose
@@ -507,7 +516,6 @@ were measured using $\Zee$ and $\Zmm$ candidate events, and the efficiencies for
 (known as the fake rate) was measured using using $W$+jets events
 The contribution of real leptons in the control region for measuring the fake rate was 
 subtracted using estimates obtained from Monte Carlo.
-
 
 %% Other backgrounds mainly come from $W$+jets, \ttbar\, lepton+jets,
 %% and single top-quark production with fake leptons. The term `fake
@@ -813,7 +821,6 @@ parameters in a $\ttbar$ sample obtained using the {\sc AcerMC} generator~\cite{
 in accordance with the Perugia Hard/Soft tune variations~\cite{Skands}.
 The uncertainty due to the choice of PDF is similarly evaluated by comparing the acceptance
 of the $\ttbar$ sample when using samples generated using a range of PDF sets~\cite{Pumplin:2002vw}.
-
 %% The uncertainty in the kinematic distributions of the \ttbar\ signal events
 %% gives rise to systematic uncertainties in
 %% the signal acceptance, with contributions from the choice of generator, the modeling of initial- and final-state
@@ -830,7 +837,6 @@ of the $\ttbar$ sample when using samples generated using a range of PDF sets~\c
 %% current PDF sets~\cite{Pumplin:2002vw}.
 %% The dominant uncertainties in this category of systematics are the
 %% modeling of ISR/FSR and the generator choice.
-
 Theoretical uncertainties on the cross-sections of single top and diboson
 backgrounds are taken to be 8.6\%~\cite{PhysRevD.83.091503} and 5\%~\cite{Campbell:2010ff},
 respectively.

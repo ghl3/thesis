@@ -3,8 +3,9 @@
 
 The lepton$+$jets channel is the most statistically powerful decay of the $\ttbar$ system for measuring the pair-production cross-section.
 The leptonic decay of one of the top results in an event topology that allows for strong background discrimination, while the hadronic decay of the other top maintains a high branching ratio for this channel.
-The distinguishing features of the lepton$+$jets channel is the presence of a high-pt lepton from the leptonic decay of a W boson,v$\MET$ from a neutrino, two b-jets from the decay $t \rightarrow W+b$, and two additional jets from the hadronic decay of a W boson.
-This topology of event was selected for by first requiring a single lepton trigger, which either required an electron or a muon (reconstructed by the trigger) with $E_{T} > 20 GeV$ or $p_{T} > 18 GeV$, respectively.
+The distinguishing features of the lepton$+$jets channel is the presence of a high-pt lepton from the leptonic decay of a W boson, $\MET$ from a neutrino, two $b$-jets from the decay $t \rightarrow W+b$, and two additional jets from the hadronic decay of a W boson.
+This topology of event was selected for by first requiring a single lepton trigger,
+which either required an electron or a muon (reconstructed by the trigger) with $E_{T} > 20$ GeV or $p_{T} > 18$ GeV, respectively.
 The exact trigger required varied throughout the run periods of 2011 as higher instantaneous luminosities required stricter lepton definitions to maintain a steady bandwidth of recorded events as selected by the trigger.
 Selected events are required to have a primary vertex that consists of 5 or more tracks.
 Each event must have exactly 1 selected electron or muon, and that lepton must match a corresponding object that fired a single-lepton trigger (events with more than 1 lepton fall into the dilepton channel, to be described in detail later).
@@ -15,16 +16,16 @@ Additional cuts are made on the to reduce the contamination from QCD, which use 
   m_{T}(W) = \sqrt{2 p_{T}^{l} p_{T}^{\nu} (1 - cos( \phi^{l} - \phi^{\nu}))},
 \end{equation} 
 where the $\MET$ vector is used to determine the kinematic variables of the neutrino, $p_{T}^{\nu}$ and $\phi^{\nu}$.
-Using this definition, the event selection requires $m_{T}(W) > 25 GeV$ in the electron channel or $\MET + m_{T}(W) > 60 GeV$ in the muon channel.
+Using this definition, the event selection requires $m_{T}(W) > 25$ GeV in the electron channel or $\MET + m_{T}(W) > 60$ GeV in the muon channel.
 
 \subsubsection{Backgrounds}
 A selection of events based on the above criteria will be contaminated with several sources of backgrounds, including
 
 \begin{itemize}
 \item QCD Multijet events where a lepton is faked via a background mechanism
-\item $W+Jets$ events where the W decays leptonically (leading to $\MET$) which includes real or fake b-jets
-\item $Z+Jets$ events where one of the two leptons isn't identified and which includes real or fake b-jets
-\item Diboson Events (WW, WZ, or ZZ events), that include some combination of leptonic decays of vector bosons, additional jets, and real or faked b-jets
+\item $W+Jets$ events where the W decays leptonically (leading to $\MET$) which includes real or fake $b$-jets
+\item $Z+Jets$ events where one of the two leptons isn't identified and which includes real or fake $b$-jets
+\item Diboson Events (WW, WZ, or ZZ events), that include some combination of leptonic decays of vector bosons, additional jets, and real or faked $b$-jets
 \item Single Top events
 \end{itemize}
 
@@ -70,19 +71,24 @@ Estimates of overall yields or kinematic variables for the $W+Jets$ background a
 The normalizations for the $Z+Jets$, diboson, and single-top backgrounds are taken directly from cross-sections evaluated using Monte-Carlo and scaled to the integrated luminosity recorded by the ATLAS detector.
 
 Each of the backgrounds which are estimated using Monte-Carlo lead to real leptons in the final state.
-In contrast, the QCD background enters the single-lepton channel when a final state jet is falsely identified as a lepton.
-The process of a jet faking a lepton depends on the details of the jet's hadronic shower, in particular it's shape and depth in both the electromagnetic and hadronic calorimeters.
-The hadronic shower evolution is of course modeled in detail by simulations used by ATLAS.
-However, small differences in the nature of that simulation can lead to significant changes in the rate of jets faking leptons.
-And because the number of QCD events created at ATLAS is extremely large, changes in the rate will have dramatic differences in the number of background events in the lepton+jets signal region.
-For this reason, it is preferable to estimate the background contribution due to QCD without relying on the details of the Monte-Carlo description of hadronic shower evolution.
+In contrast, the background from QCD enters the single-lepton channel when a final state jet is falsely identified as a lepton.
+The contribution to the signal region from this background is evaluated
+using the Matrix-Method (described in detail in appendix ~\ref{app:matrixmethod}) which uses loose and tight
+leptons selections to disentangle the contribution to the signal region from real leptons from fake leptons.
 
-The lepton+jets analysis uses a technique to extract the rate and distribution of QCD events from data directly.
-Known as the ``Matrix Method,'' this technique exploits the fact that the efficiencies of real and fake leptons differ as a function of cuts on the reconstructed lepton's isolation and shower shape.
-The technique involves creating two subsets of lepton identifications, denoted as ``loose'' and ``tight'' (with ``tight'' corresponding to the nominal selection requirements).
-The Matrix Method relies on knowing the efficiency for both real and fake leptons which pass loose selection to also pass the tight selection.
-It uses these efficiencies as a discriminating variable to separate real and fake leptons.
-As the matrix method is used extensively throughout the analyses that comprise this thesis, it is described in detail in appendix ~\ref{app:matrixmethod}.
+%% The process of a jet faking a lepton depends on the details of the jet's hadronic shower, in particular it's shape and depth in both the electromagnetic and hadronic calorimeters.
+%% The hadronic shower evolution is of course modeled in detail by simulations used by ATLAS.
+%% However, small differences in the nature of that simulation can lead to significant changes in the rate of jets faking leptons.
+%% And because the number of QCD events created at ATLAS is extremely large, changes in the rate will have dramatic differences in the number of background events in the lepton+jets signal region.
+%% For this reason, it is preferable to estimate the background contribution due to QCD without relying on the details of the Monte-Carlo description of hadronic shower evolution.
+
+%% The lepton+jets analysis uses a technique to extract the rate and distribution of QCD events from data directly.
+%% Known as the ``Matrix Method,'' this technique exploits the fact that the efficiencies of real and fake leptons differ as a function of cuts on the reconstructed lepton's isolation and shower shape.
+%% The technique involves creating two subsets of lepton identifications, denoted as ``loose'' and ``tight'' (with ``tight'' corresponding to the nominal selection requirements).
+%% The Matrix Method relies on knowing the efficiency for both real and fake leptons which pass loose selection to also pass the tight selection.
+%% It uses these efficiencies as a discriminating variable to separate real and fake leptons.
+%% As the matrix method is used extensively throughout the analyses that comprise this thesis, it is described in detail in appendix ~\ref{app:matrixmethod}.
+
 %% \begin{equation}
 %%   \epsilon_{real} = \frac{N^{tight}_{real}}{N^{loose}_{real}} and \epsilon_{fake} = \frac{N^{tight}_{fake}}{N^{loose}_{fake}},
 %% \end{equation}
