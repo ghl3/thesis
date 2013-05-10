@@ -5,11 +5,9 @@
 
 Statistical measurements, including estimates of physical parameters, the setting of confidence intervals, and the setting of upper and lower limits, require the construction of a likelihood function that incorporates one's knowledge of physical theories, experimental properties, and underlying uncertainties.
 Moreover, it is a practical requirement that such a likelihood be expressible in software, and that the software be simple, widely applicable, and fast.
-
 To make complicated statistical techniques widely available and to enable the construction of models complicated enough to accurately describe the details of physical theories, particle detectors, and the LHC, physicists built a software library consisting of tools specifically designed for the creation and evaluation of likelihood functions.
 
 HistFactory is a software tool designed to build paramaterized probability density functions and likelihood functions and is specifically designed to use histograms as inputs.
-
 HistFactory is written in c++, is a part of the ROOT framework, and was built using a statistical modeling library called RooFit.
 It can be interfaced with as a c++ library or using both XML or python as a front end.
 HistFactory produces standard but highly flexible and customizable likelihood functions using minimal input from the end user.
@@ -25,13 +23,13 @@ HistFactory is designed to allow systematic uncertainties, both theoretical or e
 To understand the likelihood functions that are constructed by HistFactory, we will describe a simple example.
 Consider a measurement of the rate of a single process that is performed by measuring the distribution a variable over events of an experiment that satisfy a certain, predefined criteria.
 This criteria, which is a function of observables, defines the signal region.
-Assume that there are two classes of events that are present in the signal region, the signal process that we're studying, ``S'', and a background process, ``B''.
-Denoting the observable we're studying is ``x'', we begin by assuming that we know the distribution of this variable under both the signal and background process individually.
+Assume that there are two classes of events that are present in the signal region, the signal process whose properties we're interested in measuring, ``S'', and a background process, ``B''.
+Denoting the observable we're studying as $x$, we begin by assuming that we know the distribution of this variable under both the signal and background processes individually.
 We will refer to these distributions as $f_{\rm S}(x)$ and $f_{\rm B}(x)$, noting that, as probability distribution functions, they each individually integrate to 1.
 %Typically in high energy physics, these distributions are modeled as histograms having a finite number of bins.
 %If we make this assumption, then we denote $f_{\rm S}$
 
-We will also define a parameter which scales with the expected number of signal events in the signal region, which we refer to as the signal strength, or simply $\mu$.
+We will also define a parameter which scales with the expected number of events coming from the signal process in the signal region, which we refer to as the signal strength, or simply $\mu$.
 And finally, we introduce a parameter, $B$, that scales with the number of background events.
 We will initially assume that this parameter is known and fixed.
 
@@ -51,19 +49,20 @@ Thus, given a value of the parameter $\mu$, the distribution of a number of meas
 \end{eqnarray}
 
 The first term on the right hand side describes the total number of events measured as a Poisson process whose mean is the sum of the expected number of signal and background events.
-The remaining of the right side describes the probability of each individual event having the value $x_i$.
+The remaining of the right side describes the probability of each individual event having the value $x_e$.
 In total, this distribution is known as a marked Poisson model.
 
-Often, in high energy physics, the distributions $f_{\rm S}(x)$ and $f_{\rm B}(x)$ are described as histograms.
+Often in high energy physics, the distributions $f_{\rm S}(x)$ and $f_{\rm B}(x)$ are described as histograms.
 In this case, we denote the signal and background histograms as $\nu_b^{\rm sig}$ and $\nu_b^{\rm bkg}$, where $b$ is the bin index.
 In the case of histograms,  marked Poisson process becomes
 
 \begin{eqnarray}
-{\cal P}(n_b |\mu)=  \textrm{Pois}(n_{\rm tot} | \mu S + B) \left[\, \prod_{b\in\rm bins}\frac{\mu \nu_b^{\rm sig} + \nu_b^{\rm bkg}}{\mu S + B}\right ] = \mathcal{N}_{\rm comb} \prod_{b\in\rm bins} \textrm{Pois}(n_b | \mu \nu_{b}^{\rm sig} + \nu_{b}^{\rm bkg}) \; ,
+{\cal P}(n_b |\mu) &=&  \textrm{Pois}(n_{\rm tot} | \mu S + B) \left[\, \prod_{b\in\rm bins}\frac{\mu \nu_b^{\rm sig} + \nu_b^{\rm bkg}}{\mu S + B}\right ] \\
+&=& \mathcal{N}_{\rm comb} \prod_{b\in\rm bins} \textrm{Pois}(n_b | \mu \nu_{b}^{\rm sig} + \nu_{b}^{\rm bkg}) \; ,
 \label{eqn:histpois}
 \end{eqnarray}
 where $n_b$ is the histogram of the observed data and and $\mathcal{N}_{\rm comb}$ is a constant combinatorial factor that can be neglected for the purpose of statistical analysis.   
-Similarly, denote the data histogram is $n_b$.
+Similarly, we denote the histogram of the distribution of $x$ as measured in data by  $n_b$.
 
 
 %% Now we ask what the probability model is for obtaining $n$ events in the data where the discriminating variable for event $e$ has a value $x_e$; thus the full dataset will be denoted $\{x_1\dots x_n\}$.  First one must include the Poisson probability of obtaining $n$ events when $\mu S + B$ are expected.  Secondly, one must take into account the probability density of obtaining $x_e$ based on the  relative mixture $f_{\rm S}(x)$ and $f_{\rm B}(x)$ for a given value of $\mu$.   Putting those two ingredients together one obtains what statisticians call a ``marked Poisson model'':
