@@ -7,7 +7,7 @@ Statistical measurements, including estimates of physical parameters, the settin
 Moreover, it is a practical requirement that such a likelihood be expressible in software, and that the software be simple, widely applicable, and fast.
 To make complicated statistical techniques widely available and to enable the construction of models complicated enough to accurately describe the details of physical theories, particle detectors, and the LHC, physicists built a software library consisting of tools specifically designed for the creation and evaluation of likelihood functions.
 
-HistFactory is a software tool designed to build paramaterized probability density functions and likelihood functions and is specifically designed to use histograms as inputs.
+HistFactory is a software tool designed to build paramaterized probability density functions and likelihood functions and is specifically designed to use histograms as inputs~\cite{Cranmer:1456844}.
 HistFactory is written in c++, is a part of the ROOT framework, and was built using a statistical modeling library called RooFit.
 It can be interfaced with as a c++ library or using both XML or python as a front end.
 HistFactory produces standard but highly flexible and customizable likelihood functions using minimal input from the end user.
@@ -57,12 +57,13 @@ In this case, we denote the signal and background histograms as $\nu_b^{\rm sig}
 In the case of histograms,  marked Poisson process becomes
 
 \begin{eqnarray}
-{\cal P}(n_b |\mu) &=&  \textrm{Pois}(n_{\rm tot} | \mu S + B) \left[\, \prod_{b\in\rm bins}\frac{\mu \nu_b^{\rm sig} + \nu_b^{\rm bkg}}{\mu S + B}\right ] \\
-&=& \mathcal{N}_{\rm comb} \prod_{b\in\rm bins} \textrm{Pois}(n_b | \mu \nu_{b}^{\rm sig} + \nu_{b}^{\rm bkg}) \; ,
+%{\cal P}(n_b |\mu) &=&  \textrm{Pois}(n_{\rm tot} | \mu S + B) \left[\, \prod_{b\in\rm bins}\frac{\mu \nu_b^{\rm sig} + \nu_b^{\rm bkg}}{\mu S + B}\right ] \\
+%&=& \mathcal{N}_{\rm comb} \prod_{b\in\rm bins} \textrm{Pois}(n_b | \mu \nu_{b}^{\rm sig} + \nu_{b}^{\rm bkg}) \; ,
+{\cal P}(n_b |\mu) &=& \mathcal{N}_{\rm comb} \prod_{b\in\rm bins} \textrm{Pois}(n_b | \mu \nu_{b}^{\rm sig} + \nu_{b}^{\rm bkg}) \; ,
 \label{eqn:histpois}
 \end{eqnarray}
-where $n_b$ is the histogram of the observed data and and $\mathcal{N}_{\rm comb}$ is a constant combinatorial factor that can be neglected for the purpose of statistical analysis.   
-Similarly, we denote the histogram of the distribution of $x$ as measured in data by  $n_b$.
+where $n_b$ is the histogram of the observed data and $\mathcal{N}_{\rm comb}$ is a constant combinatorial factor that can be neglected for the purpose of statistical analysis.   
+%Similarly, we denote the histogram of the distribution of $x$ as measured in data by  $n_b$.
 
 
 %% Now we ask what the probability model is for obtaining $n$ events in the data where the discriminating variable for event $e$ has a value $x_e$; thus the full dataset will be denoted $\{x_1\dots x_n\}$.  First one must include the Poisson probability of obtaining $n$ events when $\mu S + B$ are expected.  Secondly, one must take into account the probability density of obtaining $x_e$ based on the  relative mixture $f_{\rm S}(x)$ and $f_{\rm B}(x)$ for a given value of $\mu$.   Putting those two ingredients together one obtains what statisticians call a ``marked Poisson model'':
@@ -106,7 +107,7 @@ Each of these categories is known as a search channel, or simply a channel.
 Within each channel, one or more discriminating variables are measured.
 The total distribution for this variable (or the join distribution if multiple variables are used) is comprised of events coming from many types of physical processes, 
 some of which are considered signal and some of which are background.
-Each of these underlying physical processes, be it signal or background, is known in ``HistFactory'' as a sample.
+Each of these underlying physical processes, be it signal or background, is known in HistFactory as a sample.
 A sample may appear in one, several, or all channels considered by an analysis (but only once per channel).
 If it appears in more than one channel, it most likely shares a common parameter across channels.
 HistFactory is designed to make this sharing of parameters conceptually simple and statistically correct.
@@ -160,7 +161,7 @@ Both categories of systematic uncertainties described above use a single, global
 When building the full likelihood function, constraint terms are added to the likelihood which describe the certainty with which these parameters are known.
 Each parameter describing a source of systematic uncertainty is constrained by a Gaussian product in the likelihood.
 However, it may be desirable to not include a constraint term on a source of systematic uncertainty.
-In HistFactory, a ``NormFactory'' is effectively an ``OverallSys'' that doesn't include a constraint term in the likelihood.
+In HistFactory, a ``NormFactor'' is effectively an ``OverallSys'' that doesn't include a constraint term in the likelihood.
 In such a case, the parameter described by the NormFactor is said to ``float'' and is unconstrained in likelihood fits.
 This is useful for modeling parameters of interests, and is used throughout the analyses described in this thesis to model the $\ttbar$ cross-section and the various cross-sections of exotic models.
 
@@ -196,21 +197,13 @@ The likelihood function created by HistFactory is given by equation~\ref{Eq:Hist
 \end{itemize}
 
 
-\section{Statistical Uncertainties}
-Histfactory uses shape templates to model the distributions of signal and background samples.
-These templates are typically derived using Monte Carlo simulation or by measuring a distribution
-in a control region.
-Both of these methods use a number of training events to construct a distribution.
-When this number is small, the effect of having finite statistics to construct a
-shape template may become important.
-To address this issue, HistFactory introduced a sceme that paramaterizes changes in the shapes
-of distribution templates 
-
-
-
-
-
-
-
-
+%% \section{Statistical Uncertainties}
+%% Histfactory uses shape templates to model the distributions of signal and background samples.
+%% These templates are typically derived using Monte Carlo simulation or by measuring a distribution
+%% in a control region.
+%% Both of these methods use training events to construct a distribution.
+%% When this number is small, the effect of having finite statistics to construct a
+%% shape template may become important.
+%% To address this issue, HistFactory introduced a sceme that paramaterizes changes in the shapes
+%% of distribution templates.
 
