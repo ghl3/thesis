@@ -10,9 +10,9 @@ Selected events are required to have a primary vertex that consists of 5 or more
 Each event must have exactly 1 selected electron or muon, and that lepton must match a corresponding object that fired a single-lepton trigger (events with more than 1 lepton fall into the dilepton channel, to be described in detail later).
 The energy requirements for these objects were chosen to minimize any effects resulting from the trigger's online reconstruction.
 A cut on $\MET$ is imposed, requiring $\MET > 35 GeV$ for the electron channel and $\MET > 25 GeV$ for the muon channel (the difference in the cut results from different background contributions to each channel from QCD events, which tend to have low values of $\MET$).
-Additional cuts are made on the to reduce the contamination from QCD, which use a variable known as the ``W boson transverse mass'':
+Additional cuts are made on the to reduce the contamination from QCD, which use a variable known as the W boson transverse mass:
 \begin{equation}
-  m_{T}(W) = \sqrt(2 p_{T}^{l} p_{T}^{\nu} (1 - cos( \phi^{l} - \phi^{\nu}))),
+  m_{T}(W) = \sqrt{2 p_{T}^{l} p_{T}^{\nu} (1 - cos( \phi^{l} - \phi^{\nu}))},
 \end{equation} 
 where the $\MET$ vector is used to determine the kinematic variables of the neutrino, $p_{T}^{\nu}$ and $\phi^{\nu}$.
 Using this definition, the event selection requires $m_{T}(W) > 25 GeV$ in the electron channel or $\MET + m_{T}(W) > 60 GeV$ in the muon channel.
@@ -32,21 +32,21 @@ A selection of events based on the above criteria will be contaminated with seve
 
 \begin{figure}
   \begin{center}
-    \subfigure[$W+Jets$]{
+    \subfigure[$W+$Jets]{
       % 
-      \includegraphics[width=.4\linewidth]{figures/xsection/ZJetsDiagram.png}
+      \includegraphics[width=.2\linewidth]{figures/xsection/ZJetsDiagram.png}
     }
-    \subfigure[$QCD$]{
+    \subfigure[QCD]{
       %ZJetsDiagram.png : http://inspirehep.net/record/871058/files/qg_qZ.png
-      \includegraphics[width=.4\linewidth]{figures/xsection/ZJetsDiagram.png}
+      \includegraphics[width=.2\linewidth]{figures/xsection/ZJetsDiagram.png}
     } \\
-    \subfigure[$Z+Jets$]{
+    \subfigure[$Z+$Jets]{
       %ZJetsDiagram.png : http://inspirehep.net/record/871058/files/qg_qZ.png
-      \includegraphics[width=.4\linewidth]{figures/xsection/ZJetsDiagram.png}
+      \includegraphics[width=.2\linewidth]{figures/xsection/ZJetsDiagram.png}
     }
-    \subfigure[$Single Top$]{
+    \subfigure[Single Top]{
       % 
-      \includegraphics[width=.4\linewidth]{figures/xsection/ZJetsDiagram.png}
+      \includegraphics[width=.2\linewidth]{figures/xsection/ZJetsDiagram.png}
     } \\
   \end{center}
   \caption{Feynman diagrams for the most important backgrounds to $\ttbar$ events.  Shown are $Z+Jets$ events (top, left), $W+jets$ events (top, right), QCD events (bottom, left) and Single Top events (bottom, right).}
@@ -129,7 +129,7 @@ As the matrix method is used extensively throughout the analyses that comprise t
 In that estimation, loose electrons are defined identically as tight electrons, except their isolation cut is relaxed, requiring that $E_{T} < 6 GeV$ in a cone defined by $\Delta R = 0.2$.
 Similarly, loose muons are identical to tight muons, but the cuts on $E_{T}$ and $p_{T}$ isolation are removed entirely.
 The efficiencies for loose leptons, as defined above, to also pass tight requirements for both real and fake muons are measured directly in data.
-To measure the efficiencies of real leptons, a collection of events dominated by $Z->ee$ or $Z->\mu\mu$ is created by selecting dilepton events where the invariant mass of the leptons is close to the mass of the Z-boson.
+To measure the efficiencies of real leptons, a collection of events dominated by $Z\rightarrow ee$ or $Z \rightarrow \mu\mu$ is created by selecting dilepton events where the invariant mass of the leptons is close to the mass of the Z-boson.
 In such a sample, the efficiency can be measured directly.
 For fake leptons, a sample of QCD multijet events is collected by selecting events with a single (loose) lepton, a jet, and by requiring $5 GeV < \MET <  60 GeV$ for electron events or $m_{T}(W) < 20 GeV$ and $m_{T}(W) + \MET < 60 GeV$ for muon events.
 For muons, the efficiencies were paramaterized as a function of the muon's $p_{T}$ and $\eta$.
@@ -137,14 +137,14 @@ Contributions from $Z+Jets$ and $W+Jets$ in the QCD control regions were subtrac
 
 % e + Jets
 \begin{table}
-  \tiny
+  \footnotesize
   \begin{tabular}{lccccc}
     \hline
     $e + Jets$ & 1 Jet & 2 Jet & 3 Jet & 4 Jet & $>=$ 5 Jets \\ 
     \hline
     $\ttbar$ & $225 \pm 15$ & $1005 \pm 32$ & $1934 \pm 44$ & $1835 \pm 43$ & $1463 \pm 38$ \\
     $W+Jets$ & $161600 \pm 400$ & $43170 \pm 210$ & $10840 \pm 100$ & $2486 \pm 50$ & $1032 \pm 32$ \\
-    $QCD Multijets$ & $11000 \pm 5000$ & $4800 \pm 2400$ & $1600 \pm 800$ & $510 \pm 250$ & $117 \pm 89$ \\
+    QCD Multijets & $11000 \pm 5000$ & $4800 \pm 2400$ & $1600 \pm 800$ & $510 \pm 250$ & $117 \pm 89$ \\
     Single Top & $571 \pm 24$ & $711 \pm 27$ & $391 \pm 20$ & $156 \pm 13$ & $65 \pm 8$ \\
     $ZJets$ & $3732 \pm 61$ & $2444 \pm 49$ & $996 \pm 32$ & $333 \pm 18$ & $146 \pm 12$ \\
     Diboson & $599 \pm 25$ & $538 \pm 23$ & $178 \pm 13$ & $45 \pm 7$ & $10 \pm 3$ \\
@@ -158,14 +158,14 @@ Contributions from $Z+Jets$ and $W+Jets$ in the QCD control regions were subtrac
 
 % mu + Jets
 \begin{table}
-  \tiny
+  \footnotesize
   \begin{tabular}{lccccc}
     \hline
     $e + Jets$ & 1 Jet & 2 Jet & 3 Jet & 4 Jet & $>=$ 5 Jets \\ 
     \hline
     $\ttbar$ & $319 \pm 18$ & $1342 \pm 37$ & $2734 \pm 52$ & $2714 \pm 52$ & $2030 \pm 45$ \\
     $W+Jets$ & $383200 \pm 600$ & $93440 \pm 310$ & $20140 \pm 140$ & $4644 \pm 68$ & $1082 \pm 33$ \\
-    $QCD Multijets$ & $25000 \pm 12000$ & $11000 \pm 6000$ & $3200 \pm 1600$ & $900 \pm 400$ & $290 \pm 150$ \\
+    QCD Multijets & $25000 \pm 12000$ & $11000 \pm 6000$ & $3200 \pm 1600$ & $900 \pm 400$ & $290 \pm 150$ \\
     Single Top & $996 \pm 32$ & $1148 \pm 34$ & $594 \pm 24$ & $210 \pm 15$ & $84 \pm 9$ \\
     $ZJets$ & $17270 \pm 130$ & $5492 \pm 74$ & $1510 \pm 39$ & $436 \pm 21$ & $149 \pm 12$ \\
     Diboson & $1093 \pm 33$ & $1009 \pm 32$ & $308 \pm 18$ & $69 \pm 8$ & $18 \pm 4$ \\
@@ -264,9 +264,9 @@ In the lepton+jets analysis, these constraints are modeled as Gaussian terms wit
 
 In the lepton+jets analysis, these uncertainties fall into several categories.  
 Uncertainties on the cross-sections of backgrounds estimated using Monte-Carlo lead directly to uncertainties on the number of expected events in each bin of the discriminating variable for a fixed integrated luminosity.
-These uncertainties on the cross-sections of the diboson, single-top and Z$+$Jet processes are determined by theoretical studies using Monte-Carlo simulation.
+These uncertainties on the cross-sections of the diboson, single-top and Z$+$Jets processes are determined by theoretical studies using Monte-Carlo simulation.
 Uncertainties on the normalizations of the data-driven W$+$Jets and QCD backgrounds come from the propagation of statistical uncertainties through the data-driven techniques.
-These data-driven normalization uncertainties are considered to be uncorrelated across in the 3 Jets, 4 Jets, and 5+ Jets channels (meaning, the effect is modeled by a separate parameter for each channel, and these parameters each have separate constraint terms and are allowed to move independently in a fit).
+These data-driven normalization uncertainties are considered to be uncorrelated across in the 3 jets, 4 jets, and 5+ jets channels (meaning, the effect is modeled by a separate parameter for each channel, and these parameters each have separate constraint terms and are allowed to move independently in a fit).
 
 Uncertainties on the identification, reconstruction, and measurement of physical objects (jets, leptons, and $\MET$) effect the number of events that are selected, which channels those events may fall into, and the shape of discriminating variables within that channel.
 These uncertainties include the energies of reconstructed objects as well as the rate at which they are triggered and identified.

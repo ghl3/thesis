@@ -60,6 +60,7 @@ In the case of histograms,  marked Poisson process becomes
 
 \begin{eqnarray}
 {\cal P}(n_b |\mu)=  \textrm{Pois}(n_{\rm tot} | \mu S + B) \left[\, \prod_{b\in\rm bins}\frac{\mu \nu_b^{\rm sig} + \nu_b^{\rm bkg}}{\mu S + B}\right ] = \mathcal{N}_{\rm comb} \prod_{b\in\rm bins} \textrm{Pois}(n_b | \mu \nu_{b}^{\rm sig} + \nu_{b}^{\rm bkg}) \; ,
+\label{eqn:histpois}
 \end{eqnarray}
 where $n_b$ is the histogram of the observed data and and $\mathcal{N}_{\rm comb}$ is a constant combinatorial factor that can be neglected for the purpose of statistical analysis.   
 Similarly, denote the data histogram is $n_b$.
@@ -118,7 +119,7 @@ However, when making this product, one should be sure to use a single variable t
 For example, in the joint likelihood function, one should use a single parameter $\mu$ to describe a signal strength that is coherent across search channels.
 One can include any number of channels in this way.
 In addition, it is easy to include multiple discriminating variables in each channel by using multidimensional histograms.
-Similarly, one can consider any number of background distributions, which simply get added to equation BLAH.
+Similarly, one can consider any number of background distributions, which simply get added to equation~\ref{eqn:histpois}.
 
 Most importantly, however, is the ability to include parameters to describe systematic uncertainties in additional to the parameter of interest.
 HistFactory has developed a number ways to describe the effect of systematic uncertainties, some of which are quite intricate and sophisticated.

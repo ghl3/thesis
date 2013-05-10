@@ -104,7 +104,7 @@ These channels are mutually exclusive to facilitate their statistical combinatio
 The analysis uses collision data with a center-of-mass energy of
 $\sqrt{s}$ = 7~\TeV\ from 2011, with an integrated luminosity of \lumitotpm~\cite{Aad:2011dr, ATLAS:2011cia}.
 The main backgrounds considered in this analysis come from
-$\Z$+jets events, events with a single top quark,
+$Z+$jets events, events with a single top quark,
 diboson events, and events with misidentified leptons originating from hadronic activity.
 Background contributions from
 $\Zg \rightarrow ee$+jets, $\Zg \rightarrow\mu\mu$+jets and events with
@@ -145,9 +145,8 @@ Events containing top quarks, including the $\ttbar$ signal and the single-top b
 were generated using \MCatNLO\ generator~\cite{Frixione:2007vw,Frixione:2003ei,Frixione:2005vw}\
 with the CTEQ6.6~\cite{Nadolsky:2008zw}\ parton distribution function (PDF)
 set and a top-quark mass of 172.5~\GeV.
-However, the reference for the overall $\ttbar$ cross-section was calculated using
-{\sc Hathor}\cite{Aliev:2010gj}, which employs an NNLO perturbative QCD calculation.
-
+However, the reference for the overall $\ttbar$ cross-section was calculated using {\sc Hathor}~\cite{Aliev:2010gj},
+which employs an NNLO perturbative QCD calculation.
 
 %% The generation of \ttbar{} and single top-quark events uses the
 %% \MCatNLO\ generator~\cite{mcatnlo1,Frixione:2003ei,Frixione:2005vw}\
@@ -457,7 +456,7 @@ on the $\ttbar$ signal is 0.96\% when averaged over all three channels.
 \subsection{Background evaluation}
 \label{s:backgrounds}
 
-Although the event selection attempts to reject $\Zg$+jets events by requiring a minimum dilepton invariant mass of $15 GeV$ and excluding a
+Although the event selection attempts to reject $\Zg$+jets events by requiring a minimum dilepton invariant mass of 15 GeV and excluding a
 mass window within 10 GeV of the around the $Z$-boson, there remains a non-neglegive contribution to the signal region from this background.
 Moreover, because these events have little ``real'' missing energy (which typically refers to missing energy arising from neutrinos),
 and the event selection requires a large amount of missing energy, $\Zg$+jets must have significant missing energy arising
@@ -673,36 +672,37 @@ The expected background rate in all three channels is given in table Table~\ref{
 \newcommand{\DatammNJetsTwoJetb}{365}
 \newcommand{\DataemNJetsTwoJetb}{834}
 
-\begin{table*}[htb]
-\begin{footnotesize}
-%\begin{adjustwidth}{-6em}{-6em}
-\centering
-\begin{tabular}{|l|c|c|c|} \hline
-                          & $ee$                    & $\mu\mu$                & $e\mu$                  \\ [0.2ex] \hline
-                          &                         &                         &                         \\ [-1.9ex]
-$\Zg$+~jets               & \DYZeeNJetsTwoJet       & \DYZmmNJetsTwoJet       & -                       \\ [0.3ex]
-$\Zg \to \tau\tau$+jets   & \ZtteeNJetsTwoJet       & \ZttmmNJetsTwoJet       & \ZttemNJetsTwoJet       \\ [0.3ex]
-Fake leptons              & \FakeWeeNJetsTwoJet     & \FakeWmmNJetsTwoJet     & \FakeWemNJetsTwoJet     \\ [0.3ex]
-Single top quark          & \singletopeeNJetsTwoJet & \singletopmmNJetsTwoJet & \singletopemNJetsTwoJet \\ [0.3ex]
-Diboson                   & \dibosoneeNJetsTwoJet   & \dibosonmmNJetsTwoJet   & \dibosonemNJetsTwoJet   \\ [0.3ex] \hline
-                          &                         &                         &                         \\ [-1.9ex]
-Total background          & \TotalNonttbaree        & \TotalNonttbarmm        & \TotalNonttbarem        \\ [0.3ex]
-Predicted \ttbar\         & \ttbareeNJetsTwoJet     & \ttbarmmNJetsTwoJet     & \ttbaremNJetsTwoJet     \\ [0.3ex] \hline
-                          &                         &                         &                         \\ [-1.9ex]
-Total                     & \TotalExpectedee        & \TotalExpectedmm        & \TotalExpectedem        \\ [0.3ex] \hline \hline
-                          &                         &                         &                         \\ [-1.9ex]
-Observed                  & \DataeeNJetsTwoJet      & \DatammNJetsTwoJet      & \DataemNJetsTwoJet      \\ \hline
-\end{tabular}
-%\end{adjustwidth}
-\end{footnotesize}
-\caption {Breakdown of the expected {\ttbar} signal and background
-events in the signal region compared to the observed event yields,
-for each of the dilepton channels. All systematic uncertainties are
-included, and correlations between different background sources are
-taken into account, when calculating the total background
-uncertainty. The largest contribution to the line labeled 'Fake
-leptons' comes from $W+$jets events.} \label{t:signal}
-\end{table*}
+\begin{table}[htb]
+  \centering
+  \begin{footnotesize}
+    %\begin{adjustwidth}{-6em}{-6em}
+    \centering
+    \begin{tabular}{|l|c|c|c|} \hline
+      & $ee$                    & $\mu\mu$                & $e\mu$                  \\ [0.2ex] \hline
+      &                         &                         &                         \\ [-1.9ex]
+      $\Zg$+~jets               & \DYZeeNJetsTwoJet       & \DYZmmNJetsTwoJet       & -                       \\ [0.3ex]
+      $\Zg \to \tau\tau$+jets   & \ZtteeNJetsTwoJet       & \ZttmmNJetsTwoJet       & \ZttemNJetsTwoJet       \\ [0.3ex]
+      Fake leptons              & \FakeWeeNJetsTwoJet     & \FakeWmmNJetsTwoJet     & \FakeWemNJetsTwoJet     \\ [0.3ex]
+      Single top quark          & \singletopeeNJetsTwoJet & \singletopmmNJetsTwoJet & \singletopemNJetsTwoJet \\ [0.3ex]
+      Diboson                   & \dibosoneeNJetsTwoJet   & \dibosonmmNJetsTwoJet   & \dibosonemNJetsTwoJet   \\ [0.3ex] \hline
+      &                         &                         &                         \\ [-1.9ex]
+      Total background          & \TotalNonttbaree        & \TotalNonttbarmm        & \TotalNonttbarem        \\ [0.3ex]
+      Predicted \ttbar\         & \ttbareeNJetsTwoJet     & \ttbarmmNJetsTwoJet     & \ttbaremNJetsTwoJet     \\ [0.3ex] \hline
+      &                         &                         &                         \\ [-1.9ex]
+      Total                     & \TotalExpectedee        & \TotalExpectedmm        & \TotalExpectedem        \\ [0.3ex] \hline \hline
+      &                         &                         &                         \\ [-1.9ex]
+      Observed                  & \DataeeNJetsTwoJet      & \DatammNJetsTwoJet      & \DataemNJetsTwoJet      \\ \hline
+    \end{tabular}
+    %\end{adjustwidth}
+  \end{footnotesize}
+  \caption {Breakdown of the expected {\ttbar} signal and background
+    events in the signal region compared to the observed event yields,
+    for each of the dilepton channels. All systematic uncertainties are
+    included, and correlations between different background sources are
+    taken into account, when calculating the total background
+    uncertainty. The largest contribution to the line labeled 'Fake
+    leptons' comes from $W+$jets events.} \label{t:signal}
+\end{table}
 
 %
 % THEIRS:
@@ -743,8 +743,8 @@ leptons' comes from $W+$jets events.} \label{t:signal}
 \subsection{Systematic uncertainties}
 \label{s:objsyst}
 
-A number of systematic uncertainties contribute to the error on the measured $\ttbar$ cross section, which are summarized in Table~\ref{tab:syssum}.
-
+A number of systematic uncertainties contribute to the error on the measured $\ttbar$ cross section,
+which are summarized in Table~\ref{tab:syssum}.
 The uncertainties on the efficiency of the lepton trigger and the lepton identification algorithms
 are measured using $Z\rightarrow ee$ and $Z\rightarrow\mu\mu$ events.
 Using these events, the efficiencies from simulated Monte Carlo events are compared to data,
@@ -891,40 +891,36 @@ from a limited size of simulated events in the Monte Carlo datasets being compar
 % Table for 7 ch. combination
 %
 
+\begin{table}[htb]
+  \centering
+%  \begin{footnotesize}
+      \begin{tabular}{|l|c|c|c|}
+        \hline
+        Uncertainties  $\Delta\sigma/\sigma$[\%]        & $ee$              & $\mu\mu$          & $e\mu$ \\ \hline
 
-\begin{table*}[htb]
-\begin{footnotesize}
-%\begin{adjustwidth}{-6em}{-6em}
-\centering
-\begin{tabular}{|l|c|c|c|}
-\hline
-           Uncertainties  $\Delta\sigma/\sigma$[\%]        & $ee$              & $\mu\mu$          & $e\mu$ \\ \hline
+        Data statistics           &    $\pm 8.1$  &    $\pm 6.1$  &    $\pm 3.9$  \\
+        \hline
+        Luminosity                &    +4.4/-3.8 &    +4.4/-3.9   &    $\pm 4.2$  \\
+        \hline
+        MC statistics             &    $\pm 1.6$  &    $\pm 1.2$  &    $\pm 0.8$  \\
+        Lepton uncertainties      &    +6.2/-5.4  &    +2.9/-1.3  &    $\pm 3.1$  \\
+        Track-leptons             &     ---       &    ---        & ---           \\
+        Jet/$\met$ uncertainties  &    +5.7/-5.7  &    +6.4/-3.5  & +4.7/-3.2     \\
+        $b$-tagging uncertainties &    +1.2/-1.0  &    $\pm 0.7$  &     ---       \\
+        $\Zg$+~jets evaluation    &    $\pm 0.4$  &    +0.5/-0.0  &     ---       \\
+        Fake lepton evaluation    &    $\pm 3.3$  &    1.5/-1.3   &    $\pm 3.0$  \\
+        Generator                 &   +12/-11     &    +4.5/-4.3  &   +4.8/-4.5   \\
+        \hline
+        All syst.(except lumi.)   &   +16.4/-14.4 &    +8.8/-6.4  &    +8.2/-6.8  \\
+        \hline \hline
+        Stat. + syst.             &   +18.9/-16.9 &    +11.6/-9.5 &    +10.1/-8.8 \\
+        \hline
 
-Data statistics           &    $\pm 8.1$  &    $\pm 6.1$  &    $\pm 3.9$  \\
-\hline
-Luminosity                &    +4.4/-3.8 &    +4.4/-3.9   &    $\pm 4.2$  \\
-\hline
-MC statistics             &    $\pm 1.6$  &    $\pm 1.2$  &    $\pm 0.8$  \\
-Lepton uncertainties      &    +6.2/-5.4  &    +2.9/-1.3  &    $\pm 3.1$  \\
-Track-leptons             &     ---       &    ---        & ---           \\
-Jet/$\met$ uncertainties  &    +5.7/-5.7  &    +6.4/-3.5  & +4.7/-3.2     \\
-$b$-tagging uncertainties &    +1.2/-1.0  &    $\pm 0.7$  &     ---       \\
-$\Zg$+~jets evaluation    &    $\pm 0.4$  &    +0.5/-0.0  &     ---       \\
-Fake lepton evaluation    &    $\pm 3.3$  &    1.5/-1.3   &    $\pm 3.0$  \\
-Generator                 &   +12/-11     &    +4.5/-4.3  &   +4.8/-4.5   \\
-\hline
-All syst.(except lumi.)   &   +16.4/-14.4 &    +8.8/-6.4  &    +8.2/-6.8  \\
-\hline \hline
-Stat. + syst.             &   +18.9/-16.9 &    +11.6/-9.5 &    +10.1/-8.8 \\
-\hline
-
-\end{tabular}
-\caption{Overview of the \ttbar{} cross-section uncertainties.}
-\label{tab:syssum}
-%\end{adjustwidth}
-\end{footnotesize}
-\end{table*}
-
+      \end{tabular}
+    \caption{Overview of the \ttbar{} cross-section uncertainties.}
+    \label{tab:syssum}
+%  \end{footnotesize}
+\end{table}
 
 %% THEIRS
 
